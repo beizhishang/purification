@@ -1,1 +1,153 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+	<meta charset="GBK">
+	<title>纯化共享平台</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #F6F6F6;
+		}
+		#Menu {
+			width: 600px;
+			margin: 10px auto;
+			border: 1px solid #CCC;
+			overflow: hidden;
+			border-radius: 5px;
+			box-shadow: 5px 5px 5px rgba(0,0,0,.5)
+		}
+		#Menu ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		#Menu li {
+			width: 120px;
+			height: 50px;
+			margin: 0 auto;
+			line-height: 50px;
+			float: left;
+			list-style: none;
+			text-align: center;
+		}
+		#Menu a {
+			width: 120px;
+			float: left;
+			overflow: hidden;
+			text-decoration: none;
+			font-size: 20px;
+			color: black;
+			background: rgba(10%,10%,10%,0.1)
+		}
+		#Menu span {
+			display: block;
+			margin-top: -50px;
+			color: white;
+		}
+		#Menu a:hover {
+			padding-top: 50px;
+			background: black;
+			box-shadow: 5px 5px 5px rgba(200,0,0,.5)
+		}
+		table{
+			width:90%;
+			margin: 0 auto;
+		}
+		.menu-left{
+			background: #2C9AB7;
+			width: 20%;
+			height: 1200px;
+		}
+		.menu-center{
+			background: #1E967E;
+			width: 50%;
+			height: 1200px;
+		}
+		.menu-right{
+			background: #52BAD5;
+			width: 30%;
+			height: 1200px;
+			position: relative;
+		}
+		h3{
+			width: 2%;
+			height: 100%;
+			float: left;
+		}
+		h3:hover{
+			color: aqua;
+			text-shadow: 5px 5px 3px rgba(0,0,0,.5)
+		}
+		div.project{
+			background: green;
+			color: white;
+			width: 15.8%;
+			height: 80px;
+			padding:20px;
+			border-radius: 10px;
+			position: absolute;
+		}
+		div.project:hover{
+			background: green;
+		}
+
+		#project-top{
+			text-align: center;
+			font-size: 25px;
+			font-family: Jokerman;
+			display: block;
+		}
+		#project-top:hover{
+			color: red;
+			text-shadow: 5px 5px 3px rgba(0,0,0,.5)
+		}
+		#project-bottom{
+			text-align: center;
+			display: block;
+			font-size: 15px;
+			font-family: 幼圆;
+		}
+		#project-bottom:hover{
+			color: aqua;
+			text-shadow: 5px 5px 3px rgba(0,0,0,.5)
+		}
+	</style>
+</head>
+<body>
+<ul id="Menu">
+	<li><a href="#"><span>HOME</span>首页</a></li>
+	<li><a href="#"><span>PLAN</span>计划</a></li>
+	<li><a href="#"><span>PROJECT</span>项目</a></li>
+	<li><a href="#"><span>LEARNING</span>学习</a></li>
+	<li><a href="#"><span>OTHER</span>其他</a></li>
+</ul>
+<form>
+	<table>
+		<tr>
+			<td class="menu-left" valign="top">
+				<div class="project">
+					<h3>当前项目</h3>
+					<a id="project-top">IBI308</a>
+					<br />
+					<a id="project-bottom">信迪利单抗注射液</a>
+				</div>
+			</td>
+			<td class="menu-center">
+				<div>
+
+				</div>
+			</td>
+			<td class="menu-right">
+
+			</td>
+		</tr>
+	</table>
+</form>
+<footer>
+</footer>
+</body>
+</html>
 
