@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="GBK">
-    <title>��������ƽ̨</title>
+    <meta charset="utf-8">
+    <title>纯化共享平台</title>
     <style type="text/css">
         * {
             margin: 0;
@@ -96,7 +96,7 @@
             padding-left: 3%;
         }
 
-        div.project {
+        div.project { /*当前项目*/
             background: #1E967E;
             color: white;
             width: 100%;
@@ -113,7 +113,7 @@
             color: white;
         }
 
-        #project-top {
+        #project-top { /*项目代码*/
             font-size: 25px;
             text-align: center;
             font-family: Jokerman;
@@ -126,10 +126,10 @@
             text-shadow: 5px 5px 3px rgba(0, 0, 0, .5);
         }
 
-        #project-bottom {
+        #project-bottom { /*项目名称*/
             text-align: center;
             font-size: 15px;
-            font-family: ��Բ;
+            font-family: 幼圆;
             height: 50%;
         }
 
@@ -143,15 +143,15 @@
             text-shadow: 5px 5px 3px rgba(0, 0, 0, .5);
         }
 
-        #access-title {
+        #access-title { /*快速入口*/
             width: 92%;
             height: 30px;
             padding-top: 20px;
             padding-left: 8%;
             font-family: Arial;
             background: #1E967E;
-            font-family: ����;
-            font-size: 20px;
+            font-family: 黑体;
+            font-size: 18px;
             color: white;
         }
 
@@ -186,7 +186,7 @@
             position: relative;
         }
 
-        .menu-right td {             /*�ұ߿��������ʽ*/
+        .menu-right td { /*右边快速入口样式*/
             background: linear-gradient(lightblue, darkgray);
             width: 30%;
             height: auto;
@@ -211,25 +211,63 @@
             font-weight: 700;
             position: relative;
         }
+
+        .xinda1 { /*快速入口标题*/
+            font-size: 18px;
+        }
+
+        .xinda2 { /*快速入口副标题*/
+            font-size: 12px;
+            color: cadetblue;
+        }
+
+        #record1 {
+            width: 100%;
+            height: 5%;
+            background-color: #1E967E;
+            margin: 2px;
+        }
+
+        .title {
+            font-size: 16px;
+            color: white;
+        }
+
+        .data {
+            font-size: 10px;
+            color: white;
+
+        }
     </style>
 </head>
 <body>
 <ul id="Menu">
-    <li><a href="#"><span>HOME</span>��ҳ</a></li>
-    <li><a href="files/���������ƻ�.html"><span>PLAN</span>�ƻ�
+    <li><a href="#"><span>HOME</span>首页</a></li>
+    <li><a href="files/纯化工作计划.html"><span>PLAN</span>计划
 
     </a></li>
-    <li><a href="#"><span>PROJECT</span>��Ŀ</a></li>
-    <li><a href="#"><span>LEARNING</span>ѧϰ</a></li>
-    <li><a href="#"><span>OTHER</span>����</a></li>
+    <li><a href="#"><span>PROJECT</span>项目</a></li>
+    <li><a href="#"><span>LEARNING</span>学习</a></li>
+    <li><a href="#"><span>OTHER</span>其他</a></li>
 </ul>
 <table cellspacing="5">
     <tr>
         <td class="menu-left" valign="top">
             <div class="project">
-                <div id="project-menu"><a href="http://innoventbio.com/#/news" target=_blank>��ǰ��Ŀ</a></div>
+                <div id="project-menu"><a href="http://innoventbio.com/#/news" target=_blank>当前项目</a></div>
                 <div id="project-top"><a href="http://innoventbio.com/#/product/pd1/1" target=_blank>IBI308</a></div>
-                <div id="project-bottom"><a href="http://innoventbio.com/#/product/products" target=_blank>�ŵ�������ע��Һ</a></div>
+                <div id="project-bottom"><a href="http://innoventbio.com/#/product/products" target=_blank>信迪利单抗注射液</a>
+                </div>
+            </div>
+            <div id="present-data">
+                <div id="record1">
+                    <p class="title">信迪利单抗注射液原液纯化批生产记录</p>
+                    <p class="data">当前版本号：07</p>
+                </div>
+                <div id="record1">
+                    <p class="title">信迪利单抗注射液原液纯化配液记录</p>
+                    <p class="data">当前版本号：02</p>
+                </div>
             </div>
         </td>
         <td class="menu-center" valign="top">
@@ -239,39 +277,46 @@
         </td>
         <td class="menu-right" valign="top">
             <div id="access">
-                <div id="access-title">�������</div>
+                <div id="access-title">快速入口</div>
                 <div id="access-middle">
                     <table id="access-table" cellspacing="10px">
                         <tr>
                             <td colspan="2">
-                                <a href="http://innoventbio.com/#/" target="_blank">�Ŵ�������ҳ</a>
+                                <a href="http://innoventbio.com/#/" target="_blank"><p class="xinda1">始于信，达于行</p>
+                                    <p class="xinda2">信达生物主页</p></a>
                             </td>
                             <td>
-                                <a href="" target="_blank">ҵ������<br/>����ϵͳ</a>
+                                <a href="" target="_blank"><p class="xinda1">流程中心</p>
+                                    <p class="xinda2">业务流程管理系统</p></a>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a href="http://innovent.21tb.com/login/login.init.do?returnUrl=http%3A%2F%2Finnovent.21tb.com%2Fos%2Fhtml%2Findex.init.do&elnScreen=1920*1080elnScreen" target="_blank">�Ŵ�ѧԺ</a>
+                                <a href="http://innovent.21tb.com/login/login.init.do?returnUrl=http%3A%2F%2Finnovent.21tb.com%2Fos%2Fhtml%2Findex.init.do&elnScreen=1920*1080elnScreen"
+                                   target="_blank"><p class="xinda1">信达学院</p>
+                                    <p class="xinda2">学习中心</p></a>
                             </td>
                             <td>
-                                <a href="http://edocapp/otcs/llisapi.dll?func=llworkspace" target="_blank">e-Doc�ļ�ϵͳ</a>
+                                <a href="http://edocapp/otcs/llisapi.dll?func=llworkspace" target="_blank"><p
+                                        class="xinda1">文件系统</p>
+                                    <p class="xinda2">e-Doc文件系统</p></a>
                             </td>
                             <td>
-                                <a href="http://edocapp:8000/" target="_blank">e-Doc��ѵϵͳ</a>
+                                <a href="http://edocapp:8000/" target="_blank"><p class="xinda1">培训系统</p>
+                                    <p class="xinda2">e-Doc培训系统</p></a>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <a href="#" target="_blank"></a>
-                            </td>
-                            <td>
-                                <a href="#" target="_blank"></a>
-                            </td>
-                            <td>
-                                <a href="#" target="_blank"></a>
-                            </td>
-                        </tr>
+                        <!--                        <tr>-->
+                        <!--                            <td>-->
+                        <!--                                <a href="#" target="_blank"></a>-->
+                        <!--                            </td>-->
+                        <!--                            <td>-->
+                        <!--                                <a href="#" target="_blank"></a>-->
+                        <!--                            </td>-->
+                        <!--                            <td>-->
+                        <!--                                <a href="#" target="_blank"></a>-->
+                        <!--                            </td>-->
+                        <!--                        </tr>-->
                     </table>
                 </div>
                 <div id="access-bottom">Where there is a will, there is a way.</div>
