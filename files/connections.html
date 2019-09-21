@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>#</title>
+    <style type="text/css">
+        /* 1 - DECLARATIONS */
+        @-webkit-keyframes fade-in {
+            0%, 50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-in {
+            0%, 50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fade-bg {
+            0%, 50% {
+                background: transparent;
+            }
+            100% {
+                background: rgba(75, 227, 172, 0.5);
+            }
+        }
+
+        @keyframes fade-bg {
+            0%, 50% {
+                background: transparent;
+            }
+            100% {
+                background: rgba(75, 227, 172, 0.5);
+            }
+        }
+
+        /* 2 - RESET */
+        *, *::before, *::after {
+            margin: 0;
+            border: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 3 - BODY */
+        body li.C {
+            height: calc(calc(var(--s) * 1vmin) * 1.75);
+            width: calc(calc(var(--s) * 1vmin) * 1.75);
+            background: #94fc13;
+        }
+
+        body li.C::after {
+            content: '';
+        }
+
+        /* 4 - LIST */
+        ul {
+            z-index: 0;
+            height: 100vh;
+            width: 100vw;
+            list-style: none;
+            background: #032d3c;
+            overflow: hidden;
+            position: relative;
+            -webkit-animation: fade-in 1s ease-in-out;
+            animation: fade-in 1s ease-in-out;
+        }
+
+        /* 5 - ITEMS */
+        li {
+            position: absolute;
+            left: calc(-1 * calc(calc(var(--s) * 1vmin) / 2) + var(--X) * 1%);
+            top: calc(-1 * calc(calc(var(--s) * 1vmin) / 2) + var(--Y) * 1%);
+            transition: left calc(var(--t) * 1ms), top calc(var(--t) * 1ms), width 0.1s, height 0.1s, background 0.1s;
+            transition-timing-function: ease-in-out;
+            border-radius: 50%;
+            height: calc(var(--s) * 1vmin);
+            width: calc(var(--s) * 1vmin);
+            background: rgba(234, 254, 208, 0.8);
+        }
+
+        li:first-child {
+            z-index: 1;
+            height: calc(calc(var(--s) * 1vmin) * 2.5);
+            width: calc(calc(var(--s) * 1vmin) * 2.5);
+            background: #f7ff56;
+        }
+
+        li::after {
+            z-index: -1;
+            display: block;
+            height: calc(calc(var(--s) * 1vmin) * .25);
+            width: calc(var(--L) * 1px);
+            position: absolute;
+            border-radius: calc(calc(var(--s) * 1vmin) * .25);
+            right: 50%;
+            top: calc(50% - calc(calc(var(--s) * 1vmin) * .25) / 2);
+            -webkit-transform-origin: right;
+            transform-origin: right;
+            -webkit-animation: fade-bg .1s ease-in-out forwards;
+            animation: fade-bg .1s ease-in-out forwards;
+            -webkit-transform: rotate3d(0, 0, 1, calc(var(--T) * 1rad));
+            transform: rotate3d(0, 0, 1, calc(var(--T) * 1rad));
+        }
+    </style>
+</head>
+<body>
+
+<!-- 1 - README : TWEAK ANY VARIABLES BELOW TO UPDATE THE ANIMATION --><!-- 3 - LIST -->
+<ul style="--t: 5000; --s: 1; --d: 100;"> <!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/><!-- 5 - ITEMS -->
+    <li/>
+</body>
+<script>
+    /* DECLARATIONS CONST */
+    const {body} = document, list = body.querySelector('ul'), items = Array.from(list.querySelectorAll('li')),
+        ref = items[0], {length} = items, t = +list.style.getPropertyValue('--t'),
+        d = +list.style.getPropertyValue('--d');
+    /* DECLARATIONS LET */
+    let cX, cY, pts = items.map(pt => ({pt}));
+    /* HELPERS OBJ */
+    const {B, O, C, L, P, R, S, T, V} = {
+        B: t => t.getBoundingClientRect(),
+        O: t => {
+            const {x, y, height: h, width: w} = B(t);
+            return {x: x + w * .5, y: y + h * .5}
+        },
+        R: n => Math.random() * n,
+        S: (t, s) => t.style.cssText = s,
+        P: _ => ({X: R(100), Y: R(100)}),
+        L: (x, y) => Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)),
+        T: (x, y) => Math.atan2(y, x),
+        V: (d, dX, dY) => Math.abs(dX) < d && Math.abs(dY) < d,
+        C: (pt, d, cX, cY) => {
+            const {x, y} = O(pt), dX = x - cX, dY = y - cY;
+            return {dX, dY, dV: V(d, dX, dY)};
+        }
+    }
+    /* LOGIC OBJ */
+    const {animate, connect, init, move, track} = {
+        move: _ => pts = pts.map(({pt}) => {
+            return {pt, ...P()}
+        }), track: _ => {
+            const {x, y} = O(ref);
+            return {cX: x, cY: y}
+        }, connect: _ => pts.forEach(({pt, X, Y}, index) => {
+            const {dV, dX, dY} = C(pt, d, cX, cY);
+            S(pt, `--X: ${X}; --Y: ${Y}; ${dV && index > 0 ? `--L: ${L(dX, dY)}; --T: ${T(dX, dY)}` : ''}`);
+            pt.className = dV && index > 0 ? 'C' : '';
+        }), animate: () => {
+            ({cX, cY} = track());
+            S(body, `--cX: ${cX}; --cY: ${cY}`);
+            connect();
+            requestAnimationFrame(animate);
+        }, init: () => {
+            move();
+            setTimeout(move, 250);
+            setInterval(move, t);
+            requestAnimationFrame(animate);
+        }
+    }
+    /* INIT CALL */
+    init();
+</script>
+</html>
