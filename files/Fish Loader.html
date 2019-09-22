@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>#</title>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            /* center in the viewport */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ebfdff;
+        }
+
+        /* keyframe animations for the fish */
+        /* animate the mouth and head to rotate as to open the mouth of the fish
+        given the negative scale of the rotated semicircle, the rotation affects the two shapes in the opposite direction (on purpose)
+        */
+        #head,
+        #mouth {
+            animation: open 3s -1.5s cubic-bezier(0.645, 0.045, 0.355, 1) infinite both;
+        }
+
+        @keyframes open {
+            25% {
+                transform: rotate(30deg);
+            }
+            50%,
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        /* animate the fin, flipper and tail to rotate around their respective hinge */
+        #fin,
+        #flipper,
+        #tail {
+            animation: rotate 1.75s cubic-bezier(0.645, 0.045, 0.355, 1) infinite alternate both;
+        }
+
+        /* faster animation for the flipper, animated in the opposite direction */
+        #flipper {
+            animation-duration: 1.25s;
+            animation-direction: alternate-reverse;
+        }
+
+        /* nagative margin for the tail, to offset it from the rotate animation */
+        #tail {
+            animation-delay: -3s;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes rotate {
+            50% {
+                transform: rotate(-10deg);
+            }
+            100% {
+                transform: rotate(10deg);
+            }
+        }
+
+        /* animate the entire fish to translate from right to left
+        from outside the viewbox to roughly the first third
+        */
+        .translate {
+            animation: translate 6s cubic-bezier(0.645, 0.045, 0.355, 1) infinite both;
+        }
+
+        @keyframes translate {
+            0% {
+                transform: translateX(400px);
+            }
+            65% {
+                transform: translateX(-120px);
+            }
+            80% {
+                transform: translateX(-100px);
+            }
+            100% {
+                transform: translateX(-120px);
+            }
+        }
+
+        /* animate the entire fish to disappear behind the subsequent creature */
+        .scale {
+            animation: scale 6s cubic-bezier(0.645, 0.045, 0.355, 1) infinite both;
+        }
+
+        @keyframes scale {
+            0% {
+                transform: scale(1);
+            }
+            45% {
+                transform: scale(0.9);
+            }
+            90% {
+                transform: scale(0.6);
+            }
+            95%,
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        /* animate the clip to fake the overlap between the second and first fish */
+        #clip {
+            animation: clip 6s cubic-bezier(0.645, 0.045, 0.355, 1) infinite both;
+        }
+
+        @keyframes clip {
+            0%,
+            83.25% {
+                transform: translateX(0px);
+            }
+            100% {
+                transform: translateX(-200px);
+            }
+        }
+
+        /* animate the group#bubbles to highlight each iteration */
+        #bubbles {
+            animation: bubbles 3s cubic-bezier(0.645, 0.045, 0.355, 1) infinite both;
+        }
+
+        @keyframes bubbles {
+            0%,
+            70% {
+                transform: scale(0);
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<!-- svg used as wrapping container -->
+<svg height="600" viewBox="0 0 600 600" width="600">
+    <defs>
+        <!-- shape used to draw the fish -->
+        <path
+                d="M -50 0 a 50 50 0 0 1 100 0z"
+                id="semicircle"
+                stroke="#475c6d">
+        </path>
+
+        <!-- symbol using the defined shape and additional elements to draw the fish
+        ! the starting viewBox is '0 0 156.5 109', as in
+        156.5 = 100 (size of the fish' head) + 52.5 (size of the tail (starting at 50, scaled up 5 percent)) + 4 (width of the stroke)
+        109 = 105 (size of the fish' tail (100 scaled up 5 percent)) + 4 (size of the stroke)
+
+        from these values add a 18x18 cushion to rotate the shapes without fear of cropping them
+        specify negative values to translate the shape
+        -->
+        <symbol
+                id="fish"
+                viewBox="-9 -9 174.5 127">
+            <g transform="translate(2 4.5)">
+                <!-- translate for the stroke (4.5 considering the height of the fin, exceeding the fish by 2.5) -->
+
+                <!-- for each copy of use#semicircle, add group elements to modify not only the position and rotation of the semicircle, but also its transform origin -->
+                <g transform="translate(50 50)">
+                    <g transform="translate(0 -50)">
+                        <g id="fin" transform="rotate(0)"><!-- rotate this group -->
+                            <g transform="translate(25 0)">
+                                <use href="#semicircle" stroke-width="8" transform="rotate(180) scale(0.5)"></use>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+
+                <g transform="translate(50 50)">
+                    <g transform="translate(100 0)">
+                        <g transform="translate(-50 0)">
+                            <g transform="scale(1.05)">
+                                <g id="tail" transform="rotate(0)"><!-- rotate this group -->
+                                    <g transform="translate(50 0)">
+                                        <use fill="#fff" href="#semicircle" stroke-width="4"
+                                             transform="rotate(-90)"></use>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+
+                <g transform="translate(50 50)">
+                    <g transform="scale(-1 1)">
+                        <!-- negative scale to have the rotation affect the mouth the opposite way with respect to the head (allowing to use a single animation for both)-->
+                        <g id="mouth" transform="rotate(0)"><!-- rotate this group -->
+                            <use href="#semicircle" stroke-width="4" transform="rotate(180)"></use>
+                            <path
+                                    d="M 0 2 h 20 q 0 46 -20 46 a 48 48 0 0 0 48 -48"
+                                    fill="#000"
+                                    opacity="0.15"
+                                    transform="scale(-1 1)">
+                            </path>
+                        </g>
+                    </g>
+                </g>
+
+                <g transform="translate(50 50)">
+                    <g id="head" transform="rotate(0)"><!-- rotate this group -->
+                        <use fill="#fff" href="#semicircle" stroke-width="4"></use>
+
+                        <circle
+                                cx="-20"
+                                cy="-15"
+                                fill="#475c6d"
+                                r="4">
+                        </circle>
+                        <path
+                                d="M -44 0 a 44 44 0 0 1 88 0"
+                                fill="none"
+                                opacity="0.3"
+                                stroke="#475c6d"
+                                stroke-dasharray="0 30 30 85"
+                                stroke-linecap="round"
+                                stroke-width="4">
+                        </path>
+                    </g>
+                </g>
+
+                <g transform="translate(50 50)">
+                    <g id="flipper" transform="rotate(0)"><!-- rotate this group -->
+                        <g transform="translate(25 0)">
+                            <use fill="#fff" href="#semicircle" stroke-width="8"
+                                 transform="rotate(180) scale(0.5)"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </symbol>
+
+        <!-- clip path to fake the overlap between the second and first fish
+        applied to the second fish, translated to progressively hide it as the first fish approaches
+        -->
+        <clipPath clipPathUnits="objectBoundingBox" id="clip" transform="translate(0 0)">
+            <path
+                    d="M -0.2 -0.2 h 1.4 v 0.5 l 0.6 0.2 l -0.6 0.2 v 0.5 h -1.4 z"
+                    fill="#fff">
+            </path>
+        </clipPath>
+
+    </defs>
+
+    <!-- actual graphic
+    the idea is to draw two fishes with a different color and animate them continuously and as follows:
+    - position past the right edge of thesvg, cropping the shape
+    - translate toward the first third
+    - scale the fish to 0
+    - translate back past the right edge
+    - scale the fish to 1
+
+    ! in the translation from right to left rotate the different shapes identified by id, to fake the fish movement under the sea 🎵
+    ! apply a negative delay to have the first fish already positioned in the svg
+    ! wrap the shapes in group elements to center the fish vertically and change their transform-origin -->
+    -->
+    <g transform="translate(300 300)">
+        <g transform="translate(-100 0)">
+            <!-- bubbles animated as a fish eats another -->
+            <g fill="475c6d" id="bubbles">
+                <circle
+                        cx="100"
+                        cy="-70"
+                        opacity="0.9"
+                        r="4">
+                </circle>
+                <circle
+                        cx="130"
+                        cy="60"
+                        opacity="0.8"
+                        r="2">
+                </circle>
+                <circle
+                        cx="70"
+                        cy="90"
+                        opacity="0.75"
+                        r="3">
+                </circle>
+                <circle
+                        cx="40"
+                        cy="100"
+                        opacity="0.85"
+                        r="4">
+                </circle>
+            </g>
+        </g>
+
+        <g transform="translate(-78.25 -54.5)">
+            <g class="translate" style="animation-delay: -3s"><!-- translate this group to move the fish-->
+                <g transform="translate(156.5 54.5)">
+                    <g class="scale" style="animation-delay: -3s">
+                        <!-- scale this group to have the fish disappear as if pulled from the right-->
+                        <g transform="translate(-156.5 -54.5)">
+                            <svg height="109" width="156.5">
+                                <use fill="#ff9bbd" href="#fish"></use>
+                            </svg>
+                        </g>
+                    </g>
+                </g>
+            </g>
+
+            <!-- repeat the same pattern for the second fish, but using a different accent color and without delay on the animation -->
+            <g class="translate">
+                <g transform="translate(156.5 54.5)">
+                    <g class="scale">
+                        <g transform="translate(-156.5 -54.5)">
+                            <g>
+                                <svg clip-path="url(#clip)" height="109" width="156.5">
+                                    <use fill="#dbb8ff" href="#fish"></use>
+                                </svg>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+</body>
+</html>
