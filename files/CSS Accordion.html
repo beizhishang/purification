@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <!--    <script type="text/javascript" src="../js/jquery.js"></script>-->
+    <script type="text/javascript">
+        $(document).on('click', '.item', function () {
+            $(this).toggleClass('open');
+        });
+    </script>
+
+    <style type="text/css">
+        html {
+            font-family: 'ff-dagny-web-pro', 'DagnyWeb', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background-color: PapayaWhip;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .accordion {
+            width: 480px;
+            margin: 30px auto;
+            border: 1px solid rgba(50, 50, 50, 0.25);
+        }
+
+        .accordion .item {
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .accordion .header {
+            padding: 15px 20px;
+            cursor: pointer;
+            background: #3498db;
+            border-bottom: 1px solid #2980b9;
+            color: white;
+        }
+
+        .accordion .header h3 {
+            margin: 0;
+        }
+
+        .accordion .content {
+            padding: 0 20px;
+            font-size: 15px;
+            line-height: 20px;
+            max-height: 0;
+            transition: all ease-in-out 0.2s;
+        }
+
+        .accordion .item.open .content {
+            padding: 20px;
+            max-height: 150px;
+        }
+
+    </style>
+</head>
+<body>
+<h1 class="title">CSS Accordion</h1>
+<div class="accordion">
+    <div class="item open">
+        <div class="header">
+            <h3>Tab 1</h3>
+        </div>
+        <div class="content">
+            Maecenas vitae dictum orci, et placerat magna. Mauris et nibh id mi vestibulum tincidunt. Donec mauris nisl,
+            viverra vitae purus id, aliquam facilisis erat. In cursus nulla at neque volutpat egestas. Nam faucibus nibh
+            nec nibh ultricies dapibus. Nullam quis mi sit amet augue tincidunt consectetur vitae vitae orci. Sed.
+        </div>
+    </div>
+    <div class="item">
+        <div class="header">
+            <h3>Tab 2</h3>
+        </div>
+        <div class="content">
+            Nullam vitae mattis ante. Vestibulum vehicula eu ligula quis tincidunt. Suspendisse nec nunc nisl. Donec
+            scelerisque, quam molestie pellentesque imperdiet, arcu leo finibus mi, ac tempor enim enim sed nulla. Cras
+            vulputate nec arcu eget ultrices. Nunc euismod dui nec nunc malesuada, ac maximus lectus auctor. Duis
+            malesuada aliquam sem.
+        </div>
+    </div>
+    <div class="item">
+        <div class="header">
+            <h3>Tab 3</h3>
+        </div>
+        <div class="content">
+            Aliquam nec suscipit libero, nec vehicula lorem. In gravida, sapien ut elementum posuere, nibh sapien varius
+            turpis, sit amet ullamcorper ipsum arcu ut arcu. Morbi vel tortor enim. Proin et velit eu nisi convallis
+            vestibulum. Aliquam tincidunt nulla ipsum. Nam at lorem non dui molestie maximus. Quisque auctor tincidunt
+            justo.
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
