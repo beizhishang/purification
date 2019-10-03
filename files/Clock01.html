@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        @import url("https://fonts.googleapis.com/css?family=Old+Standard+TT");
+
+        body {
+            font-family: 'Old Standard TT', serif;
+            background-color: #1f1f1f;
+            color: rgba(255, 255, 255, 0.1);
+            margin: 0;
+            font-size: 24px;
+            overflow: hidden;
+        }
+
+        body > div {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+        }
+
+        body > div > div {
+            display: inline-flex;
+            flex-direction: column-reverse;
+        }
+
+        body > div > div:not(:last-child) {
+            margin-right: 1em;
+        }
+
+        body > div > div:not(:last-child):nth-child(2n) {
+            margin-right: 2em;
+            position: relative;
+        }
+
+        body > div > div:not(:last-child):nth-child(2n):after {
+            content: ':';
+            font-size: 2em;
+            color: white;
+            position: absolute;
+            right: -0.675em;
+            bottom: -0.2em;
+        }
+
+        body > div > div > div {
+            -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+            transition: color 350ms ease-out, -webkit-transform 200ms ease-in-out;
+            transition: transform 200ms ease-in-out, color 350ms ease-out;
+            transition: transform 200ms ease-in-out, color 350ms ease-out, -webkit-transform 200ms ease-in-out;
+        }
+
+        body > div > div > div.highlight {
+            -webkit-transform: rotate(0deg) scale(2);
+            transform: rotate(0deg) scale(2);
+            color: white;
+        }
+
+        body > div > div > div.highlight ~ div {
+            -webkit-transform: rotate(-90deg) translate3D(0.4em, 0, 0);
+            transform: rotate(-90deg) translate3D(0.4em, 0, 0);
+        }
+
+    </style>
+</head>
+<body>
+
+<div>
+    <div>
+        <div>0</div>
+        <div>1</div>
+        <div>2</div>
+    </div>
+    <div>
+        <div>0</div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+    <div>
+        <div>0</div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+    <div>
+        <div>0</div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+    <div>
+        <div>0</div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+    <div>
+        <div>0</div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    const e = [...document.querySelectorAll('body > div > div')].map(n => [...n.children]);
+    let l = [];
+    (function update() {
+        const now = new Date();
+        const a = [
+            now.getHours(),
+            now.getMinutes(),
+            now.getSeconds()].map(n => `0${n}`.slice(-2));
+        const ol = l.splice(0, 6);
+        for (let i = 0; i < 6; i++) {
+            const el = e[i][a[~~(i * 0.5)][i % 2]];
+            l.push(el);
+            el.classList.add('highlight');
+        }
+        for (const el of ol) {
+            if (!l.includes(el)) {
+                el.classList.remove('highlight');
+            }
+        }
+        requestAnimationFrame(update);
+    })();
+</script>
+</html>
