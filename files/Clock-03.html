@@ -62,7 +62,7 @@
         }
         ;
         content1.innerHTML = h + ":" + m + ":" + s;
-        content2.innerHTML = y + "." + M + "." + d + "&nbsp;" + "星期" + "一二三四五六日"[now.getDay()];
+        content2.innerHTML = y + "." + M + "." + d + "&nbsp;" + "星期" + "日一二三四五六"[now.getDay()];
         setTimeout(arguments.callee, 1000);
     })();
 
