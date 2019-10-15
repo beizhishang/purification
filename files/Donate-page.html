@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Donate-Page</title>
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui"
+          name="viewport"/><!--禁止缩放-->
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+    <!-- clipboard.js 是 JS 复制文本的库 -->
+    <script src="script.js"></script>
+</head>
+<body>
+<a class="pos-f tr3" href="https://github.com/greatghoul/donate-page" id="github" target="_blank" title="Github"></a>
+<div class="tr3" id="DonateText">Donate</div>
+<ul class="list pos-f tr3" id="donateBox">
+    <li id="PayPal"><a href="https://paypal.me/greatghoul" target="_blank">PayPal</a></li>
+    <li data-footnote="Copy addres and show QRCod" id="BTC">
+        <button alt="Copy to clipboard" data-clipboard-target="#btc-key" id="BTCBn">Bitcoin</button>
+    </li>
+    <li id="AliPay">AliPay</li>
+    <li id="WeChat">WeChat</li>
+</ul>
+<div class="pos-f left-100" id="QRBox">
+    <div id="MainBox"></div>
+</div>
+<!-- Bitcoin 账号 -->
+<input id="btc-key" readonly="readonly" type="text" value="3DxYB55bX6Cs4bYKVJA65dyqgS9Wa1Q1d7">
+</body>
+</html>
