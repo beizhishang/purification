@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="AHH9W2ojnw" name="baidu-site-verification"/>
+    <title>大屏时钟_在线大屏时钟工具_生活常用_好工具网</title>
+    <meta content="no-siteapp" http-equiv="Cache-Control"/>
+    <meta content="no-transform" http-equiv="Cache-Control"/>
+    <meta content="pc,mobile" name="applicable-device"/>
+    <meta content="width" name="MobileOptimized"/>
+    <meta content="true" name="HandheldFriendly"/>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0" name="viewport"/>
+    <meta content="webkit|ie-comp|ie-stand" name="renderer"/>
+
+    <meta content="时钟,LED" name="keywords">
+    <meta content="一个漂亮的电子屏 LED 数字时钟，适用于投影到大屏幕。" name="description">
+    <meta content="NiceTool.net" name="author">
+    <meta content="大屏时钟" property="og:title">
+    <meta content="nicetool" property="og:site_name">
+    <meta content="website" property="og:type">
+    <meta content="一个漂亮的电子屏 LED 数字时钟，适用于投影到大屏幕。" property="og:description">
+    <meta content="http://www.nicetool.net/img/screen_clock/img_128.png" property="og:image">
+    <meta content="http://www.nicetool.net/app/screen_clock.html" property="og:url">
+    <link href="http://www.nicetool.net/app/screen_clock.html" rel="canonical">
+
+    <link href="/static/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/static/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/static/img/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="/static/img/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="/static/img/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+</head>
+<body style="margin-top:0px;">
+
+<style>
+    .float_div {
+        position: absolute;
+        bottom: 1px;
+        right: 1px;
+        width: 110px;
+        height: 25px;
+        z-index: 2147483646;
+        display: inline-block;
+        vertical-align: middle;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        background-color: rgb(187, 187, 187);
+        text-align: center;
+        cursor: pointer;
+        white-space: nowrap;
+        box-shadow: rgba(0, 0, 0, 0.117647) 0px 2px 6px, rgba(0, 0, 0, 0.239216) 0px 1px 2px;
+        font-family: 微软雅黑;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        outline: 0px;
+        padding: 0px 8px;
+        overflow: hidden;
+        transition: 0.2s ease-out;
+        border-radius: 2px;
+        opacity: 0.5;
+    }
+
+    #tool_loading {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 200px;
+        height: 100px;
+        margin-left: -100px;
+        margin-top: -50px;
+    }
+
+    #tool_loading2 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 360px;
+        height: 100px;
+        margin-left: -180px;
+        margin-top: -50px;
+    }
+</style>
+<div>
+    <div>
+        <div class="col-lg-12">
+            <div id="tooluseareaall"
+                 style="height: 100%;position: fixed; z-index: 99999;top: 0;left: 0;width: 100%;background-color: whitesmoke;overflow: hidden;">
+
+
+                <div align="center" id="toolusearea" style="z-index:100;">
+                    <div id="tool_loading"><b>大屏时钟工具</b><br>正在努力为您加载...<br><img src="../static/img/loading.gif"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="float_div"><a href="http://www.nicetool.net/?embed" style="font-size:10px" target="_top"> By
+    NiceTool.net </a></div>
+
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/lunr.js"></script>
+<script src="/static/js/search.js"></script>
+<script src="/static/js/popper.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/layer_mobile/layer.js"></script>
+<script src="/static/js/other.js"></script>
+
+<script>
+    tooltype = "推荐工具", toolpath = "screen_clock", tooldir = "/json/screen_clock", toolname = "大屏时钟", toolimg128 = "/img/screen_clock/img_128.png", tooldescription = "一个漂亮的电子屏 LED 数字时钟，适用于投影到大屏幕。";
+    var toolprice = "0", toolprice_time = "2019-06-26 01:21:05";
+
+    function nicetool_pay() {
+        var e = (new Date).getTime(), t = localStorage.getItem(toolpath), o = 0;
+        if (t && (e - t) / 36e5 <= 24 * userdays) {
+            o = 1;
+            var n = 24 * userdays * 60 * 60 * 1e3 - (e - t), a = Math.floor(n / 864e5), r = n % 864e5,
+                i = Math.floor(r / 36e5), l = r % 36e5, s = Math.floor(l / 6e4), c = l % 6e4;
+            Math.round(c / 1e3);
+            layer.closeAll(), layer.open({
+                content: "\u60a8\u8fd8\u53ef\u4ee5\u8bd5\u7528" + a + "\u5929 " + i + "\u5c0f\u65f6 " + s + " \u5206\u949f",
+                skin: "msg",
+                time: 2
+            })
+        }
+        var d = new Date(toolprice_time).getTime(), p = (new Date).getTime();
+        if ("IE" == myBrowser() && 0 == toolprice) {
+            document.getElementById("toolusearea").innerHTML = '<div class="alert alert-danger" align="center" style="padding:18px;"><b>\u68c0\u6d4b\u5230\u60a8\u5728\u4f7f\u7528IE\u6d4f\u89c8\u5668</b>\uff1a\u672c\u7ad9\u90e8\u5206\u5de5\u5177\u5728IE\u6d4f\u89c8\u5668\u4e0b\u6709\u517c\u5bb9\u6027\u95ee\u9898\uff0c\u8bf7\u4f7f\u7528chrome\u5185\u6838\u6d4f\u89c8\u5668\u8bbf\u95ee\u672c\u7ad9\uff01</div>'
+        } else if ((2 == toolprice || 1 == toolprice && p >= d) && !o && isPc() && "IE" != myBrowser() && "tg_wps" != theuserfrom) if ("nicetool" == theuserfrom) layer.open({
+            type: 1,
+            shadeClose: !1,
+            content: '<iframe src="/pay/' + toolpath + "?from=" + GetQueryString("from") + "&days=" + GetQueryDays("days") + '" width="590px;" height="280px;" frameborder="0"></iframe><br>',
+            anim: "up",
+            style: "position:fixed; margin:auto; left:0; right:0; top:0; bottom:0; width:590px; height:290px; border: none; -webkit-animation-duration: .5s; animation-duration: .5s;",
+            btn: ["\u5df2\u652f\u4ed8\u8fc7", "\u6682\u65f6\u4e0d\u8981"],
+            no: function () {
+                layer.closeAll();
+                var e = '<div id="tool_loading2"><b>' + toolname + '\u5de5\u5177</b><br>\u9879\u76ee\u7ef4\u62a4\u4e0d\u6613\uff0c\u671b\u6177\u6168\u89e3\u56ca\uff0c\u60a8\u7684\u652f\u6301\u662f\u6211\u4eec\u6700\u5927\u7684\u52a8\u529b\uff01<br><a href="javascript:nextpay()" class="manager-btn l-btn" style="display: inline-block;padding: 0 20px;height: 32px;line-height: 32px;background: #2086ee;font-size: 14px;color: #fff;text-align: center;cursor: pointer;border: 0;-webkit-transition: all .3s;transition: all .3s;font-weight: 400;-webkit-appearance: none;">\u652f\u4ed8\u8bd5\u7528</a>' + vipinfo + "</div>";
+                document.getElementById("toolusearea").innerHTML = e
+            },
+            yes: function () {
+                layer.closeAll(), pay_test()
+            }
+        }); else layer.open({
+            type: 1,
+            shadeClose: !1,
+            content: '<iframe src="/pay/' + toolpath + "?from=" + GetQueryString("from") + "&days=" + GetQueryDays("days") + '" width="320px;" height="280px;" frameborder="0"></iframe><br>',
+            anim: "up",
+            style: "position:fixed; margin:auto; left:0; right:0; top:0; bottom:0; width:300px; height:290px; border: none; -webkit-animation-duration: .5s; animation-duration: .5s;",
+            btn: ["\u5df2\u652f\u4ed8\u8fc7", "\u6682\u65f6\u4e0d\u8981"],
+            no: function () {
+                layer.closeAll();
+                var e = '<div id="tool_loading2"><b>' + toolname + '\u5de5\u5177</b><br>\u9879\u76ee\u7ef4\u62a4\u4e0d\u6613\uff0c\u671b\u6177\u6168\u89e3\u56ca\uff0c\u60a8\u7684\u652f\u6301\u662f\u6211\u4eec\u6700\u5927\u7684\u52a8\u529b\uff01<br><a href="javascript:nextpay()" class="manager-btn l-btn" style="display: inline-block;padding: 0 20px;height: 32px;line-height: 32px;background: #2086ee;font-size: 14px;color: #fff;text-align: center;cursor: pointer;border: 0;-webkit-transition: all .3s;transition: all .3s;font-weight: 400;-webkit-appearance: none;">\u652f\u4ed8\u8bd5\u7528</a>' + vipinfo + "</div>";
+                document.getElementById("toolusearea").innerHTML = e
+            },
+            yes: function () {
+                layer.closeAll(), pay_test()
+            }
+        }); else (2 == toolprice || 1 == toolprice && p >= d) && !o && isPc() && "IE" == myBrowser() && layer.open({
+            title: ["\u8bf7\u66f4\u6362\u6d4f\u89c8\u5668", "background-color: #FF4351; color:#fff;"],
+            shadeClose: !1,
+            content: "\u68c0\u6d4b\u5230\u60a8\u5728\u4f7f\u7528IE\u6d4f\u89c8\u5668\uff0c\u672c\u5de5\u5177\u4e0d\u652f\u6301\u5728IE\u6d4f\u89c8\u5668\uff08IE\u6a21\u5f0f\uff09\u4e2d\u4f7f\u7528\u3002"
+        })
+    }
+
+    var theuserfrom = GetQueryString("from"), userdays = parseInt(GetQueryDays("days"));
+    userdays < 0 && (userdays = 0);
+    var vipinfo = "";
+    if ("nicetool" == theuserfrom) vipinfo = '<a href="http://www.nicetool.net/user/vip" target="_blank" class="manager-btn l-btn" style="display: inline-block;padding: 0 20px;height: 32px;line-height: 32px;background: #db3a1d;font-size: 14px;color: #fff;text-align: center;cursor: pointer;border: 0;-webkit-transition: all .3s;transition: all .3s;font-weight: 400;-webkit-appearance: none;">\u6210\u4e3aVIP\u7528\u6237</a>';
+
+    function pay_test() {
+        layer.open({
+            type: 1,
+            shadeClose: !1,
+            content: '<div style="text-align: center;width:320px; height:325px;"><div style="padding-top:105px;">\u8ba2\u5355\u53f7\uff1a<input id="paysid"><input type="submit" id="payscheack" value="\u63d0\u4ea4" onclick="javascript:pay_test_ajax();"><br><div style="border: 1px solid #b1d9ff;font-size: 12px;line-height: 20px; color: #767676;background: #ecfbff;min-height: 32px;margin-top:10px;margin-left:5px;padding-top:10px;">\u53ef\u4ee5\u5728\u5fae\u4fe1\u652f\u4ed8\u8ba2\u5355\u8be6\u60c5\u4e2d\u67e5\u770b\u5546\u6237\u5355\u53f7<br>\u5ba2\u670dqq\u7fa4\uff1a<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=bb3ab7747e0691cff0a2e5690767a83e4bf25f088aa47ef11dc2973468b723c7"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="nicetool\u4ea4\u6d41\u7fa4" title="nicetool\u4ea4\u6d41\u7fa4"></a> 573323093</div></div></div>',
+            anim: "up",
+            style: "position:fixed; margin:auto; left:0; right:0; top:0; bottom:0; width:325px; height:320px; border: none; -webkit-animation-duration: .5s; animation-duration: .5s;",
+            btn: ["\u7ee7\u7eed\u652f\u4ed8", "\u6682\u65f6\u4e0d\u8981"],
+            no: function () {
+                layer.closeAll();
+                var e = '<div id="tool_loading2"><b>' + toolname + '\u5de5\u5177</b><br>\u9879\u76ee\u7ef4\u62a4\u4e0d\u6613\uff0c\u671b\u6177\u6168\u89e3\u56ca\uff0c\u60a8\u7684\u652f\u6301\u662f\u6211\u4eec\u6700\u5927\u7684\u52a8\u529b\uff01<br><a href="javascript:nextpay()" class="manager-btn l-btn" style="display: inline-block;padding: 0 20px;height: 32px;line-height: 32px;background: #2086ee;font-size: 14px;color: #fff;text-align: center;cursor: pointer;border: 0;-webkit-transition: all .3s;transition: all .3s;font-weight: 400;-webkit-appearance: none;">\u652f\u4ed8\u8bd5\u7528</a> ' + vipinfo + "</div>";
+                document.getElementById("toolusearea").innerHTML = e
+            },
+            yes: function () {
+                layer.closeAll(), nicetool_pay()
+            }
+        })
+    }
+
+    function GetQueryString(e) {
+        var t = new RegExp("(^|&)" + e + "=([^&]*)(&|$)"), o = window.location.search.substr(1).match(t);
+        return null != o ? (localStorage.setItem("nicetool_from", unescape(o[2])), unescape(o[2])) : null != localStorage.getItem("nicetool_from") && "null" != localStorage.getItem("nicetool_from") ? localStorage.getItem("nicetool_from") : "nicetool"
+    }
+
+    function GetQueryDays(e) {
+        var t = new RegExp("(^|&)" + e + "=([^&]*)(&|$)"), o = window.location.search.substr(1).match(t);
+        return null != o ? unescape(o[2]) : "1"
+    }
+
+    function pay_test_ajax() {
+        try {
+            $.ajaxSetup({
+                error: function (e, t) {
+                    return layer.open({
+                        content: "\u7f51\u7edc\u51fa\u95ee\u9898\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5\uff01",
+                        skin: "msg",
+                        time: 2
+                    }), !1
+                }
+            }), $.getJSON("/checkpay/" + $("#paysid").val(), function (e) {
+                var t = (new Date).getTime(), o = new Date(e.create_time).getTime();
+                if (1 == e.code && e.path == toolpath) if ((t - o) / 36e5 <= 24 * userdays) {
+                    var n = 24 * userdays * 60 * 60 * 1e3 - (t - o), a = Math.floor(n / 864e5), r = n % 864e5,
+                        i = Math.floor(r / 36e5), l = r % 36e5, s = Math.floor(l / 6e4), c = l % 6e4;
+                    Math.round(c / 1e3);
+                    layer.closeAll(), layer.open({
+                        content: "\u60a8\u7684\u8ba2\u5355\u8fd8\u53ef\u4ee5\u8bd5\u7528" + a + "\u5929 " + i + "\u5c0f\u65f6 " + s + " \u5206\u949f",
+                        skin: "msg",
+                        time: 2
+                    }), localStorage.setItem(toolpath, o)
+                } else "nicetool" == theuserfrom ? layer.open({
+                    content: "\u60a8\u7684\u8ba2\u5355\u5df2\u8d85\u8fc7\u8bd5\u7528\u671f\u9650\uff0c\u8bf7\u91cd\u65b0\u652f\u4ed8\u6216\u5347\u7ea7VIP\uff01",
+                    skin: "msg",
+                    time: 2
+                }) : layer.open({
+                    content: "\u60a8\u7684\u8ba2\u5355\u5df2\u8d85\u8fc7\u8bd5\u7528\u671f\u9650\uff0c\u8bf7\u91cd\u65b0\u652f\u4ed8\uff01",
+                    skin: "msg",
+                    time: 2
+                }); else layer.open({
+                    content: "\u6ca1\u6709\u67e5\u8be2\u5230\u60a8\u7684\u8ba2\u5355\u53f7\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5\uff01",
+                    skin: "msg",
+                    time: 2
+                })
+            })
+        } catch (e) {
+            layer.open({
+                content: "\u7f51\u7edc\u51fa\u95ee\u9898\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5\uff01",
+                skin: "msg",
+                time: 2
+            })
+        }
+    }
+
+    function nextpay() {
+        getdata(), nicetool_pay()
+    }
+
+    function RandomNum(e, t) {
+        var o = t - e, n = Math.random();
+        return 0 == Math.round(n * o) ? e + 1 : Math.round(n * t) == t ? (index++, t - 1) : e + Math.round(n * o) - 1
+    }
+
+    function pays() {
+        layer.closeAll(), layer.open({
+            content: "\u652f\u4ed8\u6210\u529f\uff0c\u5f00\u59cb\u4f7f\u7528\u5427\uff01",
+            skin: "msg",
+            time: 2
+        }), localStorage.setItem(toolpath, (new Date).getTime())
+    }
+
+    function isPc() {
+        return window.screen.width > 760
+    }
+
+    function getdata() {
+        toolname && toolpath && setusedtool();
+        var e = $("#tooluseareaall").height() - 2;
+        "\u539f\u521b\u5de5\u5177" === tooltype ? $.getJSON(tooldir).then(function (t) {
+            var o, n, a;
+            $.each(t, function (e, t) {
+                if ("html" == e) {
+                    var r = t.substring(0, 8), i = t.substring(8);
+                    o = CryptoJS.AES.decrypt(i, r).toString(CryptoJS.enc.Utf8)
+                }
+                "js" == e && (n = "<script>" + t + "<\/script>", otherjs = "<script>window.onerror = function(errorMessage, scriptURI, lineNumber,columnNumber,errorObj) { parent.window.reportbug(errorMessage, scriptURI, lineNumber,columnNumber,errorObj);} <\/script>", n += otherjs), "css" == e && (a = "<style>" + t + "</style>")
+            });
+            var r = n + a + o, i = /<head[^>]*>((.|[\n\r])*)<\/head>/im.exec(r),
+                l = (/<body[^>]*>((.|[\n\r])*)<\/body>/im.exec(r), "");
+            l = '<base href="//www.nicetool.net/" target="_blank">', r = i ? r.replace("<head>", "<head>" + l) : r.replace("<html>", "<head>" + l + "</head>");
+            var s = document.createElement("iframe");
+            s.setAttribute("frameborder", "0"), s.setAttribute("id", "iframe"), s.setAttribute("name", "iframe"), s.setAttribute("width", "100%"), s.setAttribute("height", e + "px"), document.getElementById("toolusearea").innerHTML = "", document.getElementById("toolusearea").appendChild(s);
+            var c = s.contentWindow ? s.contentWindow : s.contentDocument.document ? s.contentDocument.document : s.contentDocument;
+            c.document.open(), c.document.write(r), c.document.close()
+        }) : "\u63a8\u8350\u5de5\u5177" == tooltype && (toolurl.indexOf("yunser.com") < 0 && toolurl.indexOf("ssleye.com") < 0 && toolurl.indexOf("gif5.net"), $("#toolusearea").append('<iframe style="position: absolute;top: -9999px;left: -9999px;" frameborder="0" id="iframe" name="iframe" width="100%" height="' + e + 'px" onload="javascript:toolloaded();" src="' + toolurl + '"></iframe>'))
+    }
+
+    toolurl = "https://time.yunser.com/time2?embed=true&amp;utm_source=nicetool", $(document).ready(function () {
+        $.getJSON("/wx_user_vip", function (e) {
+            9 == e.code ? setTimeout("getdata()", 10) : 1 == e.code ? (setTimeout("getdata()", 10), devtoolsDetector.addListener(function (e) {
+                if (e) {
+                    var t = '<div id="tool_loading2"><b>' + toolname + '\u5de5\u5177</b><br>\u6b63\u5728\u52aa\u529b\u4e3a\u60a8\u52a0\u8f7d...<br>\u3010\u8bf7\u5173\u95ed\u5f00\u53d1\u8005\u5de5\u5177\u6216\u6d4f\u89c8\u5668\u5176\u4ed6\u4fa7\u8fb9\u680f\u3011<br><img src="../static/img/loading.gif"></div>';
+                    document.getElementById("toolusearea").innerHTML = t, getcode()
+                } else layer.closeAll(), setTimeout("getdata()", 10)
+            }), devtoolsDetector.launch(), devtoolsDetector.stop = null) : (setTimeout("getdata()", 10), nicetool_pay(), devtoolsDetector.addListener(function (e) {
+                if (e) {
+                    var t = '<div id="tool_loading2"><b>' + toolname + '\u5de5\u5177</b><br>\u6b63\u5728\u52aa\u529b\u4e3a\u60a8\u52a0\u8f7d...<br>\u3010\u8bf7\u5173\u95ed\u5f00\u53d1\u8005\u5de5\u5177\u6216\u6d4f\u89c8\u5668\u5176\u4ed6\u4fa7\u8fb9\u680f\u3011<br><img src="../static/img/loading.gif"></div>';
+                    document.getElementById("toolusearea").innerHTML = t, getcode()
+                } else layer.closeAll(), setTimeout("getdata()", 10), nicetool_pay()
+            }), devtoolsDetector.launch(), devtoolsDetector.stop = null)
+        })
+    });
+</script>
+
+</body>
+</html>
