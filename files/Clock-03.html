@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Clock</title>
+    <style type="text/css">
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+        }
+
+        #content1 {
+            font-size: 25em;
+            margin-top: .2em;
+            width: 100vw;
+            height: 60vh;
+            text-align: center;
+            font-family: Jokerman;
+        }
+
+        #content2 {
+            font-size: 5em;
+            width: 100vw;
+            height: 40vh;
+            text-align: center;
+            font-family: "Arial Black";
+        }
+    </style>
+
+</head>
+<body>
+<div id='content1'></div>
+<div id='content2'></div>
+
+<script>
+    (function () {
+        var now = new Date;
+        var y = now.getFullYear();
+        var M = now.getMonth() + 1;
+        var d = now.getDate();
+        var h = now.getHours();
+        var m = now.getMinutes();
+        var s = now.getSeconds();
+        if (s < 10) {
+            s = "0" + s
+        }
+        ;
+        if (m < 10) {
+            m = "0" + m
+        }
+        ;
+        if (M < 10) {
+            M = "0" + M
+        }
+        ;
+        if (d < 10) {
+            d = "0" + d
+        }
+        ;
+        content1.innerHTML = h + ":" + m + ":" + s;
+        content2.innerHTML = y + "." + M + "." + d + "&nbsp;" + "星期" + "日一二三四五六"[now.getDay()];
+        setTimeout(arguments.callee, 1000);
+    })();
+
+</script>
+</body>
+</html>
