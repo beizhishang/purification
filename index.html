@@ -438,6 +438,7 @@
         /*侧边栏样式开始*/
         .nav-left {
             float: left;
+            display: block;
         }
 
         /*.title {*/
@@ -446,9 +447,10 @@
         /*}*/
 
         .accordion {
-            width: 300px;
+            position: fixed;
+            width: 15%;
             margin-top: 60px;
-            margin-left: 20px;
+            margin-left: 5px;
             border: 1px solid rgba(50, 50, 50, 0.25);
         }
 
@@ -485,11 +487,12 @@
         /*侧边栏样式结束*/
         /*展示区样式开始*/
         .show-area {
-            width: 75%;
-            height: 1000px;
-            position: relative;
+
+            width: 80%;
+            height: 100%;
+            position: absolute;
             float: left;
-            margin-left: 20px;
+            margin-left: 17%;
             margin-top: 60px;
             background-color: #1E967E;
         }
@@ -598,7 +601,7 @@
 <!--侧边栏结束-->
 <!--展示区开始-->
 <div class="show-area">
-    <iframe height="100%" src="files/注意事项.html" width="80%"></iframe>
+    <iframe height="100%" scrolling="no" src="files/注意事项.html" width="80%"></iframe>
 </div>
 <!--展示区结束-->
 </body>
