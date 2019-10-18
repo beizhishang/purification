@@ -48,19 +48,23 @@
         if (s < 10) {
             s = "0" + s
         }
-        ;
         if (m < 10) {
             m = "0" + m
         }
-        ;
+
         if (M < 10) {
             M = "0" + M
         }
-        ;
+
         if (d < 10) {
             d = "0" + d
         }
-        ;
+
+        if (h < 10) {
+            h = "0" + h
+        }
+
+
         content1.innerHTML = h + ":" + m + ":" + s;
         content2.innerHTML = y + "." + M + "." + d + "&nbsp;" + "星期" + "日一二三四五六"[now.getDay()];
         setTimeout(arguments.callee, 1000);
