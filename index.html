@@ -504,11 +504,11 @@
 
         /*侧边栏样式结束*/
         /*展示区样式开始*/
-        .show-area {
-
+        #show-area {
             width: 80%;
             height: 100%;
             position: absolute;
+            overflow: hidden;
             float: left;
             margin-left: 17%;
             margin-top: 60px;
@@ -602,19 +602,19 @@
             </div>
         </div>
 
-        <div class="item open">
+        <div class="item">
             <div class="header">
-                <h4><i class="fas fa-home"></i> 信息区</h4>
+                <h4><i class="fas fa-calendar-alt"></i> 信息区</h4>
             </div>
             <div class="content">
                 <a>
-                    <div class="content-link">交接班</div>
+                    <div class="content-link" id="jiaojieban">交接班</div>
                 </a>
                 <a>
                     <div class="content-link">当前文件版本</div>
                 </a>
                 <a>
-                    <div class="content-link">层析柱及超滤膜包状态</div>
+                    <div class="content-link">层析柱及超滤膜包</div>
                 </a>
                 <a>
                     <div class="content-link"></div>
@@ -624,7 +624,7 @@
 
         <div class="item">
             <div class="header">
-                <h4><i class="fas fa-bell"></i> 互动区</h4>
+                <h4><i class="fas fa-crown"></i> 互动区</h4>
             </div>
             <div class="content">
                 <a>
@@ -654,7 +654,7 @@
             </div>
             <div class="content">
                 <a>
-                    <div class="content-link">热水排放</div>
+                    <div class="content-link">热水排放计划表</div>
                 </a>
                 <a>
                     <div class="content-link">微消防扫码检查</div>
@@ -707,12 +707,21 @@
 </div>
 <!--侧边栏结束-->
 <!--展示区开始-->
-<div class="show-area">
-    <iframe height="100%" scrolling="no" src="files/注意事项.html" width="80%"></iframe>
+<div id="show-area">
+    <iframe height="100%" id="myframe" scrolling="no" src="files/注意事项.html" width="80%"></iframe>
 </div>
 <!--展示区结束-->
 </body>
 <script type="text/javascript">
+    function jiaoJieBan() {
+        var a = document.getElementById("myframe");
+        a.src = "https://shimo.im/sheets/cYxcH6RJYJyjQhpv/MODOC";
+        a.setAttribute("frameborder", 0);
+        a.style.position = "relative";
+        a.style.width = "100%";
+        a.style.top = "-75px";
+    }
 
+    document.getElementById("jiaojieban").addEventListener("click", jiaoJieBan);
 </script>
 </html>
