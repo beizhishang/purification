@@ -608,7 +608,13 @@
             </div>
             <div class="content">
                 <a>
-                    <div class="content-link" id="jiaojieban">交接班</div>
+                    <div class="content-link" id="zaoHuiYaoDian">早会要点</div>
+                </a>
+                <a>
+                    <div class="content-link" id="xinDeFenXiang">心得分享</div>
+                </a>
+                <a>
+                    <div class="content-link" id="jiaoJieBan">交接班</div>
                 </a>
                 <a>
                     <div class="content-link">当前文件版本</div>
@@ -713,6 +719,7 @@
 <!--展示区结束-->
 </body>
 <script type="text/javascript">
+    // 交接班功能-begin
     function jiaoJieBan() {
         var a = document.getElementById("myframe");
         a.src = "https://shimo.im/sheets/cYxcH6RJYJyjQhpv/MODOC";
@@ -722,6 +729,37 @@
         a.style.top = "-75px";
     }
 
-    document.getElementById("jiaojieban").addEventListener("click", jiaoJieBan);
+    document.getElementById("jiaoJieBan").addEventListener("click", jiaoJieBan);
+    // 交接班功能-end
+
+    // 早会要点-begin
+    function zaoHuiYaoDian() {
+        var a = document.getElementById("myframe");
+        a.src = "https://shimo.im/sheets/R3ggvHQXVTvJGTWK/MODOC";
+        a.setAttribute("frameborder", 0);
+        a.style.position = "relative";
+        a.style.width = "80%";
+        a.style.height = "150%";
+        a.style.top = "-177px";
+        a.style.left = "-47px";
+    }
+
+    document.getElementById("zaoHuiYaoDian").addEventListener("click", zaoHuiYaoDian);
+    // 早会要点-end
+
+    // 心得分享-begin
+    function xinDenFenXiang() {
+        var a = document.getElementById("myframe");
+        a.src = "https://shimo.im/sheets/PWJytgrYWKVxrxyw/MODOC";
+        a.setAttribute("frameborder", 0);
+        a.style.position = "relative";
+        a.style.width = "80%";
+        a.style.height = "150%";
+        a.style.top = "-177px";
+        a.style.left = "-47px";
+    }
+
+    document.getElementById("xinDeFenXiang").addEventListener("click", xinDenFenXiang);
+    // 心得分享-end
 </script>
 </html>
