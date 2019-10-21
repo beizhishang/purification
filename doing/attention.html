@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>#</title>
+    <style type="text/css">
+        body {
+            align-items: center;
+            background-color: #009999;
+            display: flex;
+            font-size: 20px;
+            color: white;
+            height: 100vh;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .typity {
+            border-bottom: 3px solid red;
+            padding-right: 2px;
+            position: relative;
+            transition: background-position .6s;
+            white-space: nowrap;
+
+        &
+        ::after {
+            animation: blink-cursor .75s step-end infinite;
+            background-color: transparent;
+            content: "";
+            display: block;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 2px;
+        }
+
+        &
+        .highlight {
+            background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2) 50%, transparent 50%);
+            background-position: 100%;
+            background-size: 200% 100%;
+
+        &
+        ::after {
+            animation: none;
+        }
+
+        }
+        }
+
+        @keyframes blink-cursor {
+            0% {
+                background-color: transparent;
+            }
+            50% {
+                background-color: black;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 12px;
+            }
+
+            .typity {
+                border-bottom: 1px solid red;
+                padding-right: 1px;
+
+        &::after {
+             width: 1px;
+         }
+        }
+
+        }
+    </style>
+</head>
+<body>
+<span class="typity"></span>
+</body>
+<script>
+    let typed = "";
+    const element = document.querySelector(".typity");
+
+    function startType(pun, index) {
+        if (index < pun.length) {
+            typed += pun.charAt(index);
+            element.innerHTML = typed;
+            index++;
+            setTimeout(function () {
+                startType(pun, index);
+            }, 50);
+        } else {
+            setTimeout(function () {
+                element.classList.add("highlight");
+            }, 1000);
+
+            setTimeout(function () {
+                element.classList.remove("highlight");
+                typed = "";
+                element.innerHTML = typed;
+                startType(getRandomPun(), 0);
+            }, 2000);
+        }
+    }
+
+    function getRandomPun() {
+        const puns = [
+            "只走CIP不需要浸泡的是简单清洁",
+            "充分清洁需要用0.5mol/L NoOH溶液浸泡6-24h",
+            "A crazy person who steals trains must have some locomotives.",
+            "Acupuncture is a jab well done.",
+            "Bakers trade recipes on a knead to know basis.",
+            "Being the owner of a vacuum cleaner company must suck.",
+            "Books about anti gravity are impossible to put down.",
+            "Did you hear about the Italian chef? he pasta way.",
+            "Do you know what kind of tea is sometimes hard to swallow? Reali-tea.",
+            "England doesn't have a kidney bank, but it has a Liverpool.",
+            "Have you ever tried to eat a clock? It's very time consuming.",
+            "How did the people behind the latest hack escape? They ransomware.",
+            "How do you kill a vegan vampire? Put a steak through its heart.",
+            "I don't like using calendars. It feels like my days are numbered.",
+            "I made a belt with watches, it was a waist of time.",
+            "I used to own a bakery, but then business went toast.",
+            "I used to work as a lumberjack, but then I got axed.",
+            "I used to work at a blanket factory, but then it folded.",
+            "I used to work in a bank, but then I lost interest.",
+            "I wondered why the baseball was getting bigger. Then it hit me.",
+            "I'm so poor I can't even pay attention.",
+            "If a clock gets hungry, it goes back four seconds.",
+            "If a flower shop catches fire, would that be a florist fire?",
+            "If I eat cereal, does that make me a cereal killer?",
+            "If I run behind a car, will I be exhausted?",
+            "If I run in front of a car, will I be tired?",
+            "If I throw a cigarette away, do I get a cigarette lighter?",
+            "If I'm a parent of Transformers, am I transparent?",
+            "If someone steals my mug, is that considered a mugging?",
+            "Jill hurt her finger, but on the other hand, she's fine.",
+            "Never marry a tennis player, love means nothing to them.",
+            "Puns about monorail always make for decent one-liners.",
+            "Sleeping comes naturally to me, I can do it with my eyes closed.",
+            "The cross-eyed teacher couldn't control her pupils.",
+            "The guy who fell onto an upholstery machine was fully recovered.",
+            "The guy who stole my diary just died. My thoughts are with his family.",
+            "The magician got so mad he pulled his hare out.",
+            "The new movie called Constipation hasn't come out yet.",
+            "The scarecrow got promoted because it was outstanding in its field.",
+            "They were giving away dead batteries free of charge.",
+            "Time flies like an arrow; fruit flies like a banana.",
+            "What do vegan zombies eat? Grraaainnsss.",
+            "What do you get from a pampered cow? Spoiled milk.",
+            "What is the one type of person that will never get angry? A Nomad.",
+            "When Peter Pan punches, they Neverland.",
+            "Whiteboards are remarkable.",
+            "What do you call it when a chickpea gets killed? Hummuside.",
+            "Why did the tomato blush? Because it saw the salad dressing.",
+            "Yesterday I swallowed food coloring, I dyed a little on the inside."
+        ];
+        const index = Math.floor(Math.random() * puns.length);
+
+        return puns[index];
+    }
+
+    startType(getRandomPun(), 0);
+
+</script>
+</html>

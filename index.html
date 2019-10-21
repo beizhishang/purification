@@ -505,14 +505,31 @@
         /*侧边栏样式结束*/
         /*展示区样式开始*/
         #show-area {
-            width: 80%;
+            width: 60%;
             height: 100%;
             position: absolute;
             overflow: hidden;
-            float: left;
-            margin-left: 17%;
+            margin-left: 16%;
             margin-top: 60px;
-            /*background-color: #1E967E;*/
+        }
+
+        #show-left {
+            width: 22%;
+            height: 15%;
+            position: absolute;
+            margin-left: 76.7%;
+            margin-top: 60px;
+            overflow: hidden;
+            background-color: #52BAD5;
+        }
+
+        #remind {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            font-size: 50px;
+            background-color: #52BAD5;
+
         }
 
         /*展示区样式结束*/
@@ -714,7 +731,12 @@
 <!--侧边栏结束-->
 <!--展示区开始-->
 <div id="show-area">
-    <iframe height="100%" id="myframe" scrolling="no" src="files/注意事项.html" width="80%"></iframe>
+    <iframe height="5%" id="banner" scrolling="no" src="doing/attention.html" width="100%"></iframe>
+    <iframe height="100%" id="myframe" scrolling="no" src="files/注意事项.html" width="100%"></iframe>
+</div>
+
+<div id="show-left">
+    <iframe height="100%" id="remind" scrolling="no" src="doing/attention.html" width="100%"></iframe>
 </div>
 <!--展示区结束-->
 </body>
@@ -725,10 +747,11 @@
         a.src = "https://shimo.im/sheets/cYxcH6RJYJyjQhpv/MODOC";
         a.setAttribute("frameborder", 0);
         a.style.position = "relative";
-        a.style.width = "100%";
-        a.style.top = "-75px";
+        a.style.width = "110%";
+        a.style.height = "108%";
+        a.style.top = "-210px";
+        a.style.left = "-47px";
     }
-
     document.getElementById("jiaoJieBan").addEventListener("click", jiaoJieBan);
     // 交接班功能-end
 
@@ -738,12 +761,11 @@
         a.src = "https://shimo.im/sheets/R3ggvHQXVTvJGTWK/MODOC";
         a.setAttribute("frameborder", 0);
         a.style.position = "relative";
-        a.style.width = "100%";
+        a.style.width = "110%";
         a.style.height = "120%";
-        a.style.top = "-18%";
+        a.style.top = "-229px";
         a.style.left = "-47px";
     }
-
     document.getElementById("zaoHuiYaoDian").addEventListener("click", zaoHuiYaoDian);
     // 早会要点-end
 
@@ -753,12 +775,11 @@
         a.src = "https://shimo.im/sheets/PWJytgrYWKVxrxyw/MODOC";
         a.setAttribute("frameborder", 0);
         a.style.position = "relative";
-        a.style.width = "80%";
+        a.style.width = "110%";
         a.style.height = "150%";
-        a.style.top = "-177px";
+        a.style.top = "-229px";
         a.style.left = "-47px";
     }
-
     document.getElementById("xinDeFenXiang").addEventListener("click", xinDenFenXiang);
     // 心得分享-end
 </script>
