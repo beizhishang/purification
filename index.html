@@ -503,6 +503,7 @@
         }
 
         /*侧边栏样式结束*/
+
         /*展示区样式开始*/
         #show-area {
             width: 60%;
@@ -515,7 +516,7 @@
 
         #show-left {
             width: 22%;
-            height: 15%;
+            height: 60%;
             position: absolute;
             margin-left: 76.7%;
             margin-top: 60px;
@@ -523,13 +524,22 @@
             background-color: #52BAD5;
         }
 
-        #remind {
-            width: 100%;
-            height: 100%;
+        #protect {
+            width: 22%;
+            height: 56%;
             position: absolute;
-            font-size: 50px;
-            background-color: #52BAD5;
+            margin-left: 76.7%;
+            margin-top: 60px;
+            overflow: hidden;
+            z-index: 2;
+        }
 
+        #remind {
+            width: 130%;
+            height: 200%;
+            position: relative;
+            top: -179px;
+            left: -50px;
         }
 
         /*展示区样式结束*/
@@ -549,7 +559,7 @@
                 <li class="menu-item"><a href="#0">马继东</a></li>
                 <li class="menu-item"><a href="#0">徐鹏云</a></li>
                 <li class="menu-item"><a href="#0">李超</a></li>
-                <li class="menu-item"><a href="#0">刘浩</a></li>
+                <li class="menu-item"><a href="#0">赵雷</a></li>
             </ol>
         </li>
 
@@ -636,12 +646,7 @@
                 <a>
                     <div class="content-link">当前文件版本</div>
                 </a>
-                <a>
-                    <div class="content-link">层析柱及超滤膜包</div>
-                </a>
-                <a>
-                    <div class="content-link"></div>
-                </a>
+
             </div>
         </div>
 
@@ -650,9 +655,6 @@
                 <h4><i class="fas fa-crown"></i> 互动区</h4>
             </div>
             <div class="content">
-                <a>
-                    <div class="content-link"></div>
-                </a>
                 <a>
                     <div class="content-link">温馨提示</div>
                 </a>
@@ -677,14 +679,17 @@
             </div>
             <div class="content">
                 <a>
-                    <div class="content-link">热水排放计划表</div>
+                    <div class="content-link" id="remindMe">提醒我</div>
                 </a>
+
                 <a>
-                    <div class="content-link">微消防扫码检查</div>
+                    <div class="content-link" id="reShuiPaiFang">热水排放计划表</div>
                 </a>
+
                 <a>
-                    <div class="content-link"></div>
+                    <div class="content-link" id="weiXiaoFang">微消防扫码检查</div>
                 </a>
+
             </div>
         </div>
 
@@ -729,6 +734,7 @@
     </div>
 </div>
 <!--侧边栏结束-->
+
 <!--展示区开始-->
 <div id="show-area">
     <iframe height="5%" id="banner" scrolling="no" src="doing/attention.html" width="100%"></iframe>
@@ -736,7 +742,10 @@
 </div>
 
 <div id="show-left">
-    <iframe height="100%" id="remind" scrolling="no" src="doing/attention.html" width="100%"></iframe>
+    <iframe height="100%" id="remind" src="https://shimo.im/sheets/6WTrtG4Obzk53p79/w3FRa" width="100%"></iframe>
+</div>
+
+<div id="protect">
 </div>
 <!--展示区结束-->
 </body>
@@ -752,6 +761,7 @@
         a.style.top = "-210px";
         a.style.left = "-47px";
     }
+
     document.getElementById("jiaoJieBan").addEventListener("click", jiaoJieBan);
     // 交接班功能-end
 
@@ -766,6 +776,7 @@
         a.style.top = "-229px";
         a.style.left = "-47px";
     }
+
     document.getElementById("zaoHuiYaoDian").addEventListener("click", zaoHuiYaoDian);
     // 早会要点-end
 
@@ -780,7 +791,54 @@
         a.style.top = "-229px";
         a.style.left = "-47px";
     }
+
     document.getElementById("xinDeFenXiang").addEventListener("click", xinDenFenXiang);
     // 心得分享-end
+
+    // 微消防扫码检查-begin
+    function weiXiaoFang() {
+        var a = document.getElementById("myframe");
+        a.src = "https://shimo.im/sheets/6WTrtG4Obzk53p79/rzmsx";
+        a.setAttribute("frameborder", 0);
+        a.style.position = "relative";
+        a.style.width = "110%";
+        a.style.height = "150%";
+        a.style.top = "-230px";
+        a.style.left = "-47px";
+    }
+
+    document.getElementById("weiXiaoFang").addEventListener("click", weiXiaoFang);
+    // 微消防扫码检查-end
+
+    // 热水排放计划-begin
+    function reShuiPaiFang() {
+        var a = document.getElementById("myframe");
+        a.src = "https://shimo.im/sheets/6WTrtG4Obzk53p79/jnqzu";
+        a.setAttribute("frameborder", 0);
+        a.style.position = "relative";
+        a.style.width = "110%";
+        a.style.height = "150%";
+        a.style.top = "-230px";
+        a.style.left = "-47px";
+    }
+
+    document.getElementById("reShuiPaiFang").addEventListener("click", reShuiPaiFang);
+    // 热水排放计划-end
+
+    // 提醒我-begin
+    function remindMe() {
+        var a = document.getElementById("myframe");
+        a.src = "https://shimo.im/sheets/6WTrtG4Obzk53p79/dFtlm";
+        a.setAttribute("frameborder", 0);
+        a.style.position = "relative";
+        a.style.width = "110%";
+        a.style.height = "150%";
+        a.style.top = "-231px";
+        a.style.left = "-47px";
+    }
+
+    document.getElementById("remindMe").addEventListener("click", remindMe);
+    // 提醒我-end
+
 </script>
 </html>
