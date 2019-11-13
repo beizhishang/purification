@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/c1413597b3.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            background-color: #2196f3;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .container {
+            margin: 50px auto;
+            width: 90%;
+        }
+
+        .container header h1 {
+            color: #fff;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .container .accordian {
+            background-color: #4dabf5;
+            width: 100%;
+            min-width: 800px;
+            display: block;
+            list-style-type: none;
+            overflow: hidden;
+            height: 200px;
+            font-size: 0;
+            -webkit-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.75);
+            box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.75);
+        }
+
+        .container .accordian .tab {
+            display: inline-block;
+            background-color: #0c7cd5;
+            border: #51adf6 1px solid;
+            width: 80px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            margin: 0;
+            transition: all 0.5s ease-in-out 0.1s;
+        }
+
+        .container .accordian .tab:hover {
+            width: 450px;
+        }
+
+        .container .accordian .tab:hover .social a::before {
+            margin-left: -100px;
+        }
+
+        .container .accordian .tab:hover .social a::after {
+            margin-left: -5px;
+        }
+
+        .container .accordian .tab .content {
+            background: #fff;
+            width: 360px;
+            height: 200px;
+            margin-left: 80px;
+            position: relative;
+            padding: 50px 0 0 15px;
+        }
+
+        .container .accordian .tab .content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .container .accordian .tab .content p {
+            font-size: 0.85rem;
+            line-height: 1.4rem;
+            padding-right: 30px;
+        }
+
+        .container .accordian .tab .social a::before,
+        .container .accordian .tab .social a::after {
+            transition: all 0.4s ease-in-out 0.1s;
+            width: 80px;
+            height: 200px;
+            position: absolute;
+            text-indent: 0;
+            padding-top: 90px;
+            padding-left: 25px;
+            display: block;
+            font: normal 30px 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
+            color: #fff;
+        }
+
+        .container .accordian .tab .social a::after {
+            font-size: 49px;
+            padding-left: 20px;
+            padding-top: 80px;
+            margin-left: 85px;
+        }
+
+        .container .accordian .tab .youtube a::before,
+        .container .accordian .tab .youtube a::after {
+            content: "\f167";
+        }
+
+        .container .accordian .tab .youtube a::after {
+            background-color: #ff0000;
+        }
+
+        .container .accordian .tab .twitter a::before,
+        .container .accordian .tab .twitter a::after {
+            content: '\f081';
+        }
+
+        .container .accordian .tab .twitter a::after {
+            background-color: #1da1f2;
+        }
+
+        .container .accordian .tab .facebook a::before,
+        .container .accordian .tab .facebook a::after {
+            content: '\f082';
+        }
+
+        .container .accordian .tab .facebook a::after {
+            background-color: #3b5998;
+        }
+
+        .container .accordian .tab .github a::before,
+        .container .accordian .tab .github a::after {
+            content: '\f09b';
+        }
+
+        .container .accordian .tab .github a::after {
+            background-color: #000;
+        }
+
+        .container .accordian .tab .linkedin a::before,
+        .container .accordian .tab .linkedin a::after {
+            content: '\f08c';
+        }
+
+        .container .accordian .tab .linkedin a::after {
+            background-color: #00a0dc;
+        }
+
+        .container .accordian .tab .instagram a::before,
+        .container .accordian .tab .instagram a::after {
+            content: '\f16d';
+        }
+
+        .container .accordian .tab .instagram a::after {
+            background-color: #405de6;
+        }
+
+        @media (max-width: 950px) {
+            .container {
+                width: 70%;
+            }
+
+            .container .accordian {
+                display: block;
+                min-width: 450px;
+                height: auto;
+            }
+
+            .container .accordian .tab {
+                width: 85%;
+            }
+
+            .container .accordian .tab:hover {
+                width: 100%;
+            }
+
+            .container .accordian .tab:hover .content {
+                display: block;
+                width: 100%;
+                border-bottom: 3px #333 solid;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .container {
+                width: 95%;
+            }
+
+            .container .accordian {
+                width: 100%;
+                min-width: 350px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1> Follow Me on Social Media</h1>
+    </header>
+    <ul class="accordian">
+        <li class="tab">
+            <div class="social youtube">
+                <a href="https://www.youtube.com" target="_blank">youtube</a>
+            </div>
+            <div class="content">
+                <h1>Youtube</h1>
+                <p>Subscribe To My Channel</p>
+            </div>
+        </li>
+        <li class="tab">
+            <div class="social facebook">
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            </div>
+            <div class="content">
+                <h1>Facebook</h1>
+                <p>Follow Me On Facebook</p>
+            </div>
+        </li>
+        <li class="tab">
+            <div class="social twitter">
+                <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            </div>
+            <div class="content">
+                <h1>Twitter</h1>
+                <p>Re-Twitte</p>
+            </div>
+        </li>
+        <li class="tab">
+            <div class="social github">
+                <a href="https://www.github.com" target="_blank">Github</a>
+            </div>
+            <div class="content">
+                <h1>GitHub</h1>
+                <p>Fork Project On Gihub</p>
+            </div>
+        </li>
+        <li class="tab">
+            <div class="social linkedin">
+                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            </div>
+            <div class="content">
+                <h1>LinkedIn</h1>
+                <p>Connect On Linked in</p>
+            </div>
+        </li>
+        <li class="tab">
+            <div class="social instagram">
+                <a href="https://www.instagram.com" target="_blank">Insta</a>
+            </div>
+            <div class="content">
+                <h1>Instagram</h1>
+                <p>Follow me on Insta</p>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+<script type="text/javascript">
+
+</script>
+</html>
