@@ -496,29 +496,9 @@
         opacity: 1;
     }
 
-
-    .title2 {
-        position: absolute;
-        bottom: 12%;
-        font-size: 36px;
-        font-weight: 600;
-        font-family: 'Roboto Condensed', sans-serif;
-        color: #348E8D;
-    }
-
-    .title3 {
-        position: absolute;
-        bottom: 12%;
-        font-size: 36px;
-        font-weight: 600;
-        font-family: 'Roboto Condensed', sans-serif;
-        color: #ffffff;
-    }
-
     .doc:nth-of-type(1){
         display: block;
-        color: red;
-        background-color: rgba(15,45,15,0.5);
+        background-color: darkseagreen;
         width: 15%;
         height: 50%;
         margin-left:70%;
@@ -526,7 +506,6 @@
     }
     .doc:nth-of-type(2){
         display: block;
-        color: red;
         background-color: rgba(200,100,24,0.4);
         width: 15%;
         height: 50%;
@@ -534,7 +513,7 @@
         position: fixed;
     }
 
-    #test{
+    #test1 {
         width:100px;
         height:100px;
         border-radius: 100px;
@@ -544,7 +523,19 @@
         top: 100px;
         left: 100px;
     }
-    #test>a{
+
+    #test2 {
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+        background-color: #ffffff;
+        position: fixed;
+        z-index: 100;
+        top: 100px;
+        left: 220px;
+    }
+
+    #test1 > a, #test2 > a {
         width: 100px;
         height: 100px;
         background-color: #fffffff;
@@ -555,12 +546,35 @@
         text-decoration: none;
         color: #348E8D;
     }
-    #test:hover{
+
+    #test1 > a:hover, #test2 > a:hover {
         box-shadow:5px 5px 5px;
+        background-color: #348E8D;
+        color: white;
         cursor:pointer;
     }
 
+    h2 {
+        color: #348E8D;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        margin-buttom: 0;
+    }
 
+    .doc > div > a {
+        color: #348E8D;
+        font-weight: 700;
+        display: block;
+        text-decoration: none;
+        padding: 12px;
+        text-align: center;
+    }
+
+    .doc > div > a:hover {
+        background-color: #348E8D;
+        color: white;
+    }
 
 </style>
 <body>
@@ -594,13 +608,33 @@
     </div>
     <div class="raindrop"></div>
 </div>
-<div id="test">
-    <a href="www.baidu.com">test</a>
+<div id="test1">
+    <a href="#">配液数据</a>
 </div>
+<div id="test2">
+    <a href="#">纯化数据</a>
+</div>
+
 <div>
-    <div class="doc"></div>
-    <div class="doc"></div>
-    <div class="doc"></div>
+    <div class="doc">
+        <div>
+            <h2>项目文件</h2>
+            <a href="#">阿达木单抗注射液工艺规程</a>
+            <a href="#">阿达木单抗注射液批记录</a>
+            <a href="#">阿达木单抗注射液配液记录</a>
+            <a href="#">阿达木单抗注射原液质量标准</a>
+            <a href="#"></a>
+        </div>
+    </div>
+    <div class="doc">
+        <div>
+            <h2>相关信息</h2>
+            <a href="#">SOP及辅助记录清单</a>
+            <a href="#">阿达木单抗注射液批记录</a>
+            <a href="#">阿达木单抗注射原液质量标准</a>
+            <a href="mailto:pengyun.xu@innoventbio.com?cc=hello@innoventbio.com">555</a>
+        </div>
+    </div>
     <div class="doc"></div>
 </div>
 </body>
