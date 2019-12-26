@@ -3,7 +3,7 @@
 <head>
     <title>IBI303</title>
 </head>
-<meta charset="UTF-8">
+<meta charset="GBK">
 <link href="https://trello-attachments.s3.amazonaws.com/5d870c0418f7104546584cfb/5dcbcaedb6ca803685cc6fa0/a83d2af9b74ca6ddceec6ed84190fa15/Purification_(2).ico"
       rel="shortcut icon">
 <style>
@@ -27,39 +27,17 @@
     .lefter {
         position: absolute;
         background: #ade3e3;
-        width: 70%;
+        width: 100%;
         height: 100%;
         left: 0;
         overflow: hidden;
-    }
-
-    .topper {
-        display: flex;
-        position: absolute;
-        width: 30%;
-        height: 50%;
-        right: 0;
-        top: 0;
-        background: #E2F6F6;
-        justify-content: center;
-    }
-
-    .bottomer {
-        display: flex;
-        position: absolute;
-        width: 30%;
-        height: 50%;
-        right: 0;
-        bottom: 0;
-        background: #348E8D;
-        justify-content: center;
     }
 
     .ball {
         position: absolute;
         width: 400px;
         height: 400px;
-        left: 30%;
+        left: 40%;
         top: 15%;
         border-radius: 50%;
         border: solid 1px #ffffff;
@@ -438,8 +416,8 @@
 
     .title1 {
         position: absolute;
-        bottom: 22%;
-        left: 10%;
+        top: 5%;
+        left: 5%;
         font-size: 36px;
         font-weight: 600;
         font-family: 微软雅黑;
@@ -461,55 +439,38 @@
 
     }
 
-    .cover {
-        position: absolute;
-        background: #ade3e3;
-        width: 400px;
-        height: 40px;
-        bottom: 13%;
-        left: 10%;
-        transition: bottom .5s ease-in-out;
-        opacity: 1;
-    }
-
     .word {
         position: absolute;
         width: 400px;
         height: 40px;
         text-align: left;
-        bottom: 13%;
-        left: 10%;
+        top: 10%;
+        left: 5%;
         color: #ffffff;
         font-size: 20px;
         font-family: 'Roboto Condensed', sans-serif;
     }
 
-    .bar1 {
-        position: absolute;
-        background: #ffffff;
-        width: 165px;
-        height: 5px;
-        left: 10%;
-        bottom: 21%;
-        border-radius: 0 10px 10px 0;
-        transition: all .3s;
-        opacity: 1;
-    }
-
+    /*项目文件*/
     .doc:nth-of-type(1){
         display: block;
-        background-color: darkseagreen;
+        background-color: #E2F6F6;
         width: 15%;
-        height: 50%;
-        margin-left:70%;
+        height: 36%;
+        border: 1px solid white;
+        margin-left: 3%;
+        margin-top: 10%;
         position: fixed;
+        border-radius: 10px;
     }
+
+    /*相关信息*/
     .doc:nth-of-type(2){
         display: block;
-        background-color: rgba(200,100,24,0.4);
-        width: 15%;
-        height: 50%;
-        margin-left:85%;
+        background-color: #E2F6F6;
+        width: 20%;
+        height: 100%;
+        margin-left: 80%;
         position: fixed;
     }
 
@@ -520,8 +481,8 @@
         background-color: #ffffff;
         position:fixed;
         z-index:100;
-        top: 100px;
-        left: 100px;
+        top: 30%;
+        left: 34.5%;
     }
 
     #test2 {
@@ -531,8 +492,8 @@
         background-color: #ffffff;
         position: fixed;
         z-index: 100;
-        top: 100px;
-        left: 220px;
+        top: 30%;
+        left: 61.2%;
     }
 
     #test1 > a, #test2 > a {
@@ -554,7 +515,7 @@
         cursor:pointer;
     }
 
-    h2 {
+    h3 {
         color: #348E8D;
         width: 100%;
         text-align: center;
@@ -581,9 +542,6 @@
 <div class="lefter">
     <div class="title1">I B I 3 0 3</div>
     <div class="word">阿达木单抗注射液</div>
-    <div class="cover"></div>
-    <div class="bar1"></div>
-    <div class="bar2"></div>
     <div class="ball">
         <div class="tree_back"></div>
         <div class="tree"></div>
@@ -609,30 +567,63 @@
     <div class="raindrop"></div>
 </div>
 <div id="test1">
-    <a href="#">配液数据</a>
+    <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={0DA90A6C-0118-46A1-B22B-CA7BE813EB3D}&file=%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%B3%A8%E5%B0%84%E6%B6%B2%E5%8E%9F%E6%B6%B2%E7%BA%AF%E5%8C%96%E6%BA%B6%E6%B6%B2pH%E8%B0%83%E8%8A%82%E6%95%B0%E6%8D%AE.xlsx&action=default"
+       target="_blank">配液数据</a>
 </div>
 <div id="test2">
-    <a href="#">纯化数据</a>
+    <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={8C8B76CF-F385-456A-8F08-9C0FB013E65D}&file=%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%B3%A8%E5%B0%84%E6%B6%B2%E5%8E%9F%E6%B6%B2%E7%BA%AF%E5%8C%96%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1.xlsx&action=default"
+       target="_blank">纯化数据</a>
 </div>
 
 <div>
     <div class="doc">
         <div>
-            <h2>项目文件</h2>
-            <a href="#">阿达木单抗注射液工艺规程</a>
-            <a href="#">阿达木单抗注射液批记录</a>
-            <a href="#">阿达木单抗注射液配液记录</a>
-            <a href="#">阿达木单抗注射原液质量标准</a>
-            <a href="#"></a>
+            <h3>项目文件</h3>
+            <a href="http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80332/80343/80344/80345/80731/%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%B3%A8%E5%B0%84%E6%B6%B21000L%E7%BA%AF%E5%8C%96%E5%B7%A5%E8%89%BA%E8%A7%84%E7%A8%8B.PDF?nodeid=9212103&vernum=17"
+               target="_blank">阿达木单抗注射液工艺规程</a>
+            <a href="http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80332/80343/80344/80354/80816/%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%B3%A8%E5%B0%84%E6%B6%B2%E5%8E%9F%E6%B6%B2%E7%BA%AF%E5%8C%96%E6%89%B9%E7%94%9F%E4%BA%A7%E8%AE%B0%E5%BD%95.PDF?nodeid=8527535&vernum=7"
+               target="_blank">阿达木单抗注射液纯化批记录</a>
+            <a href="http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80332/80343/80344/80354/80355/%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%B3%A8%E5%B0%84%E6%B6%B2%E5%8E%9F%E6%B6%B2%E7%BA%AF%E5%8C%96%E9%85%8D%E6%B6%B2%E8%AE%B0%E5%BD%95.PDF?nodeid=9310367&vernum=4"
+               target="_blank">阿达木单抗注射液纯化配液记录</a>
+            <a href="http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80332/80343/80344/80345/80820/%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%B3%A8%E5%B0%84%E6%B6%B2%E5%8E%9F%E6%B6%B2%E8%B4%A8%E9%87%8F%E6%A0%87%E5%87%86.PDF?nodeid=9061074&vernum=3"
+               target="_blank">阿达木单抗注射原液质量标准</a>
+            <a href="http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80336/80349/80350/80744/80810/%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%B3%A8%E5%B0%84%E6%B6%B2%E9%99%A4%E7%97%85%E6%AF%92%E8%BF%87%E6%BB%A4%E8%BF%94%E5%B7%A5%E5%90%8C%E6%AD%A5%E9%AA%8C%E8%AF%81%E6%96%B9%E6%A1%88.PDF?nodeid=8729508&vernum=-2"
+               target="_blank">除病毒过滤返工同步验证方案</a>
+            <a href="http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80336/80349/80350/80744/80810/%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%B3%A8%E5%B0%84%E6%B6%B2%E5%8E%9F%E6%B6%B2%E8%BF%87%E6%BB%A4%E8%BF%94%E5%B7%A5%E5%90%8C%E6%AD%A5%E9%AA%8C%E8%AF%81%E6%96%B9%E6%A1%88.PDF?nodeid=8748216&vernum=6"
+               target="_blank">原液过滤返工同步验证方案</a>
         </div>
     </div>
     <div class="doc">
         <div>
-            <h2>相关信息</h2>
-            <a href="#">SOP及辅助记录清单</a>
-            <a href="#">阿达木单抗注射液批记录</a>
-            <a href="#">阿达木单抗注射原液质量标准</a>
-            <a href="mailto:pengyun.xu@innoventbio.com?cc=hello@innoventbio.com">555</a>
+            <h3>相关信息</h3>
+            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={98EB4D89-6EEC-4721-8A02-2A33A7156D3E}&file=IBI303%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%E5%88%97%E8%A1%A8.xlsx&action=default"
+               target="_blank">IBI303代办事项列表</a>
+            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={EF71856D-CBD8-41A9-9D19-117632FC8881}&file=SOP%E5%8F%8A%E8%BE%85%E5%8A%A9%E8%AE%B0%E5%BD%95%E6%B8%85%E5%8D%95.xlsx&action=default"
+               target="_blank">SOP及辅助记录清单</a>
+            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={59AE7E69-2095-465E-8DE4-42DDB1ADF11F}&file=IBI303%E5%95%86%E4%B8%9A%E5%8C%96%E7%94%9F%E4%BA%A7%E8%AE%A1%E5%88%92%E6%8E%92%E7%8F%AD.xlsx&action=default"
+               target="_blank">IBI303商业化生产计划排班</a>
+            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={159F3272-42FD-4AE7-B494-6170D4F424C4}&file=%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%BA%B6%E6%B6%B2%E6%A0%87%E7%AD%BE.docx&action=default"
+               target="_blank">阿达木单抗溶液标签</a>
+            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={5A559518-0530-4325-B0E0-891EF65E28C3}&file=IBI%20303%E5%B7%A5%E8%89%BA%E6%BA%B6%E6%B6%B2%E4%BB%A3%E7%A0%81.pdf&action=default"
+               target="_blank">IBI303工艺溶液代码</a>
+            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={42DF6E7B-054E-4DD9-BC04-A0C93C015E6B}&file=IBI303%E8%86%9C%E5%8C%85%E5%A1%AB%E6%96%99%E4%BD%BF%E7%94%A8%E5%8F%B0%E8%B4%A6.xlsx&action=default"
+               target="_blank">膜包填料使用台账</a>
+            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={202D2512-B63B-48F2-9CD2-AB9D04F7F07B}&file=303%E8%AE%BE%E5%A4%87%E5%8F%B0%E5%B8%90.xlsx&action=default"
+               target="_blank">IBI303设备台账</a>
+            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={02BAC336-872E-4FE4-A8A4-F40339DE6804}&file=IBI303%E7%BA%AF%E5%8C%96%E5%B7%A5%E5%BA%8F%E5%99%A8%E5%85%B7%E9%9C%80%E6%B1%82%E8%A1%A8.docx&action=default"
+               target="_blank">IBI303纯化生产器具需求清单</a>
+            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={AEC6C17F-A21F-484A-A8C5-F15289049DC3}&file=IBI303%E9%85%8D%E6%B6%B2%E5%99%A8%E5%85%B7%E8%A1%A8.xlsx&action=default"
+               target="_blank">IBI303配液器具需求清单</a>
+            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={70224C9F-4BEB-4056-809D-B4A52105E0B3}&file=%E5%B7%A5%E8%89%BA%E5%8F%82%E6%95%B0%E8%A1%A8.xlsx&action=default"
+               target="_blank">工艺参数表</a>
+            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={ACA59C16-26D5-4474-9D09-CA2D1250E851}&file=IBI303%E7%89%A9%E6%96%99%E9%9C%80%E6%B1%82.xlsx&action=default"
+               target="_blank">IBI303物料需求</a>
+            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={39E8162D-D5D0-4B87-84C7-DAF4A6A0D672}&file=303%E8%AE%B0%E5%BD%95%E9%A2%86%E5%8F%96%E5%8F%B0%E8%B4%A6.xlsx&action=default"
+               target="_blank">IBI303记录领取台账</a>
+            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={95860C7E-4839-444D-9AB4-F7EAFEF17B85}&file=%E9%98%BF%E8%BE%BE%E6%9C%A8%E9%80%81%E6%A0%B7%E5%8D%95%E6%A8%A120191225.pptx&action=default"
+               target="_blank">IBI303送样单模板</a>
+            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={C22B56EE-9E27-440C-A1CE-FADC6EEC0D2F}&file=IBI303%20%E5%8E%9F%E6%B6%B2%E7%BA%AF%E5%8C%96%E4%B8%AD%E9%97%B4%E4%BD%93%E5%8F%96%E6%A0%B7%E8%AE%A1%E5%88%92.docx&action=default"
+               target="_blank">IBI303原液纯化中间品取样计划</a>
         </div>
     </div>
     <div class="doc"></div>
