@@ -463,13 +463,15 @@
 
         .background > div:nth-of-type(1) {
             margin-top: 10px;
+            font-size: 15px;
             position: relative;
             margin-left: 85.5vw;
         }
 
         .background > div:nth-of-type(2) {
             position: relative;
-            margin-left: 80vw;
+            margin-left: 82vw;
+            font-size: 13px;
             color: gray;
         }
 
@@ -512,8 +514,40 @@
             position: relative;
             height: 10vh;
             background-color: black;
-            top: 35vh;
+            top: 25vh;
             z-index: 0;
+        }
+
+        .control {
+            position: relative;
+            /*background-color: aqua;*/
+            width: 60vw;
+            height: 10vh;
+            z-index: 100;
+            top: -17vh;
+            left: 16vw;
+        }
+
+        #left {
+            width: 100px;
+            height: 100px;
+            /*background-color: red;*/
+            float: left;
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxMjAwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MDAgNjAwKSBzY2FsZSgwLjY5IDAuNjkpIHJvdGF0ZSgtMTgwKSB0cmFuc2xhdGUoLTYwMCAtNjAwKSIgc3R5bGU9ImZpbGw6I0IzQjNCMyI+PHN2ZyBmaWxsPSIjQjNCM0IzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3BhY2U9InByZXNlcnZlIiB2ZXJzaW9uPSIxLjEiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uO3RleHQtcmVuZGVyaW5nOmdlb21ldHJpY1ByZWNpc2lvbjtpbWFnZS1yZW5kZXJpbmc6b3B0aW1pemVRdWFsaXR5OyIgdmlld0JveD0iMCAwIDMzMyAzMzMiIHg9IjBweCIgeT0iMHB4IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCI+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4KICAgCiAgICAuZmlsMCB7ZmlsbDojQjNCM0IzO2ZpbGwtcnVsZTpub256ZXJvfQogICAKICA8L3N0eWxlPjwvZGVmcz48Zz48cGF0aCBjbGFzcz0iZmlsMCIgZD0iTTE2MiAyOTJjLTEzLDEyIC0zMSwtNiAtMTksLTE5bDEwNyAtMTA2IC0xMDcgLTEwN2MtMTIsLTEyIDYsLTMxIDE5LC0xOWwxMTUgMTE2YzUsNSA1LDE0IDAsMjBsLTExNSAxMTV6bS04NyAwYy0xMiwxMiAtMzEsLTYgLTE4LC0xOWwxMDYgLTEwNiAtMTA2IC0xMDdjLTEzLC0xMiA2LC0zMSAxOCwtMTlsMTE1IDExNmM2LDUgNiwxNCAwLDIwbC0xMTUgMTE1eiI+PC9wYXRoPjwvZz48L3N2Zz48L2c+PC9zdmc+");
+            background-size: cover;
+            -webkit-background-size: 150% 150%;
+            background-position: center;
+        }
+
+        #right {
+            width: 100px;
+            height: 100px;
+            /*background-color: red;*/
+            float: right;
+            position: relative;
+            background-image: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjQjNCM0IzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3BhY2U9InByZXNlcnZlIiB2ZXJzaW9uPSIxLjEiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uO3RleHQtcmVuZGVyaW5nOmdlb21ldHJpY1ByZWNpc2lvbjtpbWFnZS1yZW5kZXJpbmc6b3B0aW1pemVRdWFsaXR5OyIgdmlld0JveD0iMCAwIDMzMyAzMzMiIHg9IjBweCIgeT0iMHB4IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCI+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4KICAgCiAgICAuZmlsMCB7ZmlsbDojQjNCM0IzO2ZpbGwtcnVsZTpub256ZXJvfQogICAKICA8L3N0eWxlPjwvZGVmcz48Zz48cGF0aCBjbGFzcz0iZmlsMCIgZD0iTTE2MiAyOTJjLTEzLDEyIC0zMSwtNiAtMTksLTE5bDEwNyAtMTA2IC0xMDcgLTEwN2MtMTIsLTEyIDYsLTMxIDE5LC0xOWwxMTUgMTE2YzUsNSA1LDE0IDAsMjBsLTExNSAxMTV6bS04NyAwYy0xMiwxMiAtMzEsLTYgLTE4LC0xOWwxMDYgLTEwNiAtMTA2IC0xMDdjLTEzLC0xMiA2LC0zMSAxOCwtMTlsMTE1IDExNmM2LDUgNiwxNCAwLDIwbC0xMTUgMTE1eiI+PC9wYXRoPjwvZz48L3N2Zz4=");
+            background-size: cover;
+            -webkit-background-size: 100% 100%;
         }
     </style>
 </head>
@@ -776,15 +810,19 @@
 
 <!--展示区开始-->
 <div id="show-area">
-    <iframe height="100%" id="myframe" scrolling="no" src="files/注意事项.html" width="100%"></iframe>
-    <div class="protect"></div>
-</div>
-
+    <!--<iframe height="100%" id="myframe" scrolling="no" src="files/show/幻灯片1.PNG" width="100%"></iframe>-->
+    <img id="image" src="files/show/幻灯片1.PNG" height="930" width="1183"/></div>
 <div id="show-right">
     <iframe height="100%" id="remind" src="https://shimo.im/sheets/6WTrtG4Obzk53p79/w3FRa" width="100%"></iframe>
 </div>
 <div class="protect"></div>
 <div id="edit"><a href="https://shimo.im/sheets/6WTrtG4Obzk53p79/dFtlm" target="_blank">编辑</a></div>
+
+
+<div class="control">
+    <div id="left"></div>
+    <div id="right" onclick="changeNum()"></div>
+</div>
 
 
 <div class="footer">
@@ -834,7 +872,7 @@
         a.style.position = "relative";
         a.style.width = "110%";
         a.style.height = "150%";
-        a.style.top = "-230px";
+        a.style.top = "-180px";
         a.style.left = "-47px";
     }
 
@@ -849,7 +887,7 @@
         a.style.position = "relative";
         a.style.width = "110%";
         a.style.height = "150%";
-        a.style.top = "-230px";
+        a.style.top = "-180px";
         a.style.left = "-47px";
     }
 
@@ -871,5 +909,19 @@
     document.getElementById("remindMe").addEventListener("click", remindMe);
     // 提醒我-end
 
+    function changeImage(i) {
+        var a = document.getElementById("image");
+        a.src = "files/show/幻灯片" + i + ".PNG"
+    }
+
+
+    function changeNum() {
+        var i = 1;
+        var j = i + 1;
+        if () {
+        }
+        changeImage(i + 1);
+
+    }
 </script>
 </html>
