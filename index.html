@@ -389,9 +389,9 @@
             z-index: 90;
         }
 
-        #show-area:hover {
-            box-shadow: 0 0 5px;
-        }
+        /*#show-area:hover {*/
+        /*box-shadow: 0 0 5px;*/
+        /*}*/
 
         #show-right {
             width: 22vw;
@@ -411,7 +411,7 @@
             margin-left: 76.7vw;
             overflow: hidden;
             /*background-color: #52BAD5;*/
-            z-index: 100;
+            z-index: auto;
             border: 1px solid red;
         }
 
@@ -522,32 +522,38 @@
             position: relative;
             /*background-color: aqua;*/
             width: 60vw;
-            height: 10vh;
-            z-index: 100;
-            top: -17vh;
+            height: 94vh;
+            z-index: 90;
+            top: -59vh;
             left: 16vw;
         }
 
         #left {
             width: 100px;
-            height: 100px;
-            /*background-color: red;*/
+            height: 94vh;
+            background-color: red;
             float: left;
-            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxMjAwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MDAgNjAwKSBzY2FsZSgwLjY5IDAuNjkpIHJvdGF0ZSgtMTgwKSB0cmFuc2xhdGUoLTYwMCAtNjAwKSIgc3R5bGU9ImZpbGw6I0IzQjNCMyI+PHN2ZyBmaWxsPSIjQjNCM0IzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3BhY2U9InByZXNlcnZlIiB2ZXJzaW9uPSIxLjEiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uO3RleHQtcmVuZGVyaW5nOmdlb21ldHJpY1ByZWNpc2lvbjtpbWFnZS1yZW5kZXJpbmc6b3B0aW1pemVRdWFsaXR5OyIgdmlld0JveD0iMCAwIDMzMyAzMzMiIHg9IjBweCIgeT0iMHB4IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCI+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4KICAgCiAgICAuZmlsMCB7ZmlsbDojQjNCM0IzO2ZpbGwtcnVsZTpub256ZXJvfQogICAKICA8L3N0eWxlPjwvZGVmcz48Zz48cGF0aCBjbGFzcz0iZmlsMCIgZD0iTTE2MiAyOTJjLTEzLDEyIC0zMSwtNiAtMTksLTE5bDEwNyAtMTA2IC0xMDcgLTEwN2MtMTIsLTEyIDYsLTMxIDE5LC0xOWwxMTUgMTE2YzUsNSA1LDE0IDAsMjBsLTExNSAxMTV6bS04NyAwYy0xMiwxMiAtMzEsLTYgLTE4LC0xOWwxMDYgLTEwNiAtMTA2IC0xMDdjLTEzLC0xMiA2LC0zMSAxOCwtMTlsMTE1IDExNmM2LDUgNiwxNCAwLDIwbC0xMTUgMTE1eiI+PC9wYXRoPjwvZz48L3N2Zz48L2c+PC9zdmc+");
-            background-size: cover;
-            -webkit-background-size: 150% 150%;
-            background-position: center;
         }
 
         #right {
             width: 100px;
-            height: 100px;
-            /*background-color: red;*/
+            height: 94vh;
+            background-color: red;
             float: right;
             position: relative;
+        }
+
+        #right:hover {
             background-image: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjQjNCM0IzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3BhY2U9InByZXNlcnZlIiB2ZXJzaW9uPSIxLjEiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uO3RleHQtcmVuZGVyaW5nOmdlb21ldHJpY1ByZWNpc2lvbjtpbWFnZS1yZW5kZXJpbmc6b3B0aW1pemVRdWFsaXR5OyIgdmlld0JveD0iMCAwIDMzMyAzMzMiIHg9IjBweCIgeT0iMHB4IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCI+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4KICAgCiAgICAuZmlsMCB7ZmlsbDojQjNCM0IzO2ZpbGwtcnVsZTpub256ZXJvfQogICAKICA8L3N0eWxlPjwvZGVmcz48Zz48cGF0aCBjbGFzcz0iZmlsMCIgZD0iTTE2MiAyOTJjLTEzLDEyIC0zMSwtNiAtMTksLTE5bDEwNyAtMTA2IC0xMDcgLTEwN2MtMTIsLTEyIDYsLTMxIDE5LC0xOWwxMTUgMTE2YzUsNSA1LDE0IDAsMjBsLTExNSAxMTV6bS04NyAwYy0xMiwxMiAtMzEsLTYgLTE4LC0xOWwxMDYgLTEwNiAtMTA2IC0xMDdjLTEzLC0xMiA2LC0zMSAxOCwtMTlsMTE1IDExNmM2LDUgNiwxNCAwLDIwbC0xMTUgMTE1eiI+PC9wYXRoPjwvZz48L3N2Zz4=");
             background-size: cover;
             -webkit-background-size: 100% 100%;
+        }
+
+        #left:hover {
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxMjAwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MDAgNjAwKSBzY2FsZSgwLjY5IDAuNjkpIHJvdGF0ZSgtMTgwKSB0cmFuc2xhdGUoLTYwMCAtNjAwKSIgc3R5bGU9ImZpbGw6I0IzQjNCMyI+PHN2ZyBmaWxsPSIjQjNCM0IzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3BhY2U9InByZXNlcnZlIiB2ZXJzaW9uPSIxLjEiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uO3RleHQtcmVuZGVyaW5nOmdlb21ldHJpY1ByZWNpc2lvbjtpbWFnZS1yZW5kZXJpbmc6b3B0aW1pemVRdWFsaXR5OyIgdmlld0JveD0iMCAwIDMzMyAzMzMiIHg9IjBweCIgeT0iMHB4IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCI+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4KICAgCiAgICAuZmlsMCB7ZmlsbDojQjNCM0IzO2ZpbGwtcnVsZTpub256ZXJvfQogICAKICA8L3N0eWxlPjwvZGVmcz48Zz48cGF0aCBjbGFzcz0iZmlsMCIgZD0iTTE2MiAyOTJjLTEzLDEyIC0zMSwtNiAtMTksLTE5bDEwNyAtMTA2IC0xMDcgLTEwN2MtMTIsLTEyIDYsLTMxIDE5LC0xOWwxMTUgMTE2YzUsNSA1LDE0IDAsMjBsLTExNSAxMTV6bS04NyAwYy0xMiwxMiAtMzEsLTYgLTE4LC0xOWwxMDYgLTEwNiAtMTA2IC0xMDdjLTEzLC0xMiA2LC0zMSAxOCwtMTlsMTE1IDExNmM2LDUgNiwxNCAwLDIwbC0xMTUgMTE1eiI+PC9wYXRoPjwvZz48L3N2Zz48L2c+PC9zdmc+");
+            background-size: cover;
+            -webkit-background-size: 150% 150%;
+            background-position: center;
         }
     </style>
 </head>
@@ -810,7 +816,7 @@
 
 <!--展示区开始-->
 <div id="show-area">
-    <!--<iframe height="100%" id="myframe" scrolling="no" src="files/show/幻灯片1.PNG" width="100%"></iframe>-->
+    <!--<iframe height="100%" id="myframe" scrolling="no" src="files/show/show.png" width="100%"></iframe>-->
     <img id="image" src="files/show/幻灯片1.PNG" height="930" width="1183"/></div>
 <div id="show-right">
     <iframe height="100%" id="remind" src="https://shimo.im/sheets/6WTrtG4Obzk53p79/w3FRa" width="100%"></iframe>
@@ -819,9 +825,11 @@
 <div id="edit"><a href="https://shimo.im/sheets/6WTrtG4Obzk53p79/dFtlm" target="_blank">编辑</a></div>
 
 
-<div class="control">
-    <div id="left"></div>
-    <div id="right" onclick="changeNum()"></div>
+<div class="page1">
+    <div class="control">
+        <div id="left" onclick="changeNum()"></div>
+        <div id="right" onclick="changeNum()"></div>
+    </div>
 </div>
 
 
@@ -914,14 +922,10 @@
         a.src = "files/show/幻灯片" + i + ".PNG"
     }
 
-
     function changeNum() {
-        var i = 1;
-        var j = i + 1;
-        if () {
-        }
-        changeImage(i + 1);
-
+        // Math.floor(Math.random()*(max-min+1)+min)   生成min-max的随机整数
+        var i = Math.floor(Math.random() * 4 + 1);
+        changeImage(i);
     }
 </script>
 </html>
