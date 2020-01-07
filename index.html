@@ -243,7 +243,6 @@
             border-bottom: 1px solid #fff;
         }
 
-
         .sub-menu > .menu-item > a:hover {
             background: #bc003b;
         }
@@ -260,13 +259,9 @@
             transform: rotateY(-90deg) translate3d(0, 0, 75px);
         }
 
-
-
         .menu > ol:first-child > .menu-item:nth-of-type(3) > .sub-menu > .menu-item > a:before {
             transform: rotateY(-90deg) translate3d(0, 0, 75px);
         }
-
-
 
         .menu > ol:first-child > .menu-item:nth-of-type(4) > .sub-menu > .menu-item > a:before {
             transform: rotateY(-90deg) translate3d(0, 0, 75px)
@@ -275,8 +270,6 @@
         .menu > ol:first-child > .menu-item:nth-of-type(5) > .sub-menu > .menu-item > a:before {
             transform: rotateY(-90deg) translate3d(0, 0, 75px);
         }
-
-
 
         .menu > ol:first-child > .menu-item:hover > .sub-menu {
             display: block;
@@ -387,6 +380,8 @@
             margin-left: 16vw;
             margin-top: 6vh;
             z-index: 90;
+            background-image: url("files/show/»ÃµÆÆ¬1.PNG");
+            background-size: cover;
         }
 
         /*#show-area:hover {*/
@@ -817,7 +812,8 @@
 <!--Õ¹Ê¾Çø¿ªÊ¼-->
 <div id="show-area">
     <!--<iframe height="100%" id="myframe" scrolling="no" src="files/show/show.png" width="100%"></iframe>-->
-    <img id="image" src="files/show/»ÃµÆÆ¬1.PNG" height="930" width="1183"/></div>
+    <!--<img id="image" src="files/show/»ÃµÆÆ¬1.PNG" height="930" width="1183"/>-->
+</div>
 <div id="show-right">
     <iframe height="100%" id="remind" src="https://shimo.im/sheets/6WTrtG4Obzk53p79/w3FRa" width="100%"></iframe>
 </div>
@@ -827,8 +823,8 @@
 
 <div class="page1">
     <div class="control">
-        <div id="left" onclick="changeNum()"></div>
-        <div id="right" onclick="changeNum()"></div>
+        <div id="left" onclick="changeImage()"></div>
+        <div id="right" onclick="next()"></div>
     </div>
 </div>
 
@@ -917,15 +913,46 @@
     document.getElementById("remindMe").addEventListener("click", remindMe);
     // ÌáÐÑÎÒ-end
 
-    function changeImage(i) {
-        var a = document.getElementById("image");
-        a.src = "files/show/»ÃµÆÆ¬" + i + ".PNG"
+
+    // ÇÐ»»Í¼Æ¬
+    var picArr = [
+        "files/show/»ÃµÆÆ¬1.PNG",
+        "files/show/»ÃµÆÆ¬2.PNG",
+        "files/show/»ÃµÆÆ¬3.PNG",
+        "files/show/»ÃµÆÆ¬4.PNG",
+    ];
+    var index = 0;
+
+    function next() {
+        index++;
+        if (index == picArr.length) {
+            index = 0;
+        }
+        document.getElementById("show-area").style.backgroundImage = "url(" + picArr[index] + ")";
     }
 
-    function changeNum() {
-        // Math.floor(Math.random()*(max-min+1)+min)   Éú³Émin-maxµÄËæ»úÕûÊý
-        var i = Math.floor(Math.random() * 4 + 1);
-        changeImage(i);
+    function pre() {
+        index--;
+        if (index < 0) {
+            index = picArr.length - 1;
+        }
+        document.getElementById("show-area").style.backgroundImage = "url(" + picArr[index] + ")";
     }
+
+    // ÇÐ»»Í¼Æ¬½áÊø
+
+    // Ëæ»úÍ¼Æ¬
+    function changeImage() {
+        var images = [
+            "files/show/»ÃµÆÆ¬1.PNG",
+            "files/show/»ÃµÆÆ¬2.PNG",
+            "files/show/»ÃµÆÆ¬3.PNG",
+            "files/show/»ÃµÆÆ¬4.PNG",
+        ];
+        var i = Math.floor(Math.random() * 4);
+        var a = document.getElementById("show-area");
+        a.style.backgroundImage = "url(" + images[i] + ")";
+    }
+
 </script>
 </html>
