@@ -25,9 +25,12 @@
         .top > p {
             text-align: center;
             color: red;
+            font-size: 20px;
+            animation: mymove 2s infinite;
+            animation-delay: 500ms;
         }
 
-        .name {
+        #name {
             width: 100px;
             text-align: center;
             position: relative;
@@ -36,13 +39,35 @@
             color: white;
             font-size: 25px;
             margin: 0 auto;
+            animation: mymove 2s infinite;
         }
 
-        .photo {
+        @keyframes mymove {
+            0% {
+                color: red;
+            }
+
+            25% {
+                color: #73C8A9;
+            }
+
+            50% {
+                color: #ffa0a8;
+            }
+
+            75% {
+                color: #55c57a;
+            }
+            100% {
+                color: mediumslateblue;
+            }
+        }
+
+        #photo {
             position: relative;
             width: 70px;
             height: 70px;
-            background-color: red;
+            background-image: ;
             top: -10.5em;
             margin: 0 auto;
             border-radius: 70px;
@@ -53,6 +78,8 @@
             margin: 0 auto;
             text-align: center;
             height: 100%;
+            position: relative;
+            top: -5em;
         }
 
     </style>
@@ -62,8 +89,8 @@
     <p>Happy New Year!</p>
 </div>
 <canvas></canvas>
-<p class="name">颜婷婷</p>
-<div class="photo"></div>
+<p id="name">颜婷婷</p>
+<div id="photo"></div>
 <div class="text">
     <p>心灵的愉悦，来自精神的富有；</p>
     <p>简单的快乐，来自心态的知足。</p>
