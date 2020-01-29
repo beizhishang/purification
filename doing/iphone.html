@@ -7,13 +7,15 @@
     <title>Happy New Year</title>
     <style type="text/css">
         body {
-            background: linear-gradient(to bottom, #ffa0a8, #fffdea);
+            background: linear-gradient(#ffa0a8, #c734ff);
             margin: 0;
         }
 
         canvas {
             margin: 0 auto;
             display: block;
+            width: 100vw;
+            height: 60vh;
         }
 
         .top {
@@ -24,6 +26,8 @@
 
         .top > p {
             text-align: center;
+            position: relative;
+            top: 40px;
             color: red;
             font-size: 20px;
             animation: mymove 2s infinite;
@@ -35,7 +39,7 @@
             text-align: center;
             position: relative;
             display: block;
-            top: -7em;
+            top: -9em;
             color: white;
             font-size: 25px;
             margin: 0 auto;
@@ -48,18 +52,18 @@
             }
 
             25% {
-                color: #73C8A9;
+                color: #3a47c8;
             }
 
             50% {
-                color: #ffa0a8;
+                color: #c734ff;
             }
 
             75% {
-                color: #55c57a;
+                color: #b711c5;
             }
             100% {
-                color: mediumslateblue;
+                color: #1eee48;
             }
         }
 
@@ -70,7 +74,7 @@
             background-image: url("ytt.jpeg");
             background-size: cover;
             background-position: 7px 1px;
-            top: -10.5em;
+            top: -13em;
             margin: 0 auto;
             border-radius: 70px;
         }
@@ -79,18 +83,10 @@
             color: white;
             margin: 0 auto;
             text-align: center;
-            height: 400px;
-            background: linear-gradient(#e66465, #9198e5);
+            height: 26vh;
+            /*background: linear-gradient(#e66465, #9198e5);*/
             position: relative;
             overflow: scroll;
-            top: -5em;
-        }
-
-        .show {
-            width: 100vw;
-            background-color: red;
-            height: 100px;
-            position: relative;
             top: -5em;
         }
 
@@ -129,10 +125,7 @@
     <p>不留遗憾给生命。</p>
     <p>遇见，只是一个开始；</p>
     <p>守望，才能相伴一生。</p>
-    <p>珍惜爱你的人和你爱的人！</p>
 </div>
-<div class="show"></div>
-
 </body>
 <script>
     let canvas = document.querySelector('canvas'),
