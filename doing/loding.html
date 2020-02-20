@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+          name="viewport">
+    <title>Loding</title>
+    <style type="text/css">
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(135deg, #ff69b7, aqua);
+        }
+
+        .loding {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto; /*居中对齐*/
+            width: 200px;
+            height: 200px;
+            border-radius: 200px;
+            box-sizing: border-box;
+            border-top: red 20px solid;
+            animation: a1 2s linear infinite;
+        }
+
+        .loding:before, .loding:after {
+            position: absolute;
+            top: -20px;
+            content: "";
+            width: 200px;
+            height: 200px;
+            border-radius: 200px;
+            box-sizing: border-box;
+        }
+
+        .loding:before {
+            border-top: aqua 20px solid;
+            transform: rotate(120deg);
+        }
+
+        .loding:after {
+            border-top: #5994ff 20px solid;
+            transform: rotate(-120deg);
+        }
+
+        .text {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            font-family: "Lato", Helvetica, Arial;
+            color: white;
+            animation: a2 2s linear infinite;
+        }
+
+        @keyframes a1 {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes a2 {
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="loding">
+    <div class="text">Loding...</div>
+</div>
+</body>
+</html>
