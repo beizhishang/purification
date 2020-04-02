@@ -823,7 +823,7 @@
 
 <div class="page1">
     <div class="control">
-        <div id="left" onclick="changeImage()"></div>
+        <div id="left" onclick="pre()"></div>
         <div id="right" onclick="next()"></div>
     </div>
 </div>
@@ -942,17 +942,17 @@
     // ÇÐ»»Í¼Æ¬½áÊø
 
     // Ëæ»úÍ¼Æ¬
-    function changeImage() {
-        var images = [
-            "files/show/»ÃµÆÆ¬1.PNG",
-            "files/show/»ÃµÆÆ¬2.PNG",
-            "files/show/»ÃµÆÆ¬3.PNG",
-            "files/show/»ÃµÆÆ¬4.PNG",
-        ];
-        var i = Math.floor(Math.random() * 4);
-        var a = document.getElementById("show-area");
-        a.style.backgroundImage = "url(" + images[i] + ")";
-    }
+    // function changeImage() {
+    //     var images = [
+    //         "files/show/»ÃµÆÆ¬1.PNG",
+    //         "files/show/»ÃµÆÆ¬2.PNG",
+    //         "files/show/»ÃµÆÆ¬3.PNG",
+    //         "files/show/»ÃµÆÆ¬4.PNG",
+    //     ];
+    //     var i = Math.floor(Math.random() * 4);
+    //     var a = document.getElementById("show-area");
+    //     a.style.backgroundImage = "url(" + images[i] + ")";
+    // }
 
 </script>
 </html>
