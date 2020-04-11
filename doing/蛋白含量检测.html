@@ -299,35 +299,35 @@
         var n = document.getElementById("container");
         m.innerHTML = document.getElementById("selectItem").value;
         if (
-            document.getElementById("selectItem").value == "IBI301"
+            document.getElementById("selectItem").value === "IBI301"
         ) {
             n.style.backgroundImage = "linear-gradient( 109.6deg,  rgba(104,183,249,1) 31.3%, rgba(176,248,200,1) 100.2% )";
             document.getElementsByClassName("autoFill")[0].value = 50;
             document.getElementsByClassName("autoFill")[1].value = 1.643;
             document.getElementsByClassName("autoFill")[2].value = 17.5;
         } else if (
-            document.getElementById("selectItem").value == "IBI303"
+            document.getElementById("selectItem").value === "IBI303"
         ) {
             n.style.backgroundImage = "radial-gradient( circle farthest-corner at 50.1% 37.3%,  rgba(92,213,249,1) 0%, rgba(123,243,248,1) 90.1% )";
             document.getElementsByClassName("autoFill")[0].value = 150;
             document.getElementsByClassName("autoFill")[1].value = 1.39;
             document.getElementsByClassName("autoFill")[2].value = 59.0;
         } else if (
-            document.getElementById("selectItem").value == "IBI305"
+            document.getElementById("selectItem").value === "IBI305"
         ) {
             n.style.backgroundImage = "radial-gradient( circle 879px at 10.4% 22.3%,  rgba(255,235,238,1) 0%, rgba(186,190,245,1) 93.6% )";
             document.getElementsByClassName("autoFill")[0].value = 90;
             document.getElementsByClassName("autoFill")[1].value = 1.70;
             document.getElementsByClassName("autoFill")[2].value = 31.2;
         } else if (
-            document.getElementById("selectItem").value == "IBI306"
+            document.getElementById("selectItem").value === "IBI306"
         ) {
             n.style.backgroundImage = "radial-gradient( circle farthest-corner at 10% 20%,  rgba(43,199,188,1) 0%, rgba(219,249,203,1) 72.9% )";
             document.getElementsByClassName("autoFill")[0].value = 100;
             document.getElementsByClassName("autoFill")[1].value = 1.535;
             document.getElementsByClassName("autoFill")[2].value = 30;
         } else if (
-            document.getElementById("selectItem").value == "IBI308"
+            document.getElementById("selectItem").value === "IBI308"
         ) {
             n.style.backgroundImage = "linear-gradient( 135deg, #90F7EC 10%, #32CCBC 100%)";
             document.getElementsByClassName("autoFill")[0].value = 40;
@@ -370,9 +370,9 @@
         var dataF = (x + y).toFixed(4);
 
         //如果第四位小数为0，则保留三位小数
-        if (dataD * 10000 % 10 == 0) {
+        if (parseInt((dataD * 10000) % 10) === 0) {
             D.innerHTML = (x - y).toFixed(3);
-            if (dataD * 1000 % 10 == 0) {
+            if (parseInt((dataD * 1000) % 10) === 0) {
                 D.innerHTML = (x - y).toFixed(2);
             } else {
                 D.innerHTML = (x - y).toFixed(3);
@@ -381,9 +381,9 @@
             D.innerHTML = (x - y).toFixed(4);
         }
 
-        if (dataF * 10000 % 10 == 0) {
+        if ((dataF * 10000) % 10 === 0) {
             F.innerHTML = (x + y).toFixed(3);
-            if (dataF * 1000 % 10 == 0) {
+            if ((dataF * 1000) % 10 === 0) {
                 F.innerHTML = (x + y).toFixed(2);
             } else {
                 F.innerHTML = (x + y).toFixed(3);
@@ -409,7 +409,7 @@
         }
 
         var final = dataF / 2 / c.value * i.value;
-        I.innerHTML = final.toFixed(1);
+        I.innerHTML = final.toFixed(1) + " g/L";
     }
 
     function btn4() {
