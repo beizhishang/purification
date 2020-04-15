@@ -187,7 +187,7 @@
             <td>
                 <div class="showarea" id="C" title="操作人检测平均值"></div>
             </td>
-            <td title="操作人复核人检测平均值差值">A-B</td>
+            <td title="操作人复核人检测平均值差值">A+B</td>
             <td>
                 <div class="showarea" id="D" title="操作人复核人检测平均值差值"></div>
             </td>
@@ -202,7 +202,7 @@
             <td>
                 <div class="showarea" id="E" title="复核人检测平均值"></div>
             </td>
-            <td title="操作人复核人检测平均值之和">A+B</td>
+            <td title="操作人复核人检测平均值之和">A-B</td>
             <td>
                 <div class="showarea" id="F" title="操作人复核人检测平均值之和"></div>
             </td>
@@ -366,30 +366,30 @@
         C.innerHTML = x;
         E.innerHTML = y;
 
-        var dataD = (x - y).toFixed(4);
-        var dataF = (x + y).toFixed(4);
+        var dataD = (x + y).toFixed(4);
+        var dataF = (x - y).toFixed(4);
 
         //如果第四位小数为0，则保留三位小数
         if (parseInt((dataD * 10000) % 10) === 0) {
-            D.innerHTML = (x - y).toFixed(3);
+            D.innerHTML = (x + y).toFixed(3);
             if (parseInt((dataD * 1000) % 10) === 0) {
-                D.innerHTML = (x - y).toFixed(2);
+                D.innerHTML = (x + y).toFixed(2);
             } else {
-                D.innerHTML = (x - y).toFixed(3);
+                D.innerHTML = (x + y).toFixed(3);
             }
         } else {
-            D.innerHTML = (x - y).toFixed(4);
+            D.innerHTML = (x + y).toFixed(4);
         }
 
         if ((dataF * 10000) % 10 === 0) {
-            F.innerHTML = (x + y).toFixed(3);
+            F.innerHTML = (x - y).toFixed(3);
             if ((dataF * 1000) % 10 === 0) {
-                F.innerHTML = (x + y).toFixed(2);
+                F.innerHTML = (x - y).toFixed(2);
             } else {
-                F.innerHTML = (x + y).toFixed(3);
+                F.innerHTML = (x - y).toFixed(3);
             }
         } else {
-            F.innerHTML = (x + y).toFixed(4);
+            F.innerHTML = (x - y).toFixed(4);
         }
 
         var z = Math.abs(x - y);
@@ -408,7 +408,7 @@
             H.style.color = "darkgreen";
         }
 
-        var final = dataF / 2 / c.value * i.value;
+        var final = dataD / 2 / c.value * i.value;
         I.innerHTML = final.toFixed(1) + " g/L";
     }
 
