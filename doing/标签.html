@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+          name="viewport">
+    <link rel="shortcut icon"
+          href="https://trello-attachments.s3.amazonaws.com/5d870c0418f7104546584cfb/5dcbcaedb6ca803685cc6fa0/a83d2af9b74ca6ddceec6ed84190fa15/Purification_(2).ico">
+    <title>标签</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .background {
+            width: 100vw;
+            height: 100vh;
+            background-color: darkcyan;
+        }
+
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 600px;
+            height: 500px;
+            /*background-color: aqua;*/
+        }
+
+        .tag {
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*left: 0;*/
+            /*right: 0;*/
+            /*bottom: 0;*/
+            margin-top: 20px;
+            width: 600px;
+            height: 350px;
+            background-color: white;
+        }
+
+        .batch-number {
+            position: relative;
+            float: left;
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        #batch-number {
+            width: 150px;
+            height: 30px;
+            font-size: 16px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .day-number {
+            position: relative;
+            float: right;
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        #day-number {
+            position: relative;
+            float: right;
+            width: 150px;
+            height: 30px;
+            font-size: 16px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .logo {
+            position: relative;
+            float: left;
+            width: 120px;
+            height: 40px;
+            background-color: #17e0cf;
+        }
+
+        .title {
+            position: relative;
+            float: left;
+            width: 100px;
+            height: 40px;
+            background-color: red;
+        }
+
+        .color {
+            position: relative;
+            float: right;
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+<div class="background">
+    <div class="container">
+        <!--批号选择或输入-->
+        <div class="batch-number">批号</div>
+        <input type="text" id="batch-number" list="select-batch">
+        <datalist id="select-batch">
+            <option>DS2003004</option>
+            <option>DS2003005</option>
+            <option>DS2003006</option>
+            <option>DS2003008</option>
+            <option>DS2003009</option>
+            <option>DS2003010</option>
+            <option>DS2003011</option>
+            <option>DS2003012</option>
+            <option>DS2004005</option>
+        </datalist>
+
+        <!--天数选择-->
+        <div class="day-number">天数</div>
+        <input type="text" id="day-number" list="select">
+
+        <!--标签样式-->
+        <div class="tag">
+            <div class="logo"></div>
+            <div class="title"></div>
+            <div class="color"></div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
