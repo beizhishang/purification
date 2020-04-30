@@ -16,7 +16,7 @@
         .background {
             width: 100vw;
             height: 100vh;
-            background-color: darkcyan;
+            background-color: #267e70;
         }
 
         .container {
@@ -39,17 +39,20 @@
             /*bottom: 0;*/
             margin-top: 20px;
             width: 600px;
-            height: 350px;
+            height: 400px;
             background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 100px 10px rgb(0, 0, 0);
         }
 
         .batch-number {
             position: relative;
             float: left;
-            width: 40px;
+            width: 50px;
             height: 30px;
-            text-align: center;
+            text-align: left;
             line-height: 35px;
+            color: white;
         }
 
         #batch-number {
@@ -65,10 +68,11 @@
         .day-number {
             position: relative;
             float: right;
-            width: 40px;
+            width: 50px;
             height: 30px;
-            text-align: center;
+            text-align: left;
             line-height: 35px;
+            color: white;
         }
 
         #day-number {
@@ -86,33 +90,51 @@
         .logo {
             position: relative;
             float: left;
-            margin: 20px 0 0 20px;
+            margin: 30px 0 0 20px;
             width: 120px;
-            height: 40px;
-            background-color: #17e0cf;
+            height: 20px;
+            background-image: url("http://innoventbio.com/static/img/logo-zh-new.0df48ac.svg");
+            background-size: 90%;
+            background-repeat: no-repeat;
         }
 
         .title {
             position: relative;
             float: left;
-            margin: 20px 0 0 40px;
-            width: 300px;
+            margin: 20px 0 0 70px;
             height: 40px;
-            background-color: red;
             text-align: justify;
             line-height: 40px;
             font-size: 30px;
             font-weight: 200;
+            letter-spacing: 10px;
         }
 
         .color {
             position: relative;
-            margin: 20px 20px 0 0;
+            margin: 10px 15px 0 0;
             float: right;
-            width: 100px;
-            height: 100px;
-            border-radius: 100px;
+            width: 80px;
+            height: 80px;
+            border-radius: 80px;
             background-color: green;
+            box-shadow: 0 0 1.5px 1px;
+        }
+
+        .context-box {
+            width: 600px;
+            height: 300px;
+            background-color: #267e70;
+            position: relative;
+            top: 100px;
+            border-radius: 10px;
+        }
+
+        .context {
+            /*float: none;*/
+            width: 150px;
+            height: 40px;
+            background-color: red;
         }
 
     </style>
@@ -121,7 +143,7 @@
 <div class="background">
     <div class="container">
         <!--批号选择或输入-->
-        <div class="batch-number">批号</div>
+        <div class="batch-number">批号:</div>
         <input type="text" id="batch-number" list="select-batch">
         <datalist id="select-batch">
             <option>DS2003004</option>
@@ -137,7 +159,7 @@
 
         <!--天数选择-->
         <input type="text" id="day-number" list="select-day">
-        <div class="day-number">天数</div>
+        <div class="day-number">天数:</div>
         <datalist id="select-day">
             <option>D1</option>
             <option>D2</option>
@@ -152,7 +174,10 @@
             <div class="logo"></div>
             <div class="title">溶液标签<span></span></div>
             <div class="color"></div>
-
+            <div class="context-box">
+                <div class="context">溶液名称：</div>
+                <div class="write"></div>
+            </div>
         </div>
     </div>
 </div>
