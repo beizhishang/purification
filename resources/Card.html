@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+            background-color: #383838 !important;
+        }
+
+        /*///////////////*/
+        /* metro styling */
+        /*///////////////*/
+
+        @media (min-width: 768px) {
+
+            .faq-boxes-container {
+                padding-left: 5px !important;
+                padding-right: 5px !important;
+                padding-top: 10px;
+            }
+
+            .metro-faq-box-container {
+                margin-bottom: 10px;
+                padding-left: 5px !important;
+                padding-right: 5px !important;
+                min-height: 150px !important;
+                float: left;
+                overflow: hidden;
+            }
+
+            .metro-faq-box-container .metro-box-inner {
+                background-color: #0000008f;
+                min-height: 150px;
+                /* height: 100%; */
+                transition: all 0.5s ease;
+                background-size: 50px;
+                background-repeat: no-repeat;
+                background-position: center 25px;
+            }
+
+            .metro-box-xl.metro-faq-box-container .metro-box-inner {
+                background-position: center;
+            }
+
+            .metro-faq-box-container a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+            .metro-faq-box-container a .metro-box-inner span {
+                display: block;
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                right: -20px;
+                top: -20px;
+                border-radius: 50%;
+                transform: scale(0);
+            }
+
+            .metro-faq-box-container a .metro-box-inner span.circle1 {
+                background: rgba(255, 255, 255, 0.2);
+                transition: all 0.3s ease;
+            }
+
+            .metro-faq-box-container a .metro-box-inner span.circle2 {
+                background: rgba(255, 255, 255, 0.4);
+                transition: all 0.5s ease;
+            }
+
+            .metro-faq-box-container a:hover .metro-box-inner span {
+                transform: scale(70);
+            }
+
+            .metro-faq-box-container a:hover {
+                color: #111;
+            }
+
+            .question-container {
+                display: table;
+                width: calc(100% - 10px);
+                min-height: 150px;
+                padding: 15px;
+                position: absolute;
+            }
+
+            .metro-box-xl .question-container {
+                min-height: 310px;
+            }
+
+            .question-container p {
+                display: table-cell;
+                vertical-align: bottom;
+                font-size: 16px;
+                text-align: left;
+                line-height: 23px;
+            }
+
+            .faq-boxes-container .modal .modal-header span .fa {
+                font-size: 35px;
+                position: absolute;
+                margin-top: -6px;
+                margin-left: -3px;
+            }
+
+            .faq-boxes-container .modal {
+                background: -webkit-linear-gradient(-45deg, #17e0cf91 0%, #9f23f780 100%);
+            }
+
+            .faq-boxes-container .modal .modal-body h3 {
+                font-size: 18px;
+                font-weight: bold;
+                text-align: justify;
+            }
+
+            .faq-boxes-container .modal .modal-body p {
+                padding-top: 10px;
+                font-size: 13px;
+                text-align: justify;
+            }
+
+            .faq-boxes-container .modal .modal-footer button {
+                font-size: 14px;
+                padding: 3px 35px;
+            }
+
+            /* flip animation */
+            /* entire container, keeps perspective */
+            .flip-container {
+                perspective: 1000px;
+            }
+
+            /* flip the pane when hovered */
+            .flip-container:hover .flipper, .flip-container.hover .flipper {
+                transform: rotateY(180deg);
+            }
+
+            .flip-container, .front, .back {
+                width: 100%;
+                /* height: 480px; */
+            }
+
+            /* flip speed goes here */
+            .flipper {
+                transition: 0.6s;
+                transform-style: preserve-3d;
+
+                position: relative;
+            }
+
+            /* hide back of pane during swap */
+            .front, .back {
+                backface-visibility: hidden;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            /* front pane, placed above back */
+            .front {
+                z-index: 2;
+                /* for firefox 31 */
+                transform: rotateY(0deg);
+            }
+
+            .front p {
+                color: #fff;
+                text-align: center;
+            }
+
+            /* back, initially hidden pane */
+            .back {
+                transform: rotateY(180deg);
+                background: #484848;
+                padding: 15px;
+                overflow-y: scroll;
+            }
+
+            .back p {
+                color: #fff;
+                font-size: 13px;
+                text-align: justify;
+            }
+
+            .back::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            .back::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
+                background: rgba(17, 17, 17, 0.22);
+            }
+
+            .back::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+                background: -webkit-linear-gradient(-90deg, #17e0cf 0%, #9f23f7 100%);
+            }
+
+            .question-container {
+                width: 100%;
+            }
+
+            .mobile-show-icon {
+                display: none;
+            }
+
+            .question-container .fa {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col-lg-10.offset-lg-1 {
+                padding: 15px;
+            }
+
+            .header-box {
+                min-height: 150px;
+            }
+
+            .faq-boxes-container {
+                background: transparent;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 0px;
+            }
+
+            .metro-faq-box-container {
+                padding: 0px;
+                margin-bottom: 15px;
+            }
+
+            .bottom-space-fix.metro-faq-box-container {
+                position: relative !important;
+            }
+
+            .question-container {
+                width: calc(100%);
+                background: -webkit-linear-gradient(-45deg, #1fd4d1 0%, #41a7dc 100%);
+                color: #fff;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: left;
+                line-height: 23px;
+                /* height: 100px; */
+                padding: 10px;
+                padding-right: 40px;
+            }
+
+            .question-container p {
+                margin-bottom: 0px;
+                text-align: justify;
+            }
+
+            .metro-box-inner.front {
+                background-image: none !important;
+            }
+
+            .header-box .metro-box-inner {
+                min-height: 150px;
+            }
+
+            .header-box .question-container img {
+                width: 150px;
+                float: none;
+                margin: auto;
+            }
+
+            .metro-faq-box-container .back {
+                background-color: #d8d8d8;
+            }
+
+            .metro-faq-box-container .back p {
+                margin-bottom: 0px;
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .mobile-show-icon {
+                display: block;
+                width: 25px;
+                float: left;
+                margin-right: 5px;
+            }
+
+            .question-container .fa {
+                display: block;
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                font-size: 20px;
+                transition: all 0.5s ease;
+            }
+
+            .flipper[aria-expanded="true"] .question-container .fa {
+                transform: rotate(180deg);
+            }
+
+            /* accordian */
+            .metro-box-inner.front {
+                color: rgba(0, 0, 0, 0.87);
+                cursor: pointer;
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+                transition: 0.4s;
+            }
+
+            .back {
+                background-color: white;
+                max-height: 0;
+                overflow: hidden;
+                transition: 0.4s ease-in-out;
+                opacity: 0;
+            }
+
+            .back.show {
+                opacity: 1;
+                max-height: 500px;
+            }
+        }
+
+        .footer-container {
+            color: #fff;
+        }
+
+        .footer-container a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .footer-container a img {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+
+<div class="section-light faq">
+    <div class="container center-text">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-md-12 faq-boxes-container" id="accordion">
+                        <div class="col-sm-12 metro-box metro-box-1 metro-faq-box-container flip-container header-box">
+                            <div href="#qwe" style="position: relative;">
+                                <div class="metro-box-inner front"
+                                     style="background-color: #03A9F4; background-size: 200px; background-image: url('https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/EA_logo_white.png');">
+                                    <div class="question-container">
+                                        <img class="mobile-show-icon"
+                                             src="https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/EA_logo_white.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 metro-box metro-box-1 metro-faq-box-container flip-container">
+                            <div class="flipper" href="#qwe">
+                                <div class="metro-box-inner front"
+                                     style="background-color: rgb(46,204,113); background-image: url('https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/question.png');">
+                                    <div class="question-container">
+                                        <img class="mobile-show-icon"
+                                             src="https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/question.png">
+                                        <p>
+                                            Lorem Ipsum is simply dummy text.
+                                        </p>
+                                        <i aria-hidden="true" class="fa fa-angle-down"></i>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-8 metro-box metro-box-2 metro-faq-box-container flip-container">
+                            <div class="flipper" href="#qwe">
+                                <div class="metro-box-inner front"
+                                     style="background-color: rgb(231,76,60); background-image: url('https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/bank.png');">
+                                    <div class="question-container">
+                                        <img class="mobile-show-icon"
+                                             src="https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/bank.png">
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        </p>
+                                        <i aria-hidden="true" class="fa fa-angle-down"></i>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4 metro-box metro-box-1 metro-box-xl metro-faq-box-container flip-container">
+                            <div class="flipper" href="#qwe">
+                                <div class="metro-box-inner front"
+                                     style="background-color: #b855ff; background-image: url('https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/transfer.png');">
+                                    <div class="question-container">
+                                        <img class="mobile-show-icon"
+                                             src="https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/transfer.png">
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        </p>
+                                        <i aria-hidden="true" class="fa fa-angle-down"></i>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4 metro-box metro-box-1 metro-faq-box-container flip-container">
+                            <div class="flipper" href="#qwe">
+                                <div class="metro-box-inner front"
+                                     style="background-color: #2cc2d5; background-image: url('https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/card_pay.png');">
+                                    <div class="question-container">
+                                        <img class="mobile-show-icon"
+                                             src="https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/card_pay.png">
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        </p>
+                                        <i aria-hidden="true" class="fa fa-angle-down"></i>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4 metro-box metro-box-1 metro-faq-box-container flip-container">
+                            <div class="flipper" href="#qwe">
+                                <div class="metro-box-inner front"
+                                     style="background-color: #804eee; background-image: url('https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/card.png');">
+                                    <div class="question-container">
+                                        <img class="mobile-show-icon"
+                                             src="https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/card.png">
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        </p>
+                                        <i aria-hidden="true" class="fa fa-angle-down"></i>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-8 metro-box metro-box-2 metro-faq-box-container flip-container">
+                            <div class="flipper" href="#qwe">
+                                <div class="metro-box-inner front"
+                                     style="background-color: #009688; background-image: url('https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/secure_transfer.png');">
+                                    <div class="question-container">
+                                        <img class="mobile-show-icon"
+                                             src="https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/secure_transfer.png">
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        </p>
+                                        <i aria-hidden="true" class="fa fa-angle-down"></i>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-8 metro-box metro-box-2 metro-faq-box-container flip-container">
+                            <div class="flipper" href="#qwe">
+                                <div class="metro-box-inner front"
+                                     style="background-color: #2cc2d5; background-image: url('https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/verified.png');">
+                                    <div class="question-container">
+                                        <img class="mobile-show-icon"
+                                             src="https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/verified.png">
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        </p>
+                                        <i aria-hidden="true" class="fa fa-angle-down"></i>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4 metro-box metro-box-1 metro-faq-box-container flip-container">
+                            <div class="flipper" href="#qwe">
+                                <div class="metro-box-inner front"
+                                     style="background-color: rgb(243,156,18); background-image: url('https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/question.png');">
+                                    <div class="question-container">
+                                        <img class="mobile-show-icon"
+                                             src="https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/question.png">
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        </p>
+                                        <i aria-hidden="true" class="fa fa-angle-down"></i>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4 metro-box metro-box-1 metro-faq-box-container flip-container">
+                            <div class="flipper" href="#qwe">
+                                <div class="metro-box-inner front"
+                                     style="background-color: rgb(149,165,166); background-image: url('https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/mobile_banking.png');">
+                                    <div class="question-container">
+                                        <img class="mobile-show-icon"
+                                             src="https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/mobile_banking.png">
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        </p>
+                                        <i aria-hidden="true" class="fa fa-angle-down"></i>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4 metro-box metro-box-1 metro-faq-box-container flip-container">
+                            <div class="flipper" href="#qwe">
+                                <div class="metro-box-inner front"
+                                     style="background-color: #009688; background-image: url('https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/documents.png');">
+                                    <div class="question-container">
+                                        <img class="mobile-show-icon"
+                                             src="https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/documents.png">
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        </p>
+                                        <i aria-hidden="true" class="fa fa-angle-down"></i>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4 metro-box metro-box-1 metro-box-xl metro-faq-box-container flip-container">
+                            <div class="flipper" href="#qwe">
+                                <div class="metro-box-inner front"
+                                     style="background-color: #b855ff; background-image: url('https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/fees.png');">
+                                    <div class="question-container">
+                                        <img class="mobile-show-icon"
+                                             src="https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/fees.png">
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        </p>
+                                        <i aria-hidden="true" class="fa fa-angle-down"></i>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-8 metro-box metro-box-2 bottom-space-fix metro-faq-box-container flip-container">
+                            <div class="flipper" href="#qwe">
+                                <div class="metro-box-inner front"
+                                     style="background-color: #745feb; background-image: url('https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/received.png');">
+                                    <div class="question-container">
+                                        <img class="mobile-show-icon"
+                                             src="https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/received.png">
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        </p>
+                                        <i aria-hidden="true" class="fa fa-angle-down"></i>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-container">
+    <div class="conainer text-center">
+        <p>Powered by <a href="https://github.com/NadeeshaEranjan"><img
+                src="https://raw.githubusercontent.com/NadeeshaEranjan/responsive-metro-design/master/images/EA_logo_white_min.png">
+            Creations</a> 2K18.</p>
+    </div>
+</div>
+
+
+<script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+<script crossorigin="anonymous" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+<script type="text/javascript">
+    function materialBoxResize() {
+        // if ($(window).width() >= 751) {}
+        if ($(window).width() >= 767) {
+            $('.metro-box-xl').css({
+                'height': (($('.metro-box-1').height()) * 2) + 10
+            });
+
+            $('.metro-box-xl .metro-box-inner').css({
+                'height': (($('.metro-box-1').height()) * 2) + 10
+            });
+
+            $('.metro-box .back').css({
+                'height': (($('.metro-box-1').height()) * 2) + 10
+            });
+
+            $('.metro-box .back').css({
+                'height': ($('.metro-box-1').height())
+            });
+
+            $('.metro-box-xl .back').css({
+                'height': (($('.metro-box-1').height()) * 2) + 10
+            });
+
+            $('.metro-box.bottom-space-fix').css({
+                'position': 'absolute',
+                'bottom': '0',
+                'width': (($('.metro-box-2').width()) + 10)
+            });
+
+            $('.my-cards ul').css({
+                'height': ($('.c-card-input').height()),
+                'max-height': '181px',
+                'overflow-y': 'scroll',
+            });
+
+            $(".flipper .back").removeClass("collapse");
+
+            // $( ".flip-container .flipper" ).removeAttr('data-toggle, data-parent, data-target')
+        } else {
+            $('.metro-box-xl').css({
+                'height': 'auto'
+            });
+
+            $('.metro-box-xl .metro-box-inner').css({
+                'height': 'auto'
+            });
+
+            $('.metro-box.bottom-space-fix').css({
+                'position': 'unset',
+                'bottom': 'auto',
+                'width': 'auto'
+            });
+
+            $('.metro-box').css({
+                'width': '100%',
+                'max-width': 'unset'
+            });
+
+            $(".flipper .front .question-container").css({
+                'width': $('.metro-box-1').width(),
+            });
+
+            $(".header-box .question-container").css({
+                'width': $('.metro-box-1').width(),
+                'height': $('.metro-box-1').height(),
+            });
+
+            // $( ".flipper .back" ).addClass( "collapse" );
+
+            var acc = document.getElementsByClassName("front");
+            var panel = document.getElementsByClassName('back');
+
+            for (var i = 0; i < acc.length; i++) {
+                acc[i].onclick = function () {
+                    var setClasses = !this.classList.contains('active');
+                    setClass(acc, 'active', 'remove');
+                    setClass(panel, 'show', 'remove');
+
+                    if (setClasses) {
+                        this.classList.toggle("active");
+                        this.nextElementSibling.classList.toggle("show");
+                    }
+                }
+            }
+
+            function setClass(els, className, fnName) {
+                for (var i = 0; i < els.length; i++) {
+                    els[i].classList[fnName](className);
+                }
+            }
+        }
+    }
+
+    materialBoxResize();
+
+    $(window).load(function () {
+        materialBoxResize();
+    });
+
+    $(window).resize(function () {
+        materialBoxResize();
+        if ($(window).width() > 766 && $(window).width() < 800) {
+            location.reload();
+        } else {
+        }
+    });
+</script>
+</html>

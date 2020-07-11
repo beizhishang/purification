@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div {
+            width: 990px;
+            height: 800px;
+            background-color: darkgray;
+            overflow: hidden;
+        }
+
+        .class1 {
+            width: 100px;
+            height: 40px;
+            background-color: #76ecea;
+        }
+
+    </style>
+</head>
+<body>
+<input onclick="changeText()" type="button" value="test">
+<div class="class1" onclick="changeText()"></div>
+<div id="divid">
+    <iframe height='800px' id="myframe" src="../files/注意事项.html" width='1000px'></iframe>
+</div>
+
+</body>
+<script>
+    function changeText() {
+        var a = document.getElementById("myframe");
+        a.src = "CET-4(dict).html";
+        // a.innerHTML = "<iframe src='../done/注意事项.html' width='1000px' height='800px'>"
+    }
+</script>
+
+</html>

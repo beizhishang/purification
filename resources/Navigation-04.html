@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+</head>
+<meta charset="UTF-8">
+<style>
+    * {
+        box-sizing: border-box;
+        /*border:solid 1px red;*/
+    }
+
+    body {
+
+        background: #ffffff;
+        margin: 0;
+        /*背景填滿無邊界*/
+        overflow: hidden;
+        /*讓物件跑出背景時不會出現捲軸*/
+        /*cursor:crosshair;*/
+
+    }
+
+    /*------------定位------------*/
+    .lefter {
+        position: absolute;
+        background: #ade3e3;
+        width: 70%;
+        height: 100%;
+        left: 0;
+        overflow: hidden;
+    }
+
+    .topper {
+        display: flex;
+        position: absolute;
+        width: 30%;
+        height: 50%;
+        right: 0;
+        top: 0;
+        background: #E2F6F6;
+        justify-content: center;
+    }
+
+    .bottomer {
+        display: flex;
+        position: absolute;
+        width: 30%;
+        height: 50%;
+        right: 0;
+        bottom: 0;
+        background: #348E8D;
+        justify-content: center;
+    }
+
+    .ball {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        left: 30%;
+        top: 15%;
+        border-radius: 50%;
+        border: solid 1px #ffffff;
+        overflow: hidden;
+    }
+
+    .ball:after {
+        content: "";
+        position: absolute;
+        background: #ffffff;
+        opacity: 0.2;
+        border-radius: 50%;
+        width: 400px;
+        height: 400px;
+        left: 0;
+        top: 0;
+    }
+
+    /*------------地面------------*/
+
+    /*地層*/
+    .ground {
+        position: absolute;
+        background: #E2F6F6;
+        width: 400px;
+        height: 120px;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        border-radius: 50% 50% 50% 50%/50% 50% 100% 100%;
+    }
+
+    .ground:before {
+        content: "";
+        position: absolute;
+        background: #E2F6F6;
+        width: 140px;
+        height: 40px;
+        bottom: 90px;
+        border-radius: 50% 50% 0 0/100% 100% 0 0;
+        transform: rotate(-5deg);
+        box-shadow: 50px 10px 0px #E2F6F6;
+    }
+
+    .ground:after {
+        content: "";
+        position: absolute;
+        background: #E2F6F6;
+        width: 150px;
+        height: 40px;
+        bottom: 90px;
+        right: 0;
+        border-radius: 50% 50% 0 0/100% 100% 0 0;
+        transform: rotate(5deg);
+        box-shadow: -65px 10px 0px #E2F6F6;
+    }
+
+    /*------------房屋------------*/
+
+    /*定位房子*/
+    /*.house {
+      position: absolute;
+      bottom: 220px;
+      left:18%;
+    }*/
+
+    /*牆壁的方形部分*/
+    /*.wall {
+      position: absolute;
+      background: #e2f4f4;
+      width: 80px;
+      height: 40px;
+    }*/
+
+    /*牆壁的三角部分*/
+    /*.wall:before {
+      content: "";
+      position: absolute;
+      background: transparent;
+      width: 0;
+      height: 0;
+      bottom: 40px;
+      border-bottom: 80px solid #e2f4f4;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+    }*/
+
+    /*屋頂設定*/
+    /*.roof {
+      position: absolute;
+      background: #ffffff;
+      width: 100px;
+      height: 10px;
+      border-radius: 40px;
+    }*/
+
+    /*右邊屋頂*/
+    /*.roof.right {
+      left: 14px;
+      bottom: 30px;
+      transform: rotate(58deg);
+    }*/
+
+    /*左邊屋頂*/
+    /*.roof.left {
+      left: -34px;
+      bottom: 30px;
+      transform: rotate(-58deg);
+    }*/
+
+    /*房子的門*/
+    /*.door {
+      position: absolute;
+      background: #9acccb;
+      width: 20px;
+      height: 30px;
+      bottom: -40px;
+      left: 16px;
+    }*/
+
+    /*直柵欄*/
+    /*.fence {
+      position: absolute;
+      background: #ffffff;
+      width: 3px;
+      height: 30px;
+      bottom: -40px;
+      left: 2px;
+      border-radius: 3px;
+      box-shadow: -10px 0px 0px #ffffff, -20px 0px 0px #ffffff,
+        -30px 0px 0px #ffffff, -40px 0px 0px #ffffff, -50px 0px 0px #ffffff,
+        -60px 0px 0px #ffffff, -70px 0px 0px #ffffff;
+
+
+    }*/
+
+    /*橫柵欄*/
+    /*.fence:before {
+      content: "";
+      position: absolute;
+      background: #ffffff;
+      width: 72px;
+      height: 3px;
+      bottom: 22px;
+      right: 0;
+      box-shadow: 0px 14px 0px #ffffff;
+
+    }*/
+
+    /*------------植物------------*/
+
+    /*小樹樹幹*/
+    .tree_back {
+        position: absolute;
+        background: #348e8d;
+        width: 10px;
+        height: 15px;
+        bottom: 130px;
+        right: 20%;
+    }
+
+    /*小樹*/
+    .tree_back:before {
+        content: "";
+        position: absolute;
+        background: #e2f4f4;
+        width: 30px;
+        height: 60px;
+        border-radius: 50%;
+        bottom: 15px;
+        right: -10px;
+    }
+
+    /*大樹樹幹*/
+    .tree {
+        position: absolute;
+        background: #348e8d;
+        width: 10px;
+        height: 40px;
+        bottom: 130px;
+        right: 16%;
+    }
+
+    /*大樹*/
+    .tree:before {
+        content: "";
+        position: absolute;
+        background: #ffffff;
+        width: 40px;
+        height: 80px;
+        border-radius: 50%;
+        bottom: 25px;
+        left: -15px;
+    }
+
+    /*------------郵筒------------*/
+
+    /*郵筒a*/
+    .postbox_a {
+        position: absolute;
+        background: #73fffd;
+        width: 20px;
+        height: 25px;
+        bottom: 138px;
+        left: 15%;
+        animation-name: upppp;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        /*無限重複播放動畫*/
+        animation-timing-function: ease-in-out;
+        /*緩入緩出效果*/
+        animation-direction: alternate;
+        /*反向播放動畫*/
+    }
+
+    /*郵筒a的桿子*/
+    .postbox_a:after {
+        content: "";
+        position: absolute;
+        background: #76ecea;
+        width: 5px;
+        height: 20px;
+        bottom: -20px;
+        left: 8px;
+    }
+
+    /*所有的郵筒洞洞*/
+    .hole {
+        position: absolute;
+        background: #ffffff;
+        width: 6px;
+        height: 2px;
+        top: 5px;
+        left: 2px;
+        box-shadow: 10px 0px 0px rgba(100%, 100%, 100%);
+    }
+
+    /*郵筒b*/
+    .postbox_b {
+        position: absolute;
+        background: #2cb7b5;
+        width: 20px;
+        height: 25px;
+        bottom: 138px;
+        left: 22%;
+        animation-name: upppp;
+        animation-duration: 1s;
+        animation-delay: 1s;
+        /*晚一秒播放動畫*/
+        animation-iteration-count: infinite;
+        /*無限重複播放動畫*/
+        animation-timing-function: ease-in-out;
+        /*緩入緩出效果*/
+        animation-direction: alternate;
+        /*反向播放動畫*/
+    }
+
+    /*郵筒b的桿子*/
+    .postbox_b:after {
+        content: "";
+        position: absolute;
+        background: #348e8d;
+        width: 5px;
+        height: 20px;
+        bottom: -20px;
+        left: 8px;
+    }
+
+    /*郵筒上升動畫*/
+    @keyframes upppp {
+        100% {
+            transform: translatey(-8px);
+        }
+    }
+
+    /*------------風車------------*/
+
+    /*定位風車*/
+    .windmill {
+        position: absolute;
+        left: 38%;
+        bottom: 120px;
+    }
+
+    /*風車塔*/
+    .tower {
+        position: absolute;
+        background: transparent;
+        width: 100px;
+        height: 0;
+        border-top: 0px solid transparent;
+        border-bottom: 90px solid #e2f4f4;
+        border-right: 20px solid transparent;
+        border-left: 20px solid transparent;
+        bottom: 0;
+    }
+
+    /*風車中間*/
+    .t1 {
+        position: absolute;
+        background: #2cb7b5;
+        width: 90px;
+        height: 10px;
+        bottom: 40px;
+        left: 5px;
+    }
+
+    /*塔門*/
+    .t1:before {
+        content: "";
+        position: absolute;
+        background: #2cb7b5;
+        width: 20px;
+        height: 20px;
+        bottom: -40px;
+        right: 35px;
+        box-shadow: 0px -54px 0px #2cb7b5;
+        /*二樓的窗*/
+    }
+
+    /*風車屋頂*/
+    .t2 {
+        position: absolute;
+        background: transparent;
+        width: 0;
+        height: 0;
+        border-bottom: 40px solid #2cb7b5;
+        border-right: 30px solid transparent;
+        border-left: 30px solid transparent;
+        bottom: 90px;
+        left: 20px;
+    }
+
+    /*風車屋簷*/
+    .t2:after {
+        content: "";
+        position: absolute;
+        background: #2cb7b5;
+        width: 70px;
+        height: 10px;
+        border-radius: 10px;
+        bottom: -50px;
+        left: -35px;
+    }
+
+    /*扇葉範圍與動畫*/
+    .blade {
+        position: absolute;
+        width: 100px;
+        height: 200px;
+        left: 0;
+        bottom: 0;
+        animation-name: spin;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        /*無限重複播放動畫*/
+        animation-timing-function: linear;
+        /*線性動畫*/
+    }
+
+    /*扇葉柄*/
+    .windblade {
+        position: absolute;
+        background: #ffffff;
+        width: 4px;
+        height: 76px;
+        bottom: 106px;
+        left: 46px;
+    }
+
+    /*扇葉*/
+    .windblade:before {
+        content: "";
+        position: absolute;
+        background: #e2f4f4;
+        opacity: 0.8;
+        width: 16px;
+        height: 60px;
+    }
+
+    /*複製一個旋轉90度*/
+    .windblade2 {
+        transform: rotate(90deg);
+        bottom: 65px;
+        left: 87px;
+    }
+
+    /*複製一個旋轉180度*/
+    .windblade3 {
+        transform: rotate(180deg);
+        bottom: 25px;
+    }
+
+    /*複製一個旋轉270度*/
+    .windblade4 {
+        transform: rotate(270deg);
+        bottom: 65px;
+        left: 5px;
+    }
+
+    /*旋轉中心點*/
+    .windblade4:after {
+        content: "";
+        position: absolute;
+        background: #ffffff;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        bottom: -8px;
+        right: -3px;
+    }
+
+    /*風車旋轉動畫*/
+    @keyframes spin {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /*------------水滴------------*/
+
+    /*水滴*/
+    .raindrop {
+        background: #E2F6F6;
+        border-radius: 100%;
+        box-shadow: 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6;
+        position: absolute;
+        top: 75%;
+        right: 50%;
+        margin-top: 0;
+        margin-left: -0.1em;
+        width: 0.2em;
+        height: 0.2em;
+        animation: drop 3s cubic-bezier(0, 0, 1, 0.5) infinite;
+    }
+
+    @keyframes drop {
+        3% {
+            box-shadow: 0.1em -0.1em 0 0.05em #E2F6F6, 0.1em -0.2em 0 0.05263158em #E2F6F6, 0.1em 0.3em 0 0.05555556em #E2F6F6, 0.1em 0.4em 0 0.08333333em #E2F6F6, 0.1em 0.5em 0 0.09090909em #E2F6F6, 0.1em 0.6em 0 0.1em #E2F6F6, 0.1em 0.7em 0 0.11111111em #E2F6F6, 0.1em 0.8em 0 0.125em #E2F6F6, 0.1em 0.9em 0 0.14285714em #E2F6F6, 0.1em 1em 0 0.16666667em #E2F6F6;
+        }
+        15% {
+            top: 98%;
+            box-shadow: 0.1em 0.1em 0 0.10526316em #ffffff, 0.1em 0.2em 0 0.11111111em #ffffff, 0.1em 0.3em 0 0.11764706em #ffffff, 0.1em 0.4em 0 0.125em #ffffff, 0.1em 0.5em 0 0.13333333em #ffffff, 0.1em 0.6em 0 0.14285714em #ffffff, 0.1em 0.7em 0 0.15384615em #ffffff, 0.1em 0.8em 0 0.16666667em #ffffff, 0.1em 0.9em 0 0.18181818em #ffffff, 0.1em 1em 0 0.2em #ffffff;
+        }
+        25% {
+            top: 98%;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: -0.1em 0.1em 0 0.06666667em rgba(255, 255, 255, 0.1), -2em -0.21em 0 0.1em rgba(255, 255, 255, 0.1), 2em -1.5em 0 0.04em rgba(255, 255, 255, 0.1), 2.5em -2em 0 0.2em rgba(255, 255, 255, 0.1), 8em -8em 0 0.01em rgba(255, 255, 255, 0.1), 2.5em -3em 0 0.04em rgba(255, 255, 255, 0.1), 3em -0.26em 0 0.03333333em rgba(255, 255, 255, 0.1), -5em -5em 0 0.03333333em rgba(255, 255, 255, 0.1), 5em -3.5em 0 0.1em rgba(255, 255, 255, 0.1), 0.1em -3em 0 0.2em rgba(255, 255, 255, 0.1);
+        }
+        35% {
+            top: 98%;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: -0.4em 0.4em 0 0.06666667em rgba(255, 255, 255, 0.1), -8em 0.4em 0 0.1em rgba(255, 255, 255, 0.1), 8em 0.4em 0 0.04em rgba(255, 255, 255, 0.1), 10em 0.4em 0 0.2em rgba(255, 255, 255, 0.1), 32em 0.4em 0 0.01em rgba(255, 255, 255, 0.1), 12em 0.4em 0 0.04em rgba(255, 255, 255, 0.1), 12em 0.4em 0 0.03333333em rgba(255, 255, 255, 0.1), -20em 0.4em 0 0.03333333em rgba(255, 255, 255, 0.1), 20em 0.4em 0 0.1em rgba(255, 255, 255, 0.1), 0.4em 0.4em 0 0.2em rgba(255, 255, 255, 0.1);
+        }
+        40% {
+            top: 98%;
+            background: rgba(0, 0, 0, 0);
+            box-shadow: -0.1em 0.1em 0 0.06666667em rgba(0, 0, 0, 0), -2em 0.1em 0 0.1em rgba(0, 0, 0, 0), 2em 0.1em 0 0.04em rgba(0, 0, 0, 0), 2.5em 0.1em 0 0.2em rgba(0, 0, 0, 0), 8em 0.1em 0 0.01em rgba(0, 0, 0, 0), 3em 0.1em 0 0.04em rgba(0, 0, 0, 0), 3em 0.1em 0 0.03333333em rgba(0, 0, 0, 0), -5em 0.1em 0 0.03333333em rgba(0, 0, 0, 0), 5em 0.1em 0 0.1em rgba(0, 0, 0, 0), 0.1em 0.1em 0 0.2em rgba(0, 0, 0, 0);
+        }
+        100% {
+            top: 98%;
+            background: rgba(0, 0, 0, 0);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+        }
+    }
+
+    /*------------標題------------*/
+
+    .title1 {
+        position: absolute;
+        bottom: 22%;
+        left: 10%;
+        font-size: 36px;
+        font-weight: 600;
+        font-family: 'Roboto Condensed', sans-serif;
+        color: #348E8D;
+    }
+
+    .title1:hover {
+        color: #666666;
+        transform: translatey(2px);
+        cursor: pointer;
+    }
+
+    .title1:hover ~ .cover {
+        /*opacity:0;*/
+        bottom: 50px;
+    }
+
+    .title:hover ~ .bar1 {
+
+    }
+
+    .cover {
+        position: absolute;
+        background: #ade3e3;
+        width: 400px;
+        height: 40px;
+        bottom: 13%;
+        left: 10%;
+        transition: bottom .5s ease-in-out;
+        opacity: 1;
+    }
+
+    .word {
+        position: absolute;
+        width: 400px;
+        height: 40px;
+        text-align: left;
+        bottom: 13%;
+        left: 10%;
+        color: #ffffff;
+        font-size: 20px;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+
+    .bar1 {
+        position: absolute;
+        background: #ffffff;
+        width: 160px;
+        height: 5px;
+        left: 10%;
+        bottom: 21%;
+        border-radius: 0 10px 10px 0;
+        transition: all .3s;
+        opacity: 1;
+    }
+
+    .title2 {
+        position: absolute;
+        bottom: 12%;
+        font-size: 36px;
+        font-weight: 600;
+        font-family: 'Roboto Condensed', sans-serif;
+        color: #348E8D;
+    }
+
+    .title3 {
+        position: absolute;
+        bottom: 12%;
+        font-size: 36px;
+        font-weight: 600;
+        font-family: 'Roboto Condensed', sans-serif;
+        color: #ffffff;
+    }
+
+
+</style>
+<body>
+<div class="lefter">
+    <div class="title1">Portfolio</div>
+    <div class="word">AI/PS/AE/Unity/CSS/</div>
+    <div class="cover"></div>
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="ball">
+        <div class="tree_back"></div>
+        <div class="tree"></div>
+        <div class="postbox_a">
+            <div class="hole"></div>
+        </div>
+        <div class="postbox_b">
+            <div class="hole"></div>
+        </div>
+        <div class="windmill">
+            <div class="tower"></div>
+            <div class="t1"></div>
+            <div class="t2"></div>
+            <div class="blade">
+                <div class="windblade"></div>
+                <div class="windblade windblade2"></div>
+                <div class="windblade windblade3"></div>
+                <div class="windblade windblade4"></div>
+            </div>
+        </div>
+        <div class="ground"></div>
+    </div>
+    <div class="raindrop"></div>
+</div>
+
+<div class="topper">
+    <div class="title2">about</div>
+</div>
+
+<div class="bottomer">
+    <div class="title3">contact</div>
+    <div class="house">
+        <div class="fence"></div>
+        <div class="wall"></div>
+        <div class="roof left"></div>
+        <div class="roof right"></div>
+        <div class="door"></div>
+    </div>
+</div>
+</body>
+
+</html>

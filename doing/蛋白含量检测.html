@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蛋白含量检测</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-image: linear-gradient(135deg, #69FF97 10%, #00E4FF 100%);
+        }
+
+        #container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 650px;
+            height: 600px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px;
+            padding: 0 55px;
+        }
+
+        #item {
+            width: 200px;
+            text-align: center;
+            padding: 30px 0 5px 0;
+            font-size: 25px;
+            margin: 0 auto;
+            font-weight: 700;
+        }
+
+        #selectItem {
+            width: 100px;
+            font-size: 16px;
+            text-align: center;
+            border: none;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        input {
+            width: 100px;
+            height: 30px;
+            border: none;
+            font-size: 16px;
+            padding-left: 6px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px gray;
+            color: #1227c5;
+        }
+
+        td {
+            /*border: gray 1px solid;*/
+            padding: 8px 5px;
+            text-align: center;
+        }
+
+        td：hover {
+            color: red;
+        }
+
+        .thead > td {
+            padding: 10px 0;
+            text-align: left;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .showarea {
+            width: 106px;
+            height: 30px;
+            background-color: #ffdaf0;
+            line-height: 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px gray;
+        }
+
+        .tfoot > td {
+            margin: 0 auto;
+        }
+
+        input[type="button"] {
+            width: 70px;
+            height: 30px;
+            padding: 5px;
+            margin-left: 30px;
+            margin-right: 30px;
+            font-size: 12px;
+            background-image: linear-gradient(to left, #ff696e, #ffa3bd, #ff696e);
+            background-size: 200%;
+            transition: 0.5s;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 0 5px gray;
+        }
+
+        input[type="button"]:hover {
+            background-position: right;
+        }
+
+        .edit {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .edit > div {
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="item"></div>
+    <span><strong>选择项目</strong></span>
+    <select id="selectItem" onchange="selectItem()" onload="selectItem()">
+        <option value="IBI301">IBI301</option>
+        <option value="IBI303">IBI303</option>
+        <option value="IBI305">IBI305</option>
+        <option value="IBI306">IBI306</option>
+        <option value="IBI308">IBI308</option>
+    </select><br/>
+
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tr class="thead">
+            <td colspan="4">系统适应性检测</td>
+            <td></td>
+            <td style="text-align:center">回收率</td>
+            <td></td>
+            <td style="text-align: center">是否合格</td>
+        </tr>
+
+        <tr>
+            <td title="参比品检测吸收值">A参</td>
+            <td><input id="aCan" title="参比品检测吸收值" step="0.001" type="number"/></td>
+            <td title="参比品稀释倍数">D参</td>
+            <td><input class="autoFill" id="dCan" title="参比品稀释倍数" type="number"/></td>
+            <td></td>
+            <td rowspan="2">
+                <div class="showarea" id="A"></div>
+            </td>
+            <td></td>
+            <td rowspan="2">
+                <div class="showarea" id="B"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td title="消光系数">E</td>
+            <td><input class="autoFill" id="xiaoGuangXiShu" step="0.001" title="消光系数" type="number"/></td>
+            <td title="参比品蛋白含量">C参</td>
+            <td><input class="autoFill" id="cCan" step="0.1" title="参比品蛋白含量" type="number"/></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td colspan="9">
+                <div class="edit">
+                    <div><input onclick="btn1()" type="button" value="计算"/></div>
+                    <div><input onclick="btn2()" type="button" value="重置"/></div>
+                </div>
+            </td>
+        </tr>
+
+        <tr class="thead">
+            <td colspan="9">蛋白含量检测</td>
+        </tr>
+
+        <tr>
+            <td title="操作人检测值a1">a1</td>
+            <td><input id="a1" step="0.001" title="操作人检测值a1" type="number"/></td>
+            <td title="操作人检测值a2">a2</td>
+            <td><input id="a2" step="0.001" title="操作人检测值a2" type="number"/></td>
+            <td title="操作人检测平均值">A</td>
+            <td>
+                <div class="showarea" id="C" title="操作人检测平均值"></div>
+            </td>
+            <td title="操作人复核人检测平均值差值">A+B</td>
+            <td>
+                <div class="showarea" id="D" title="操作人复核人检测平均值差值"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td title="复核人检测值b1">b1</td>
+            <td><input id="b1" step="0.001" title="复核人检测值b1" type="number"/></td>
+            <td title="复核人检测值b2">b2</td>
+            <td><input id="b2" step="0.001" title="复核人检测值b2" type="number"/></td>
+            <td title="复核人检测平均值">B</td>
+            <td>
+                <div class="showarea" id="E" title="复核人检测平均值"></div>
+            </td>
+            <td title="操作人复核人检测平均值之和">A-B</td>
+            <td>
+                <div class="showarea" id="F" title="操作人复核人检测平均值之和"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">相对平均偏差D</td>
+            <td colspan="2">|A-B|/(A+B)*100%</td>
+            <td>=</td>
+            <td>
+                <div class="showarea" id="G" title="相对平均偏差"></div>
+            </td>
+            <td>判断</td>
+            <td>
+                <div class="showarea" id="H" title="判断相对平均偏差是否合格"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">蛋白含量g/L</td>
+            <td colspan="2">(A+B)÷2÷E*d</td>
+            <td>&nbsp;&nbsp;d&nbsp;&nbsp;</td>
+            <td><input id="xiShiBeiShu" title="样品稀释倍数" type="number"/></td>
+            <td>=</td>
+            <td>
+                <div class="showarea" id="I" title="蛋白含量计算结果"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="9">
+                <div class="edit">
+                    <div><input onclick="btn3()" type="button" value="计算"/></div>
+                    <div><input onclick="btn4()" type="button" value="重置"/></div>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+</div>
+</body>
+<script type="text/javascript">
+
+    // 申明参数
+    var a = document.getElementById("aCan");
+    var b = document.getElementById("dCan");
+    var c = document.getElementById("xiaoGuangXiShu");
+    var d = document.getElementById("cCan");
+    var e = document.getElementById("a1");
+    var f = document.getElementById("a2");
+    var g = document.getElementById("b1");
+    var h = document.getElementById("b2");
+    var i = document.getElementById("xiShiBeiShu");
+    var A = document.getElementById("A");
+    var B = document.getElementById("B");
+    var C = document.getElementById("C");
+    var D = document.getElementById("D");
+    var E = document.getElementById("E");
+    var F = document.getElementById("F");
+    var G = document.getElementById("G");
+    var H = document.getElementById("H");
+    var I = document.getElementById("I");
+
+    // 选择当前的项目
+    (function defaultSelect() {
+        document.getElementById("selectItem").value = "IBI308";
+    })();
+
+    // 加载当前项目的样式
+    window.onload = selectItem();
+
+    // 每个项目对应不同样式
+    function selectItem() {
+        // 清空输入的内容
+        a.value = "";
+        e.value = "";
+        f.value = "";
+        g.value = "";
+        h.value = "";
+        i.value = "";
+        A.innerHTML = "";
+        B.innerHTML = "";
+        B.style.backgroundColor = "#ffdaf0";
+        C.innerHTML = "";
+        D.innerHTML = "";
+        E.innerHTML = "";
+        F.innerHTML = "";
+        G.innerHTML = "";
+        H.innerHTML = "";
+        H.style.backgroundColor = "#ffdaf0";
+        I.innerHTML = "";
+
+        var m = document.getElementById("item");
+        var n = document.getElementById("container");
+        m.innerHTML = document.getElementById("selectItem").value;
+        if (
+            document.getElementById("selectItem").value === "IBI301"
+        ) {
+            n.style.backgroundImage = "linear-gradient( 109.6deg,  rgba(104,183,249,1) 31.3%, rgba(176,248,200,1) 100.2% )";
+            document.getElementsByClassName("autoFill")[0].value = 50;
+            document.getElementsByClassName("autoFill")[1].value = 1.643;
+            document.getElementsByClassName("autoFill")[2].value = 17.5;
+        } else if (
+            document.getElementById("selectItem").value === "IBI303"
+        ) {
+            n.style.backgroundImage = "radial-gradient( circle farthest-corner at 50.1% 37.3%,  rgba(92,213,249,1) 0%, rgba(123,243,248,1) 90.1% )";
+            document.getElementsByClassName("autoFill")[0].value = 150;
+            document.getElementsByClassName("autoFill")[1].value = 1.39;
+            document.getElementsByClassName("autoFill")[2].value = 59.0;
+        } else if (
+            document.getElementById("selectItem").value === "IBI305"
+        ) {
+            n.style.backgroundImage = "radial-gradient( circle 879px at 10.4% 22.3%,  rgba(255,235,238,1) 0%, rgba(186,190,245,1) 93.6% )";
+            document.getElementsByClassName("autoFill")[0].value = 90;
+            document.getElementsByClassName("autoFill")[1].value = 1.70;
+            document.getElementsByClassName("autoFill")[2].value = 31.2;
+        } else if (
+            document.getElementById("selectItem").value === "IBI306"
+        ) {
+            n.style.backgroundImage = "radial-gradient( circle farthest-corner at 10% 20%,  rgba(43,199,188,1) 0%, rgba(219,249,203,1) 72.9% )";
+            document.getElementsByClassName("autoFill")[0].value = 100;
+            document.getElementsByClassName("autoFill")[1].value = 1.535;
+            document.getElementsByClassName("autoFill")[2].value = 30;
+        } else if (
+            document.getElementById("selectItem").value === "IBI308"
+        ) {
+            n.style.backgroundImage = "linear-gradient( 135deg, #90F7EC 10%, #32CCBC 100%)";
+            document.getElementsByClassName("autoFill")[0].value = 40;
+            document.getElementsByClassName("autoFill")[1].value = 1.374;
+            document.getElementsByClassName("autoFill")[2].value = 14.8;
+        }
+    }
+
+
+    function btn1() {
+        var result = (a.value * b.value) / (c.value * d.value) * 100;
+        A.innerHTML = result.toFixed(1) + "%";// 对计算结果进行修约，四舍五入保留一位小数
+        if (
+            result.toFixed(1) < 95 || result.toFixed(1) > 105
+        ) {
+            B.innerHTML = "不合格";
+            B.style.backgroundColor = "red";
+            B.style.color = "white";
+        } else {
+            B.innerHTML = "合格";
+            B.style.backgroundColor = "#6BFF94";
+            B.style.color = "darkgreen";
+        }
+    }
+
+    function btn2() {
+        a.value = "";
+        A.innerHTML = "";
+        B.innerHTML = "";
+        B.style.backgroundColor = "#ffdaf0";
+    }
+
+    function btn3() {
+        var x = e.value / 2 + f.value / 2;
+        var y = g.value / 2 + h.value / 2;
+        C.innerHTML = x;
+        E.innerHTML = y;
+
+        var dataD = (x + y).toFixed(4);
+        var dataF = (x - y).toFixed(4);
+
+        //如果第四位小数为0，则保留三位小数
+        if (parseInt((dataD * 10000) % 10) === 0) {
+            D.innerHTML = (x + y).toFixed(3);
+            if (parseInt((dataD * 1000) % 10) === 0) {
+                D.innerHTML = (x + y).toFixed(2);
+            } else {
+                D.innerHTML = (x + y).toFixed(3);
+            }
+        } else {
+            D.innerHTML = (x + y).toFixed(4);
+        }
+
+        if ((dataF * 10000) % 10 === 0) {
+            F.innerHTML = (x - y).toFixed(3);
+            if ((dataF * 1000) % 10 === 0) {
+                F.innerHTML = (x - y).toFixed(2);
+            } else {
+                F.innerHTML = (x - y).toFixed(3);
+            }
+        } else {
+            F.innerHTML = (x - y).toFixed(4);
+        }
+
+        var z = Math.abs(x - y);
+        var j = x + y;
+        var result = Math.ceil(z / j * 1000) / 10;// 向上取整，因为只能取整数，所以先把小数位数转化为整数，处理后再回到想要的位数
+        G.innerHTML = result.toFixed(1) + "%";// 保留一位小数
+
+        if (result.toFixed(1) > 10) {
+            H.innerHTML = "不合格";
+            H.style.backgroundColor = "red";
+            H.style.color = "white";
+
+        } else if (result.toFixed(1) >= 0) {
+            H.innerHTML = "合格";
+            H.style.backgroundColor = "#6BFF94";
+            H.style.color = "darkgreen";
+        }
+
+        var final = dataD / 2 / c.value * i.value;
+        I.innerHTML = final.toFixed(1) + " g/L";
+    }
+
+    function btn4() {
+        e.value = "";
+        f.value = "";
+        g.value = "";
+        h.value = "";
+        i.value = "";
+        C.innerHTML = "";
+        D.innerHTML = "";
+        E.innerHTML = "";
+        F.innerHTML = "";
+        G.innerHTML = "";
+        H.innerHTML = "";
+        I.innerHTML = "";
+        H.style.backgroundColor = "#ffdaf0";
+    }
+
+
+</script>
+</html>

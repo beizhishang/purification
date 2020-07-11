@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>#</title>
+    <style type="text/css">
+        body {
+            overflow: hidden;
+            margin: 0
+        }
+
+        @keyframes rots {
+            0% {
+                transform: rotate(0deg)
+            }
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <svg height=100vh id=svg viewbox=-100,-100,200,200 width=100vw></svg>
+</div>
+</body>
+<script>
+    for (var i = 0; i < 500; i++) {
+        const a = i * 137.5 / 180 * Math.PI, r = Math.sqrt(i) * 4;
+        svg.innerHTML += `<g transform="scale(${r / 80})translate(${r * Math.cos(a)},${r * Math.sin(a)})">
+   <rect x=-2 y=-2 style="animation: ${Math.random() * 5 + 5}s rots linear infinite" height=4 width=4 fill=hsl(${r * 3},75%,75%)></g>`
+    }
+</script>
+</html>

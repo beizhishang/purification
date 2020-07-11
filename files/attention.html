@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>#</title>
+    <style type="text/css">
+        body {
+            align-items: center;
+            background-color: #009999;
+            display: flex;
+            font-size: 20px;
+            color: white;
+            height: 100vh;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .typity {
+            /*border-bottom: 3px solid red;*/
+            padding-right: 2px;
+            position: relative;
+            transition: background-position .6s;
+            white-space: nowrap;
+
+    </style>
+</head>
+<body>
+<span class="typity"></span>
+</body>
+<script>
+    let typed = "";
+    const element = document.querySelector(".typity");
+
+    function startType(pun, index) {
+        if (index < pun.length) {
+            typed += pun.charAt(index);
+            element.innerHTML = typed;
+            index++;
+            setTimeout(function () {
+                startType(pun, index);
+            }, 100);
+        } else {
+            setTimeout(function () {
+                element.classList.add("highlight");
+            }, 1000);
+
+            setTimeout(function () {
+                element.classList.remove("highlight");
+                typed = "";
+                element.innerHTML = typed;
+                startType(getRandomPun(), 0);
+            }, 2000);
+        }
+    }
+
+    function getRandomPun() {
+        const puns = [
+            "只走CIP不需要浸泡的是简单清洁",
+            "充分清洁需要用0.5mol/L NoOH溶液浸泡6-24h",
+            "蠕动泵安装管道时需在断电的情况下操作",
+            "月底更换消毒剂时需先去残留",
+            "配液记录上以g做单位的物料需用电子天平称量，以kg做单位的物料用台秤称量",
+            "地漏在当天使用后需用消毒剂灌地漏，未使用的地漏隔7天也需要灌地漏",
+            "注射用水排放点需留一个卡箍在管道上方，便于取样人员取样，同时为了热水经过管道时给卡箍消毒",
+            "D级区周清洁及月清洁需用杀孢子剂清理回风口",
+            "C级区周清洁不需要杀孢子剂清理回风口，月清洁需要用杀孢子剂清理回风口",
+            "储液车上若有残留标签，需及时清理",
+            "玻璃上有消毒剂需及时清理",
+            "发现锈迹及时清理干净",
+            "纯化一退回的器具传入器具清洗间需开启紫外消毒",
+            "房间清洁状态牌更换时须将更换前的状态牌擦干净",
+            "外来工具传入D级区需用杀孢子剂清理",
+            "外来人员进入生产区域前需在CNC走廊登记人员信息",
+            "外来人员进入生产区域需生产人员带领",
+            "消毒剂残留严重时需用注射用水去残留",
+            "月清洁的清洁步骤是先拖顶，再拖墙，最后拖地",
+            "地漏使用时不能将内层钟罩拿开",
+            "取样前需用75%乙醇消毒双手，自然晾干后再取样",
+            "取TOC时一定要注意等到75%乙醇晾干后取样或更换手套后取样",
+            "75%乙醇开瓶后有效期为10天",
+            "异丙醇开瓶后有效期为30天",
+            "标准缓冲液及3mol/L KCl开瓶有效期为3个月",
+            "标准缓冲液及3mol/L KCl原有日期格式为“日/月/年”",
+        ];
+        const index = Math.floor(Math.random() * puns.length);
+
+        return puns[index];
+    }
+
+    startType(getRandomPun(), 0);
+
+</script>
+</html>

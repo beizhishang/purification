@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <style type="text/css">
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        body {
+            background-color: #F2EFE9;
+            overflow: visible;
+            padding-top: 40px;
+            font-family: helvetica, arial, sans-serif;
+            font-size: 1em;
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #wrapper {
+            width: 680px;
+            margin: 0 auto;
+            height: 1000px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1.4em;
+            color: #4e6a6a;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+            font-family: helvetica, arial, sans-serif;
+        }
+
+        h1 span {
+            font-weight: lighter;
+        }
+
+        .card-drop {
+            max-width: 300px;
+            position: relative;
+            margin: 0 auto;
+            -webkit-perspective: 800px;
+            -moz-perspective: 800px;
+            -ms-perspective: 800px;
+            -o-perspective: 800px;
+            perspective: 800px;
+        }
+
+        .card-drop a {
+            display: block;
+            width: 100%;
+            background-color: salmon;
+            padding: 20px 0 20px 20px;
+            height: 60px;
+            text-decoration: none;
+            color: #1e2929;
+            background-color: #5f8181;
+            border-bottom: 1px solid #4e6a6a;
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 1s ease-out;
+        }
+
+        .card-drop a i {
+            display: inline-block;
+            width: 20px;
+        }
+
+        .card-drop > a.toggle {
+            position: relative;
+            z-index: 300;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            -o-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transform-origin: 50% 0%;
+            -moz-transform-origin: 50% 0%;
+            -ms-transform-origin: 50% 0%;
+            -o-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+            -webkit-transition: 0.1s linear;
+            -moz-transition: 0.1s linear;
+            -o-transition: 0.1s linear;
+            transition: 1s linear;
+            background-color: #729797;
+        }
+
+        .card-drop > a.toggle:active {
+            -webkit-transform: rotateX(60deg);
+            -moz-transform: rotateX(60deg);
+            -ms-transform: rotateX(60deg);
+            -o-transform: rotateX(60deg);
+            transform: rotateX(60deg);
+        }
+
+        .card-drop > a.toggle.active:before {
+            content: "\f0d8";
+        }
+
+        .card-drop > a.toggle:before {
+            border-left: 1px solid #4E6A6A;
+            color: #344646;
+            content: "";
+            display: block;
+            font-family: 'FontAwesome';
+            font-size: 1.3em;
+            height: 59px;
+            line-height: 60px;
+            position: absolute;
+            right: 0;
+            text-align: center;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+            top: 0;
+            width: 60px;
+        }
+
+        .card-drop ul {
+            position: absolute;
+            height: 100%;
+            top: 0;
+            display: block;
+            width: 100%;
+        }
+
+        .card-drop ul li {
+            margin: 0 auto;
+            -webkit-transition: all, 0.3s ease-out;
+            -moz-transition: all, 0.3s ease-out;
+            -o-transition: all, 0.3s ease-out;
+            transition: all, 0.3s ease-out;
+            position: absolute;
+            top: 0;
+            z-index: 0;
+            width: 100%;
+        }
+
+        .card-drop ul li a:hover {
+            background-color: #6a9090;
+            color: #dce5e5;
+        }
+
+        .card-drop ul li.active a {
+            color: #95b1b1;
+            background-color: #547272;
+            cursor: default;
+        }
+
+        .card-drop ul li.closed a:hover {
+            cursor: default;
+            background-color: #5f8181;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <h1><i class='icon-sort-by-attributes'></i> CSS3 <span>Card Deck Drop Down</span></h1>
+    <div class="card-drop">
+        <a class='toggle' href="#">
+            <i class='icon-suitcase'></i>
+            <span class='label-active'>Everyting</span>
+        </a>
+        <ul>
+            <li class='active'>
+                <a data-label="Everyting" href="#"><i class='icon-suitcase'></i> Everyting</a>
+            </li>
+            <li>
+                <a data-label="Design" href="#"><i class='icon-magic'></i> Design</a>
+            </li>
+            <li>
+                <a data-label="UI-UX" href="#"><i class='icon-bolt'></i> UI-UX</a>
+            </li>
+            <li>
+                <a data-label="Print" href="#"><i class='icon-tint'></i> Print</a>
+            </li>
+            <li>
+                <a data-label="Photography" href="#"><i class='icon-camera-retro'></i> Phtography</a>
+            </li>
+            <li>
+                <a data-label="sridhar" href="#"><i class='icon-camera-retro'></i>sridhar</a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        (function ($) {
+            //Author: Brady Sammons
+            //URL: www.bradysammons.com
+            /* -------------------------------------------------------- */
+            /*	//set Global variables
+            /* -------------------------------------------------------- */
+            var cards = $(".card-drop"),
+                toggler = cards.find(".toggle"),
+                links = cards.find("ul>li>a"),
+                li = links.parent('li'),
+                count = links.length,
+                width = links.outerWidth();
+
+            console.info(count);
+
+            console.info(width);
+            console.info(toggler);
+            console.info(links);
+            console.info(li);
+            console.info(cards);
+
+            //set z-Index of drop Items
+            links.parent("li").each(function (i) {
+                $(this).css("z-index", count - i); //invert the index values
+            });
+
+            //set top margins & widths of li elements
+            function setClosed() {
+                li.each(function (index) {
+                    $(this).css("top", index * 2)
+
+                        .css("width", width - index * 20)
+                        .css("margin-left", (index * 20) / 2)
+                        .css("margin-left", (index * 20) / 2);
+                });
+
+                li.addClass('closed');
+                toggler.removeClass("active");
+            }
+
+            setClosed();
+
+            /* -------------------------------------------------------- */
+            /*	Toggler Click handler
+            /* -------------------------------------------------------- */
+            toggler.on("mousedown", function () {
+                var $this = $(this); //cache $(this)
+                //if the menu is active:
+                console.info(this);
+                if ($this.is(".active")) {
+                    setClosed();
+                } else {
+                    //if the menu is un-active:
+                    $this.addClass("active");
+                    li.removeClass('closed');
+                    //set top margins
+                    li.each(function (index) {
+                        $(this).css("top", 60 * (index + 1))
+                            .css("width", "70%")
+                            .css("margin-left", "40px");
+                    });
+                }
+            });
+
+            /* -------------------------------------------------------- */
+            /*	Links Click handler
+            /* -------------------------------------------------------- */
+            links.on("click", function (e) {
+                var $this = $(this),
+                    label = $this.data("label");
+                icon = $this.children("i").attr("class");
+
+                li.removeClass('active');
+                if ($this.parent("li").is("active")) {
+                    $this.parent('li').removeClass("active");
+                } else {
+                    $this.parent("li").addClass("active");
+                }
+                toggler.children("span").text(label);
+                toggler.children("i").removeClass().addClass(icon);
+                setClosed();
+                e.preventDefault;
+            });
+
+        })(jQuery);
+    });
+</script>
+</html>

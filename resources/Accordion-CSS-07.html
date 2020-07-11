@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            font: 2vmin sans-serif;
+            margin: 0;
+            background: #252525;
+            display: flex;
+            min-height: 100%;
+        }
+
+        .column-accordian {
+            min-height: 100%;
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: stretch;
+        }
+
+        .column-accordian > .column {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-transform: uppercase;
+            transition: .3s;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid white;
+        }
+
+        .column-accordian > .column:nth-child(1) {
+            background: rgba(191, 149, 64, 0.8);
+        }
+
+        .column-accordian > .column:nth-child(2) {
+            background: rgba(149, 191, 64, 0.8);
+        }
+
+        .column-accordian > .column:nth-child(3) {
+            background: rgba(64, 191, 64, 0.8);
+        }
+
+        .column-accordian > .column:nth-child(4) {
+            background: rgba(64, 191, 149, 0.8);
+        }
+
+        .column-accordian > .column:nth-child(5) {
+            background: rgba(64, 149, 191, 0.8);
+        }
+
+        .column-accordian > .column:nth-child(6) {
+            background: rgba(64, 64, 191, 0.8);
+        }
+
+        .column-accordian > .column:nth-child(7) {
+            background: rgba(149, 64, 191, 0.8);
+        }
+
+        .column-accordian > .column > div {
+            font-size: 3vmin;
+            transition: .6s;
+        }
+
+        .column-accordian > .column.flex {
+            flex: 10;
+        }
+
+        .column-accordian > .column.flex > div {
+            font-size: 18vmin;
+        }
+
+
+    </style>
+</head>
+<body>
+<section class="column-accordian">
+    <div aria-role="button" class="column">
+        <div>a</div>
+    </div>
+    <div aria-role="button" class="column">
+        <div>b</div>
+    </div>
+    <div aria-role="button" class="column">
+        <div>c</div>
+    </div>
+    <div aria-role="button" class="column flex">
+        <div>d</div>
+    </div>
+    <div aria-role="button" class="column">
+        <div>e</div>
+    </div>
+    <div aria-role="button" class="column">
+        <div>f</div>
+    </div>
+    <div aria-role="button" class="column">
+        <div>g</div>
+    </div>
+</section>
+
+</body>
+<script type="text/javascript">
+    (function () {
+        var $columnAccordian = document.querySelector('.column-accordian'),
+            items = [].slice.call($columnAccordian.querySelectorAll('.column')),
+            prev2, prev = $columnAccordian.querySelector('.flex');
+
+        items.forEach(
+            function (item) {
+                item.addEventListener('click', function () {
+                    if (prev !== item) {
+                        prev.classList.remove('flex');
+                        item.classList.add('flex');
+                        prev2 = prev;
+                        prev = item;
+                    } else {
+                        prev2.classList.add('flex');
+                        item.classList.remove('flex');
+                        prev = prev2 || prev;
+                        prev2 = item;
+                    }
+                });
+            });
+    })();
+</script>
+</html>

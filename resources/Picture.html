@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <style type="text/css">
+        /*Time for the CSS*/
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #ccc;
+        }
+
+        .slider {
+            width: 640px;
+            /*Same as width of the large image*/
+
+            position: relative;
+            /*Instead of height we will use padding*/
+
+            padding-top: 320px;
+            /*That helps bring the labels down*/
+
+            margin: 100px auto;
+            /*Lets add a shadow*/
+
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+        }
+
+        /*Last thing remaining is to add transitions*/
+
+        .slider > img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 0.5s;
+        }
+
+        .slider input[name='slide_switch'] {
+            display: none;
+        }
+
+        .slider label {
+            /*Lets add some spacing for the thumbnails*/
+
+            margin: 18px 0 0 18px;
+            border: 3px solid #999;
+            float: left;
+            cursor: pointer;
+            transition: all 0.5s;
+            /*Default style = low opacity*/
+
+            opacity: 0.6;
+        }
+
+        .slider label img {
+            display: block;
+        }
+
+        /*Time to add the click effects*/
+
+        .slider input[name='slide_switch']:checked + label {
+            border-color: #666;
+            opacity: 1;
+        }
+
+        /*Clicking any thumbnail now should change its opacity(style)*/
+        /*Time to work on the main images*/
+
+        .slider input[name='slide_switch'] ~ img {
+            opacity: 0;
+            transform: scale(1.1);
+        }
+
+        /*That hides all main images at a 110% size
+        On click the images will be displayed at normal size to complete the effect
+        */
+
+        .slider input[name='slide_switch']:checked + label + img {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /*Clicking on any thumbnail now should activate the image related to it*/
+        /*We are done :)*/
+        /---------------------------------------------------------/
+            /*Now the styles*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #ccc;
+            font-family: arial, verdana, tahoma;
+        }
+
+        /*Time to apply widths for accordian to work
+        Width of image = 640px
+        total images = 5
+        so width of hovered image = 640px
+        width of un-hovered image = 40px - you can set this to anything
+        so total container width = 640 + 40*4 = 800px;
+        default width = 800/5 = 160px;
+        */
+
+        .accordian {
+            width: 805px;
+            height: 320px;
+            overflow: hidden;
+
+            /*Time for some styling*/
+            margin: 100px auto;
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+            -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+            -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+        }
+
+        /*A small hack to prevent flickering on some browsers*/
+        .accordian ul {
+            width: 2000px;
+            /*This will give ample space to the last item to move
+            instead of falling down/flickering during hovers.*/
+        }
+
+        .accordian li {
+            position: relative;
+            display: block;
+            width: 160px;
+            float: left;
+
+            border-left: 1px solid #888;
+
+            box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+            -webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+
+            /*Transitions to give animation effect*/
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            /*If you hover on the images now you should be able to
+            see the basic accordian*/
+        }
+
+        /*Reduce with of un-hovered elements*/
+        .accordian ul:hover li {
+            width: 40px;
+        }
+
+        /*Lets apply hover effects now*/
+        /*The LI hover style should override the UL hover style*/
+        .accordian ul li:hover {
+            width: 640px;
+        }
+
+        .accordian li img {
+            display: block;
+        }
+
+        /*Image title styles*/
+        .image_title {
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 640px;
+
+        }
+
+        .image_title a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="slider">
+    <input id="id1" name="slide_switch" type="radio"/>
+    <label for="id1">
+        <img src="http://thecodeplayer.com/uploads/media/3yiC6Yq.jpg" width="100"/>
+
+    </label>
+    <img src="http://thecodeplayer.com/uploads/media/3yiC6Yq.jpg"/>
+
+    <!--Lets show the second image by default on page load-->
+    <input checked="checked" id="id2" name="slide_switch" type="radio"/>
+    <label for="id2">
+        <img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg" width="100"/>
+
+    </label>
+    <img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg"/>
+
+    <input id="id3" name="slide_switch" type="radio"/>
+    <label for="id3">
+        <img src="http://thecodeplayer.com/uploads/media/00kih8g.jpg" width="100"/>
+    </label>
+    <img src="http://thecodeplayer.com/uploads/media/00kih8g.jpg"/>
+
+    <input id="id4" name="slide_switch" type="radio"/>
+    <label for="id4">
+        <img src="http://thecodeplayer.com/uploads/media/2rT2vdx.jpg" width="100"/>
+    </label>
+    <img src="http://thecodeplayer.com/uploads/media/2rT2vdx.jpg"/>
+
+    <input id="id5" name="slide_switch" type="radio"/>
+    <label for="id5">
+        <img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg" width="100"/>
+    </label>
+    <img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg"/>
+</div>
+<div class="accordian">
+    <ul>
+        <li>
+            <div class="image_title">
+                <a href="#">KungFu Panda</a>
+            </div>
+            <a href="#">
+                <img src="http://thecodeplayer.com/uploads/media/3yiC6Yq.jpg"/>
+            </a>
+        </li>
+        <li>
+            <div class="image_title">
+                <a href="#">Toy Story 2</a>
+            </div>
+            <a href="#">
+                <img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg"/>
+            </a>
+        </li>
+        <li>
+            <div class="image_title">
+                <a href="#">Wall-E</a>
+            </div>
+            <a href="#">
+                <img src="http://thecodeplayer.com/uploads/media/00kih8g.jpg"/>
+            </a>
+        </li>
+        <li>
+            <div class="image_title">
+                <a href="#">Up</a>
+            </div>
+            <a href="#">
+                <img src="http://thecodeplayer.com/uploads/media/2rT2vdx.jpg"/>
+            </a>
+        </li>
+        <li>
+            <div class="image_title">
+                <a href="#">Cars 2</a>
+            </div>
+            <a href="#">
+                <img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg"/>
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+<script type="text/javascript">
+
+</script>
+</html>
