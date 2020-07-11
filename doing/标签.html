@@ -32,11 +32,6 @@
         }
 
         .tag {
-            /*position: absolute;*/
-            /*top: 0;*/
-            /*left: 0;*/
-            /*right: 0;*/
-            /*bottom: 0;*/
             margin-top: 20px;
             width: 600px;
             height: 400px;
@@ -130,12 +125,14 @@
             border-radius: 10px;
         }
 
-        .context {
-            /*float: none;*/
-            width: 150px;
-            height: 40px;
-            background-color: red;
+        .line{
+            width: 510px;
+            height: 30px;
+            padding: 8px 40px;
+            background-color: #267e70;
+            border: solid 1px #0c7cd5;
         }
+
 
     </style>
 </head>
@@ -144,7 +141,7 @@
     <div class="container">
         <!--批号选择或输入-->
         <div class="batch-number">批号:</div>
-        <input type="text" id="batch-number" list="select-batch">
+        <input type="text" id="batch-number" list="select-batch" title="选择批号">
         <datalist id="select-batch">
             <option>DS2003004</option>
             <option>DS2003005</option>
@@ -158,7 +155,7 @@
         </datalist>
 
         <!--天数选择-->
-        <input type="text" id="day-number" list="select-day">
+        <input type="text" id="day-number" list="select-day" title="选择天数">
         <div class="day-number">天数:</div>
         <datalist id="select-day">
             <option>D1</option>
@@ -172,14 +169,32 @@
         <!--标签样式-->
         <div class="tag">
             <div class="logo"></div>
-            <div class="title">溶液标签<span></span></div>
+            <div class="title">溶液标签</div>
             <div class="color"></div>
             <div class="context-box">
-                <div class="context">溶液名称：</div>
-                <div class="write"></div>
+                <div class="line">
+                    <div id=""></div>
+                    <div id=""></div>
+                </div>
+                <div class="line">
+
+                </div>
+                <div class="line">
+
+                </div>
+                <div class="line">
+
+                </div>
+                <div class="line">
+
+                </div>
+                <div class="line">
+
+                </div>
             </div>
         </div>
     </div>
 </div>
 </body>
 </html>
+
