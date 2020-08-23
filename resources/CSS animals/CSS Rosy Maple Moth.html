@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Rosy Maple Moth</title>
+    <style type="text/css">
+        :root {
+            --background-color: #01A0A0;
+            --pink: #FCA9C4;
+            --yellow: #FCE599;
+            --dark-yellow: #E0CD8D;
+            --dark-pink: #EA8AAA;
+        }
+
+        body{
+            background: var(--background-color);
+        }
+
+        .box-canvas{
+            position: relative;
+            margin: auto;
+            display: block;
+            margin-top: 8%;
+            margin-bottom: 8%;
+            width: 600px;
+            height:600px;
+            background: var(--background-color);
+        }
+
+        .body {
+            position: absolute;
+            left: 275px;
+            top: 50px;
+            width: 50px;
+            height: 160px;
+            background: repeating-linear-gradient(var(--yellow), var(--yellow) 10px, var(--dark-yellow) 15px, var(--dark-yellow) 20px, var(--yellow) 25px);
+            border-radius: 30% 30% 50% 50%;
+        }
+
+        /* Left feeler */
+        .body::before {
+            content: '';
+            top: -15px;
+            left: 13px;
+            position: absolute;
+            width: 3px;
+            height: 15px;
+            background: var(--dark-pink);
+            transform: rotate(-10deg);
+        }
+
+        /* Right feeler */
+        .body::after {
+            content: '';
+            top: -15px;
+            right: 13px;
+            position: absolute;
+            width: 3px;
+            height: 15px;
+            background: var(--dark-pink);
+            transform: rotate(10deg);
+        }
+
+        .bottom {
+            position: absolute;
+            top: 80px;
+            background: var(--pink);
+            height: 120px;
+            width: 65px;
+            overflow: hidden;
+            border: 1px solid var(--pink);
+        }
+
+        .left-wing-bottom {
+            left: 230px;
+            border-radius: 50% 20% 40% 40%;
+            transform: rotate(-10deg);
+        }
+
+        .right-wing-bottom {
+            right: 230px;
+            transform: rotate(10deg);
+            border-radius: 20% 50% 40% 40%;
+        }
+
+        .bottom::before {
+            content: '';
+            position: absolute;
+            background: repeating-linear-gradient(to left, var(--yellow), var(--yellow) 10px, var(--pink) 13px, var(--pink) 13px, var(--yellow) 14px);
+            height: 95px;
+            width: 65px;
+            border-radius: 0 0 50% 50%;
+        }
+
+        .top {
+            top: 40px;
+            clip-path: polygon(0 95%, 100% 95%, 100% 0, 82% 0);
+            width: 130px;
+            height: 150px;
+            background: var(--dark-pink);
+            border-radius: 0 10% 40% 50%;
+        }
+
+        .left-wing-top {
+            position: absolute;
+            left: 145px;
+            transform: rotate(20deg);
+        }
+
+        .right-wing-top {
+            position: absolute;
+            right: 145px;
+            transform: rotateY(180deg) rotate(20deg);
+        }
+
+        .top::before {
+            content: '';
+            position: absolute;
+            background: var(--yellow);
+            width: 100px;
+            height: 50px;
+            bottom: 35px;
+            clip-path: polygon(0 100%, 0 0, 100% 0);
+            border-radius: 0 40% 0 0;
+            left: 20px;
+        }
+
+        .top::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            background: black;
+            height: 150px;
+            width: 10px;
+            box-shadow: 10px 8px 0px 0px black;
+        }
+    </style>
+</head>
+<body>
+<div class="box-canvas">
+    <div class="body"></div>
+    <div class="left-wing-bottom bottom"></div>
+    <div class="left-wing-top top"></div>
+    <div class="right-wing-bottom bottom"></div>
+    <div class="right-wing-top top"></div>
+</div>
+</body>
+</html>

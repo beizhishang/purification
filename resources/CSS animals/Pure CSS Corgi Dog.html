@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pure CSS Corgi Dog</title>
+    <style type="text/css">
+        :root {
+            --background-color: #632F44;
+            --orange-fur-color: #ECB272;
+        }
+
+        body{
+            background: var(--background-color);
+        }
+
+        .box-canvas{
+            position: relative;
+            margin: auto;
+            display: block;
+            margin-top: 8%;
+            margin-bottom: 8%;
+            width: 600px;
+            height:600px;
+            background: var(--background-color);
+        }
+
+        /* Shared ear styles - container to create rounded top */
+        .ear {
+            position: absolute;
+            top: 10px;
+            height: 220px;
+            width: 140px;
+            border-radius: 50% 50% 0 0;
+            overflow: hidden;
+            background: var(--background-color);
+        }
+
+        .left-ear {
+            left: 120px;
+            transform: rotate(-20deg);
+        }
+
+        .right-ear {
+            right: 120px;
+            transform: rotate(20deg);
+        }
+
+        /* Shared main orange outer ear styles */
+        .ear::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            background: var(--orange-fur-color);
+            width: 130%;
+            height: 120%;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        .left-ear::before {
+            left: -25px;
+        }
+
+        .right-ear::before {
+            right: -25px;
+        }
+
+        /* Shared ear styles for inner pink */
+        .ear::after {
+            content: '';
+            bottom: 10px;
+            position: absolute;
+            background: pink;
+            width: 95%;
+            height: 80%;
+            clip-path: polygon(49% 0, 6% 100%, 100% 100%);
+        }
+
+        .left-ear::after {
+            right: 8px;
+        }
+
+        .right-ear::after {
+            left: 5px;
+        }
+
+        /* Main head */
+        .head {
+            position: absolute;
+            left: 150px;
+            top: 150px;
+            background: white;
+            width: 300px;
+            height: 275px;
+            border-radius: 45%;
+            overflow: hidden;
+        }
+
+        /* Left color patch */
+        .head::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            background: var(--orange-fur-color);
+            width: 40%;
+            height: 60%;
+            border-radius: 0 0 50% 0;
+        }
+
+        /* Right color patch */
+        .head::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            background: var(--orange-fur-color);
+            width: 40%;
+            height: 60%;
+            border-radius: 0 0 0 50%;
+        }
+
+        /* Shared eye styles */
+        .eye {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: black;
+            top: 220px;
+            border-radius: 50%;
+        }
+
+        /* Reflection in pupil */
+        .eye::after {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: white;
+            bottom: 5px;
+            right: 5px;
+        }
+
+        .left-eye {
+            left: 220px;
+        }
+
+        .right-eye {
+            right: 220px;
+        }
+
+        /* White snout section */
+        .snout {
+            position: absolute;
+            left: 225px;
+            top: 250px;
+            width: 150px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        /* Nose */
+        .snout::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            width: 50px;
+            height: 30px;
+            background: black;
+            border-radius: 30% 30% 50% 50%;
+        }
+
+        /* Tongue */
+        .tongue {
+            position: absolute;
+            left: 275px;
+            top: 340px;
+            background: pink;
+            width: 50px;
+            height: 50px;
+            border-radius: 0 0 50% 50%;
+        }
+
+        /* Mouth curl - left */
+        .tongue::before {
+            content: '';
+            position: absolute;
+            top: -29px;
+            left: -34px;
+            width: 60px;
+            height: 30px;
+            border-radius: 50%;
+            box-shadow: 0px 8px 0px 0px black;
+            background: white;
+        }
+
+        /* Mouth curl - right */
+        .tongue::after {
+            content: '';
+            position: absolute;
+            top: -29px;
+            right: -34px;
+            width: 60px;
+            height: 30px;
+            border-radius: 50%;
+            box-shadow: 0px 8px 0px 0px black;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+<div class="box-canvas">
+    <div class="left-ear ear"></div>
+    <div class="right-ear ear"></div>
+    <div class="head"></div>
+    <div class="left-eye eye"></div>
+    <div class="right-eye eye"></div>
+    <div class="snout"></div>
+    <div class="tongue"></div>
+</div>
+</body>
+</html>

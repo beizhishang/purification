@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Monkey</title>
+    <style type="text/css">
+        :root {
+            --brown: #9E5936;
+            --brown-light: #EABE7F;
+        }
+
+        body{
+            background: #F9DA8A;
+        }
+
+        .box-canvas{
+            position: relative;
+            margin: auto;
+            display: block;
+            margin-top: 8%;
+            margin-bottom: 8%;
+            width: 100vmin;
+            height:600px;
+        }
+
+        .branch {
+            position: absolute;
+            top: 10vmin;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40vmin;
+            height: 2vmin;
+            background: green;
+        }
+
+        .tail-front {
+            width: 10vmin;
+            left: 50%;
+            transform: translateX(calc(-50% - 5vmin));
+            top: 8vmin;
+            height: 20vmin;
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 3vmin 0 0 var(--brown);
+        }
+
+        .tail-back {
+            position: absolute;
+            top: 8vmin;
+            left: 50%;
+            transform: translateX(calc(-50% - 2vmin));
+            width: 5vmin;
+            height: 7vmin;
+            border-radius: 50%;
+            box-shadow: -2vmin 0 0 var(--brown);
+        }
+
+        .body {
+            position: absolute;
+            top: 25vmin;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20vmin;
+            height: 30vmin;
+            background: var(--brown);
+            border-radius: 50%;
+        }
+
+        .legs {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -18vmin;
+            width: 30vmin;
+            height: 20vmin;
+            border-radius: 50%;
+            box-shadow: 0 3vmin 0 var(--brown);
+        }
+
+        .legs::before {
+            content: '';
+            position: absolute;
+            width: 6vmin;
+            height: 4vmin;
+            background: var(--brown);
+            top: 10.5vmin;
+            transform: rotate(-20deg);
+            transform-origin: top right;
+            left: -5.5vmin;
+            border-radius: 30%;
+        }
+
+        .legs::after {
+            content: '';
+            position: absolute;
+            width: 6vmin;
+            height: 4vmin;
+            background: var(--brown);
+            top: 10.5vmin;
+            transform: rotate(20deg);
+            transform-origin: top left;
+            right: -5.5vmin;
+            border-radius: 30%;
+        }
+
+        .arms {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -15vmin;
+            width: 40vmin;
+            height: 20vmin;
+            border-radius: 45%;
+            box-shadow: 0 -2.5vmin 0 var(--brown), 0vmin -2.5vmin 0 var(--brown);
+        }
+
+        .arms::before {
+            content: '';
+            position: absolute;
+            width: 4vmin;
+            height: 6vmin;
+            border-radius: 50%;
+            top: 4.5vmin;
+            background: var(--brown);
+            left: -1vmin;
+            transform: rotate(20deg);
+            transform-origin: top right;
+        }
+
+        .arms::after {
+            content: '';
+            position: absolute;
+            width: 4vmin;
+            height: 6vmin;
+            border-radius: 50%;
+            top: 4.5vmin;
+            background: var(--brown);
+            right: -1vmin;
+            transform: rotate(-20deg);
+            transform-origin: top left;
+        }
+
+
+        .head-wrapper {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 50vmin;
+            width: 35vmin;
+            height: 21vmin;
+        }
+
+        .ear {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-70%);
+            background: var(--brown-light);
+            width: 5vmin;
+            height: 5vmin;
+            border-radius: 50%;
+            border: 3vmin solid var(--brown);
+        }
+
+        .ear.right {
+            right: 0;
+        }
+
+        .head {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 25vmin;
+            height: 20vmin;
+            background: var(--brown);
+            border-radius: 50%;
+            border: 0.5vmin solid #9B512D;
+        }
+
+        /* Mask left */
+        .mask {
+            position: absolute;
+            width: 10vmin;
+            height: 7vmin;
+            border-radius: 50%;
+            background: var(--brown-light);
+            left: 3vmin;
+            top: 5vmin;
+        }
+
+        /* Mask right */
+        .mask::before {
+            content: '';
+            position: absolute;
+            width: 10vmin;
+            height: 7vmin;
+            border-radius: 50%;
+            background: var(--brown-light);
+            left: 9vmin;
+        }
+
+        /* Mask bottom */
+        .mask::after {
+            content: '';
+            position: absolute;
+            width: 15vmin;
+            height: 7vmin;
+            border-radius: 50%;
+            background: var(--brown-light);
+            bottom: -5vmin;
+            left: 2vmin;
+        }
+
+        .eye {
+            position: absolute;
+            background: black;
+            border-radius: 50%;
+            border: 1vmin solid white;
+            width: 2vmin;
+            height: 2vmin;
+            top: 7vmin;
+        }
+
+        .eye.left {
+            left: 6vmin;
+        }
+
+        .eye.right {
+            right: 6vmin;
+        }
+
+        .eye::before {
+            content: '';
+            position: absolute;
+            width: 1vmin;
+            height: 1vmin;
+            background: white;
+            border-radius: 50%;
+            right: 0;
+        }
+
+        .mouth {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 5vmin;
+            width: 10vmin;
+            height: 3vmin;
+            border-radius: 50%;
+            box-shadow: 0 1vmin 0 black;
+        }
+
+        /* Nose left */
+        .mouth::before {
+            content: '';
+            position: absolute;
+            width: 1.5vmin;
+            height: 1.5vmin;
+            background: black;
+            left: 3vmin;
+            top: -0.5vmin;
+            border-radius: 20% 50%;
+        }
+
+        /* Nose right */
+        .mouth::after {
+            content: '';
+            position: absolute;
+            width: 1.5vmin;
+            height: 1.5vmin;
+            background: black;
+            right: 3vmin;
+            top: -0.5vmin;
+            border-radius: 50% 20%;
+        }
+    </style>
+</head>
+<body>
+<div class="box-canvas">
+    <div class="tail-back"></div>
+    <div class="branch"></div>
+    <div class="tail-front"></div>
+    <div class="body">
+        <div class="legs"></div>
+        <div class="arms"></div>
+    </div>
+    <div class="head-wrapper">
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+        <div class="head">
+            <div class="mask"></div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="mouth"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

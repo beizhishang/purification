@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mavo color clock!</title>
+    <script src="https://dev.mavo.io/dist/mavo.es5.js" type="text/javascript"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+
+        time {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+            margin: auto;
+            font: bold 700% sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div mv-app="clock" mv-bar="none">
+    <!-- 	Circles all hues every 6 minutes -->
+    <time style="background: hsl([$now / 1000 mod 360], 100%, 80%)">
+        [time($now)]
+    </time>
+</div>
+</body>
+</html>

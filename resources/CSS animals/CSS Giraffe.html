@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Giraffe</title>
+    <style type="text/css">
+        :root {
+            --patch-color: #B86D38;
+            --body-color: #E0BB89;
+            --snout-color: #F5EBCF;
+            --hair-color: #785F5C;
+        }
+
+        body{
+            background: #8787ED;
+        }
+
+        .box-canvas{
+            position: relative;
+            margin: auto;
+            display: block;
+            margin-top: 8%;
+            margin-bottom: 8%;
+            width: 200px;
+            height:600px;
+        }
+
+        .neck {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 80px;
+            background: var(--body-color);
+            width: 30px;
+            height: 120px;
+            overflow: hidden;
+        }
+
+        .patch {
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--patch-color);
+        }
+
+        .patch.one {
+            left: -5px;
+        }
+
+        .patch.two {
+            transform: rotate(45deg);
+            left: -5px;
+            top: 60px;
+        }
+
+        .patch.three {
+            right: -5px;
+            transform: rotate(75deg);
+            top: 25px;
+        }
+
+        .patch.four {
+            width: 40px;
+            height: 30px;
+            bottom: 0;
+            right: -20px;
+        }
+
+        .head {
+            position: absolute;
+            left: calc(50% - 5px);
+            top: 45px;
+            transform: translateX(-50%) rotate(20deg);
+            width: 50px;
+            height: 65px;
+            background: var(--body-color);
+            border-radius: 20% 20% 50% 50%;
+        }
+
+        /* Top hair */
+        .head::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 15px;
+            transform: rotate(45deg);
+            background: var(--hair-color);
+            width: 15px;
+            height: 15px;
+        }
+
+        /* Second hair piece */
+        .head::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            transform: rotate(45deg);
+            background: var(--hair-color);
+            right: 15px;
+            top: -7px;
+        }
+
+        .eye {
+            position: absolute;
+            top: 10px;
+            width: 15px;
+            height: 15px;
+            background: black;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .eye.left {
+            left: 3px;
+        }
+
+        .eye.right {
+            right: 3px;
+        }
+
+        /* Shine in eye */
+        .eye::after {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+            right: 2px;
+            bottom: 2px;
+        }
+
+        .horn {
+            position: absolute;
+            width: 5px;
+            height: 18px;
+            top: -15px;
+            background: var(--body-color);
+        }
+
+        .horn.left {
+            left: 5px;
+            transform: rotate(-10deg);
+        }
+
+        .horn.right {
+            right: 5px;
+            transform: rotate(10deg);
+        }
+
+        .horn::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 8px;
+            left: -4px;
+            background: var(--body-color);
+            border-radius: 50%;
+        }
+
+        .snout {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0px;
+            width: 40px;
+            height: 25px;
+            background: var(--snout-color);
+            border-radius: 50%;
+        }
+
+        /* Smile */
+        .snout::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 20px;
+            border-radius: 50%;
+            border-bottom: 2px solid var(--hair-color);
+        }
+
+        .nose {
+            position: absolute;
+            width: 40px;
+            height: 10px;
+        }
+
+        /* Left nostril */
+        .nose::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            width: 5px;
+            height: 7px;
+            background: var(--hair-color);
+            border-radius: 50%;
+        }
+
+        /* Right nostril */
+        .nose::after {
+            content: '';
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            width: 5px;
+            height: 7px;
+            background: var(--hair-color);
+            border-radius: 50%;
+        }
+
+        .body {
+            position: absolute;
+            top: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--body-color);
+            border-radius: 45%;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        .body-patch {
+            position: absolute;
+            width: 30px;
+            height: 40px;
+            background: var(--patch-color);
+            border-radius: 50%;
+        }
+
+        .body-patch.one {
+            transform: rotate(-20deg);
+            left: -5px;
+        }
+
+        .body-patch.two {
+            top: 40px;
+            left: 20px;
+        }
+
+        .body-patch.three {
+            right: -10px;
+            top: 10px;
+        }
+
+        .body-patch.four {
+            right: 15px;
+            bottom: 0;
+            transform: rotate(90deg);
+        }
+
+        .body::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 60px;
+            background: var(--snout-color);
+            border-radius: 50% 50% 0 0;
+            bottom: -5px;
+            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+        }
+
+        .leg {
+            position: absolute;
+            overflow: hidden;
+            width: 15px;
+            height: 100px;
+            background: linear-gradient(to top,
+            var(--hair-color),
+            var(--hair-color) 10px,
+            var(--body-color) 10px,
+            var(--body-color)
+            );
+            top: 250px;
+        }
+
+        .leg.left {
+            transform: rotate(5deg);
+            left: 60px;
+        }
+
+        .leg.right {
+            transform: rotate(-5deg);
+            right: 60px;
+        }
+
+        .leg-patch {
+            position: absolute;
+            top: 20px;
+            width: 10px;
+            height: 10px;
+            background: var(--patch-color);
+            border-radius: 30%;
+        }
+
+        .leg-patch.one {
+            left: -3px;
+        }
+
+        .leg-patch.two {
+            transform: rotate(45deg);
+            left: 10px;
+            top: 25px;
+        }
+
+        .leg-patch.three {
+            top: 35px;
+            left: 5px;
+            width: 5px;
+            height: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="box-canvas">
+    <div class="leg left">
+        <div class="leg-patch one"></div>
+        <div class="leg-patch two"></div>
+        <div class="leg-patch three"></div>
+    </div>
+    <div class="leg right">
+        <div class="leg-patch one"></div>
+        <div class="leg-patch two"></div>
+        <div class="leg-patch three"></div>
+    </div>
+    <div class="body">
+        <div class="body-patch one"></div>
+        <div class="body-patch two"></div>
+        <div class="body-patch three"></div>
+        <div class="body-patch four"></div>
+    </div>
+    <div class="neck">
+        <div class="patch one"></div>
+        <div class="patch two"></div>
+        <div class="patch three"></div>
+        <div class="patch four"></div>
+    </div>
+    <div class="head">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="horn left"></div>
+        <div class="horn right"></div>
+        <div class="snout">
+            <div class="nose"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

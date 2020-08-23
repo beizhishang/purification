@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pure CSS Surgeonfish</title>
+    <style type="text/css">
+        :root {
+            --main-body-blue: #1C6BF4;
+            --body-dark-blue: #071525;
+            --inner-tank-color: #8CD2E0;
+            --background-color: #ED9F38;
+        }
+
+        body{
+            background: var(--background-color);
+        }
+
+        /* Wrapper to float the whole fish (too lazy to apply to the individual pieces) */
+        .tank-inner {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            animation: bob 5s infinite;
+        }
+
+
+        .box-canvas{
+            position: relative;
+            margin: auto;
+            display: block;
+            margin-top: 8%;
+            margin-bottom: 8%;
+            width: 600px;
+            height:600px;
+            background: var(--background-color);
+        }
+
+        /* Top dark blue fin */
+        .fin-top {
+            position: absolute;
+            top: 140px;
+            left: 165px;
+            width: 230px;
+            height: 120px;
+            background: var(--body-dark-blue);
+            clip-path: ellipse(50% 35% at 50% 50%);
+            transform: rotate(-15deg);
+        }
+
+        /* Bottom fin dark blue surround */
+        .fin-bottom {
+            position: absolute;
+            top: 240px;
+            left: 155px;
+            width: 210px;
+            height: 120px;
+            background: var(--body-dark-blue);
+            clip-path: ellipse(50% 35% at 50% 50%);
+            transform: rotate(25deg);
+        }
+
+        /* Bottom fin stripes */
+        .fin-bottom::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 190px;
+            height: 100px;
+            background: repeating-linear-gradient(to right,  var(--main-body-blue) 3px, var(--body-dark-blue) 10px);
+            clip-path: ellipse(50% 35% at 50% 50%);
+        }
+
+        /* Main body */
+        .main-body{
+            position: absolute;
+            left: 175px;
+            top: 125px;
+            width: 320px;
+            height: 250px;
+            background: var(--main-body-blue);
+            clip-path: ellipse(50% 35% at 50% 50%);
+        }
+
+        /* White eye background */
+        .eye {
+            position: absolute;
+            background: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            top: 225px;
+            right: 135px;
+        }
+
+        /* Eye pupil */
+        .eye::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--body-dark-blue);
+        }
+
+        /* Mouth */
+        .eye::before {
+            content: '';
+            background: var(--inner-tank-color);
+            position: absolute;
+            left: 40px;
+            top: 30px;
+            width: 14px;
+            height: 19px;
+            border: 2px solid var(--body-dark-blue);
+            transform: rotate(50deg);
+            border-right: none;
+            border-top: none;
+            border-radius: 30% 0 0 30%;
+        }
+
+        /* Dark blue oblong on body */
+        .dark-patch {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            background: var(--body-dark-blue);
+            width: 270px;
+            height: 150px;
+            clip-path: ellipse(50% 35% at 50% 50%);
+        }
+
+        /* light blue patch */
+        .dark-patch::before {
+            content: '';
+            position: absolute;
+            background: var(--main-body-blue);
+            height: 40px;
+            width: 120px;
+            left: 60px;
+            top: 60px;
+            border-radius: 40%;
+        }
+
+        /* curving patch at front of face */
+        .main-body::after {
+            content: '';
+            position: absolute;
+            right: 55px;
+            top: 90px;
+            width: 80px;
+            height: 90px;
+            background: var(--main-body-blue);
+            transform: rotate(20deg);
+            border-radius: 40% 40% 30% 0;
+            box-shadow: 10px -18px 0px 0px var(--body-dark-blue);
+        }
+
+        /* Dark blue tail background */
+        .tail {
+            position: absolute;
+            top: 170px;
+            left: 135px;
+            background: var(--body-dark-blue);
+            width: 70px;
+            height: 130px;
+            transform: rotate(90deg);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        /* Yellow tail overlay */
+        .tail::after {
+            content: '';
+            position: absolute;
+            background: yellow;
+            width: 50px;
+            height: 130px;
+            top: 20px;
+            left: 10px;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: yellow;
+        }
+
+        .tank {
+            position: abolute;
+            height: 80%;
+            width: 100%;
+            border: 10px solid var(--body-dark-blue);
+            border-top: 50px solid var(--body-dark-blue);
+            background: linear-gradient(to top, var(--main-body-blue) , var(--inner-tank-color) 40%);
+        }
+
+
+        @keyframes bob {
+            0% {
+
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-30px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="box-canvas">
+    <div class="tank">
+        <div class="tank-inner">
+            <div class="fin-top"></div>
+            <div class="fin-bottom"></div>
+            <div class="main-body">
+                <div class="dark-patch"></div>
+            </div>
+            <div class="eye"></div>
+            <div class="tail"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

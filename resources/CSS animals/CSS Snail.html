@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Snail</title>
+    <style type="text/css">
+        :root {
+            --body-color: #D8993A;
+            --shell-color: #BB7124;
+            --shell-accent-color: #7F4D1C;
+        }
+
+        body{
+            background: #9ED88A;
+        }
+
+        .box-canvas{
+            position: relative;
+            margin: auto;
+            display: block;
+            margin-top: 8%;
+            margin-bottom: 8%;
+            width: 170px;
+            height:120px;
+        }
+
+        .shell {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            background: var(--shell-color);
+            background: radial-gradient(
+                    var(--shell-accent-color),
+                    var(--shell-color),
+                    var(--shell-accent-color),
+                    var(--shell-color),
+                    var(--shell-accent-color),
+                    var(--shell-color)
+            );
+            border-radius: 50% 50% 50% 20%;
+        }
+
+        .inner {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: 4px solid var(--shell-accent-color);
+            border-bottom-color: transparent;
+        }
+
+        .inner::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            width: 45px;
+            height: 45px;
+            border: 4px solid var(--shell-accent-color);
+            border-right-color: transparent;
+            border-radius: 50%;
+        }
+
+        .inner::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 10px;
+            height: 10px;
+            border: 4px solid var(--shell-accent-color);
+            border-left-color: transparent;
+            border-radius: 50%;
+        }
+
+        .body {
+            position: absolute;
+            left: calc(50% + 10px);
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 170px;
+            height: 30px;
+            background: var(--body-color);
+            border-radius: 0% 100% 100% 10% / 30% 99% 1% 70%
+        }
+
+        .vertical-body {
+            position: absolute;
+            background: var(--body-color);
+            bottom: 0;
+            left: 0px;
+            width: 30px;
+            height: 95px;
+            border-radius: 50% 50% 0% 100% / 35% 35% 30% 35% ;
+        }
+
+        .vertical-body::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 8px;
+            border-radius: 50%;
+            box-shadow: 0 2px 0 black;
+        }
+
+        .antenna::before {
+            content: '';
+            position: absolute;
+            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+            background: var(--body-color);
+            height: 30px;
+            width: 10px;
+            top: -20px;
+        }
+
+        .antenna.left::before {
+            transform: rotate(-15deg);
+        }
+
+        .antenna.right::before {
+            transform: rotate(15deg);
+            right: 0;
+        }
+
+        .antenna::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: -30px;
+            width: 5px;
+            height: 5px;
+            background: black;
+            border-radius: 50%;
+            border: 8px solid white;
+        }
+
+        .antenna.left::after {
+            left: -10px;
+        }
+
+        .antenna.right::after {
+            left: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="box-canvas">
+    <div class="body"></div>
+    <div class="vertical-body">
+        <div class="antenna left"></div>
+        <div class="antenna right"></div>
+    </div>
+    <div class="shell">
+        <div class="inner"></div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Lobster</title>
+    <style type="text/css">
+        :root {
+            --body-color: #F81301;
+            --shade-color: #CC1902;
+            --background-color: #243560;
+        }
+
+        body{
+            background: var(--background-color);
+        }
+
+        .box-canvas{
+            position: relative;
+            margin: auto;
+            display: block;
+            margin-top: 8%;
+            margin-bottom: 8%;
+            width: 250px;
+            height:600px;
+        }
+
+        .head {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--body-color);
+            width: 80px;
+            height: 90px;
+            border-radius: 50% / 45%;
+            border-bottom: 5px solid var(--shade-color);
+        }
+
+        /* Left eye */
+        .head::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 15px;
+            background: black;
+            border-radius: 40%;
+            left: 25%;
+            transform: translateX(-25%);
+        }
+
+        /* Right eye */
+        .head::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 15px;
+            background: black;
+            border-radius: 40%;
+            right: 25%;
+            transform: translateX(25%);
+        }
+
+        .body {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 160px;
+            width: 60px;
+            height: 130px;
+            background: var(--body-color);
+            border-radius: 40%;
+            border-bottom: 5px solid var(--shade-color);
+        }
+
+        .body::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -5px;
+            width: 70px;
+            height: 110px;
+            background: var(--body-color);
+            border-radius: 50% / 40%;
+            border-bottom: 5px solid var(--shade-color);
+        }
+
+        .body::after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -10px;
+            width: 80px;
+            height: 100px;
+            background: var(--body-color);
+            border-radius: 50% / 40%;
+            border-bottom: 5px solid var(--shade-color);
+        }
+
+        .tail {
+            position: absolute;
+            left: 83px;
+            top: 265px;
+            transform: rotate(35deg);
+            width: 40px;
+            height: 70px;
+            background: var(--body-color);
+            border-radius: 50%;
+            border-bottom: 5px solid var(--shade-color);
+        }
+
+        .tail::before {
+            content: '';
+            position: absolute;
+            transform: rotate(-70deg);
+            transform-origin: center top;
+            width: 40px;
+            height: 70px;
+            background: var(--body-color);
+            border-radius: 50%;
+            border-bottom: 5px solid var(--shade-color);
+        }
+
+        .arm {
+            position: absolute;
+            background: var(--body-color);
+            border-bottom: 5px solid var(--shade-color);
+            width: 30px;
+            height: 50px;
+            top: 100px;
+            border-radius: 40%;
+        }
+
+        .arm.left {
+            left: 60px;
+            transform: rotate(-45deg);
+        }
+
+        .arm.right {
+            right: 60px;
+            transform: rotate(45deg);
+        }
+
+        .arm::after {
+            content: '';
+            position: absolute;
+            background: var(--body-color);
+            border-bottom: 5px solid var(--shade-color);
+            width: 30px;
+            height: 50px;
+            border-radius: 40%;
+            top: -30px;
+        }
+
+        .arm.left::after {
+            left: 5px;
+            transform: rotate(25deg);
+        }
+
+        .arm.right::after {
+            right: 5px;
+            transform: rotate(-25deg);
+        }
+
+        .claw {
+            position: absolute;
+            background: var(--body-color);
+            width: 60px;
+            height: 90px;
+            border-radius: 50% 50% 30% 30%;
+            border-bottom: 5px solid var(--shade-color);
+        }
+
+        .claw.left {
+            left: 15px;
+            transform: rotate(-10deg);
+        }
+
+        .claw.right {
+            right: 15px;
+            transform: rotate(10deg);
+        }
+
+        /* Claw cutout */
+        .claw::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 70px;
+            background: var(--background-color);
+            top: -5px;
+            border-radius: 50%;
+        }
+
+        .claw.left::after {
+            right: 15px;
+        }
+
+        .claw.right::after {
+            left: 15px;
+        }
+
+        /* Middle leg */
+        .leg {
+            position: absolute;
+            top: 170px;
+            border: 5px solid var(--body-color);
+            border-top-color: transparent;
+            width: 30px;
+            height: 40px;
+        }
+
+        .leg.left {
+            left: 60px;
+            border-right-color: transparent;
+            transform: rotate(-40deg);
+        }
+
+        .leg.right {
+            border-left-color: transparent;
+            transform: rotate(40deg);
+            right: 60px;
+        }
+
+        /* Upper leg */
+        .leg::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            border: 5px solid var(--body-color);
+            border-top-color: transparent;
+            width: 30px;
+            height: 40px;
+        }
+
+        .leg.left::before {
+            left: 10px;
+            border-right-color: transparent;
+        }
+
+        .leg.right::before {
+            right: 10px;
+            border-left-color: transparent;
+        }
+
+        /* Lower leg */
+        .leg::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            border: 5px solid var(--body-color);
+            border-top-color: transparent;
+            width: 30px;
+            height: 40px;
+        }
+
+        .leg.left::after {
+            left: -20px;
+            border-right-color: transparent;
+        }
+
+        .leg.right::after {
+            right: -20px;
+            border-left-color: transparent;
+        }
+    </style>
+</head>
+<body>
+<div class="box-canvas">
+    <div class="leg left"></div>
+    <div class="leg right"></div>
+    <div class="arm left"></div>
+    <div class="claw left"></div>
+    <div class="arm right"></div>
+    <div class="claw right"></div>
+    <div class="tail"></div>
+    <div class="body"></div>
+    <div class="head"></div>
+</div>
+</body>
+</html>

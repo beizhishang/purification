@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Ladybug</title>
+    <style type="text/css">
+        :root {
+            --red: #F82222;
+            --background-color: #F7B506;
+        }
+
+        body{
+            background: var(--background-color);
+        }
+
+        .box-canvas{
+            position: relative;
+            margin: auto;
+            display: block;
+            margin-top: 8%;
+            margin-bottom: 8%;
+            width: 600px;
+            height:600px;
+        }
+
+        .body {
+            position: absolute;
+            left: 50%;
+            top: 150px;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 200px;
+            background: var(--red);
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--red);
+        }
+
+        /* White dot at top of body */
+        .body::before {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Stripe in middle body */
+        .body::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 200px;
+            background: #B21C1C;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .spot {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: black;
+            border-radius: 50%;
+            top: 50%;
+        }
+
+        .spot.left {
+            left: 25%;
+            transform: translate(-25%, -50%);
+        }
+
+        .spot.right {
+            right: 25%;
+            transform: translate(25%, -50%);
+        }
+
+        /* Top smaller dot */
+        .spot::before {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: black;
+            border-radius: 50%;
+            top: -35px;
+        }
+
+        .spot.left::before {
+            left: -5px;
+        }
+
+        .spot.right::before {
+            right: -5px;
+        }
+
+        /* Lower small spots */
+        .spot::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: black;
+            border-radius: 50%;
+            top: 60px;
+        }
+
+        .spot.left::after {
+            left: -5px;
+        }
+
+        .spot.right::after {
+            right: -5px;
+        }
+
+        .head {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 90px;
+            width: 90px;
+            height: 90px;
+            background: black;
+            border-radius: 50% 50% 0 0;
+            border: 2px solid black;
+            overflow: hidden;
+        }
+
+        /* Left white head spot */
+        .head::before {
+            content: '';
+            position: absolute;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        /* Right white head spot */
+        .head::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            transform: translateX(50%);
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .feeler {
+            position: absolute;
+            height: 50px;
+            width: 20px;
+            border-top: 3px solid black;
+
+
+            top: 55px;
+        }
+
+        .feeler.left {
+            left: 43%;
+            transform: rotate(-45deg) translateX(-43%);
+            border-right: 5px solid black;
+            border-radius: 0 50%;
+        }
+
+        .feeler.right {
+            right: 43%;
+            transform: rotate(45deg) translateX(43%);
+            border-left: 5px solid black;
+            border-radius: 50% 0;
+        }
+
+        /* Circle on end of feelers */
+        .feeler::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: black;
+            border-radius: 50%;
+            top: -5px;
+        }
+
+        .feeler.left::after {
+            left: -5px;
+            top: -5px;
+        }
+
+        .feeler.right::after {
+            right: -5px;
+        }
+
+        /* Middle leg */
+        .leg {
+            position: absolute;
+            top: 250px;
+            width: 50px;
+            height: 10px;
+            border: 5px solid black;
+            border-radius: 50% 50% 20% 20%;
+            border-bottom-color: var(--background-color);
+        }
+
+        .leg.left {
+            left: 30%;
+            transform: translateX(-30%);
+        }
+
+        .leg.right {
+            right: 30%;
+            transform: translateX(30%);
+        }
+
+        /* Top legs */
+        .leg::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            width: 50px;
+            height: 10px;
+            border: 5px solid black;
+            border-radius: 50% 50% 20% 20%;
+            border-bottom-color: var(--background-color);
+        }
+
+        .leg.left::before {
+            left: 5px;
+            transform: rotate(20deg);
+        }
+
+        .leg.right::before {
+            right: 5px;
+            transform: rotate(-20deg);
+        }
+
+        /* Bottom legs */
+        .leg::after {
+            content: '';
+            position: absolute;
+            top: 50px;
+            width: 50px;
+            height: 10px;
+            border: 5px solid black;
+            border-radius: 50% 50% 20% 20%;
+            border-bottom-color: var(--background-color);
+        }
+
+        .leg.left::after {
+            left: 8px;
+            transform: rotate(-20deg);
+        }
+
+        .leg.right::after {
+            right: 8px;
+            transform: rotate(20deg);
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="box-canvas">
+    <div class="leg left"></div>
+    <div class="leg right"></div>
+    <div class="feeler left"></div>
+    <div class="feeler right"></div>
+    <div class="head"></div>
+    <div class="body">
+        <div class="spot left"></div>
+        <div class="spot right"></div>
+    </div>
+</div>
+</body>
+</html>
