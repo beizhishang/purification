@@ -11,13 +11,13 @@
 
         h1 {
             margin: 2em auto 0;
-            font: 700 3em "Poppins", sans-serif;
+            font: 700 2em "Poppins", sans-serif;
             color: #f1f5f6;
             text-align: center;
         }
 
         h5 {
-            margin: 0 auto 2em;
+            margin: 0.7em auto 2em;
             font: 400 1.3em "Poppins", sans-serif;
             color: #f1f5f6;
             text-align: center;
@@ -106,13 +106,12 @@
         }
 
         .periodic-element .description {
-            font: 500 12px "Poppins", sans-serif;
+            font: 500 5px "Poppins", sans-serif;
             margin-top: -0.2em;
         }
 
         .periodic-element:after {
             z-index: 10;
-            content: attr(data-description);
             background: #f9f8f7;
             color: #333;
             width: 180px;
@@ -152,45 +151,45 @@
             cursor: pointer;
         }
 
-        .social-media {
+        .integrity {
             background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
         }
 
-        .social-media .title,
-        .social-media .description {
+        .integrity .title,
+        .integrity .description {
             background: -webkit-linear-gradient(#f3f9a6, #cbc634);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .fun-stuff {
+        .cooperation {
             background: linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%);
         }
 
-        .fun-stuff .title,
-        .fun-stuff .description {
+        .cooperation .title,
+        .cooperation .description {
             background: -webkit-linear-gradient(#ff616d, #ffc171);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .just-trying {
+        .willing-to-do {
             background: linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%);
         }
 
-        .just-trying .title,
-        .just-trying .description {
+        .willing-to-do .title,
+        .willing-to-do .description {
             background: -webkit-linear-gradient(#37cfdc, #5a88e5);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .intense-work {
+        .good-to-learn {
             background: linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%);
         }
 
-        .intense-work .title,
-        .intense-work .description {
+        .good-to-learn .title,
+        .good-to-learn .description {
             background: -webkit-linear-gradient(#58ac30, #a7df62);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -232,7 +231,6 @@
         .empty-spacer-1 {
             grid-column: 3 / span 4;
             grid-row: 1;
-            /*background-color: #0c7cd5;*/
         }
 
         .empty-spacer-2 {
@@ -240,239 +238,298 @@
             grid-row: 4;
         }
 
+        .empty-spacer-3 {
+            grid-column: 1 / span 2;
+            grid-row: 5;
+        }
+
+
     </style>
 </head>
 <body>
 
-<h1>My Internet Periodic Table</h1>
-<h5>How I waste my time on the Internet</h5>
+<h1>Start with Integrity Succeed through Action</h1>
+<h5>始于信 达于行</h5>
 <div class="periodic-table">
     <div class="empty-spacer-1"></div>
     <div class="empty-spacer-2"></div>
-    <div class="periodic-element social-media" data-description="I'm only on here to reject invitations 😂">
-        <div class="periodic-element-inner" style="background:url(../images/cloud.png); background-size: cover">
-            <div class="title">Li</div>
-            <div class="description">LinkedIn</div>
-        </div>
-    </div>
-    <div class="periodic-element social-media" data-description="Only so I don't miss out on my friends' milestones 🤷">
+    <div class="empty-spacer-3"></div>
+
+    <div class="periodic-element integrity">
         <div class="periodic-element-inner">
-            <div class="title">Fb</div>
-            <div class="description">Facebook</div>
+            <div class="title">Xd</div>
+            <div class="description">信达主页</div>
         </div>
     </div>
-    <div class="periodic-element just-trying"
-         data-description="Looking at amazing Dribbble 🏀 shots and internally die from the amount of talent/skill out there">
+
+    <div class="periodic-element integrity">
         <div class="periodic-element-inner">
-            <div class="title">Db</div>
-            <div class="description">Dribbble</div>
+            <div class="title">Xy</div>
+            <div class="description">信达学院</div>
         </div>
     </div>
-    <div class="periodic-element intense-work" data-description="Coming up with sassy commit messages 🔥">
+
+    <div class="periodic-element willing-to-do">
         <div class="periodic-element-inner">
-            <div class="title">Ct</div>
-            <div class="description">Commits</div>
+            <div class="title">Yw</div>
+            <div class="description">业务流程</div>
         </div>
     </div>
-    <div class="periodic-element intense-work" data-description="Making custom emojis for Slack 💪🏻">
+
+    <div class="periodic-element good-to-learn">
         <div class="periodic-element-inner">
-            <div class="title">Sl</div>
-            <div class="description">Slack</div>
+            <div class="title">Ew</div>
+            <div class="description">文件系统</div>
         </div>
     </div>
-    <div class="periodic-element fun-stuff" data-description="'Wikipedia Wormhole' is a thing. And it is dangerous 🐛">
+
+    <div class="periodic-element good-to-learn">
         <div class="periodic-element-inner">
-            <div class="title">Wk</div>
-            <div class="description">Wikipedia</div>
+            <div class="title">Ep</div>
+            <div class="description">培训系统</div>
         </div>
     </div>
-    <div class="periodic-element fun-stuff"
-         data-description="Choosing the right playlist. (If my Spotify is working... it's always not working)">
+
+    <div class="periodic-element cooperation">
         <div class="periodic-element-inner">
-            <div class="title">Sp</div>
-            <div class="description">Spotify</div>
+            <div class="title">Mt</div>
+            <div class="description">多媒体平台</div>
         </div>
     </div>
-    <a class="periodic-element social-media" data-description="If you say something witty, it's going on my Twitter 🐦"
-       href="https://twitter.com/meowlivia_" target="_blank">
+
+    <div class="periodic-element cooperation">
+        <div class="periodic-element-inner">
+            <div class="title">Nk</div>
+            <div class="description">电子内刊</div>
+        </div>
+    </div>
+
+    <a class="periodic-element integrity" href="https://twitter.com/meowlivia_" target="_blank">
         <div class="periodic-element-inner">
             <div class="title">Tw</div>
-            <div class="description">Twitter</div>
+            <div class="description">TrackWise</div>
         </div>
     </a>
-    <div class="periodic-element social-media" data-description="Professional Dota 2 Watcher right here ✌️">
+
+    <div class="periodic-element integrity">
         <div class="periodic-element-inner">
-            <div class="title">Tc</div>
-            <div class="description">Twitch</div>
+            <div class="title">Jx</div>
+            <div class="description">绩效管理</div>
         </div>
     </div>
-    <div class="periodic-element intense-work"
-         data-description="Creating GitHub issues, a.k.a. tossing problems which I can solve to the frontend team">
+
+    <div class="periodic-element good-to-learn">
         <div class="periodic-element-inner">
-            <div class="title">Gt</div>
-            <div class="description">GitHub</div>
+            <div class="title">Xs</div>
+            <div class="description">雪松班</div>
         </div>
     </div>
-    <div class="periodic-element intense-work"
-         data-description="Trying to get yarn working after an update. The main reason I toss issues to the frontend team.">
+
+    <div class="periodic-element good-to-learn">
         <div class="periodic-element-inner">
-            <div class="title">Yn</div>
-            <div class="description">Yarn</div>
+            <div class="title">Xt</div>
+            <div class="description">协同中心</div>
         </div>
     </div>
-    <div class="periodic-element just-trying"
-         data-description="A skill I'm trying to learn 🎨... and failing to learn 😛">
+
+    <div class="periodic-element willing-to-do">
         <div class="periodic-element-inner">
-            <div class="title">Il</div>
-            <div class="description">Illustration</div>
+            <div class="title">Jb</div>
+            <div class="description">加班申请</div>
         </div>
     </div>
-    <a class="periodic-element just-trying"
-       data-description="Resident Designer. Keeping the diminishing flame of web design in me alive 🕯️"
-       href="https://tellystats.com" target="_blank">
+
+    <a class="periodic-element willing-to-do" href="https://tellystats.com" target="_blank">
         <div class="periodic-element-inner">
-            <div class="title">Te</div>
-            <div class="description">TellyStats</div>
+            <div class="title">Tx</div>
+            <div class="description">调休申请</div>
         </div>
     </a>
-    <div class="periodic-element just-trying"
-         data-description="I just need to stop adding items and actually start doing things. Am I the only one who is still using Wunderlist? 😂">
+
+    <div class="periodic-element willing-to-do">
         <div class="periodic-element-inner">
-            <div class="title">Wu</div>
-            <div class="description">Wunderlist</div>
+            <div class="title">Bx</div>
+            <div class="description">报销申请</div>
         </div>
     </div>
-    <div class="periodic-element fun-stuff"
-         data-description="I have zero cooking skills, so I watch cooking videos and never try cooking for real 🍳">
+
+    <div class="periodic-element cooperation">
         <div class="periodic-element-inner">
-            <div class="title">Cv</div>
-            <div class="description">Cooking</div>
+            <div class="title">Ft</div>
+            <div class="description">FTE填报</div>
         </div>
     </div>
-    <div class="periodic-element fun-stuff" data-description="Or any animal gifs, basically. 🐈🐕🦊🦔🦉🐍🐬🦄">
+
+    <div class="periodic-element cooperation">
         <div class="periodic-element-inner">
-            <div class="title">Dg</div>
-            <div class="description">Dog Gifs</div>
+            <div class="title">Jz</div>
+            <div class="description">价值观</div>
         </div>
     </div>
-    <a class="periodic-element fun-stuff" data-description="Getting distracted by Toggl comics 🙃"
-       href="https://blog.toggl.com" target="_blank">
+
+    <a class="periodic-element cooperation" href="https://blog.toggl.com" target="_blank">
         <div class="periodic-element-inner">
-            <div class="title">Tg</div>
-            <div class="description">Toggl Blog</div>
+            <div class="title">Nl</div>
+            <div class="description">能量站</div>
         </div>
     </a>
-    <div class="periodic-element just-trying"
-         data-description="I google every damn thing. Including movie spoilers. While watching the movie. Yes.">
+
+    <div class="periodic-element willing-to-do">
         <div class="periodic-element-inner">
             <div class="title">Gg</div>
             <div class="description">Google</div>
         </div>
     </div>
-    <a class="periodic-element just-trying"
-       data-description="I like spreadsheets so I create them for the smallest reasons 🧐"
-       href="https://docs.google.com/spreadsheets/d/1Dim2nKRjgpkjA4miqTzcLPT68L0B5LU2aWZWF5hHYAc/edit#gid=0"
+
+    <a class="periodic-element willing-to-do" href="https://docs.google.com/spreadsheets/d/1Dim2nKRjgpkjA4miqTzcLPT68L0B5LU2aWZWF5hHYAc/edit#gid=0"
        target="_blank">
         <div class="periodic-element-inner">
             <div class="title">Ex</div>
             <div class="description">Excel</div>
         </div>
     </a>
-    <div class="periodic-element intense-work"
-         data-description="I still StackOverflow the simplest shit 'just to be sure'. Where will we be without it ❤️">
+
+    <div class="periodic-element good-to-learn">
         <div class="periodic-element-inner">
             <div class="title">So</div>
             <div class="description">StackOv.</div>
         </div>
     </div>
-    <div class="periodic-element intense-work"
-         data-description="It's very much not my job, but sometimes I stick my hand into the Coding Projects jar 🍪 anyway">
+
+    <div class="periodic-element good-to-learn">
         <div class="periodic-element-inner">
             <div class="title">Cd</div>
             <div class="description">Coding</div>
         </div>
     </div>
-    <div class="periodic-element just-trying"
-         data-description="I spend so much time on Codepen, I decided to go Pro because I felt bad 💸">
+
+    <div class="periodic-element willing-to-do">
         <div class="periodic-element-inner">
             <div class="title">Cp</div>
             <div class="description">Codepen</div>
         </div>
     </div>
 
-    <div class="periodic-element just-trying" data-description="We all have that one thing that keeps us alive 🛫🗺️">
+    <div class="periodic-element willing-to-do">
         <div class="periodic-element-inner">
             <div class="title">Tr</div>
             <div class="description">Travel</div>
         </div>
     </div>
 
-    <a class="periodic-element social-media" data-description="Fuck this app. It's a terrible love-hate relationship."
-       href="https://www.instagram.com/meowliviaaa/" target="_blank">
+    <a class="periodic-element integrity" href="https://www.instagram.com/meowliviaaa/" target="_blank">
         <div class="periodic-element-inner">
-            <div class="title">In</div>
-            <div class="description">Instagram</div>
+            <div class="title">Gz</div>
+            <div class="description">工作计划</div>
         </div>
     </a>
 
-    <a class="periodic-element fun-stuff"
-       data-description="Obsessing over musicals and stalking broadway stars is 👏🏻 not 👏🏻 a 👏🏻 crime!"
-       href="https://codepen.io/collection/XPWkdW/" target="_blank">
+    <a class="periodic-element cooperation" href="https://codepen.io/collection/XPWkdW/" target="_blank">
         <div class="periodic-element-inner">
-            <div class="title">Mu</div>
-            <div class="description">Musicals</div>
+            <div class="title">Xm</div>
+            <div class="description">项目信息</div>
         </div>
     </a>
 
-    <div class="periodic-element fun-stuff" data-description="I learn memes, I make memes, I breathe memes.">
+    <div class="periodic-element cooperation">
         <div class="periodic-element-inner">
-            <div class="title">Me</div>
-            <div class="description">Memes</div>
+            <div class="title">Cs</div>
+            <div class="description">纯化设备</div>
         </div>
     </div>
-    <div class="periodic-element intense-work" data-description="Battling double columns in Notion">
+
+    <div class="periodic-element good-to-learn">
         <div class="periodic-element-inner">
-            <div class="title">No</div>
-            <div class="description">Notion</div>
+            <div class="title">Ll</div>
+            <div class="description">纯化理论</div>
         </div>
     </div>
-    <div class="periodic-element social-media"
-         data-description="Oh my god. Someone please save me from this Reddit hell hole 😭">
+
+    <div class="periodic-element integrity">
         <div class="periodic-element-inner">
-            <div class="title">Re</div>
-            <div class="description">Reddit</div>
+            <div class="title">GL</div>
+            <div class="description">管理知识</div>
         </div>
     </div>
-    <div class="periodic-element intense-work" data-description="Research &amp; Documentation nobody asks for 🤓📝">
+
+    <div class="periodic-element good-to-learn">
         <div class="periodic-element-inner">
-            <div class="title">Rd</div>
-            <div class="description">Research</div>
+            <div class="title">Tx</div>
+            <div class="description">提醒事项</div>
         </div>
     </div>
-    <div class="periodic-element intense-work" data-description="Stats. Data. Stats. Data. 📊 Just lots of reporting.">
+
+    <div class="periodic-element good-to-learn">
         <div class="periodic-element-inner">
-            <div class="title">St</div>
-            <div class="description">Stats</div>
+            <div class="title">Lc</div>
+            <div class="description">工作流程</div>
         </div>
     </div>
-    <div class="periodic-element intense-work"
-         data-description="Ads. Ads. Ads. If you've seen a Toggl ad, it was me. (Sorry)">
+
+    <div class="periodic-element good-to-learn">
         <div class="periodic-element-inner">
-            <div class="title">Ad</div>
-            <div class="description">Ads</div>
+            <div class="title">Qt</div>
+            <div class="description">其它</div>
         </div>
     </div>
+
+    <div class="periodic-element good-to-learn">
+        <div class="periodic-element-inner">
+            <div class="title">Qt</div>
+            <div class="description">其它</div>
+        </div>
+    </div>
+
+    <div class="periodic-element good-to-learn">
+        <div class="periodic-element-inner">
+            <div class="title">Qt</div>
+            <div class="description">其它</div>
+        </div>
+    </div>
+
+    <div class="periodic-element good-to-learn">
+        <div class="periodic-element-inner">
+            <div class="title">Qt</div>
+            <div class="description">其它</div>
+        </div>
+    </div>
+
+    <div class="periodic-element good-to-learn">
+        <div class="periodic-element-inner">
+            <div class="title">Qt</div>
+            <div class="description">其它</div>
+        </div>
+    </div>
+
+    <div class="periodic-element good-to-learn">
+        <div class="periodic-element-inner">
+            <div class="title">Qt</div>
+            <div class="description">其它</div>
+        </div>
+    </div>
+
+    <div class="periodic-element good-to-learn">
+        <div class="periodic-element-inner">
+            <div class="title">Qt</div>
+            <div class="description">其它</div>
+        </div>
+    </div>
+
 </div>
+
 <div class="legend-table">
-    <div class="legend-table__wrapper"><span class="legend-table__marker social-media"></span><span
-            class="legend-table__text">Social Media</span><span class="legend-table__marker intense-work"></span><span
-            class="legend-table__text">Serious Work</span><span class="legend-table__marker just-trying"></span><span
-            class="legend-table__text">Personal Development</span><span
-            class="legend-table__marker fun-stuff"></span><span class="legend-table__text">Fun Stuff</span><br/>
-        <div class="legend-table__direction"><span>&#8594; &ensp; Across the table: Importance</span></div>
-        <div class="legend-table__direction"><span>&#8595; &ensp; Down the table: Time Spent</span></div>
+    <div class="legend-table__wrapper">
+        <span class="legend-table__marker integrity"></span>
+        <span class="legend-table__text">诚信</span>
+        <span class="legend-table__marker good-to-learn"></span>
+        <span class="legend-table__text">会学</span>
+        <span class="legend-table__marker willing-to-do"></span>
+        <span class="legend-table__text">肯干</span>
+        <span class="legend-table__marker cooperation"></span>
+        <span class="legend-table__text">协作</span>
     </div>
 </div>
+
 <aside class="context">
     <div class="explanation">I try to be productive a lot, and I fail a lot :)<br/>Part of the <a
             href="https://codepen.io/collection/DQvYpQ/" target="_blank">CSS Grid collection here</a>.
@@ -480,6 +537,7 @@
 </aside>
 <footer><a href="https://twitter.com/meowlivia_" target="_blank"><i class="icon-social-twitter icons"></i></a><a
         href="https://github.com/oliviale" target="_blank"><i class="icon-social-github icons"></i></a><a
-        href="https://dribbble.com/oliviale" target="_blank"><i class="icon-social-dribbble icons"></i></a></footer>
+        href="https://dribbble.com/oliviale" target="_blank"><i class="icon-social-dribbble icons"></i></a>
+</footer>
 </body>
 </html>
