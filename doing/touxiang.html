@@ -15,12 +15,12 @@
             width: 100vw;
             height: 100vh;
             background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(248,219,219,1) 0%, rgba(229,248,250,1) 90% );
-
+            overflow: hidden;
         }
 
         .container{
             position: relative;
-            margin: 0 auto;
+            margin: 150px auto 0;
             width: 1000px;
             height: 500px;
             /*background-color: aquamarine;*/
@@ -30,9 +30,20 @@
             flex-wrap: wrap;
         }
 
+        #logo{
+            width: 180px;
+            height: 54px;
+            border-radius: 5px;
+            background-image: url("https://trello-attachments.s3.amazonaws.com/5d870c0418f7104546584cfb/5f531cee9a6672401310fc51/aba171ef3a08dbab931ae6e42a597cdd/logo.png");
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            margin: -10em 0 0 30px;
+        }
+
         .box{
             width: 1000px;
-            height: 100px;
+            height: 90px;
             /*background-color: #2cb7b5;*/
             position: relative;
             display: flex;
@@ -41,71 +52,116 @@
             align-items: center;
         }
 
+        .box-inside{
+            position: relative;
+            margin: 0 12px;
+            width: 89px;
+            height: 102px;
+            clip-path: polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+            float: left;
+            display: block;
+            background-color: red;
+        }
+
         .show{
             position: relative;
-            margin: 0 13px;
-            /*background-color: darkgreen;*/
             width: 87px;
             height: 100px;
-            clip-path: polygon(50% 0,100% 22%,100% 78%,50% 100%,0 78%,0 22%);
-            float: left;
-            background-image: url("1.png");
+            clip-path: polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
             background-size: cover;
             background-position: center;
-            box-shadow: black 3px 3px 5px;
+            left: 1px;
+            top: 1px;
+            transform: scale
+        }
+
+        #button{
+            height: 55px;
+            width: 260px;
+            background-image: linear-gradient(to left, #ff696e, #ffa3bd, #ff696e);
+            background-size: 200%;
+            transition: 100ms;
+            box-shadow: 1px 1px 10px black;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            user-select: none;
+            margin-top: 50px;
+        }
+
+        #button:hover{
+            background-position: right;
+            cursor: pointer;
+            color: #09fffa;
+        }
+
+        #button:active{
+            transform: translateY(2px);
+            box-shadow: 1px 1px 1px black;
+            background-position: left;
+        }
+
+        a{
+            text-decoration: none;
         }
 
     </style>
 </head>
 <body>
+<div id="logo"></div>
 <div class="container">
     <div class="box">
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
     </div>
     <div class="box">
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
     </div>
     <div class="box">
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
     </div>
     <div class="box">
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
     </div>
     <div class="box">
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
-        <div class="show"></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
+        <div class="box-inside"><div class="show" style="background-image:url(1.png)"></div></div>
     </div>
-
+    <a href="">
+        <div id="button">因为相信&nbsp;&nbsp;&nbsp;所以奋进</div>
+    </a>
 </div>
 </body>
 </html>
