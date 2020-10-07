@@ -7,8 +7,8 @@
     <title>picture</title>
     <style type="text/css">
         body {
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             margin: 0;
             padding: 0;
             background: snow;
@@ -85,6 +85,20 @@
             width: 100%;
         }
 
+        .show{
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            z-index: 100;
+            display: flex;
+            background-color: aqua;
+        }
+
+        .show>img{
+            width: 500px;
+            height: 800px;
+        }
+
 
     </style>
 </head>
@@ -95,6 +109,9 @@
         <div>始于信 达于行</div>
         <div>Start with Integrity Succeed through Action</div>
     </div>
+</div>
+<div class="show">
+    <img src="1.png"/>
 </div>
 <div class="container">
     <div><img src="dragon.png"></div>
