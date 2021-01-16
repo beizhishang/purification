@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+    <link rel="shortcut icon"
+          href="https://trello-attachments.s3.amazonaws.com/5d870c0418f7104546584cfb/5dcbcaedb6ca803685cc6fa0/a83d2af9b74ca6ddceec6ed84190fa15/Purification_(2).ico">
+    <title>缩略词查询</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+      .container{
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          background-image: linear-gradient( 108.1deg,  rgba(167,220,225,1) 11.2%, rgba(217,239,242,1) 88.9% );
+      }
+
+        .input1{
+            height: 50px;
+            width: 400px;
+            margin-top: -20vh;
+            padding: 0 20px;
+            font-size:1.2em;
+            text-align: center;
+            font-family: "Microsoft YaHei UI";
+            font-weight: 700;
+            border-radius: 30px;
+            border: none;
+            background-color: #2cb7b5;
+            color: white;
+        }
+
+        .input1::placeholder{
+            color: white;
+            font-weight: 200;
+            opacity: 0.8;
+        }
+
+        .input1:focus,.input2:focus{
+            outline: none;
+        }
+
+        .input2{
+            height: 40px;
+            width: 80px;
+            margin-top: -20vh;
+            font-size:1.2em;
+            text-align: center;
+            border-radius: 5px;
+            font-family: "Microsoft YaHei UI";
+            font-weight: 700;
+            border: none;
+            background-color: #2cb7b5;
+            color: white;
+        }
+
+        .explain{
+            position: relative;
+            width: 660px;
+            height: 40vh;
+            /*background-color: #17e0cf;*/
+            padding: 20px;
+        }
+
+        p{
+            font-size: 1.4em;
+            font-family: "Microsoft YaHei UI";
+            margin: 10px 0;
+            line-height: 1.8em;
+        }
+
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="search">
+    <input type="text" class="input1" placeholder="请输入需要查询的缩略词" list="slc" style="" id="context1">
+        <input type="button" class="input2" value="Search" onclick="search()">
+    <datalist id="slc">
+        <option value="CFR"></option>
+        <option value="CCA"></option>
+        <option value="CIP"></option>
+        <option value="ChP"></option>
+        <option value="DQ"></option>
+        <option value="E-DOC"></option>
+        <option value="EPH"></option>
+        <option value="EU"></option>
+        <option value="FAT"></option>
+        <option value="FEMA"></option>
+        <option value="FRA"></option>
+        <option value="FS"></option>
+    </datalist>
+    </div>
+
+
+    <div class="explain">
+        <p id="context2"></p>
+        <p id="context3"></p>
+        <p id="context4"></p>
+    </div>
+
+</div>
+</body>
+<script type="text/javascript">
+
+    function search() {
+        var i = document.getElementById("context1").value;
+        var j = document.getElementById("context2");
+        var k = document.getElementById("context3");
+        var l = document.getElementById("context4");
+
+        switch(i){
+
+            default:
+                j.innerHTML="非常抱歉，暂未收录该词条";
+                k.innerHTML="<a href=\"mailto:pengyun.xu@innoventbio.com?subject=缩略词收录&body=请描述清楚词条信息\">点击此处收录该词条</a>";
+                l.innerHTML="";
+                break;
+
+            case "":
+                j.innerHTML="";
+                k.innerHTML="";
+                l.innerHTML="";
+                break;
+
+            case "CFR":
+                j.innerHTML="全称："+"Coding of Federal Regulations";
+                k.innerHTML="释义："+"联邦法规";
+                l.innerHTML="定义："+"《美国联邦法规》(Code of Federal Regulations，简称CFR）是美国联邦政府执行机构和部门在\"联邦公报\"（FederalRegister(登记、注册)，简称FR）中发表与公布的一般性和永久性规则的集成，具有普遍适用性和法律效应。因此，CFR的内容覆盖广泛。读者在使用CFR时需要注意的是，美国联邦法律在为CFR中的法规提供权威性的同时，对CFR也设置了一定的限制条件。这意味着CFR任何主题下的法规都应当与美国法典（U.S.C.，United States Code，为ACT的一些编纂，可从GPO的网站查询）中具有紧密联系的相应部分一起应用。在某些情况下，法庭可以因为CFR的某法规与联邦法律发生冲突而认定其无效。";
+                break;
+
+            case "CCA":
+                j.innerHTML="全称："+"Component Criticality Assessment";
+                k.innerHTML="释义："+"部件关键性评估";
+                l.innerHTML="定义："+"风险管理与验证（确认）中的一种手段，通过对“直接影响系统”的关键性部件进行风险评估，确定其在整个系统中的风险程度，并建议控制措施降低其风险，通过评估，最终归“关键性”与“非关键性”两大类";
+                break;
+
+            case "CIP":
+                j.innerHTML="全称："+"Cleanning In Place";
+                k.innerHTML="释义："+"在位清洗";
+                l.innerHTML="定义："+"CIP在位清洗系统俗称就地清洗系统简称CIP，又称清洗定位或定位清洗（cleaning in place）。就地清洗是指不用拆开或移动装置，即采用高温、高浓度的洗净液，对设备装置加以强力作用，把与食品的接触面洗净,对卫生级别要求较严格的生产设备的清洗、净化。";
+                break;
+
+            case "ChP":
+                j.innerHTML="全称："+"Chinese Pharmacopoeia";
+                k.innerHTML="释义："+"中国药典";
+                l.innerHTML="定义："+"《中华人民共和国药典》（简称《中国药典》）2015年版，药典包括凡例、正文及通则（本版药典对各部药典共性附录进行整合，将原附录更名为通则），是药品研制、生产、经营、使用和监督管理等均应遵循的法定依据。所有国家药品标准应当符合中国药典凡例及附录的相关要求。" +
+                    "<br />"+"新版药典进一步扩大药品品种的收载和修订，共收载品种5608种。一部收载品种2598种，其中新增品种440种。二部收载品种2603种，其中新增品种492种。三部收载品种137种，其中新增品种13种、修订品种105种。首次将上版药典附录整合为通则，并与药用辅料单独成卷作为新版药典四部。四部收载通则总数317个，其中制剂通则38个、检测方法240个、指导原则30个、标准物质和对照品相关通则9个；药用辅料收载270种，其中新增137种、修订97种。";
+                break;
+
+            case "DQ":
+                j.innerHTML="全称："+"Design Qualification";
+                k.innerHTML="释义："+"设计确认";
+                l.innerHTML="定义："+"设计确认（DQ）是新的或改造的厂房、设施、设备验证工作的第一步，内容主要包括为了确认设施、系统和设备的设计方案符合期望目标所做的各种查证";
+                break;
+
+            case "E-DOC":
+                j.innerHTML="全称："+"Electronic Document System";
+                k.innerHTML="释义："+"电子文档系统";
+                l.innerHTML="定义："+"用于电子文档版本控制、方便文件审批、查阅、培训考核";
+                break;
+
+            case "EPH":
+                j.innerHTML="全称："+"Equipment Phase";
+                k.innerHTML="释义："+"基础功能";
+                l.innerHTML="";
+                break;
+
+            case "EU":
+                j.innerHTML="全称："+"European Union";
+                k.innerHTML="释义："+"欧盟";
+                l.innerHTML="定义："+"欧洲联盟（德语：Europäische Union，法语：Union européenne），简称欧盟（EU），总部设在比利时首都布鲁塞尔（Brussels），是由欧洲共同体发展而来的，创始成员国有6个，分别为德国、法国、意大利、荷兰、比利时和卢森堡。现拥有27个会员国，正式官方语言有24种。";
+                break;
+
+            case "FAT":
+                j.innerHTML="全称："+"Factory Acceptance Test";
+                k.innerHTML="释义："+"工厂验收测试";
+                l.innerHTML="定义："+"工厂验收测试（FAT）是一个过程，通过验证设备是否按照设计规格制造和运行来评估设备在组装过程中和组装之后的过程。 FAT确保组件和控件根据设备本身的功能正常工作。顾名思义，该测试是在工厂执行的。进行FAT通常是为了评估任何差异和不合格之处，并制定处理方式。在测试过程中观察到的偏差或异常会记录在问题报告中，并在发货前进行纠正";
+                break;
+
+            case "FEMA":
+                j.innerHTML="全称："+"Failure Mode and Effect Analysis";
+                k.innerHTML="释义："+"失效模式和影响分析";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "FRA":
+                j.innerHTML="全称："+"Function Risk Assessment";
+                k.innerHTML="释义："+"功能风险评估";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "FS":
+                j.innerHTML="全称："+"Functional Specification";
+                k.innerHTML="释义："+"功能说明";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "GAMP":
+                j.innerHTML="全称："+"Good Automated Manufacturing Practice";
+                k.innerHTML="释义："+"良好的自动化生产规范";
+                l.innerHTML="定义："+"良好自动化生产实践指南,GAMP的第五版题目为’A Risk-base Approach Compliant GxP Computrized Systems‘遵从GXP计算机化系统监管的风险管理方法）；又称GAMP5。国际药物工程协会（ISPE)从确保计算机化系统技能满足预定用途又能符合GXP法规要求出发，组织专家编写一套的简称GAMP的方法性指南文件，该指南从1995年第一版开始到2008年，已经更新出版了5版，所以称为GAMP5";
+                break;
+
+            case "GMP":
+                j.innerHTML="全称："+"Good Manufacturing Practice";
+                k.innerHTML="释义："+"药品生产质量管理规范";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "HDS":
+                j.innerHTML="全称："+"Hardware Design Specification";
+                k.innerHTML="释义："+"硬件设计说明";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "HMI":
+                j.innerHTML="全称："+"Human & Machine Interface";
+                k.innerHTML="释义："+"人机交互界面";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "I/O":
+                j.innerHTML="全称："+"Input / Output";
+                k.innerHTML="释义："+"输入/输出";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "IQ":
+                j.innerHTML="全称："+"Installation Qualification";
+                k.innerHTML="释义："+"安装确认";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "ISPE":
+                j.innerHTML="全称："+"International Society for Pharmaceutical Engineering";
+                k.innerHTML="释义："+"国际制药工程协会";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "N/A":
+                j.innerHTML="全称："+"Not Applicable";
+                k.innerHTML="释义："+"不适用";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "OQ":
+                j.innerHTML="全称："+"Operational Qualification";
+                k.innerHTML="释义："+"运行确认";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "P&ID":
+                j.innerHTML="全称："+"Piping & Instrument Drawing";
+                k.innerHTML="释义："+"管道仪表流程图";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "PCS":
+                j.innerHTML="全称："+"Process Control System";
+                k.innerHTML="释义："+"过程控制系统";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "PLC":
+                j.innerHTML="全称："+"Programmable Logic Controller";
+                k.innerHTML="释义："+"可编程逻辑控制器";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "PQ":
+                j.innerHTML="全称："+"Performance Qualification";
+                k.innerHTML="释义："+"性能确认";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "QA":
+                j.innerHTML="全称："+"Quality Assurance";
+                k.innerHTML="释义："+"质量保证";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "QC":
+                j.innerHTML="全称："+"Quality Control";
+                k.innerHTML="释义："+"质量控制";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "RTM":
+                j.innerHTML="全称："+"Requirement Traceability Matrix";
+                k.innerHTML="释义："+"需求追溯矩阵";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "SAT":
+                j.innerHTML="全称："+"Site Acceptance Test";
+                k.innerHTML="释义："+"现场验收测试";
+                l.innerHTML="定义："+"设备/系统安装后在终端用户场地后，为支持其后续确认/验证或商业化使用而进行的检查、静态和动态测试。现场接收测试应在终端用户现场进行，并由相关部门进行批准。";
+                break;
+
+            case "SDS":
+                j.innerHTML="全称："+"Software Design Specification";
+                k.innerHTML="释义："+"软件设计说明";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "SIA":
+                j.innerHTML="全称："+"System Impact Assessment";
+                k.innerHTML="释义："+"系统影响性评估";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "SIP":
+                j.innerHTML="全称："+"Steam In Place";
+                k.innerHTML="释义："+"在位蒸汽处理";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "SMP":
+                j.innerHTML="全称："+"Standard Management Procedure";
+                k.innerHTML="释义："+"标准管理规程";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "SOP":
+                j.innerHTML="全称："+"Standard Operating Procedure";
+                k.innerHTML="释义："+"标准操作规程";
+                l.innerHTML="定义："+"将某一事件的标准操作步骤和要求以统一的格式描述出来,用来指导和规范日常的工作.SOP的精髓,就是将细节进行量化,用更通俗的话来说,SOP就是对某一程序中的关键控制点进行细化和量化。";
+                break;
+
+            case "URS":
+                j.innerHTML="全称："+"User Requirement Specification";
+                k.innerHTML="释义："+"用户需求说明";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "USP":
+                j.innerHTML="全称："+"United States Pharmacopoeia";
+                k.innerHTML="释义："+"美国药典";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "VM":
+                j.innerHTML="全称："+"Virtual Machine";
+                k.innerHTML="释义："+"虚拟机";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "VMP":
+                j.innerHTML="全称："+"Validation Master Plan";
+                k.innerHTML="释义："+"验证主计划";
+                l.innerHTML="定义："+"验证总体计划，也称为“ VMP”，概述了设施认证所涉及的原则，定义了要进行认证的区域和系统，并提供了用于实现和维护合格设施的书面计划。 VMP是验证计划的基础，并且应包括过程验证，设施和公用事业资格与验证，设备资格，清洁和计算机验证。这是GMP（药品生产质量管理规范）规范的制药行业的重要文件，因为它推动了验证项目的结构化方法。";
+                break;
+
+            case "VP":
+                j.innerHTML="全称："+"Validation Plan";
+                k.innerHTML="释义："+"验证计划";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "VSR":
+                j.innerHTML="全称："+"Validation Summary Report";
+                k.innerHTML="释义："+"验证总结报告";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "ALCOA":
+                j.innerHTML="全称："+"Attributable/Legible/Contemporaneous/Original/Accurate";
+                k.innerHTML="释义："+"可溯源/清晰/同步/原始/准确";
+                l.innerHTML="定义："+"FDA在2003年关于执行其21 CFR Part 11数据完整性规范的指南中，使用首字母缩写词ALCOA，定义了良好的数据完整性做法，技术人员在测试时的记录是可追溯的，清晰易懂的，记录与测试活动是同步的，原始且准确。" +
+                    "<br />" +
+                    "<br />" + "Attributable（可溯源）：谁获取的数据活谁执行的活动，什么时候？" +
+                    "<br />" + "Legible（清晰）：是否可以辨识数据和所有实验室记录？"+
+                    "<br />" + "Contemporaneous（同步）：记录和活动同步"+
+                    "<br />" + "Original（原始）：书面的打印资料、观察报告或经核实的副本（如适用）"+
+                    "<br />" + "Accurate（准确）：没有错误或修改";
+                break;
+
+            case "PV":
+                j.innerHTML="全称："+"Process Validation";
+                k.innerHTML="释义："+"工艺验证";
+                l.innerHTML="定义："+"能够很好的确保在特定工艺下能够生产出始终如一的符合预定规格和预期质量标准的产品的证明性工作。在这一阶段对已经设计的工艺进行确认，证明其能够进行重复性的商业化生产。";
+                break;
+
+            case "PPQ":
+                j.innerHTML="全称："+"Process Performance Validation";
+                k.innerHTML="释义："+"工艺性能确认";
+                l.innerHTML="定义："+"将实际厂房、设施、设备（已确认）以 及经培训的人员与商业化生产的工艺、控 制程序和原辅料等组合起来，生产商业化 的批次。" +
+                    "<br />"+"工艺性能确认标志着从产品开发和临床生产转移到日常商业生产。工艺性能确认（PPQ）证明了在商业生产规模下工艺设计的有效性和工艺控制策略的适用性。在日常生产中，系统的监测、控制和操作规程应能及时发现和修正产品周期中潜在的工艺变化。这些，PPQ提供了一定的保障。";
+                break;
+
+            case "CSV":
+                j.innerHTML="全称："+"Computerized System Validation";
+                k.innerHTML="释义："+"计算机化系统验证";
+                l.innerHTML="定义："+"计算机化系统验证是为确保计算机化系统持续稳定运行既定功能而执行的一项保障措施。范围包括了应用程序系统、与设备关联的计算机化控制系统（设备类系统）以及IT基础设施系统的确认、采购、验证/再验证、使用和维护。";
+                break;
+
+            case "GDP":
+                j.innerHTML="全称："+"Good Documentation Practice";
+                k.innerHTML="释义："+"良好的文件管理规范";
+                l.innerHTML="定义："+"良好的文件管理规范(GDP)是指编制、审查、批准、发放、记录、储存和归档文件的一整套系统程序。" +
+                   "<br />"+ "企业应当建立文件管理的操作规程，系统地设计、制定、审核、批准和发放文件。与本规范有关的文件应当经质量管理部门的审核。";
+                break;
+
+        }
+    }
+</script>
+</html>
