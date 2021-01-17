@@ -99,6 +99,10 @@
             color: #0d8278;
         }
 
+        a{
+            cursor: pointer;
+        }
+
 
     </style>
 </head>
@@ -106,23 +110,158 @@
 <body>
 <div id="logo"></div>
 <div class="container">
-
     <div class="search">
-    <input type="text" class="input1" placeholder="请输入需要查询的缩略词" list="slc" style="" id="context1" onkeypress="sender()">
+    <input type="search" class="input1" placeholder="请输入需要查询的缩略词" list="slc" style="" id="context1" onkeypress="sender()">
         <input type="button" class="input2" value="Search" onclick="search()">
     <datalist id="slc">
-        <option value="CFR"></option>
+        <option value="AC"></option>
+        <option value="ADF"></option>
+        <option value="AEX"></option>
+        <option value="AI"></option>
+        <option value="ANDA"></option>
+        <option value="AO"></option>
+        <option value="APS"></option>
+        <option value="AS"></option>
+        <option value="ASME"></option>
+        <option value="ASTM"></option>
+        <option value="BES"></option>
+        <option value="BLA"></option>
+        <option value="BOM"></option>
+        <option value="BPE"></option>
+        <option value="CAL"></option>
+        <option value="CAPA"></option>
         <option value="CCA"></option>
-        <option value="CIP"></option>
+        <option value="CE-SDS"></option>
+        <option value="CEX"></option>
+        <option value="CEX-HPLC"></option>
+        <option value="CF"></option>
+        <option value="CFR"></option>
+        <option value="cGMP"></option>
         <option value="ChP"></option>
+        <option value="CI"></option>
+        <option value="CIP"></option>
+        <option value="CPP"></option>
+        <option value="CPU"></option>
+        <option value="CQA"></option>
+        <option value="CS"></option>
+        <option value="CSV"></option>
+        <option value="CV"></option>
+        <option value="DCS"></option>
+        <option value="DHT"></option>
+        <option value="DI"></option>
+        <option value="DO"></option>
+        <option value="DOE"></option>
+        <option value="DP"></option>
         <option value="DQ"></option>
+        <option value="DS"></option>
         <option value="E-DOC"></option>
+        <option value="EHS"></option>
+        <option value="EM"></option>
+        <option value="EMPQ"></option>
+        <option value="EMS"></option>
+        <option value="ENG"></option>
+        <option value="EP"></option>
         <option value="EPH"></option>
         <option value="EU"></option>
         <option value="FAT"></option>
+        <option value="FDA"></option>
         <option value="FEMA"></option>
+        <option value="FMEA"></option>
         <option value="FRA"></option>
         <option value="FS"></option>
+        <option value="GAMP"></option>
+        <option value="GCP"></option>
+        <option value="GEP"></option>
+        <option value="GMP"></option>
+        <option value="GPP"></option>
+        <option value="GxP"></option>
+        <option value="HCP"></option>
+        <option value="HDS"></option>
+        <option value="HIC"></option>
+        <option value="HMI"></option>
+        <option value="I/O"></option>
+        <option value="ICH"></option>
+        <option value="IEC"></option>
+        <option value="IPC"></option>
+        <option value="IPT"></option>
+        <option value="IQ"></option>
+        <option value="ISPE"></option>
+        <option value="KPP"></option>
+        <option value="KVM"></option>
+        <option value="LMH"></option>
+        <option value="MCB"></option>
+        <option value="MCC"></option>
+        <option value="MFG"></option>
+        <option value="MP"></option>
+        <option value="MST"></option>
+        <option value="N/A"></option>
+        <option value="NDA"></option>
+        <option value="NMPA"></option>
+        <option value="NWP"></option>
+        <option value="OOS"></option>
+        <option value="OP"></option>
+        <option value="OQ"></option>
+        <option value="P&ID"></option>
+        <option value="PAI"></option>
+        <option value="PAR"></option>
+        <option value="PAS"></option>
+        <option value="PC"></option>
+        <option value="PCS"></option>
+        <option value="PDA"></option>
+        <option value="PFD"></option>
+        <option value="PLC"></option>
+        <option value="PPQ"></option>
+        <option value="PQ"></option>
+        <option value="PQP"></option>
+        <option value="PR"></option>
+        <option value="PS"></option>
+        <option value="PV"></option>
+        <option value="PW"></option>
+        <option value="Q&A"></option>
+        <option value="QA"></option>
+        <option value="QbD"></option>
+        <option value="QC"></option>
+        <option value="QP"></option>
+        <option value="RA"></option>
+        <option value="RCB"></option>
+        <option value="RTM"></option>
+        <option value="RW"></option>
+        <option value="SAT"></option>
+        <option value="SD"></option>
+        <option value="SDS"></option>
+        <option value="SEC-HPLC"></option>
+        <option value="SFC"></option>
+        <option value="SIA"></option>
+        <option value="SIP"></option>
+        <option value="SMP"></option>
+        <option value="SOP"></option>
+        <option value="SS"></option>
+        <option value="SU"></option>
+        <option value="SW"></option>
+        <option value="TC"></option>
+        <option value="TCU"></option>
+        <option value="TM"></option>
+        <option value="TMP"></option>
+        <option value="TOC"></option>
+        <option value="TPP"></option>
+        <option value="TS"></option>
+        <option value="UDS"></option>
+        <option value="UF"></option>
+        <option value="UF/DF"></option>
+        <option value="UP"></option>
+        <option value="UPS"></option>
+        <option value="URS"></option>
+        <option value="USP"></option>
+        <option value="UV"></option>
+        <option value="VF"></option>
+        <option value="VI"></option>
+        <option value="VM"></option>
+        <option value="VMP"></option>
+        <option value="VP"></option>
+        <option value="VSR"></option>
+        <option value="WCB"></option>
+        <option value="WC-CPP"></option>
+        <option value="WHO"></option>
     </datalist>
     </div>
 
@@ -154,7 +293,7 @@
             default:
                 j.innerHTML="非常抱歉，暂未收录该词条";
                 k.innerHTML="<a href=\"mailto:pengyun.xu@innoventbio.com?subject=缩略词收录&body=请描述清楚词条信息\">点击此处收录该词条</a>";
-                l.innerHTML="";
+                l.innerHTML="<a href=\"http://shareedit/_layouts/15/WopiFrame2.aspx?sourcedoc={F5385DCF-AD29-4310-B346-320C0FA5227F}&file=%E7%BA%AF%E5%8C%96%E6%9C%AF%E8%AF%AD.xlsx&action=default\" target='_blank'>查看已收录词条<a/>";
                 break;
 
             case "":
@@ -203,7 +342,7 @@
             case "EPH":
                 j.innerHTML="全称："+"Equipment Phase";
                 k.innerHTML="释义："+"基础功能";
-                l.innerHTML="";
+                l.innerHTML="定义："+"价值工程对象之所以存在或必需的用途。";
                 break;
 
             case "EU":
@@ -218,22 +357,22 @@
                 l.innerHTML="定义："+"工厂验收测试（FAT）是一个过程，通过验证设备是否按照设计规格制造和运行来评估设备在组装过程中和组装之后的过程。 FAT确保组件和控件根据设备本身的功能正常工作。顾名思义，该测试是在工厂执行的。进行FAT通常是为了评估任何差异和不合格之处，并制定处理方式。在测试过程中观察到的偏差或异常会记录在问题报告中，并在发货前进行纠正";
                 break;
 
-            case "FEMA":
+            case "FMEA":
                 j.innerHTML="全称："+"Failure Mode and Effect Analysis";
                 k.innerHTML="释义："+"失效模式和影响分析";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"在产品设计阶段和过程设计阶段，对构成产品的子系统、零件，对构成过程的各个工序逐一进行分析，找出所有潜在的失效模式，并分析其可能的后果，从而预先采取必要的措施，以提高产品的质量和可靠性的一种系统化的活动。";
                 break;
 
             case "FRA":
                 j.innerHTML="全称："+"Function Risk Assessment";
                 k.innerHTML="释义："+"功能风险评估";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"在风险事件发生之前或之后（但还没有结束），设备的功能能否满足工艺要求或功能是否会对工艺造成的影响的可能性进行量化评估的工作。即，测评设备功能带来的影响的可能程度。";
                 break;
 
             case "FS":
                 j.innerHTML="全称："+"Functional Specification";
                 k.innerHTML="释义："+"功能说明";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"对设备的各功能进行描述，包括功能的运行逻辑，运行参数等";
                 break;
 
             case "GAMP":
@@ -245,91 +384,93 @@
             case "GMP":
                 j.innerHTML="全称："+"Good Manufacturing Practice";
                 k.innerHTML="释义："+"药品生产质量管理规范";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"《药品生产质量管理规范》是药品生产和质量管理的基本准则，适用于药品制剂生产的全过程和原料药生产中影响成品质量的关键工序。大力推行药品GMP，是为了最大限度地避免药品生产过程中的污染和交叉污染，降低各种差错的发生，是提高药品质量的重要措施。";
                 break;
 
             case "HDS":
                 j.innerHTML="全称："+"Hardware Design Specification";
                 k.innerHTML="释义："+"硬件设计说明";
-                l.innerHTML="定义："+"";
+                l.innerHTML="";
                 break;
 
             case "HMI":
                 j.innerHTML="全称："+"Human & Machine Interface";
                 k.innerHTML="释义："+"人机交互界面";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"人机交互界面是指人与计算机系统之间的通信媒体或手段，是人与计算机之间进行各种符号和动作的双向信息交换的平台。";
                 break;
 
             case "I/O":
                 j.innerHTML="全称："+"Input / Output";
                 k.innerHTML="释义："+"输入/输出";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"输入输出设备（IO设备），是数据处理系统的关键外部设备之一，可以和计算机本体进行交互使用。如：键盘、写字板、麦克风、音响、显示器等。因此输入输出设备起了人与机器之间进行联系的作用。";
                 break;
 
             case "IQ":
                 j.innerHTML="全称："+"Installation Qualification";
                 k.innerHTML="释义："+"安装确认";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"安装确认(IQ)是指有客观证据支持,即正确地考虑到所有符合厂商规格的过程设备和辅助安装系统的主要布置和设备供应商的说明。z";
                 break;
 
             case "ISPE":
                 j.innerHTML="全称："+"International Society for Pharmaceutical Engineering";
                 k.innerHTML="释义："+"国际制药工程协会";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"国际制药工程协会（ISPE）是一个制药工程领域的民间组织。1980年在美国佛罗里达州坦帕市成立，主要由制药生产和研发领域的专业人员组成。";
                 break;
 
             case "N/A":
                 j.innerHTML="全称："+"Not Applicable";
                 k.innerHTML="释义："+"不适用";
-                l.innerHTML="定义："+"";
+                l.innerHTML="";
                 break;
 
             case "OQ":
                 j.innerHTML="全称："+"Operational Qualification";
                 k.innerHTML="释义："+"运行确认";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"运行确认(OQ)是通过按草拟的SOP运行空载实验,检查和测试仪器设备运行、操作和控制性能,通过记录并以文件形式证实仪器设备符合实验室检验的要求。";
                 break;
 
             case "P&ID":
                 j.innerHTML="全称："+"Piping & Instrument Drawing";
                 k.innerHTML="释义："+"管道仪表流程图";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"P&ID 的表达重点是管道的流程以及过程工艺如何控制，显示管道系统是如何将工业加工设备连接在一起的。P&ID 示意图还会显示用于监控物料在管道中的流动情况的仪表和阀门。";
                 break;
 
             case "PCS":
                 j.innerHTML="全称："+"Process Control System";
                 k.innerHTML="释义："+"过程控制系统";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"以保证生产过程的参量为被控制量使之接近给定值或保持在给定范围内的自动控制系统。这里“过程”是指在生产装置或设备中进行的物质和能量的相互作用和转换过程。表征过程的主要参量有温度、压力、流量、液位、成分、浓度等。通过对过程参量的控制，可使生产过程中产品的产量增加、质量提高和能耗减少。一般的过程控制系统通常采用反馈控制的形式，这是过程控制的主要方式。";
                 break;
 
             case "PLC":
                 j.innerHTML="全称："+"Programmable Logic Controller";
                 k.innerHTML="释义："+"可编程逻辑控制器";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"可编程逻辑控制器是种专门为在工业环境下应用而设计的数字运算操作电子系统。它采用一种可编程的存储器，在其内部存储执行逻辑运算、顺序控制、定时、计数和算术运算等操作的指令，通过数字式或模拟式的输入输出来控制各种类型的机械设备或生产过程。";
                 break;
 
             case "PQ":
                 j.innerHTML="全称："+"Performance Qualification";
                 k.innerHTML="释义："+"性能确认";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"性能确认（PQ）是在有制品时，常规正常生产条件下证明设备运行情况能达到预先设定的运行要求。";
                 break;
 
             case "QA":
                 j.innerHTML="全称："+"Quality Assurance";
                 k.innerHTML="释义："+"质量保证";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"质量保证（Quality Assurance）也是质量管理的一部分，它致力于提供质量要求会得到满足的信任。质量保证是指为使人们确信产品或服务能满足质量要求而在质量管理体系中实施并根据需要进行证实的全部有计划和有系统的活动。质量保证一般适用于有合同的场合，其主要目的是使用户确信产品或服务能满足规定的质量要求。" +
+                    "<br />"+"质量保证的内容绝不是单纯的保证质量，保证质量是质量控制的任务，质量保证是以保证质量为其基础，进一步引申到提供“信任”这一基本目的。";
                 break;
 
             case "QC":
                 j.innerHTML="全称："+"Quality Control";
                 k.innerHTML="释义："+"质量控制";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"为达到质量要求所采取的作业技术和活动称为质量控制。这就是说，质量控制是为了通过监视质量形成过程，消除质量环上所有阶段引起不合格或不满意效果的因素。以达到质量要求，获取经济效益，而采用的各种质量作业技术和活动。" +
+                    "<br />"+"质量控制是为使产品或服务达到质量要求而采取的技术措施和管理措施方面的活动。质量控制的目标在于确保产品或服务质量能满足要求（包括明示的、习惯上隐含的或必须履行的规定）。";
                 break;
 
             case "RTM":
                 j.innerHTML="全称："+"Requirement Traceability Matrix";
                 k.innerHTML="释义："+"需求追溯矩阵";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"需求追溯矩阵是一种主要管理需求变更和验证需求是否得到了实现的有效工具，借助RTM，可以跟踪每个需求的状态。";
                 break;
 
             case "SAT":
@@ -371,19 +512,19 @@
             case "URS":
                 j.innerHTML="全称："+"User Requirement Specification";
                 k.innerHTML="释义："+"用户需求说明";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"指使用方对设备、厂房、硬件设施系统等提出的自己的期望使用需求说明，设计方依据这个需求等提出自己具体的方案，设备供应商依据客户提供的URS方案设计施工。";
                 break;
 
             case "USP":
                 j.innerHTML="全称："+"United States Pharmacopoeia";
                 k.innerHTML="释义："+"美国药典";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"《美国药典》是由美国药典委员会编写的。美国药典是美国政府对药品质量标准和检定方法作出的技术规定，也是药品生产、使用、管理、检验的法律依据。NF收载了美国药典（USP）尚未收入的新药和新制剂。";
                 break;
 
             case "VM":
                 j.innerHTML="全称："+"Virtual Machine";
                 k.innerHTML="释义："+"虚拟机";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"虚拟机（Virtual Machine）指通过软件模拟的具有完整硬件系统功能的、运行在一个完全隔离环境中的完整计算机系统。在实体计算机中能够完成的工作在虚拟机中都能够实现。在计算机中创建虚拟机时，需要将实体机的部分硬盘和内存容量作为虚拟机的硬盘和内存容量。每个虚拟机都有独立的CMOS、硬盘和操作系统，可以像使用实体机一样对虚拟机进行操作。";
                 break;
 
             case "VMP":
@@ -445,7 +586,7 @@
             case "AC":
                 j.innerHTML="全称："+"Affinity Chromatography";
                 k.innerHTML="释义："+"亲和层析";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"亲和色谱也称为亲和层析，是一种利用固定相的结合特性来分离分子的色谱方法。亲和色谱在凝胶过滤色谱柱上连接与待分离的物质有一定结合能力的分子，并且它们的结合是可逆的，在改变流动相条件时二者还能相互分离。亲和色谱可以用来从混合物中纯化或浓缩某一分子，也可以用来去除或减少混合物中某一分子的含量。";
                 break;
 
             case "ADF":
@@ -457,13 +598,13 @@
             case "AEX":
                 j.innerHTML="全称："+"Anion Exchange Chromatography";
                 k.innerHTML="释义："+"阴离子交换层析";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"一种含阴离子交换剂的层析系统，根据样品混合物中各成分所含负电荷数量的不同，从而对阴离子交换剂结合的强度不同而得以分离。";
                 break;
 
             case "AI":
                 j.innerHTML="全称："+"Analog Input";
                 k.innerHTML="释义："+"模拟量输入";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"模拟量输入是指输入为连续变化的物理量，相对于数字量(简单的来说就是\"0\"\"1\"和电流电压两种激活输入单元的方式不同而已)输入（digital input）而言。通俗点其实就是精度，位数越高，把这个模拟量化的越细，结果也就越精准。";
                 break;
 
             case "ANDA":
@@ -475,7 +616,7 @@
             case "AO":
                 j.innerHTML="全称："+"Analog Output";
                 k.innerHTML="释义："+"模拟量输出";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"计算机或控制系统输出的模拟量称为模拟量输出，在单片机控制系统中，输出信号中模拟量为数不少，它们是单片机输出的数字信号经过模拟量输出通道处理后得到的。模拟量输出通道的任务是把计算机处理后的数字量信号先通过数据总线、隔离装置，再通过D/A转换器转换成模拟电压或电流信号，经放大用以驱动相应的执行器，从而达到控制的目的。";
                 break;
 
             case "AS":
@@ -487,7 +628,7 @@
             case "ASME":
                 j.innerHTML="全称："+"American Society of Mechanical Engineers";
                 k.innerHTML="释义："+"美国机械工程师协会";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"美国机械工程师协会 (ASME)（American Society of Mechanical Engineers）成立于1880年。现今已成为一家拥有全球超过125,000会员的国际性非盈利教育和技术组织。由于工程领域各学科间交叉性不断增长，ASME出版物也相应提供了跨学科前沿科技的资讯。涵盖的学科内容包括：基础工程、制造、系统设计等方面。";
                 break;
 
             case "ASTM":
@@ -499,7 +640,7 @@
             case "BES":
                 j.innerHTML="全称："+"Batch Execution Station  Batch";
                 k.innerHTML="释义："+"控制站";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"固定在同一面板或位于同一外壳中一个或多个控制操动器的集合。";
                 break;
 
             case "BLA":
@@ -511,7 +652,7 @@
             case "BOM":
                 j.innerHTML="全称："+"Bill of Materials";
                 k.innerHTML="释义："+"材料清单";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"材料清单（Bill of Material）指的是制造产品所需的所有零件、材料的总清单。";
                 break;
 
             case "BPE":
@@ -667,12 +808,6 @@
             case "FDA":
                 j.innerHTML="全称："+"Food and Drug Administration";
                 k.innerHTML="释义："+"美国食品药品监督管理局";
-                l.innerHTML="定义："+"";
-                break;
-
-            case "FMEA":
-                j.innerHTML="全称："+"Failure Mode and Effects Analysis";
-                k.innerHTML="释义："+"失败模式和影响分析";
                 l.innerHTML="定义："+"";
                 break;
 
@@ -1009,6 +1144,60 @@
             case "WHO":
                 j.innerHTML="全称："+"World Health Organization";
                 k.innerHTML="释义："+"世界卫生组织";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "NMPA":
+                j.innerHTML="全称："+"National Medical Products Administration";
+                k.innerHTML="释义："+"国家药品监督管理局";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "EP":
+                j.innerHTML="全称："+"Electro Polishing";
+                k.innerHTML="释义："+"电解抛光";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "MP":
+                j.innerHTML="全称："+"Mechanival Polishing";
+                k.innerHTML="释义："+"机械抛光";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "GEP":
+                j.innerHTML="全称："+"Good Engineering Practice";
+                k.innerHTML="释义："+"良好的工程规范";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "APS":
+                j.innerHTML="全称："+"Aspetic Process simulation";
+                k.innerHTML="释义："+"无菌工艺模拟实验";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "CAL":
+                j.innerHTML="全称："+"Calibration";
+                k.innerHTML="释义："+"校准";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "RCB":
+                j.innerHTML="全称："+"Research Cell Bank";
+                k.innerHTML="释义："+"研发细胞库";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "MCB":
+                j.innerHTML="全称："+"Master Cell Bank";
+                k.innerHTML="释义："+"主细胞库";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "WCB":
+                j.innerHTML="全称："+"Work Cell Bank";
+                k.innerHTML="释义："+"工作细胞库";
                 l.innerHTML="定义："+"";
                 break;
 
