@@ -1,0 +1,411 @@
+<!DOCTYPE process>
+<process lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon"
+          href="https://trello-attachments.s3.amazonaws.com/5d870c0418f7104546584cfb/5dcbcaedb6ca803685cc6fa0/a83d2af9b74ca6ddceec6ed84190fa15/Purification_(2).ico">
+    <title>培训演示</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(0, 0, 0, 0.85);
+            color: whitesmoke;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        #logo{
+            width: 180px;
+            height: 54px;
+            border-radius: 5px;
+            background-image: url("https://trello-attachments.s3.amazonaws.com/5d870c0418f7104546584cfb/5f531cee9a6672401310fc51/aba171ef3a08dbab931ae6e42a597cdd/logo.png");
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            margin: 2em 0 0 30px;
+        }
+
+        .wrapper {
+            width: 100%;
+            padding: 60px 0;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        [type="radio"]:checked,
+        [type="radio"]:not(:checked) {
+            position: absolute;
+            left: -9999px;
+        }
+
+        [type="radio"]:checked + label,
+        [type="radio"]:not(:checked) + label {
+            position: relative;
+            padding-left: 12px;
+            padding-right: 12px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            line-height: 30px;
+            font-size: 15px;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: #fff;
+            margin-right: 10px;
+            margin-left: 10px;
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+        }
+
+        [type="radio"]:checked + label:after,
+        [type="radio"]:not(:checked) + label:after {
+            content: "";
+            border-radius: 2px;
+            height: 20px;
+            padding: 5px;
+            background-color: #e74c3c;
+            position: absolute;
+            bottom: 0;
+            left: 6px;
+            top: -4px;
+            z-index: -1;
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+        }
+
+        [type="radio"]:not(:checked) + label:after {
+            opacity: 0;
+            width: 0;
+        }
+
+        [type="radio"]:checked + label:after {
+            opacity: 1;
+            width: calc(100% - 24px);
+        }
+
+        .checkbox-all:checked + label:after,
+        .checkbox-all:not(:checked) + label:after {
+            background-color: hotpink;
+        }
+
+        .checkbox-basic:checked + label:after,
+        .checkbox-basic:not(:checked) + label:after {
+            background-color: #f1c40f;
+        }
+
+        .checkbox-process:checked + label:after,
+        .checkbox-process:not(:checked) + label:after {
+            background-color: #ff932b;
+        }
+
+        .checkbox-equipment:checked + label:after,
+        .checkbox-equipment:not(:checked) + label:after {
+            background-color: #64e1fe;
+        }
+
+        .checkbox-quality:checked + label:after,
+        .checkbox-quality:not(:checked) + label:after {
+            background-color: #6edbbe;
+        }
+
+        .checkbox-regulation:checked + label:after,
+        .checkbox-regulation:not(:checked) + label:after {
+            background-color: #e75139;
+        }
+
+        .checkbox-all:checked + label {
+            margin-left: 17px;
+        }
+
+        label{
+            user-select: none;
+            position: fixed;
+            height: 80px;
+            width: 100%;
+
+        }
+
+        .seperator {
+            width: 100%;
+            height: 30px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            width: 1000px;
+        }
+
+        a{
+            text-decoration: none;
+            display: block;
+            padding: 0;
+            width: 191px;
+        }
+
+        .project {
+            border-radius: 4px;
+            -webkit-transition: all 0.2s linear;
+            transition: all 0.3s linear;
+            cursor: pointer;
+        }
+
+        .project:hover {
+            box-shadow: 6px 7px 28px 0 rgba(9, 255, 250, 0.7);
+        }
+
+        .tittle{
+            color: white;
+            text-align: center;
+            position: center;
+            height: 50px;
+            overflow: hidden;
+            word-wrap: break-word;
+            margin-top: 35px;
+            font-size: 1.0em;
+            background-image: linear-gradient( 111.5deg,  rgba(228,247,255,1) 21.9%, rgba(255,216,194,1) 92.2% );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+        
+        .tittle:hover{
+            background-image: none;
+            -webkit-text-fill-color: white;
+            text-shadow: 2px 2px 5px lightpink;
+        }
+
+        .owner{
+            text-align: right;
+            color: gray;
+            height: 25px;
+            position: relative;
+        }
+
+        .owner:hover{
+            color: #27ffd3;
+         }
+
+        .project.basic {
+            border: 3px solid #f1c40f;
+        }
+
+        .project.process {
+            border: 3px solid #ff932b;
+        }
+
+        .project.equipment {
+            border: 3px solid #64e1fe;
+        }
+
+        .project.quality {
+            border: 3px solid #6edbbe;
+        }
+
+        .project.regulation {
+            border: 3px solid #e75139;
+        }
+
+        .project.basic,a,
+        .project.process,
+        .project.equipment,
+        .project.quality,
+        .project.regulation {
+            opacity: 0;
+            transform: scale(0);
+            padding: 0;
+            margin: 0;
+            visibility: hidden;
+            border-width: 0;
+            width: 0;
+        }
+
+        .checkbox-all:checked ~ .cards .project.basic,
+        .checkbox-all:checked ~ .cards .project.process,
+        .checkbox-all:checked ~ .cards .project.equipment,
+        .checkbox-all:checked ~ .cards .project.quality,
+        .checkbox-all:checked ~ .cards .project.regulation,
+        .checkbox-basic:checked ~ .cards .project.basic,
+        .checkbox-process:checked ~ .cards .project.process,
+        .checkbox-equipment:checked ~ .cards .project.equipment,
+        .checkbox-quality:checked ~ .cards .project.quality,
+        .checkbox-regulation:checked ~ .cards .project.regulation {
+            opacity: 1;
+            min-height: 140px;
+            min-width: calc(22% - 28px);
+            padding: 0 10px;
+            margin: 10px;
+            visibility: visible;
+            transform: scale(1);
+            border-width: 3px;
+        }
+
+        @media only screen and (max-width: 650px) {
+            .container {
+                width: 100%;
+            }
+
+            label {
+                display: block;
+            }
+
+            .cards {
+                flex-direction: column;
+                width: auto;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="logo"></div>
+
+<div class="wrapper">
+    <div class="container">
+
+        <input class="checkbox-all" id="all" type="radio" name="checkbox" checked=""/>
+        <label for="all">all</label>
+        <input class="checkbox-basic" id="basic" type="radio" name="checkbox"/>
+        <label for="basic">basic</label>
+        <input class="checkbox-equipment" id="equipment" type="radio" name="checkbox"/>
+        <label for="equipment">equipment</label>
+        <input class="checkbox-process" id="process" type="radio" name="checkbox"/>
+        <label for="process">process</label>
+        <input class="checkbox-quality" id="quality" type="radio" name="checkbox"/>
+        <label for="quality">quality</label>
+        <input class="checkbox-regulation" id="regulation" type="radio" name="checkbox"/>
+        <label for="regulation">regulation</label>
+
+        <div class="seperator"></div>
+
+        <!-- project cards-->
+        <div class="cards">
+
+            <a class="project basic" href="#" target="_blank">
+                <p class="tittle">层析原理营业用奥飞多久啊送饭发窘是的房间</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project process" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project equipment" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project quality" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project regulation" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project basic" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project process" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project equipment" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project quality" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project regulation" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project basic" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project process" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project equipment" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project quality" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project regulation" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project basic" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project process" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project equipment" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project quality" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project regulation" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project process" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project equipment" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project quality" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project regulation" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+        </div>
+    </div>
+</div>
+</body>
+</process>
