@@ -2,9 +2,9 @@
 <process lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>培训演示</title>
     <link rel="shortcut icon"
           href="https://trello-attachments.s3.amazonaws.com/5d870c0418f7104546584cfb/5dcbcaedb6ca803685cc6fa0/a83d2af9b74ca6ddceec6ed84190fa15/Purification_(2).ico">
-    <title>培训演示</title>
     <style type="text/css">
         body {
             margin: 0;
@@ -115,6 +115,11 @@
             background-color: #e75139;
         }
 
+        .checkbox-other:checked + label:after,
+        .checkbox-other:not(:checked) + label:after {
+            background-color: #c197b7;
+        }
+
         .checkbox-all:checked + label {
             margin-left: 17px;
         }
@@ -185,7 +190,7 @@
         }
 
         .owner:hover{
-            color: #27ffd3;
+            color: #f8e8ed;
          }
 
         .project.basic {
@@ -208,11 +213,16 @@
             border: 3px solid #e75139;
         }
 
+        .project.other {
+            border: 3px solid #c197b7;
+        }
+
         .project.basic,a,
         .project.process,
         .project.equipment,
         .project.quality,
-        .project.regulation {
+        .project.regulation,
+        .project.other{
             opacity: 0;
             transform: scale(0);
             padding: 0;
@@ -231,7 +241,8 @@
         .checkbox-process:checked ~ .cards .project.process,
         .checkbox-equipment:checked ~ .cards .project.equipment,
         .checkbox-quality:checked ~ .cards .project.quality,
-        .checkbox-regulation:checked ~ .cards .project.regulation {
+        .checkbox-regulation:checked ~ .cards .project.regulation,
+        .checkbox-other:checked ~ .cards .project.other{
             opacity: 1;
             min-height: 140px;
             min-width: calc(22% - 28px);
@@ -278,6 +289,8 @@
         <label for="quality">quality</label>
         <input class="checkbox-regulation" id="regulation" type="radio" name="checkbox"/>
         <label for="regulation">regulation</label>
+        <input class="checkbox-other" id="other" type="radio" name="checkbox"/>
+        <label for="other">other</label>
 
         <div class="seperator"></div>
 
@@ -285,7 +298,7 @@
         <div class="cards">
 
             <a class="project basic" href="#" target="_blank">
-                <p class="tittle">层析原理营业用奥飞多久啊送饭发窘是的房间</p>
+                <p class="tittle">新员工入职培训--科技文献服务平台介绍</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
@@ -400,6 +413,11 @@
             </a>
 
             <a class="project regulation" href="#" target="_blank">
+                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+                <p class="owner">徐鹏云</p>
+            </a>
+
+            <a class="project other" href="#" target="_blank">
                 <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
                 <p class="owner">徐鹏云</p>
             </a>
