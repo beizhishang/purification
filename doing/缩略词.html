@@ -165,7 +165,6 @@
         <option value="EU"></option>
         <option value="FAT"></option>
         <option value="FDA"></option>
-        <option value="FEMA"></option>
         <option value="FMEA"></option>
         <option value="FRA"></option>
         <option value="FS"></option>
@@ -182,12 +181,12 @@
         <option value="I/O"></option>
         <option value="ICH"></option>
         <option value="IEC"></option>
+        <option value="IND"></option>
         <option value="IPC"></option>
         <option value="IPT"></option>
         <option value="IQ"></option>
         <option value="ISPE"></option>
         <option value="KPP"></option>
-        <option value="KVM"></option>
         <option value="LMH"></option>
         <option value="MCB"></option>
         <option value="MCC"></option>
@@ -202,6 +201,7 @@
         <option value="OP"></option>
         <option value="OQ"></option>
         <option value="P&ID"></option>
+        <option value="PA"></option>
         <option value="PAI"></option>
         <option value="PAR"></option>
         <option value="PAS"></option>
@@ -233,6 +233,8 @@
         <option value="SFC"></option>
         <option value="SIA"></option>
         <option value="SIP"></option>
+        <option value="SISPQ"></option>
+        <option value="SME"></option>
         <option value="SMP"></option>
         <option value="SOP"></option>
         <option value="SS"></option>
@@ -311,7 +313,7 @@
             case "CCA":
                 j.innerHTML="全称："+"Component Criticality Assessment";
                 k.innerHTML="释义："+"部件关键性评估";
-                l.innerHTML="定义："+"风险管理与验证（确认）中的一种手段，通过对“直接影响系统”的关键性部件进行风险评估，确定其在整个系统中的风险程度，并建议控制措施降低其风险，通过评估，最终归“关键性”与“非关键性”两大类";
+                l.innerHTML="定义："+"风险管理与验证（确认）中的一种手段，通过对“直接影响系统”的关键性部件进行风险评估，确定其在整个系统中的风险程度，并建议控制措施降低其风险，通过评估，最终归“关键性”与“非关键性”两大类。";
                 break;
 
             case "CIP":
@@ -354,7 +356,7 @@
             case "FAT":
                 j.innerHTML="全称："+"Factory Acceptance Test";
                 k.innerHTML="释义："+"工厂验收测试";
-                l.innerHTML="定义："+"工厂验收测试（FAT）是一个过程，通过验证设备是否按照设计规格制造和运行来评估设备在组装过程中和组装之后的过程。 FAT确保组件和控件根据设备本身的功能正常工作。顾名思义，该测试是在工厂执行的。进行FAT通常是为了评估任何差异和不合格之处，并制定处理方式。在测试过程中观察到的偏差或异常会记录在问题报告中，并在发货前进行纠正";
+                l.innerHTML="定义："+"工厂验收测试（FAT）是一个过程，通过验证设备是否按照设计规格制造和运行来评估设备在组装过程中和组装之后的过程。 FAT确保组件和控件根据设备本身的功能正常工作。顾名思义，该测试是在工厂执行的。进行FAT通常是为了评估任何差异和不合格之处，并制定处理方式。在测试过程中观察到的偏差或异常会记录在问题报告中，并在发货前进行纠正。";
                 break;
 
             case "FMEA":
@@ -372,13 +374,13 @@
             case "FS":
                 j.innerHTML="全称："+"Functional Specification";
                 k.innerHTML="释义："+"功能说明";
-                l.innerHTML="定义："+"对设备的各功能进行描述，包括功能的运行逻辑，运行参数等";
+                l.innerHTML="定义："+"对设备的各功能进行描述，包括功能的运行逻辑，运行参数等。";
                 break;
 
             case "GAMP":
                 j.innerHTML="全称："+"Good Automated Manufacturing Practice";
                 k.innerHTML="释义："+"良好的自动化生产规范";
-                l.innerHTML="定义："+"良好自动化生产实践指南,GAMP的第五版题目为’A Risk-base Approach Compliant GxP Computrized Systems‘遵从GXP计算机化系统监管的风险管理方法）；又称GAMP5。国际药物工程协会（ISPE)从确保计算机化系统技能满足预定用途又能符合GXP法规要求出发，组织专家编写一套的简称GAMP的方法性指南文件，该指南从1995年第一版开始到2008年，已经更新出版了5版，所以称为GAMP5";
+                l.innerHTML="定义："+"良好自动化生产实践指南,GAMP的第五版题目为’A Risk-base Approach Compliant GxP Computrized Systems‘遵从GXP计算机化系统监管的风险管理方法）；又称GAMP5。国际药物工程协会（ISPE)从确保计算机化系统技能满足预定用途又能符合GXP法规要求出发，组织专家编写一套的简称GAMP的方法性指南文件，该指南从1995年第一版开始到2008年，已经更新出版了5版，所以称为GAMP5。";
                 break;
 
             case "GMP":
@@ -408,7 +410,7 @@
             case "IQ":
                 j.innerHTML="全称："+"Installation Qualification";
                 k.innerHTML="释义："+"安装确认";
-                l.innerHTML="定义："+"安装确认(IQ)是指有客观证据支持,即正确地考虑到所有符合厂商规格的过程设备和辅助安装系统的主要布置和设备供应商的说明。z";
+                l.innerHTML="定义："+"安装确认(IQ)是指有客观证据支持,即正确地考虑到所有符合厂商规格的过程设备和辅助安装系统的主要布置和设备供应商的说明。";
                 break;
 
             case "ISPE":
@@ -527,6 +529,7 @@
                 l.innerHTML="定义："+"虚拟机（Virtual Machine）指通过软件模拟的具有完整硬件系统功能的、运行在一个完全隔离环境中的完整计算机系统。在实体计算机中能够完成的工作在虚拟机中都能够实现。在计算机中创建虚拟机时，需要将实体机的部分硬盘和内存容量作为虚拟机的硬盘和内存容量。每个虚拟机都有独立的CMOS、硬盘和操作系统，可以像使用实体机一样对虚拟机进行操作。";
                 break;
 
+
             case "VMP":
                 j.innerHTML="全称："+"Validation Master Plan";
                 k.innerHTML="释义："+"验证主计划";
@@ -610,7 +613,7 @@
             case "ANDA":
                 j.innerHTML="全称："+"Abbreviated New Drug Application";
                 k.innerHTML="释义："+"仿制药申请";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"ANDA的申请即为“复制”一个已被批准上市的产品。其中，这里的“复制”是指其与该上市药品具有相同的活性成分、剂型、规格、服用方式及适应症等。仿制药申请被称为简短的 (abbreviated)，是因为这类申请不需要提供临床前（动物）和临床（人体）数据来证明其安全性和有效性。取而代之的是，仿制药申请者必需提供产品生物等效性的证明材料（比如与原研药相比没有区别）。一旦此类药品获得批准，申请者可以生产并上市这一安全有效且价格低廉的替代物。";
                 break;
 
             case "AO":
@@ -789,7 +792,7 @@
             case "EM":
                 j.innerHTML="全称："+"Equipment Module";
                 k.innerHTML="释义："+"设备模块";
-                l.innerHTML="定义："+"模块,又称构件,是能够单独命名并独立地完成一定功能的集合,设备模块则是能够完成系统一定功能的设备集合";
+                l.innerHTML="定义："+"模块,又称构件,是能够单独命名并独立地完成一定功能的集合,设备模块则是能够完成系统一定功能的设备集合。";
                 break;
 
             case "EMPQ":
@@ -823,7 +826,7 @@
                 break;
 
             case "GPP":
-                j.innerHTML="全称："+"General process parameter";
+                j.innerHTML="全称："+"General Process Parameter";
                 k.innerHTML="释义："+"一般工艺参数";
                 l.innerHTML="定义："+"";
                 break;
@@ -866,7 +869,7 @@
 
             case "IPT":
                 j.innerHTML="全称："+"In-Process Testing";
-                k.innerHTML="释义："+"";
+                k.innerHTML="释义："+"中间测试";
                 l.innerHTML="定义："+"";
                 break;
 
@@ -891,7 +894,7 @@
             case "MFG":
                 j.innerHTML="全称："+"Manufacturing";
                 k.innerHTML="释义："+"生产（部）";
-                l.innerHTML="定义："+"生产部又称制造部，是以产品生产为主要工作的部门";
+                l.innerHTML="定义："+"生产部又称制造部，是以产品生产为主要工作的部门。";
                 break;
 
             case "MST":
@@ -903,7 +906,8 @@
             case "NDA":
                 j.innerHTML="全称："+"New Drug Application";
                 k.innerHTML="释义："+"新药上市申请";
-                l.innerHTML="定义："+"";
+                l.innerHTML="定义："+"当人体试验第三阶段完成，所需非临床试验已告结束，则可以出具一套资料，向FNS申请新药上市许可之核准，NDA主要目的是确保上市药品安全有效和质量可控。以植物药NDA为例，FDA认为除其在质量标准方面与化学药品确有不同之外，在安全性和有效性方面二者应符合相同上市标准。因此FND对植物药NDA在安全性和有效性方面的审批要求与相同适应证的化学药品相同，但在质量标准方面可有所不同。"
+                    + "<br />" + "植物药NDA申报材料与化学药品类似，主要包括以下内容：CMC数据、非临床药理和毒理数据、人体药代动力学和生物利用度数据、微生物数据、临床数据、安全性数据更新报告、统计学数据、病例报告表、有关专利情况、样品、包装及标签等。";
                 break;
 
             case "NWP":
@@ -921,6 +925,12 @@
             case "OP":
                 j.innerHTML="全称："+"Operations";
                 k.innerHTML="释义："+"操作程序";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "PA":
+                j.innerHTML="全称："+"Process Air";
+                k.innerHTML="释义："+"工艺压缩空气";
                 l.innerHTML="定义："+"";
                 break;
 
@@ -1041,7 +1051,7 @@
             case "SU":
                 j.innerHTML="全称："+"Single Use";
                 k.innerHTML="释义："+"一次性";
-                l.innerHTML="定义："+"只有一次,不重复的";
+                l.innerHTML="定义："+"只有一次，不重复的。";
                 break;
 
             case "SW":
@@ -1206,6 +1216,26 @@
                 j.innerHTML="全称："+"Working Cell Bank";
                 k.innerHTML="释义："+"工作细胞库";
                 l.innerHTML="定义："+"工作细胞库（Working Cell Bank，WCB）是由有限传代水平的主细胞库制备而来的均一性细胞悬液，分装适宜体积于多个容器中，冻存于-130℃或以下用于生产。由本细胞库移出的细胞无论开瓶与否，均不得再返回贮存。";
+                break;
+
+            case "IND":
+                j.innerHTML="全称："+"Investigational New Drug";
+                k.innerHTML="释义："+"新药研究申请";
+                l.innerHTML="定义："+"IND主要目的是提供足够信息来证明药品在人体进行试验是安全的，以及证明针对研究目的的临床方案设计是合理的。IND主要包括Ⅰ、Ⅱ、Ⅲ期临床试验申请，其中Ⅰ、Ⅱ期临床试验为初期临床试验，是疗效的探索阶段；Ⅲ期临床试验为扩大临床试验，是疗效的验证性阶段，只有在初期临床试验IND获准后，申请人才可以提交扩大临床试验申请。"
+                    + "<br />" + "在IND申报阶段，FDA一般规定（最低限度）药品申办者必须：（1）做该药的药理研究；（2）在至少二种动物身上进行急毒试验；（3）按照该药预想的用途进行为期二个星期至三个月的短期研究。一旦临床前研究结束，动物试验并没有结束随之完成，许多时间更长、更专项的研究如慢性、抗癌试验将在整个新药申请过程中进行。"
+                    + "<br />" + "临床前研究用来评估: （1）药品的药理学现象和作用机理(MOA)；（2）药物毒性特征和毒性靶器官；（3）药物吸收、分布、代谢和排泄(ADME)。当药品申办者认为它已具有足够的数据证明该药是安全时，就可准备向FDA提交新药临床研究申请（IND）。本质上IND只是一个建议，通过这 个建议，药品申办者获得FDA的许可，开始在人身上进行试验。";
+                break;
+
+            case "SME":
+                j.innerHTML="全称："+"Subject Matter Expert";
+                k.innerHTML="释义："+"各个区域的技术专家";
+                l.innerHTML="定义："+"";
+                break;
+
+            case "SISPQ":
+                j.innerHTML="全称："+"Safety, Identity, Strength, Purity, and Quality";
+                k.innerHTML="释义："+"产品质量的安全性、一致性、有效性、纯度和质量";
+                l.innerHTML="定义："+"";
                 break;
 
         }
