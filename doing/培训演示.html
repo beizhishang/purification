@@ -28,13 +28,6 @@
             margin: 2em 0 0 30px;
         }
 
-        .mulu{
-            display: block;
-            width: 180px;
-            height: 54px;
-            background-color: #27ffd3;
-        }
-
         .wrapper {
             width: 100%;
             padding: 60px 0;
@@ -173,28 +166,31 @@
             color: white;
             text-align: center;
             position: center;
-            height: 50px;
+            height: 130px;
+            width: 200px;
             overflow: hidden;
             word-wrap: break-word;
-            margin-top: 35px;
             font-size: 1.0em;
             background-image: linear-gradient( 111.5deg,  rgba(228,247,255,1) 21.9%, rgba(255,216,194,1) 92.2% );
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 600;
+            display: table-cell;
+            vertical-align: middle;
         }
         
         .tittle:hover{
             background-image: none;
             -webkit-text-fill-color: white;
-            text-shadow: 2px 2px 5px lightpink;
+            text-shadow: 2px 2px 10px lightpink;
         }
 
         .owner{
             text-align: right;
             color: gray;
-            height: 25px;
+            height: 0;
             position: relative;
+            margin-top: -30px;
         }
 
         .owner:hover{
@@ -275,6 +271,41 @@
                 width: auto;
             }
         }
+
+        /*回到顶部*/
+        .arrow{
+            border: 9px solid transparent;
+            border-bottom-color: #3DA0DB;
+            width: 0;
+            height: 0;
+            top:0;
+        }
+        .stick{
+            width: 8px;
+            height: 14px;
+            border-radius: 1px;
+            background-color: #3DA0DB;
+            top:15px;
+        }
+        #back_top div{
+            position: absolute;
+            margin: auto;
+            right: 0;
+            left: 0;
+        }
+        #back_top{
+            background-color: #dddddd;
+            height: 38px;
+            width: 38px;
+            border-radius: 3px;
+            display: block;
+            cursor: pointer;
+            position: fixed;
+            right: 50px;
+            bottom: 100px;
+            display: none;
+        }
+        /*回到顶部结束*/
 
     </style>
 </head>
@@ -405,33 +436,48 @@
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project process" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
-                <p class="owner">徐鹏云</p>
-            </a>
-
-            <a class="project equipment" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
-                <p class="owner">徐鹏云</p>
-            </a>
-
-            <a class="project quality" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
-                <p class="owner">徐鹏云</p>
-            </a>
-
-            <a class="project regulation" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
-                <p class="owner">徐鹏云</p>
-            </a>
-
             <a class="project other" href="#" target="_blank">
                 <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
                 <p class="owner">徐鹏云</p>
             </a>
-
         </div>
     </div>
 </div>
+
+<!--回到顶部-->
+    <div id="article"></div>
+    <div id="back_top">
+        <div class="arrow"></div>
+        <div class="stick"></div>
+    </div>
+    <script src="http://cdn.staticfile.org/jquery/1.11.1-rc2/jquery.min.js"></script>
+    <script>
+        $(function(){
+
+            $(window).scroll(function(){  //只要窗口滚动,就触发下面代码
+
+                var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度
+
+                if( scrollt >200 ){  //判断滚动后高度超过200px,就显示
+
+                    $("#back_top").fadeIn(400); //淡入
+
+                }else{
+
+                    $("#back_top").stop().fadeOut(400); //如果返回或者没有超过,就淡出.必须加上stop()停止之前动画,否则会出现闪动
+
+                }
+
+            });
+
+            $("#back_top").click(function(){ //当点击标签的时候,使用animate在200毫秒的时间内,滚到顶部
+
+                $("html,body").animate({scrollTop:"0px"},200);
+
+            });
+
+        });
+    </script>
+<!--回到顶部结束-->
 </body>
 </html>
