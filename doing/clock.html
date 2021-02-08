@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <link rel="shortcut icon"
+    href="https://trello-attachments.s3.amazonaws.com/5d870c0418f7104546584cfb/5dcbcaedb6ca803685cc6fa0/a83d2af9b74ca6ddceec6ed84190fa15/Purification_(2).ico">
+    <script src="https://dev.mavo.io/dist/mavo.es5.js" type="text/javascript"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+
+        #logo{
+            position: absolute;
+            background-image: url("https://trello-attachments.s3.amazonaws.com/5d870c0418f7104546584cfb/5f531cee9a6672401310fc51/aba171ef3a08dbab931ae6e42a597cdd/logo.png");
+            width: 180px;
+            height: 55px;
+            z-index: 100;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+
+        time {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+            margin: auto;
+            font: bold 2000% sans-serif;
+            flex-direction: column;
+            position: fixed;
+            color: #069784;
+        }
+
+        #content{
+            font-size: 50px;
+            color: rgba(10, 84, 92, 0.7);
+        }
+    </style>
+</head>
+<body>
+<div id="logo"></div>
+<div mv-app="clock" mv-bar="none">
+    <!-- 	Circles all hues every 6 minutes -->
+    <time style="background: hsl([$now / 1000 mod 360], 100%, 80%)">
+        [time($now)]
+        <div id="content"></div>
+    </time>
+</div>
+
+
+</body>
+<script>
+    (function () {
+        var now = new Date;
+        var y = now.getFullYear();
+        var M = now.getMonth() + 1;
+        var d = now.getDate();
+        if (M < 10) {
+            M = "0" + M
+        }
+
+        if (d < 10) {
+            d = "0" + d
+        }
+        content.innerHTML = y + "." + M + "." + d + "&nbsp;" + "星期" + "日一二三四五六"[now.getDay()];
+        setTimeout(arguments.callee, 1000);
+    })();
+
+</script>
+
+</html>

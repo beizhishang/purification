@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>checked~label</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #ff69b7;
+            cursor: pointer;
+        }
+
+        input{
+            display: none;
+        }
+
+        #test:checked ~ label div{
+            background-color: #55c57a;
+            position: absolute;
+            /*left: -100px;*/
+        }
+    </style>
+</head>
+<body>
+<input id="test" type="checkbox"\>
+<label for="test">
+    <div id="change">
+
+    </div>
+</label>
+</body>
+</html>
+
