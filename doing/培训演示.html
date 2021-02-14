@@ -130,7 +130,6 @@
             position: fixed;
             height: 80px;
             width: 100%;
-
         }
 
         .seperator {
@@ -148,7 +147,6 @@
             text-decoration: none;
             display: block;
             padding: 0;
-            width: 191px;
         }
 
         .project {
@@ -187,10 +185,11 @@
 
         .owner{
             text-align: right;
+            padding: 0;
+            margin: 0;
             color: gray;
-            height: 0;
             position: relative;
-            margin-top: -30px;
+            top: -20px;
         }
 
         .owner:hover{
@@ -221,7 +220,7 @@
             border: 3px solid #c197b7;
         }
 
-        .project.basic,a,
+        .project.basic,
         .project.process,
         .project.equipment,
         .project.quality,
@@ -241,6 +240,7 @@
         .checkbox-all:checked ~ .cards .project.equipment,
         .checkbox-all:checked ~ .cards .project.quality,
         .checkbox-all:checked ~ .cards .project.regulation,
+        .checkbox-all:checked ~ .cards .project.other,
         .checkbox-basic:checked ~ .cards .project.basic,
         .checkbox-process:checked ~ .cards .project.process,
         .checkbox-equipment:checked ~ .cards .project.equipment,
@@ -248,7 +248,7 @@
         .checkbox-regulation:checked ~ .cards .project.regulation,
         .checkbox-other:checked ~ .cards .project.other{
             opacity: 1;
-            min-height: 140px;
+            height: 140px;
             min-width: calc(22% - 28px);
             padding: 0 10px;
             margin: 10px;
@@ -341,105 +341,356 @@
                 <p class="owner">李锦</p>
             </a>
 
-            <a class="project process" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project process" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={2E948764-3787-4E16-9A73-2F17D0331E4E}&file=%E5%8D%95%E5%85%8B%E9%9A%86%E6%8A%97%E4%BD%93%E4%B8%8B%E6%B8%B8%E5%B7%A5%E8%89%BA%E7%AE%80%E4%BB%8B.pptx&action=default" target="_blank">
+                <p class="tittle">单克隆抗体下游工艺简介</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project equipment" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project equipment" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={69E318E3-A1B8-4912-AF9E-14E3DC242457}&file=%E6%B4%81%E5%87%80%E5%B7%A5%E4%BD%9C%E5%8F%B0.pptx&action=default" target="_blank">
+                <p class="tittle">洁净工作台</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project quality" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={ACE63F69-1577-47C3-B23A-B45F40F474CB}&file=%E8%89%AF%E5%A5%BD%E8%AE%B0%E5%BD%95%E8%A7%84%E8%8C%83.pptx&action=default" target="_blank">
+                <p class="tittle">良好记录规范</p>
+                <p class="owner">魏晴</p>
+            </a>
+
+            <a class="project regulation" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={F98023EB-E28F-4138-9B99-0D0B331559E3}&file=%E9%A3%8E%E9%99%A9%E5%9F%B9%E8%AE%AD.pptx&action=default" target="_blank">
+                <p class="tittle">风险培训</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project regulation" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={C5AE2327-62D8-45A9-9B06-09015B66B180}&file=%E9%98%80%E9%97%A8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.pptx&action=default" target="_blank">
+                <p class="tittle">阀门工作原理</p>
+                <p class="owner">杨新进</p>
+            </a>
+
+            <a class="project process" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={33B7F275-BB97-4E3F-81CC-39116875982F}&file=IBI301%E7%BA%AF%E5%8C%96%E5%B7%A5%E8%89%BA.pptx&action=default" target="_blank">
+                <p class="tittle">IBI301纯化工艺</p>
+                <p class="owner">易伟龙</p>
+            </a>
+
+            <a class="project equipment" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={10DF3D2A-B808-48B2-9487-165D2A40B836}&file=%E5%B0%81%E7%AE%A1%E6%9C%BA.pptx&action=default" target="_blank">
+                <p class="tittle">封管机</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project basic" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={83CE2F54-566C-415D-9D09-FA3D44E28C0B}&file=%E6%97%A0%E8%8F%8C%E6%8E%A7%E5%88%B6%E5%92%8C%E6%97%A0%E8%8F%8C%E4%BF%9D%E9%9A%9C.pptx&action=default" target="_blank">
+                <p class="tittle">无菌控制和无菌保障</p>
+                <p class="owner">李锦</p>
+            </a>
+
+            <a class="project regulation" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={DD20AEFE-5F1C-468B-8729-5DC1EC294913}&file=%E5%8F%98%E6%9B%B4%E6%B3%95%E8%A7%84%E5%9F%B9%E8%AE%AD.pptx&action=default" target="_blank">
+                <p class="tittle">法规变更培训</p>
+                <p class="owner">巨晓敏</p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={9492E5DB-83F5-4124-829B-17089FAD836C}&file=%E5%AE%89%E5%85%A8%E5%9F%B9%E8%AE%AD.pptx&action=default" target="_blank">
+                <p class="tittle">安全培训</p>
+                <p class="owner">周厚报</p>
+            </a>
+
+            <a class="project process" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={CD1F47B1-5330-49DC-AC7F-4A0D17175F6C}&file=IBI318%E7%BA%AF%E5%8C%96%E5%B7%A5%E8%89%BA.pptx&action=default" target="_blank">
+                <p class="tittle">IBI318纯化工艺</p>
+                <p class="owner">赵子明</p>
+            </a>
+
+            <a class="project equipment" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={3E45716B-220D-44A8-B443-2CDCF55C1C4D}&file=%E5%A4%9A%E5%8F%82%E6%95%B0%E4%BB%AA%EF%BC%88pH%E3%80%81%E7%94%B5%E5%AF%BC%EF%BC%89.pptx&action=default" target="_blank">
+                <p class="tittle">多参数仪（pH、电导）</p>
+                <p class="owner">易伟龙</p>
+            </a>
+
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={96543169-6E4C-433E-9B37-6E1876C26F47}&file=%E8%B4%A8%E9%87%8F%E9%A3%8E%E9%99%A9%E7%AE%A1%E7%90%86.pptx&action=default" target="_blank">
+                <p class="tittle">质量风险管理</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project process" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project equipment" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={B675912E-642E-4046-84EF-989286AD6EAE}&file=%E4%B8%80%E6%AC%A1%E6%80%A7%E6%B7%B7%E5%90%88%E5%99%A8.pptx&action=default" target="_blank">
+                <p class="tittle">一次性混合器</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project equipment" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={B9D2CE78-8C8A-4BCF-953B-2DB638D308CC}&file=%E4%B8%8D%E9%94%88%E9%92%A2%E5%82%A8%E7%BD%90%E7%BB%93%E6%9E%84.pptx&action=default" target="_blank">
+                <p class="tittle">不锈钢储罐结构</p>
+                <p class="owner">魏晴</p>
+            </a>
+
+            <a class="project process" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={C3FB257D-CF84-4E9D-8BA8-B78E0E2E8697}&file=IBI306%E7%BA%AF%E5%8C%96%E5%B7%A5%E8%89%BA.pptx&action=default" target="_blank">
+                <p class="tittle">IBI306纯化工艺</p>
+                <p class="owner">易伟龙</p>
+            </a>
+
+            <a class="project equipment" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={177AA082-FA0A-44BA-962B-B068F8943C12}&file=%E8%A0%95%E5%8A%A8%E6%B3%B5.pptx&action=default" target="_blank">
+                <p class="tittle">蠕动泵</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project quality" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={AA95C50D-8A91-45AD-BEEE-4BD4B4B0AA47}&file=%E5%81%8F%E5%B7%AE%E7%AE%A1%E7%90%86.pptx&action=default" target="_blank">
+                <p class="tittle">偏差管理</p>
+                <p class="owner">周厚报</p>
+            </a>
+
+            <a class="project regulation" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={9C8C90F4-F543-43C8-8A2E-AD3BD4D542EE}&file=%E8%8D%AF%E7%89%A9CMC%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E6%B3%95%E8%A7%84%E6%8C%87%E5%8D%97%E5%8F%8A%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82%E4%BB%8B%E7%BB%8D.pptx&action=default" target="_blank">
+                <p class="tittle">药物CMC开发中的法规指南及技术要求介绍</p>
+                <p class="owner"></p>
+            </a>
+
+            <a class="project other" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={80197C78-34AA-40D6-A0A7-00BE7D0366C7}&file=%E6%96%B0%E5%91%98%E5%B7%A5%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD--%E5%85%AC%E5%8F%B8%E4%BB%8B%E7%BB%8D.pptx&action=default" target="_blank">
+                <p class="tittle">新员工入职培训--公司介绍</p>
+                <p class="owner"></p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={0E6F0FA4-C0BE-4A05-90A8-485C3747C270}&file=%E5%B1%82%E6%9E%90%E5%8E%9F%E7%90%86.pptx&action=default" target="_blank">
+                <p class="tittle">层析原理</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project regulation" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project process" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={5EB973C9-4E51-4FCB-8EFF-D8566B17D475}&file=%E5%B7%A5%E8%89%BA%E4%B8%8E%E4%BA%A7%E5%93%81%E5%BC%80%E5%8F%91%E7%AE%80%E4%BB%8B.pptx&action=default" target="_blank">
+                <p class="tittle">工艺与产品开发简介</p>
+                <p class="owner">周凯松</p>
+            </a>
+
+            <a class="project equipment" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={EF030034-70E9-4E42-8442-D51A15EB07B8}&file=%E8%AE%BE%E5%A4%87%E7%B3%BB%E7%BB%9FCSV%E9%AA%8C%E8%AF%81.pptx&action=default" target="_blank">
+                <p class="tittle">设备系统CSV验证</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project basic" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={F8FBC1F0-F9D9-44BE-A350-5EF8AEA053CC}&file=%E5%8F%98%E6%9B%B4%E6%8E%A7%E5%88%B6.pptx&action=default" target="_blank">
+                <p class="tittle">变更控制</p>
+                <p class="owner">周厚报</p>
+            </a>
+
+            <a class="project other" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={5E12DAA2-8E28-43FC-A56B-056290CE0E3D}&file=%E6%96%B0%E5%91%98%E5%B7%A5%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD--%E5%B7%AE%E6%97%85%E5%88%B6%E5%BA%A6.pptx&action=default" target="_blank">
+                <p class="tittle">新员工入职培训--差旅制度</p>
+                <p class="owner"></p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={56B8FFE5-4242-4954-BFAF-55DD92632B0A}&file=%E5%A4%B9%E5%A5%97%E6%8E%A7%E6%B8%A9%E5%8E%9F%E7%90%86.pptx&action=default" target="_blank">
+                <p class="tittle">夹套控温原理</p>
+                <p class="owner">赵子明</p>
+            </a>
+
+            <a class="project equipment" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={2716FB5A-34B5-4FCA-9FAF-D592B20B04D5}&file=%E5%AE%8C%E6%95%B4%E6%80%A7%E6%B5%8B%E8%AF%95%E4%BB%AA.pptx&action=default" target="_blank">
+                <p class="tittle">完整性检测仪</p>
+                <p class="owner">魏晴</p>
+            </a>
+
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={8BCA732A-4AFC-4904-A56B-1AC53ACF86B3}&file=CAPA%E5%9F%B9%E8%AE%AD.pptx&action=default" target="_blank">
+                <p class="tittle">CAPA培训</p>
+                <p class="owner">周厚报</p>
+            </a>
+
+            <a class="project other" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={A138CE53-757F-4E3F-A7DF-2C279E26F4B7}&file=%E6%96%B0%E5%91%98%E5%B7%A5%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD--%E7%BB%A9%E6%95%88%E7%AE%A1%E7%90%86.pptx&action=default" target="_blank">
+                <p class="tittle">新员工入职培训--绩效管理</p>
+                <p class="owner"></p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={05C5334C-9B07-4B12-ADE4-577A995D6D04}&file=%E6%B4%81%E5%87%80%E5%8C%BA%E7%A9%BA%E8%B0%83%E7%B3%BB%E7%BB%9F.pptx&action=default" target="_blank">
+                <p class="tittle">洁净区空调系统</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project process" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project equipment" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={1DDC6C4F-6821-4025-9220-E8096D230993}&file=AKTA%20process%E6%89%8B%E5%8A%A8%E6%8C%87%E4%BB%A4.pptx&action=default" target="_blank">
+                <p class="tittle">AKTA process手动指令</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project equipment" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={33732FC3-30E4-4371-B1D3-4376FCD85D6A}&file=%E5%81%8F%E5%B7%AE%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E4%B8%BB%E8%AE%B0%E5%BD%95%E3%80%81%E8%A1%A5%E5%85%85%E8%AE%B0%E5%BD%95.pptx&action=default" target="_blank">
+                <p class="tittle">偏差板块流程培训ppt--主记录、补充记录</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project other" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={5A5F653F-4C06-4F26-A891-3F3C83A41641}&file=%E6%96%B0%E5%91%98%E5%B7%A5%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD--%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83%E5%9F%B9%E8%AE%AD.pptx&action=default" target="_blank">
+                <p class="tittle">新员工入职培训--知识产权培训</p>
+                <p class="owner"></p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={30529014-24CB-4B6E-B72E-A66D34D6970E}&file=%E4%BA%B2%E5%92%8C%E5%B1%82%E6%9E%90.pptx&action=default" target="_blank">
+                <p class="tittle">亲和层析</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project quality" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project equipment" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={C00C9A53-798C-4706-BF81-6CA22256B90E}&file=%E6%8E%A5%E7%AE%A1%E6%9C%BA.pptx&action=default" target="_blank">
+                <p class="tittle">接管机</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project regulation" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={88049567-5389-4730-AB66-353D4F1AE2D6}&file=%E5%81%8F%E5%B7%AE%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E8%B0%83%E6%9F%A5%E4%BB%BB%E5%8A%A1.pptx&action=default" target="_blank">
+                <p class="tittle">偏差板块流程培训ppt--调查任务</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project other" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={96F18DD0-5922-47F8-ABC0-4CF9C90803D9}&file=%E6%96%B0%E5%91%98%E5%B7%A5%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD--%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%9F%B9%E8%AE%AD.pptx&action=default" target="_blank">
+                <p class="tittle">新员工入职培训--信息安全培训</p>
+                <p class="owner"></p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={F3D13FC8-135F-44BF-9A0A-93CCEE728A2F}&file=%E6%95%B0%E6%8D%AE%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B9%B4%E5%BA%A6%E5%9F%B9%E8%AE%AD.pptx&action=default" target="_blank">
+                <p class="tittle">数据可靠性年度培训</p>
+                <p class="owner">陆人豪</p>
+            </a>
+
+            <a class="project equipment" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={3930E61E-4F1A-4707-A357-E99194CA3172}&file=%E5%B1%82%E6%9E%90%E6%9F%B1%E4%BB%8B%E7%BB%8D.pptx&action=default" target="_blank">
+                <p class="tittle">层析柱介绍</p>
+                <p class="owner">赵子明</p>
+            </a>
+
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={CF2D2F95-3116-4EE8-B114-287AA5E0FF80}&file=%E5%81%8F%E5%B7%AE%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E9%98%B6%E6%AE%B5%E6%80%A7%E8%B0%83%E6%9F%A5%E6%8A%A5%E5%91%8A.pptx&action=default" target="_blank">
+                <p class="tittle">偏差板块流程培训ppt--阶段性调查报告</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project other" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={F1C80830-E0B8-4643-9463-802ABC903D0C}&file=%E6%96%B0%E5%91%98%E5%B7%A5%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD--%E8%80%83%E5%8B%A4%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86.pptx&action=default" target="_blank">
+                <p class="tittle">新员工入职培训--考勤相关知识</p>
+                <p class="owner"></p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={D74BD454-9C61-47E2-A3CC-9659E071AF1A}&file=%E5%B1%82%E6%9E%90%E6%9C%AF%E8%AF%AD.ppt&action=default" target="_blank">
+                <p class="tittle">层析术语</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project basic" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={2B005C7E-887D-453D-A90F-F034CB06E518}&file=%E5%81%8F%E5%B7%AE%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E8%A1%8C%E5%8A%A8%E9%A1%B9%E3%80%81%E7%BA%A0%E6%AD%A3.pptx&action=default" target="_blank">
+                <p class="tittle">偏差板块流程培训ppt--行动项、纠正</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project other" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={73D92884-04F1-4F76-83A6-87A23C2F4DB8}&file=%E6%96%B0%E5%91%98%E5%B7%A5%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD--%E8%A1%8C%E6%94%BF%E4%BA%8B%E5%8A%A1.pptx&action=default" target="_blank">
+                <p class="tittle">新员工入职培训--行政事务</p>
+                <p class="owner"></p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={68767B2A-87C2-4F87-9FAF-9E6EDD65C4AB}&file=%E5%BE%AE%E7%94%9F%E7%89%A9%E9%99%90%E5%BA%A6%E6%A3%80%E6%9F%A5%E4%B8%8E%E6%97%A0%E8%8F%8C%E6%A3%80%E6%9F%A5%E6%B3%95.pptx&action=default" target="_blank">
+                <p class="tittle">微生物限度检查与无菌检查法</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project process" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={C0263F42-D0BE-42B7-B801-5E6B2E8A8CBF}&file=%E5%8F%98%E6%9B%B4%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E7%B4%A7%E6%80%A5%E5%8F%98%E6%9B%B4.pptx&action=default" target="_blank">
+                <p class="tittle">变更板块流程培训ppt--紧急变更</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project other" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={9835A3D2-7D93-420C-887C-A432357207FA}&file=%E6%96%B0%E5%91%98%E5%B7%A5%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD--%E7%A7%91%E6%8A%80%E6%96%87%E7%8C%AE%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0%E4%BB%8B%E7%BB%8D.pptx&action=default" target="_blank">
+                <p class="tittle">新员工入职培训--科技文献服务平台介绍</p>
+                <p class="owner"></p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={6CBC8B4D-5C7C-47B7-8DD4-A06521628A91}&file=%E8%86%9C%E5%88%86%E7%A6%BB%E6%8A%80%E6%9C%AF%E7%AE%80%E4%BB%8B.ppt&action=default" target="_blank">
+                <p class="tittle">膜分离技术简介</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project equipment" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={7389B47B-3F61-43BC-9028-454121D199FC}&file=%E5%8F%98%E6%9B%B4%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E4%B8%B4%E6%97%B6%E5%8F%98%E6%9B%B4%E4%B8%BB%E8%AE%B0%E5%BD%95%E5%8F%8A%E8%A1%A5%E5%85%85%E8%AE%B0%E5%BD%95.pptx&action=default" target="_blank">
+                <p class="tittle">变更板块流程培训ppt--临时变更主记录及补充记录</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project other" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={E50DE22C-3CBE-4663-8E2C-B39A2B0F67F4}&file=%E6%96%B0%E5%91%98%E5%B7%A5%E5%85%A5%E8%81%8C%E5%9F%B9%E8%AE%AD--%E9%9B%86%E5%9B%A2EHS%E5%9F%B9%E8%AE%AD.pptx&action=default" target="_blank">
+                <p class="tittle">新员工入职培训--集团EHS培训</p>
+                <p class="owner"></p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={9DA7960A-2E23-4879-B456-AE992D9B92A3}&file=%E5%8D%95%E5%85%8B%E9%9A%86%E6%8A%97%E4%BD%93%E5%88%B6%E5%A4%87.pptx&action=default" target="_blank">
+                <p class="tittle">单克隆抗体制备</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project quality" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={6E16DCA7-0E8C-4CB9-BFD7-61C62E97F85F}&file=%E5%8F%98%E6%9B%B4%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E6%B0%B8%E4%B9%85%E5%8F%98%E6%9B%B4%E4%B8%BB%E8%AE%B0%E5%BD%95%E5%8F%8A%E8%A1%A5%E5%85%85%E8%AE%B0%E5%BD%95.pptx&action=default" target="_blank">
+                <p class="tittle">变更板块流程培训ppt--永久变更主记录及补充记录</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={F4903429-A1AA-4C3E-B412-B6AAFDED49B8}&file=%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%8D%95%E6%8A%97%E7%94%9F%E4%BA%A7%E7%BA%BF%E4%B8%8D%E9%94%88%E9%92%A2%E7%AE%A1%E7%BD%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%AA%8C%E8%AF%81.pptx&action=default" target="_blank">
+                <p class="tittle">大规模单抗生产线不锈钢管罐系统的验证</p>
+                <p class="owner">周厚报</p>
+            </a>
+
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={018826EC-5A31-4292-94B4-BE166C04C19C}&file=%E5%8F%98%E6%9B%B4%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E5%8F%98%E6%9B%B4%E5%BD%B1%E5%93%8D%E9%A3%8E%E9%99%A9%E8%AF%84%E4%BC%B0.pptx&action=default" target="_blank">
+                <p class="tittle">变更板块流程培训ppt--变更影响风险评估</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={6088E861-C95C-47CF-AD9F-BBDBAEA80D28}&file=%E5%B1%82%E6%9E%90%E7%AD%96%E7%95%A5.pptx&action=default" target="_blank">
+                <p class="tittle">层析策略</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project regulation" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={5B729C29-338E-4F7D-A2B6-62A4C87366AE}&file=%E5%8F%98%E6%9B%B4%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E5%8F%98%E6%9B%B4%E9%83%A8%E5%88%86%E7%94%9F%E6%95%88%E7%94%B3%E8%AF%B7.pptx&action=default" target="_blank">
+                <p class="tittle">变更板块流程培训ppt--变更部分生效申请</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={3A9B7621-CD96-4A10-AB24-D7AB598B2498}&file=%E7%A6%BB%E5%AD%90%E5%B1%82%E6%9E%90.ppt&action=default" target="_blank">
+                <p class="tittle">离子层析</p>
                 <p class="owner">徐鹏云</p>
             </a>
 
-            <a class="project other" href="#" target="_blank">
-                <p class="tittle">Hello world! Hello world! Hello world! Hello world!</p>
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={B9E55104-0697-4B64-A804-410ABC4CA341}&file=%E5%8F%98%E6%9B%B4%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E5%8F%98%E6%9B%B4%E8%A1%8C%E5%8A%A8%E9%A1%B9.pptx&action=default" target="_blank">
+                <p class="tittle">变更板块流程培训ppt--变更行动项</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={80AD9622-5DB4-44A2-BECF-DAEE16C5B37A}&file=FAT%E6%B5%81%E7%A8%8B%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9.pptx&action=default" target="_blank">
+                <p class="tittle">FAT流程及注意事项</p>
+                <p class="owner">周厚报</p>
+            </a>
+
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={CD791A16-39E4-4C46-BC28-C23200E859F5}&file=%E5%8F%98%E6%9B%B4%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E5%8F%98%E6%9B%B4%E5%90%8E%E7%BD%AE%E8%A1%8C%E5%8A%A8%E9%A1%B9.pptx&action=default" target="_blank">
+                <p class="tittle">变更板块流程培训ppt--变更后置行动项</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={D28F4626-4C6C-4FCA-9036-EA2FD3D30617}&file=%E7%96%8F%E6%B0%B4%E5%B1%82%E6%9E%90.ppt&action=default" target="_blank">
+                <p class="tittle">疏水层析</p>
                 <p class="owner">徐鹏云</p>
             </a>
+
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={D98CE3A7-A9D9-499F-8980-2DA93B8FC25A}&file=%E5%8F%98%E6%9B%B4%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E5%8F%98%E6%9B%B4%E8%AE%A1%E5%88%92%E4%BF%AE%E6%94%B9%E7%94%B3%E8%AF%B7.pptx&action=default" target="_blank">
+                <p class="tittle">变更板块流程培训ppt--变更计划修改申请</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={45F749BB-17A2-40DD-B730-ECA4FE1F5DD3}&file=pH%E5%80%BC%E4%B8%8E%E9%85%B8%E7%A2%B1%E7%9F%A5%E8%AF%86%E7%90%86%E8%AE%BA.pptx&action=default" target="_blank">
+                <p class="tittle">pH值与酸碱知识理论</p>
+                <p class="owner">秦笃伟</p>
+            </a>
+
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={8E85B496-4BDD-4167-A527-05DCA9BD5D40}&file=%E5%8F%98%E6%9B%B4%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E5%8F%98%E6%9B%B4%E5%89%8D%E7%BD%AE%E8%A1%8C%E5%8A%A8%E9%A1%B9.pptx&action=default" target="_blank">
+                <p class="tittle">变更板块流程培训ppt--变更前置行动项</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project basic" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={56EEC029-9C34-404E-A846-FE98438C4717}&file=GMP%E8%BD%A6%E9%97%B4%E6%9B%B4%E8%A1%A3%E5%9F%B9%E8%AE%AD.PPTX&action=default" target="_blank">
+                <p class="tittle">GMP车间更衣培训</p>
+                <p class="owner">魏晴</p>
+            </a>
+
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={6DE5CB8A-23F2-4997-B931-6DB750BA8E54}&file=%E5%8F%98%E6%9B%B4%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E5%8F%98%E6%9B%B4%E7%BB%88%E6%AD%A2%E8%A1%8C%E5%8A%A8%E9%A1%B9.pptx&action=default" target="_blank">
+                <p class="tittle">变更板块流程培训ppt--变更终止行动项</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={B8E7E974-4642-4917-8816-357AB9F9585B}&file=%E5%8F%98%E6%9B%B4%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E5%8F%98%E6%9B%B4%E7%BB%88%E6%AD%A2%E7%94%B3%E8%AF%B7.pptx&action=default" target="_blank">
+                <p class="tittle">变更板块流程培训ppt--变更终止申请</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={F9C4870E-46C1-4A85-9DE7-7F6AAD52BF45}&file=CAPA%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E4%B8%BB%E8%AE%B0%E5%BD%95.pptx&action=default" target="_blank">
+                <p class="tittle">CAPA板块流程培训ppt--主记录</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={F66E175D-05DC-4CD7-9849-180C20F755C9}&file=CAPA%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--%E8%A1%8C%E5%8A%A8%E9%A1%B9.pptx&action=default" target="_blank">
+                <p class="tittle">CAPA板块流程培训ppt--行动项</p>
+                <p class="owner">陈思依</p>
+            </a>
+
+            <a class="project quality" href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={42D15CE8-9E9A-4BBB-BAFB-7F5F3FAD4B2A}&file=CAPA%E6%9D%BF%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9F%B9%E8%AE%ADppt--CAPA%E4%BF%AE%E8%AE%A2.pptx&action=default" target="_blank">
+                <p class="tittle">CAPA板块流程培训ppt--CAPA修订</p>
+                <p class="owner">陈思依</p>
+            </a>
+
         </div>
     </div>
 </div>
