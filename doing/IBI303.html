@@ -2,633 +2,144 @@
 <html>
 <head>
     <title>IBI303</title>
-</head>
-<meta charset="GBK">
-<link href="https://trello-attachments.s3.amazonaws.com/5d870c0418f7104546584cfb/5dcbcaedb6ca803685cc6fa0/a83d2af9b74ca6ddceec6ed84190fa15/Purification_(2).ico"
+    <meta charset="GBK">
+    <link href="https://trello-attachments.s3.amazonaws.com/5d870c0418f7104546584cfb/5dcbcaedb6ca803685cc6fa0/a83d2af9b74ca6ddceec6ed84190fa15/Purification_(2).ico"
       rel="shortcut icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
 <style>
-    * {
-        box-sizing: border-box;
-        /*border:solid 1px red;*/
-    }
-
     body {
-
-        background: #ffffff;
-        margin: 0;
-        /*背景填滿無邊界*/
-        overflow: hidden;
-        /*讓物件跑出背景時不會出現捲軸*/
-        /*cursor:crosshair;*/
-
+        font-family: 'Roboto', sans-serif;
     }
 
-    /*------------定位------------*/
-    .lefter {
-        position: absolute;
-        background: #ade3e3;
-        width: 100%;
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .sidebar{
+        position: fixed;
+        left: -250px;
+        width: 250px;
         height: 100%;
-        left: 0;
-        overflow: hidden;
+        background: #042331;
+        transition: all .5s ease;
     }
 
-    .ball {
-        position: absolute;
-        width: 400px;
-        height: 400px;
-        left: 40%;
-        top: 15%;
-        border-radius: 50%;
-        border: solid 1px #ffffff;
-        overflow: hidden;
+    .sidebar header{
+        font-size: 22px;
+        color: white;
+        text-align: center;
+        line-height: 70px;
+        background: #063146;
+        user-select: none;
     }
 
-    .ball:after {
-        content: "";
-        position: absolute;
-        background: #ffffff;
-        opacity: 0.2;
-        border-radius: 50%;
-        width: 400px;
-        height: 400px;
-        left: 0;
-        top: 0;
-    }
-
-    /*------------地面------------*/
-
-    /*地層*/
-    .ground {
-        position: absolute;
-        background: #E2F6F6;
-        width: 400px;
-        height: 120px;
-        bottom: 0;
-        left: 0;
-        margin: 0;
-        border-radius: 50% 50% 50% 50%/50% 50% 100% 100%;
-    }
-
-    .ground:before {
-        content: "";
-        position: absolute;
-        background: #E2F6F6;
-        width: 140px;
-        height: 40px;
-        bottom: 90px;
-        border-radius: 50% 50% 0 0/100% 100% 0 0;
-        transform: rotate(-5deg);
-        box-shadow: 50px 10px 0px #E2F6F6;
-    }
-
-    .ground:after {
-        content: "";
-        position: absolute;
-        background: #E2F6F6;
-        width: 150px;
-        height: 40px;
-        bottom: 90px;
-        right: 0;
-        border-radius: 50% 50% 0 0/100% 100% 0 0;
-        transform: rotate(5deg);
-        box-shadow: -65px 10px 0px #E2F6F6;
-    }
-
-    /*------------植物------------*/
-
-    /*小樹樹幹*/
-    .tree_back {
-        position: absolute;
-        background: #348e8d;
-        width: 10px;
-        height: 15px;
-        bottom: 130px;
-        right: 20%;
-    }
-
-    /*小樹*/
-    .tree_back:before {
-        content: "";
-        position: absolute;
-        background: #e2f4f4;
-        width: 30px;
-        height: 60px;
-        border-radius: 50%;
-        bottom: 15px;
-        right: -10px;
-    }
-
-    /*大樹樹幹*/
-    .tree {
-        position: absolute;
-        background: #348e8d;
-        width: 10px;
-        height: 40px;
-        bottom: 130px;
-        right: 16%;
-    }
-
-    /*大樹*/
-    .tree:before {
-        content: "";
-        position: absolute;
-        background: #ffffff;
-        width: 40px;
-        height: 80px;
-        border-radius: 50%;
-        bottom: 25px;
-        left: -15px;
-    }
-
-    /*------------郵筒------------*/
-
-    /*郵筒a*/
-    .postbox_a {
-        position: absolute;
-        background: #73fffd;
-        width: 20px;
-        height: 25px;
-        bottom: 138px;
-        left: 15%;
-        animation-name: upppp;
-        animation-duration: 1s;
-        animation-iteration-count: infinite;
-        /*無限重複播放動畫*/
-        animation-timing-function: ease-in-out;
-        /*緩入緩出效果*/
-        animation-direction: alternate;
-        /*反向播放動畫*/
-    }
-
-    /*郵筒a的桿子*/
-    .postbox_a:after {
-        content: "";
-        position: absolute;
-        background: #76ecea;
-        width: 5px;
-        height: 20px;
-        bottom: -20px;
-        left: 8px;
-    }
-
-    /*所有的郵筒洞洞*/
-    .hole {
-        position: absolute;
-        background: #ffffff;
-        width: 6px;
-        height: 2px;
-        top: 5px;
-        left: 2px;
-        box-shadow: 10px 0px 0px rgba(100%, 100%, 100%);
-    }
-
-    /*郵筒b*/
-    .postbox_b {
-        position: absolute;
-        background: #2cb7b5;
-        width: 20px;
-        height: 25px;
-        bottom: 138px;
-        left: 22%;
-        animation-name: upppp;
-        animation-duration: 1s;
-        animation-delay: 1s;
-        /*晚一秒播放動畫*/
-        animation-iteration-count: infinite;
-        /*無限重複播放動畫*/
-        animation-timing-function: ease-in-out;
-        /*緩入緩出效果*/
-        animation-direction: alternate;
-        /*反向播放動畫*/
-    }
-
-    /*郵筒b的桿子*/
-    .postbox_b:after {
-        content: "";
-        position: absolute;
-        background: #348e8d;
-        width: 5px;
-        height: 20px;
-        bottom: -20px;
-        left: 8px;
-    }
-
-    /*郵筒上升動畫*/
-    @keyframes upppp {
-        100% {
-            transform: translatey(-8px);
-        }
-    }
-
-    /*------------風車------------*/
-
-    /*定位風車*/
-    .windmill {
-        position: absolute;
-        left: 38%;
-        bottom: 120px;
-    }
-
-    /*風車塔*/
-    .tower {
-        position: absolute;
-        background: transparent;
-        width: 100px;
-        height: 0;
-        border-top: 0px solid transparent;
-        border-bottom: 90px solid #e2f4f4;
-        border-right: 20px solid transparent;
-        border-left: 20px solid transparent;
-        bottom: 0;
-    }
-
-    /*風車中間*/
-    .t1 {
-        position: absolute;
-        background: #2cb7b5;
-        width: 90px;
-        height: 10px;
-        bottom: 40px;
-        left: 5px;
-    }
-
-    /*塔門*/
-    .t1:before {
-        content: "";
-        position: absolute;
-        background: #2cb7b5;
-        width: 20px;
-        height: 20px;
-        bottom: -40px;
-        right: 35px;
-        box-shadow: 0px -54px 0px #2cb7b5;
-        /*二樓的窗*/
-    }
-
-    /*風車屋頂*/
-    .t2 {
-        position: absolute;
-        background: transparent;
-        width: 0;
-        height: 0;
-        border-bottom: 40px solid #2cb7b5;
-        border-right: 30px solid transparent;
-        border-left: 30px solid transparent;
-        bottom: 90px;
-        left: 20px;
-    }
-
-    /*風車屋簷*/
-    .t2:after {
-        content: "";
-        position: absolute;
-        background: #2cb7b5;
-        width: 70px;
-        height: 10px;
-        border-radius: 10px;
-        bottom: -50px;
-        left: -35px;
-    }
-
-    /*扇葉範圍與動畫*/
-    .blade {
-        position: absolute;
-        width: 100px;
-        height: 200px;
-        left: 0;
-        bottom: 0;
-        animation-name: spin;
-        animation-duration: 10s;
-        animation-iteration-count: infinite;
-        /*無限重複播放動畫*/
-        animation-timing-function: linear;
-        /*線性動畫*/
-    }
-
-    /*扇葉柄*/
-    .windblade {
-        position: absolute;
-        background: #ffffff;
-        width: 4px;
-        height: 76px;
-        bottom: 106px;
-        left: 46px;
-    }
-
-    /*扇葉*/
-    .windblade:before {
-        content: "";
-        position: absolute;
-        background: #e2f4f4;
-        opacity: 0.8;
-        width: 16px;
-        height: 60px;
-    }
-
-    /*複製一個旋轉90度*/
-    .windblade2 {
-        transform: rotate(90deg);
-        bottom: 65px;
-        left: 87px;
-    }
-
-    /*複製一個旋轉180度*/
-    .windblade3 {
-        transform: rotate(180deg);
-        bottom: 25px;
-    }
-
-    /*複製一個旋轉270度*/
-    .windblade4 {
-        transform: rotate(270deg);
-        bottom: 65px;
-        left: 5px;
-    }
-
-    /*旋轉中心點*/
-    .windblade4:after {
-        content: "";
-        position: absolute;
-        background: #ffffff;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        bottom: -8px;
-        right: -3px;
-    }
-
-    /*風車旋轉動畫*/
-    @keyframes spin {
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    /*------------水滴------------*/
-
-    /*水滴*/
-    .raindrop {
-        background: #E2F6F6;
-        border-radius: 100%;
-        box-shadow: 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6, 0 0 0 0.2em #E2F6F6;
-        position: absolute;
-        top: 75%;
-        right: 50%;
-        margin-top: 0;
-        margin-left: -0.1em;
-        width: 0.2em;
-        height: 0.2em;
-        animation: drop 3s cubic-bezier(0, 0, 1, 0.5) infinite;
-    }
-
-    @keyframes drop {
-        3% {
-            box-shadow: 0.1em -0.1em 0 0.05em #E2F6F6, 0.1em -0.2em 0 0.05263158em #E2F6F6, 0.1em 0.3em 0 0.05555556em #E2F6F6, 0.1em 0.4em 0 0.08333333em #E2F6F6, 0.1em 0.5em 0 0.09090909em #E2F6F6, 0.1em 0.6em 0 0.1em #E2F6F6, 0.1em 0.7em 0 0.11111111em #E2F6F6, 0.1em 0.8em 0 0.125em #E2F6F6, 0.1em 0.9em 0 0.14285714em #E2F6F6, 0.1em 1em 0 0.16666667em #E2F6F6;
-        }
-        15% {
-            top: 98%;
-            box-shadow: 0.1em 0.1em 0 0.10526316em #ffffff, 0.1em 0.2em 0 0.11111111em #ffffff, 0.1em 0.3em 0 0.11764706em #ffffff, 0.1em 0.4em 0 0.125em #ffffff, 0.1em 0.5em 0 0.13333333em #ffffff, 0.1em 0.6em 0 0.14285714em #ffffff, 0.1em 0.7em 0 0.15384615em #ffffff, 0.1em 0.8em 0 0.16666667em #ffffff, 0.1em 0.9em 0 0.18181818em #ffffff, 0.1em 1em 0 0.2em #ffffff;
-        }
-        25% {
-            top: 98%;
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: -0.1em 0.1em 0 0.06666667em rgba(255, 255, 255, 0.1), -2em -0.21em 0 0.1em rgba(255, 255, 255, 0.1), 2em -1.5em 0 0.04em rgba(255, 255, 255, 0.1), 2.5em -2em 0 0.2em rgba(255, 255, 255, 0.1), 8em -8em 0 0.01em rgba(255, 255, 255, 0.1), 2.5em -3em 0 0.04em rgba(255, 255, 255, 0.1), 3em -0.26em 0 0.03333333em rgba(255, 255, 255, 0.1), -5em -5em 0 0.03333333em rgba(255, 255, 255, 0.1), 5em -3.5em 0 0.1em rgba(255, 255, 255, 0.1), 0.1em -3em 0 0.2em rgba(255, 255, 255, 0.1);
-        }
-        35% {
-            top: 98%;
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: -0.4em 0.4em 0 0.06666667em rgba(255, 255, 255, 0.1), -8em 0.4em 0 0.1em rgba(255, 255, 255, 0.1), 8em 0.4em 0 0.04em rgba(255, 255, 255, 0.1), 10em 0.4em 0 0.2em rgba(255, 255, 255, 0.1), 32em 0.4em 0 0.01em rgba(255, 255, 255, 0.1), 12em 0.4em 0 0.04em rgba(255, 255, 255, 0.1), 12em 0.4em 0 0.03333333em rgba(255, 255, 255, 0.1), -20em 0.4em 0 0.03333333em rgba(255, 255, 255, 0.1), 20em 0.4em 0 0.1em rgba(255, 255, 255, 0.1), 0.4em 0.4em 0 0.2em rgba(255, 255, 255, 0.1);
-        }
-        40% {
-            top: 98%;
-            background: rgba(0, 0, 0, 0);
-            box-shadow: -0.1em 0.1em 0 0.06666667em rgba(0, 0, 0, 0), -2em 0.1em 0 0.1em rgba(0, 0, 0, 0), 2em 0.1em 0 0.04em rgba(0, 0, 0, 0), 2.5em 0.1em 0 0.2em rgba(0, 0, 0, 0), 8em 0.1em 0 0.01em rgba(0, 0, 0, 0), 3em 0.1em 0 0.04em rgba(0, 0, 0, 0), 3em 0.1em 0 0.03333333em rgba(0, 0, 0, 0), -5em 0.1em 0 0.03333333em rgba(0, 0, 0, 0), 5em 0.1em 0 0.1em rgba(0, 0, 0, 0), 0.1em 0.1em 0 0.2em rgba(0, 0, 0, 0);
-        }
-        100% {
-            top: 98%;
-            background: rgba(0, 0, 0, 0);
-            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
-        }
-    }
-
-    /*------------標題------------*/
-
-    .title1 {
-        position: absolute;
-        top: 5%;
-        left: 5%;
-        font-size: 36px;
-        font-weight: 600;
-        font-family: 微软雅黑;
-        color: #348E8D;
-    }
-
-    .title1:hover {
-        color: #666666;
-        transform: translatey(2px);
-        cursor: pointer;
-    }
-
-    .title1:hover ~ .cover {
-        /*opacity:0;*/
-        bottom: 50px;
-    }
-
-    .title:hover ~ .bar1 {
-
-    }
-
-    .word {
-        position: absolute;
-        width: 400px;
-        height: 40px;
-        text-align: left;
-        top: 10%;
-        left: 5%;
-        color: #ffffff;
+    .sidebar ul a{
+        display: block;
+        height: 100%;
+        width: 100%;
+        line-height: 65px;
         font-size: 20px;
-        font-family: 'Roboto Condensed', sans-serif;
-    }
-
-    /*项目文件*/
-    .doc:nth-of-type(1) {
-        display: block;
-        background-color: #E2F6F6;
-        width: 15%;
-        height: 36%;
-        border: 1px solid white;
-        margin-left: 3%;
-        margin-top: 10%;
-        position: fixed;
-        border-radius: 10px;
-    }
-
-    /*相关信息*/
-    .doc:nth-of-type(2) {
-        display: block;
-        background-color: #E2F6F6;
-        width: 20%;
-        height: 100%;
-        margin-left: 80%;
-        position: fixed;
-    }
-
-    #test1 {
-        width: 100px;
-        height: 100px;
-        border-radius: 100px;
-        background-color: #ffffff;
-        position: fixed;
-        z-index: 100;
-        top: 30%;
-        left: 34.5%;
-    }
-
-    #test2 {
-        width: 100px;
-        height: 100px;
-        border-radius: 100px;
-        background-color: #ffffff;
-        position: fixed;
-        z-index: 100;
-        top: 30%;
-        left: 61.2%;
-    }
-
-    #test1 > a, #test2 > a {
-        width: 100px;
-        height: 100px;
-        background-color: #fffffff;
-        display: block;
-        border-radius: 100px;
-        text-align: center;
-        line-height: 100px;
-        text-decoration: none;
-        color: #348E8D;
-    }
-
-    #test1 > a:hover, #test2 > a:hover {
-        box-shadow: 5px 5px 5px;
-        background-color: #348E8D;
         color: white;
+        padding-left: 40px;
+        box-sizing: border-box;
+        border-top: 1px solid rgba(255,255,255,.1);
+        border-bottom: 1px solid black;
+        transition: .4s;
+    }
+
+    ul li:hover a{
+        padding-left: 50px;
+    }
+
+    .sidebar ul a i{
+        margin-right: 16px;
+    }
+
+    #check{
+        display: none;
+    }
+
+    label #btn, label #cancel{
+        position: absolute;
         cursor: pointer;
+        background: #042331;
+        border-radius: 3px;
     }
 
-    h3 {
-        color: #348E8D;
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
-        margin-buttom: 0;
-    }
-
-    .doc > div > a {
-        color: #348E8D;
-        font-weight: 700;
-        display: block;
-        text-decoration: none;
-        padding: 12px;
-        text-align: center;
-    }
-
-    .doc > div > a:hover {
-        background-color: #348E8D;
+    label #btn{
+        left: 40px;
+        top: 25px;
+        font-size: 35px;
         color: white;
+        padding: 6px 12px;
+        transition: all .5s;
+    }
+
+    label #cancel{
+        z-index: 1111;
+        left: -195px;
+        top: 17px;
+        font-size: 30px;
+        color: #0a5275;
+        padding: 4px 9px;
+        transition: all .5s ease;
+    }
+
+    #check:checked ~ .sidebar{
+        left: 0;
+    }
+
+    #check:checked ~ label #btn{
+        left: 250px;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    #check:checked ~ label #cancel{
+        left: 195px;
+    }
+
+    section{
+        height: 100vh;
+        width: 100vw;
+        transition: all .5s ease;
+    }
+
+    #check:checked ~ section{
+        margin-left: 250px;
     }
 
 </style>
 
 <body>
-<div class="lefter">
-    <div class="title1">I B I 3 0 3</div>
-    <div class="word">阿达木单抗注射液</div>
-    <div class="ball">
-        <div class="tree_back"></div>
-        <div class="tree"></div>
-        <div class="postbox_a">
-            <div class="hole"></div>
-        </div>
-        <div class="postbox_b">
-            <div class="hole"></div>
-        </div>
-        <div class="windmill">
-            <div class="tower"></div>
-            <div class="t1"></div>
-            <div class="t2"></div>
-            <div class="blade">
-                <div class="windblade"></div>
-                <div class="windblade windblade2"></div>
-                <div class="windblade windblade3"></div>
-                <div class="windblade windblade4"></div>
-            </div>
-        </div>
-        <div class="ground"></div>
-    </div>
-    <div class="raindrop"></div>
-</div>
-<div id="test1">
-    <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={0DA90A6C-0118-46A1-B22B-CA7BE813EB3D}&file=%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%B3%A8%E5%B0%84%E6%B6%B2%E5%8E%9F%E6%B6%B2%E7%BA%AF%E5%8C%96%E6%BA%B6%E6%B6%B2pH%E8%B0%83%E8%8A%82%E6%95%B0%E6%8D%AE.xlsx&action=default"
-       target="_blank">配液数据</a>
-</div>
-<div id="test2">
-    <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={8C8B76CF-F385-456A-8F08-9C0FB013E65D}&file=%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%B3%A8%E5%B0%84%E6%B6%B2%E5%8E%9F%E6%B6%B2%E7%BA%AF%E5%8C%96%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1.xlsx&action=default"
-       target="_blank">纯化数据</a>
-</div>
 
-<div>
-    <div class="doc">
-        <div>
-            <h3>项目文件</h3>
-            <a href="http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80332/80343/80344/80345/80731/%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%B3%A8%E5%B0%84%E6%B6%B21000L%E7%BA%AF%E5%8C%96%E5%B7%A5%E8%89%BA%E8%A7%84%E7%A8%8B.PDF?nodeid=9212103&vernum=17"
-               target="_blank">阿达木单抗注射液工艺规程</a>
-            <a href="http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80332/80343/80344/80354/80816/%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%B3%A8%E5%B0%84%E6%B6%B2%E5%8E%9F%E6%B6%B2%E7%BA%AF%E5%8C%96%E6%89%B9%E7%94%9F%E4%BA%A7%E8%AE%B0%E5%BD%95.PDF?nodeid=8527535&vernum=7"
-               target="_blank">阿达木单抗注射液纯化批记录</a>
-            <a href="http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80332/80343/80344/80354/80355/%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%B3%A8%E5%B0%84%E6%B6%B2%E5%8E%9F%E6%B6%B2%E7%BA%AF%E5%8C%96%E9%85%8D%E6%B6%B2%E8%AE%B0%E5%BD%95.PDF?nodeid=9310367&vernum=4"
-               target="_blank">阿达木单抗注射液纯化配液记录</a>
-            <a href="http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80332/80343/80344/80345/80820/%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%B3%A8%E5%B0%84%E6%B6%B2%E5%8E%9F%E6%B6%B2%E8%B4%A8%E9%87%8F%E6%A0%87%E5%87%86.PDF?nodeid=9061074&vernum=3"
-               target="_blank">阿达木单抗注射原液质量标准</a>
-            <a href="http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80336/80349/80350/80744/80810/%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%B3%A8%E5%B0%84%E6%B6%B2%E9%99%A4%E7%97%85%E6%AF%92%E8%BF%87%E6%BB%A4%E8%BF%94%E5%B7%A5%E5%90%8C%E6%AD%A5%E9%AA%8C%E8%AF%81%E6%96%B9%E6%A1%88.PDF?nodeid=8729508&vernum=-2"
-               target="_blank">除病毒过滤返工同步验证方案</a>
-            <a href="http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80336/80349/80350/80744/80810/%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%B3%A8%E5%B0%84%E6%B6%B2%E5%8E%9F%E6%B6%B2%E8%BF%87%E6%BB%A4%E8%BF%94%E5%B7%A5%E5%90%8C%E6%AD%A5%E9%AA%8C%E8%AF%81%E6%96%B9%E6%A1%88.PDF?nodeid=8748216&vernum=6"
-               target="_blank">原液过滤返工同步验证方案</a>
-        </div>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fa fa-bars" id="btn"></i>
+        <i class="fa fa-times" id="cancel"></i>
+    </label>
+
+    <div class="sidebar">
+        <header>My App</header>
+        <ul>
+            <li><a href="#"><i class="fas fa-qrcode"></i>Dashboard</a></li>
+            <li><a href="#"><i class="fas fa-link"></i>Shortcuts</a></li>
+            <li><a href="#"><i class="fas fa-stream"></i>Overview</a></li>
+            <li><a href="#"><i class="fas fa-calendar-week"></i>Events</a></li>
+            <li><a href="#"><i class="fas fa-question-circle"></i>About</a></li>
+            <li><a href="#"><i class="fas fa-sliders-h"></i>Services</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i>Contact</a></li>
+        </ul>
     </div>
-    <div class="doc">
-        <div>
-            <h3>相关信息</h3>
-            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={98EB4D89-6EEC-4721-8A02-2A33A7156D3E}&file=IBI303%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%E5%88%97%E8%A1%A8.xlsx&action=default"
-               target="_blank">IBI303代办事项列表</a>
-            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={EF71856D-CBD8-41A9-9D19-117632FC8881}&file=SOP%E5%8F%8A%E8%BE%85%E5%8A%A9%E8%AE%B0%E5%BD%95%E6%B8%85%E5%8D%95.xlsx&action=default"
-               target="_blank">SOP及辅助记录清单</a>
-            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={59AE7E69-2095-465E-8DE4-42DDB1ADF11F}&file=IBI303%E5%95%86%E4%B8%9A%E5%8C%96%E7%94%9F%E4%BA%A7%E8%AE%A1%E5%88%92%E6%8E%92%E7%8F%AD.xlsx&action=default"
-               target="_blank">IBI303商业化生产计划排班</a>
-            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={159F3272-42FD-4AE7-B494-6170D4F424C4}&file=%E9%98%BF%E8%BE%BE%E6%9C%A8%E5%8D%95%E6%8A%97%E6%BA%B6%E6%B6%B2%E6%A0%87%E7%AD%BE.docx&action=default"
-               target="_blank">阿达木单抗溶液标签</a>
-            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={5A559518-0530-4325-B0E0-891EF65E28C3}&file=IBI%20303%E5%B7%A5%E8%89%BA%E6%BA%B6%E6%B6%B2%E4%BB%A3%E7%A0%81.pdf&action=default"
-               target="_blank">IBI303工艺溶液代码</a>
-            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={42DF6E7B-054E-4DD9-BC04-A0C93C015E6B}&file=IBI303%E8%86%9C%E5%8C%85%E5%A1%AB%E6%96%99%E4%BD%BF%E7%94%A8%E5%8F%B0%E8%B4%A6.xlsx&action=default"
-               target="_blank">膜包填料使用台账</a>
-            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={202D2512-B63B-48F2-9CD2-AB9D04F7F07B}&file=303%E8%AE%BE%E5%A4%87%E5%8F%B0%E5%B8%90.xlsx&action=default"
-               target="_blank">IBI303设备台账</a>
-            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={02BAC336-872E-4FE4-A8A4-F40339DE6804}&file=IBI303%E7%BA%AF%E5%8C%96%E5%B7%A5%E5%BA%8F%E5%99%A8%E5%85%B7%E9%9C%80%E6%B1%82%E8%A1%A8.docx&action=default"
-               target="_blank">IBI303纯化生产器具需求清单</a>
-            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={AEC6C17F-A21F-484A-A8C5-F15289049DC3}&file=IBI303%E9%85%8D%E6%B6%B2%E5%99%A8%E5%85%B7%E8%A1%A8.xlsx&action=default"
-               target="_blank">IBI303配液器具需求清单</a>
-            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={70224C9F-4BEB-4056-809D-B4A52105E0B3}&file=%E5%B7%A5%E8%89%BA%E5%8F%82%E6%95%B0%E8%A1%A8.xlsx&action=default"
-               target="_blank">工艺参数表</a>
-            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={ACA59C16-26D5-4474-9D09-CA2D1250E851}&file=IBI303%E7%89%A9%E6%96%99%E9%9C%80%E6%B1%82.xlsx&action=default"
-               target="_blank">IBI303物料需求</a>
-            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={39E8162D-D5D0-4B87-84C7-DAF4A6A0D672}&file=303%E8%AE%B0%E5%BD%95%E9%A2%86%E5%8F%96%E5%8F%B0%E8%B4%A6.xlsx&action=default"
-               target="_blank">IBI303记录领取台账</a>
-            <a href="R:\生产部\03 原液生产\01 M1a 原液 李云峰\02 纯化组 潘毅\04 计划\徐鹏云\纯化共享平台\files\送样单\IBI303送样单模板.html"
-               target="_blank">IBI303送样单模板</a>
-            <a href="http://shareedit/_layouts/15/WopiFrame.aspx?sourcedoc={C22B56EE-9E27-440C-A1CE-FADC6EEC0D2F}&file=IBI303%20%E5%8E%9F%E6%B6%B2%E7%BA%AF%E5%8C%96%E4%B8%AD%E9%97%B4%E4%BD%93%E5%8F%96%E6%A0%B7%E8%AE%A1%E5%88%92.docx&action=default"
-               target="_blank">IBI303原液纯化中间品取样计划</a>
-        </div>
-    </div>
-    <div class="doc"></div>
-</div>
+    <section>
+        <iframe height="100%" width="100%" frameborder="0" src="login.html"></iframe>
+    </section>
+
 </body>
 
 </html>
