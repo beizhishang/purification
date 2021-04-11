@@ -132,7 +132,7 @@
             width: 100%;
         }
 
-        .seperator {
+        .space {
             width: 100%;
             height: 30px;
         }
@@ -251,7 +251,7 @@
         .checkbox-regulation:checked ~ .cards .project.regulation,
         .checkbox-other:checked ~ .cards .project.other{
             opacity: 1;
-            height: 140px;
+            min-height: 140px;
             min-width: calc(22% - 28px);
             /*padding: 0 10px;*/
             margin: 10px;
@@ -259,6 +259,7 @@
             transform: scale(1);
             border-width: 3px;
         }
+
 
         @media only screen and (max-width: 650px) {
             .container {
@@ -334,7 +335,7 @@
         <input class="checkbox-other" id="other" type="radio" name="checkbox"/>
         <label for="other">other</label>
 
-        <div class="seperator"></div>
+        <div class="space"></div>
 
         <!-- project cards-->
         <div class="cards">
