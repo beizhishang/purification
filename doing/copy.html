@@ -19,7 +19,21 @@
 </head>
 <body>
 <input class="context" id="test" value="Hello World!"/>
-<button class="copy1" data-clipboard-target="#test">复制</button>
+<button class="copy1" data-clipboard-action="copy" data-clipboard-target="#test">复制</button>
+<br>
+<input style="height: 100px; margin-top: 50px;" class="context"/>
 
 </body>
+<script src="../js/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.copy1');
+
+    clipboard.on('success', function (e) {
+        console.log(e);
+    });
+
+    clipboard.on('error', function (e) {
+        console.log(e);
+    });
+</script>
 </html>
