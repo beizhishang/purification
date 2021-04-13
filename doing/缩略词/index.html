@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Infinite Scrolling Cards with GSAP and ScrollTrigger (continuous snap)</title>
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="gallery">
+	<ul class="cards">
+		<li style="background-color: #FFFFCC">
+			<p class="abb">AC</p>
+			<p class="full-name">Affinity Chromatography</p>
+			<p class="definition">亲和层析</p>
+			<p class="page">1</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">AD</p>
+			<p class="full-name">Assembly Drawings</p>
+			<p class="definition">装配图</p>
+			<p class="page">2</p>
+		</li>
+
+		<li style="background-color: #FFCCCC">
+			<p class="abb">ADF</p>
+			<p class="full-name">Adsorption depth filtration</p>
+			<p class="definition">吸附深层过滤</p>
+			<p class="page">3</p>
+		</li>
+
+		<li style="background-color: #99CCCC">
+			<p class="abb">AEX</p>
+			<p class="full-name">Anion Exchange Chromatography</p>
+			<p class="definition">阴离子交换层析</p>
+			<p class="page">4</p>
+		</li>
+
+		<li style="background-color: #FFCC99">
+			<p class="abb">AI</p>
+			<p class="full-name">Analog Input</p>
+			<p class="definition">模拟量输入</p>
+			<p class="page">5</p>
+		</li>
+
+		<li style="background-color: #FF6666">
+			<p class="abb">AIS</p>
+			<p class="full-name">Automated Information System</p>
+			<p class="definition">自动化信息系统</p>
+			<p class="page">6</p>
+		</li>
+
+		<li style="background-color: #FF9966">
+			<p class="abb">ANDA</p>
+			<p class="full-name">Abbreviated New Drug Application</p>
+			<p class="definition">仿制药申请</p>
+			<p class="page">7</p>
+		</li>
+
+		<li style="background-color: #CCCCFF">
+			<p class="abb">AO</p>
+			<p class="full-name">Analog Output</p>
+			<p class="definition">模拟量输出</p>
+			<p class="page">8</p>
+		</li>
+
+		<li style="background-color: #FFFF00">
+			<p class="abb">APS</p>
+			<p class="full-name">Aspetic Process simulation</p>
+			<p class="definition">无菌工艺模拟实验</p>
+			<p class="page">9</p>
+		</li>
+
+		<li style="background-color: #99CC99">
+			<p class="abb">AR</p>
+			<p class="full-name">Analytic Reagent</p>
+			<p class="definition">分析纯化数据</p>
+			<p class="page">10</p>
+		</li>
+
+		<li style="background-color: #FF9933">
+			<p class="abb">AS</p>
+			<p class="full-name">Asymmetry</p>
+			<p class="definition">对称性</p>
+			<p class="page">11</p>
+		</li>
+
+		<li style="background-color: #009966">
+			<p class="abb">ASME</p>
+			<p class="full-name">American Society of Mechanical Engineers</p>
+			<p class="definition">美国机械工程师协会</p>
+			<p class="page">12</p>
+		</li>
+
+		<li style="background-color: #999999">
+			<p class="abb">ASTM</p>
+			<p class="full-name">American Society of Testing and Materials</p>
+			<p class="definition">美国测试和材料学会</p>
+			<p class="page">13</p>
+		</li>
+
+		<li style="background-color: #CCCC33">
+			<p class="abb">BES</p>
+			<p class="full-name">Batch Execution Station  Batch</p>
+			<p class="definition">控制站</p>
+			<p class="page">14</p>
+		</li>
+
+		<li style="background-color: #99CCFF">
+			<p class="abb">BI</p>
+			<p class="full-name">Biological Indicator</p>
+			<p class="definition">生物指示物</p>
+			<p class="page">15</p>
+		</li>
+
+		<li style="background-color: #CCCC00">
+			<p class="abb">BLA</p>
+			<p class="full-name">Biologics License Application</p>
+			<p class="definition">生物制品许可申请</p>
+			<p class="page">16</p>
+		</li>
+
+		<li style="background-color: #FFCC99">
+			<p class="abb">BOM</p>
+			<p class="full-name">Bill of Materials</p>
+			<p class="definition">材料清单</p>
+			<p class="page">17</p>
+		</li>
+
+		<li style="background-color: #CC9999">
+			<p class="abb">BPDR</p>
+			<p class="full-name">Biologycal Product Deviation Record</p>
+			<p class="definition">生物产品偏差记录</p>
+			<p class="page">18</p>
+		</li>
+
+		<li style="background-color: #FFCC99">
+			<p class="abb">BPE</p>
+			<p class="full-name">Bioprocessing Equipment (BPE) Standard</p>
+			<p class="definition">生物处理设备（BPE）标准</p>
+			<p class="page">19</p>
+		</li>
+
+		<li style="background-color: #CCCCCC">
+			<p class="abb">BPR</p>
+			<p class="full-name">Batch Production Record</p>
+			<p class="definition">批生产记录</p>
+			<p class="page">20</p>
+		</li>
+
+		<li style="background-color: #CC9933">
+			<p class="abb">CAL</p>
+			<p class="full-name">Calibration</p>
+			<p class="definition">校准</p>
+			<p class="page">21</p>
+		</li>
+
+		<li style="background-color: #FFFF99">
+			<p class="abb">CAPA</p>
+			<p class="full-name">Corrective Action and Preventative Action</p>
+			<p class="definition">纠正和预防措施</p>
+			<p class="page">22</p>
+		</li>
+
+		<li style="background-color: #009966">
+			<p class="abb">CCA</p>
+			<p class="full-name">Component Criticality Assessment</p>
+			<p class="definition">部件关键性评估</p>
+			<p class="page">23</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">CCPD</p>
+			<p class="full-name">Cell Culture Process Development</p>
+			<p class="definition">细胞培养工艺开发部门</p>
+			<p class="page">24</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">CCS</p>
+			<p class="full-name">Contamination Control Strategy</p>
+			<p class="definition">污染控制策略</p>
+			<p class="page">25</p>
+		</li>
+
+		<li style="background-color: #CCCCFF">
+			<p class="abb">CDER</p>
+			<p class="full-name">FDA Center for Drug Evaluation and Research</p>
+			<p class="definition">(美国)FDA药品评价与研究中心</p>
+			<p class="page">26</p>
+		</li>
+
+		<li style="background-color: #6699CC">
+			<p class="abb">CE-SDS</p>
+			<p class="full-name">Capillary Electrophoresis Sodium Dodecyl Sulfate</p>
+			<p class="definition">十二烷基硫酸钠毛细管电泳</p>
+			<p class="page">27</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">CEX</p>
+			<p class="full-name">Cation Exchange Chromatography</p>
+			<p class="definition">阳离子交换层析</p>
+			<p class="page">28</p>
+		</li>
+
+		<li style="background-color: #99CCFF">
+			<p class="abb">CEX-HPLC</p>
+			<p class="full-name">Cation Exchange Chromatography-High-Performance Liquid Chromatography</p>
+			<p class="definition">阳离子交换高效液相色谱</p>
+			<p class="page">29</p>
+		</li>
+
+		<li style="background-color: #FF9999">
+			<p class="abb">CF</p>
+			<p class="full-name">Clarification Filtration</p>
+			<p class="definition">澄清过滤</p>
+			<p class="page">30</p>
+		</li>
+
+		<li style="background-color: #669999">
+			<p class="abb">CFR</p>
+			<p class="full-name">Code of Federal Regulations</p>
+			<p class="definition">联邦法规</p>
+			<p class="page">31</p>
+		</li>
+
+		<li style="background-color: #9999CC">
+			<p class="abb">cGMP</p>
+			<p class="full-name">Current Good Manufacture Practices</p>
+			<p class="definition">现行药品生产质量管理规范</p>
+			<p class="page">32</p>
+		</li>
+
+		<li style="background-color: #FFCCCC">
+			<p class="abb">ChP</p>
+			<p class="full-name">Chinese Pharmacopeia</p>
+			<p class="definition">中华人民共和国药典</p>
+			<p class="page">33</p>
+		</li>
+
+		<li style="background-color: #CCFF66">
+			<p class="abb">CHW</p>
+			<p class="full-name">Chilled Water</p>
+			<p class="definition">冷却水</p>
+			<p class="page">34</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">CI</p>
+			<p class="full-name">Credibility Interval</p>
+			<p class="definition">置信区间</p>
+			<p class="page">35</p>
+		</li>
+
+		<li style="background-color: #FFCC99">
+			<p class="abb">CIP</p>
+			<p class="full-name">Cleaning In Place</p>
+			<p class="definition">在位清洗</p>
+			<p class="page">36</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">CMC</p>
+			<p class="full-name">Chemical,Manufacturing and Control</p>
+			<p class="definition">药品的化学、制造和控制</p>
+			<p class="page">37</p>
+		</li>
+
+		<li style="background-color: #99CCFF">
+			<p class="abb">CoC</p>
+			<p class="full-name">Certificate Of Compliance</p>
+			<p class="definition">符合标准证书</p>
+			<p class="page">38</p>
+		</li>
+
+		<li style="background-color: #CCFF00">
+			<p class="abb">CPP</p>
+			<p class="full-name">Critical process parameter</p>
+			<p class="definition">质量关键工艺参数</p>
+			<p class="page">39</p>
+		</li>
+
+		<li style="background-color: #CC9999">
+			<p class="abb">CPU</p>
+			<p class="full-name">Central Processing Unit</p>
+			<p class="definition">中央处理单元</p>
+			<p class="page">40</p>
+		</li>
+
+		<li style="background-color: #009999">
+			<p class="abb">CQA</p>
+			<p class="full-name">Critical Quality Attribute</p>
+			<p class="definition">关键质量属性</p>
+			<p class="page">41</p>
+		</li>
+
+		<li style="background-color: #33CC99">
+			<p class="abb">CS</p>
+			<p class="full-name">Control Strategy/Clean Steam</p>
+			<p class="definition">控制策略/洁净蒸汽</p>
+			<p class="page">42</p>
+		</li>
+
+		<li style="background-color: #FF9933">
+			<p class="abb">CSV</p>
+			<p class="full-name">Computerized system verification</p>
+			<p class="definition">计算机化系统验证</p>
+			<p class="page">43</p>
+		</li>
+
+		<li style="background-color: #CC99CC">
+			<p class="abb">CV</p>
+			<p class="full-name">Column volume/Cleaning Validation</p>
+			<p class="definition">柱体积/清洁验证</p>
+			<p class="page">44</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">DCS</p>
+			<p class="full-name">Data Communication System/Distributed Control System</p>
+			<p class="definition">数据传输系统/集散控制系统</p>
+			<p class="page">45</p>
+		</li>
+
+		<li style="background-color: #CC9999">
+			<p class="abb">DHT</p>
+			<p class="full-name">Dirty Hold Time</p>
+			<p class="definition">清洁后保存时间</p>
+			<p class="page">46</p>
+		</li>
+
+		<li style="background-color: #CC9999">
+			<p class="abb">DI</p>
+			<p class="full-name">Digital Input</p>
+			<p class="definition">数字式输入</p>
+			<p class="page">47</p>
+		</li>
+
+		<li style="background-color: #FFCC99">
+			<p class="abb">DLI</p>
+			<p class="full-name">Dynamic Lifetime Indicator</p>
+			<p class="definition">动态使用寿命指示仪</p>
+			<p class="page">48</p>
+		</li>
+
+		<li style="background-color: #CCCCCC">
+			<p class="abb">DO</p>
+			<p class="full-name">Digital Output</p>
+			<p class="definition">数字式输出</p>
+			<p class="page">49</p>
+		</li>
+
+		<li style="background-color: #CC9933">
+			<p class="abb">DOE</p>
+			<p class="full-name">Design of Experiments</p>
+			<p class="definition">实验设计</p>
+			<p class="page">50</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">DP</p>
+			<p class="full-name">Drug Product</p>
+			<p class="definition">成品药</p>
+			<p class="page">51</p>
+		</li>
+
+		<li style="background-color: #FFCCCC">
+			<p class="abb">DQ</p>
+			<p class="full-name">Design Qualification</p>
+			<p class="definition">设计确认</p>
+			<p class="page">52</p>
+		</li>
+
+		<li style="background-color: #99CCCC">
+			<p class="abb">DS</p>
+			<p class="full-name">Drug Substance</p>
+			<p class="definition">原液</p>
+			<p class="page">53</p>
+		</li>
+
+		<li style="background-color: #FFCC99">
+			<p class="abb">E-DOC</p>
+			<p class="full-name">Electronic Document System</p>
+			<p class="definition">电子文档系统</p>
+			<p class="page">54</p>
+		</li>
+
+		<li style="background-color: #FF6666">
+			<p class="abb">EHS</p>
+			<p class="full-name">Environment , Health, Safety</p>
+			<p class="definition">环境、健康、安全</p>
+			<p class="page">55</p>
+		</li>
+
+		<li style="background-color: #FFFF99">
+			<p class="abb">EM</p>
+			<p class="full-name">Equipment Module</p>
+			<p class="definition">设备模块</p>
+			<p class="page">56</p>
+		</li>
+
+		<li style="background-color: #009966">
+			<p class="abb">EMPQ</p>
+			<p class="full-name">Environmental Monitoring Process Qualification</p>
+			<p class="definition">环境监控表现验证</p>
+			<p class="page">57</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">EMS</p>
+			<p class="full-name">Environment Monitoring System</p>
+			<p class="definition">环境监测系统</p>
+			<p class="page">58</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">ENG</p>
+			<p class="full-name">Engineering station</p>
+			<p class="definition">工程师站</p>
+			<p class="page">59</p>
+		</li>
+
+		<li style="background-color: #CCCCFF">
+			<p class="abb">EP</p>
+			<p class="full-name">Electro Polishing</p>
+			<p class="definition">电解抛光</p>
+			<p class="page">60</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">EPH</p>
+			<p class="full-name">Equipment Phase</p>
+			<p class="definition">基础功能</p>
+			<p class="page">61</p>
+		</li>
+
+		<li style="background-color: #FFCC99">
+			<p class="abb">EU</p>
+			<p class="full-name">European Union</p>
+			<p class="definition">欧盟</p>
+			<p class="page">62</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">FAT</p>
+			<p class="full-name">Factory Acceptance Test</p>
+			<p class="definition">工厂验收测试</p>
+			<p class="page">63</p>
+		</li>
+
+		<li style="background-color: #99CCFF">
+			<p class="abb">FDA</p>
+			<p class="full-name">Food and Drug Administration</p>
+			<p class="definition">美国食品药品监督管理局
+			</p>
+			<p class="page">64</p>
+		</li>
+
+		<li style="background-color: #CCFF00">
+			<p class="abb">FDS</p>
+			<p class="full-name">Functional Design Specification</p>
+			<p class="definition">功能设计说明</p>
+			<p class="page">65</p>
+		</li>
+
+		<li style="background-color: #CC9999">
+			<p class="abb">FFF</p>
+			<p class="full-name">Formulation, Fill & Finish</p>
+			<p class="definition">制剂，灌装部门</p>
+			<p class="page">66</p>
+		</li>
+
+		<li style="background-color: #009999">
+			<p class="abb">FMEA</p>
+			<p class="full-name">Failure Mode and Effects Analysis</p>
+			<p class="definition">失败模式和影响分析</p>
+			<p class="page">67</p>
+		</li>
+
+		<li style="background-color: #33CC99">
+			<p class="abb">FRA</p>
+			<p class="full-name">Function Risk Assessment</p>
+			<p class="definition">功能风险评估</p>
+			<p class="page">68</p>
+		</li>
+
+		<li style="background-color: #FF9933">
+			<p class="abb">FS</p>
+			<p class="full-name">Functional Specification</p>
+			<p class="definition">功能说明</p>
+			<p class="page">69</p>
+		</li>
+
+		<li style="background-color: #CC99CC">
+			<p class="abb">FTP</p>
+			<p class="full-name">Factory Acceptance Test Protocol</p>
+			<p class="definition">工厂验收测试方案</p>
+			<p class="page">70</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">FTR</p>
+			<p class="full-name">Factory Acceptance Test Report</p>
+			<p class="definition">工厂验收测试报告</p>
+			<p class="page">71</p>
+		</li>
+
+		<li style="background-color: #FFFF99">
+			<p class="abb">GAMP</p>
+			<p class="full-name">Good Automated Manufacturing Practice</p>
+			<p class="definition">良好自动化生产实践指南</p>
+			<p class="page">72</p>
+		</li>
+
+		<li style="background-color: #009966">
+			<p class="abb">GCP</p>
+			<p class="full-name">Good Clinical Practices</p>
+			<p class="definition">药品临床试验管理规范</p>
+			<p class="page">73</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">GEP</p>
+			<p class="full-name">Good Engineering Practice</p>
+			<p class="definition">良好的工程规范</p>
+			<p class="page">74</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">GMP</p>
+			<p class="full-name">Good Manufacturing Practice</p>
+			<p class="definition">药品生产质量管理规范</p>
+			<p class="page">75</p>
+		</li>
+
+		<li style="background-color: #CCCCFF">
+			<p class="abb">GPP</p>
+			<p class="full-name">General Process Parameter</p>
+			<p class="definition">一般工艺参数</p>
+			<p class="page">76</p>
+		</li>
+
+		<li style="background-color: #6699CC">
+			<p class="abb">GQAAC</p>
+			<p class="full-name">Global Quality Auditing and Compliance</p>
+			<p class="definition">全球质量审核与合规</p>
+			<p class="page">77</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">GS</p>
+			<p class="full-name">General Specification</p>
+			<p class="definition">一般说明</p>
+			<p class="page">78</p>
+		</li>
+
+		<li style="background-color: #99CCFF">
+			<p class="abb">HCP</p>
+			<p class="full-name">Haemolysin-Coregulated Protein</p>
+			<p class="definition">宿主细胞蛋白</p>
+			<p class="page">79</p>
+		</li>
+
+		<li style="background-color: #FF9999">
+			<p class="abb">HDS</p>
+			<p class="full-name">Hardware Design Specification</p>
+			<p class="definition">硬件设计说明</p>
+			<p class="page">80</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">HIC</p>
+			<p class="full-name">Hydrophobic Interaction Chromatography</p>
+			<p class="definition">疏水层析</p>
+			<p class="page">81</p>
+		</li>
+
+		<li style="background-color: #FFCCCC">
+			<p class="abb">HMI</p>
+			<p class="full-name">Human Machine Interface</p>
+			<p class="definition">人机交互界面</p>
+			<p class="page">82</p>
+		</li>
+
+		<li style="background-color: #99CCCC">
+			<p class="abb">I/O</p>
+			<p class="full-name">Input/output</p>
+			<p class="definition">输入/输出</p>
+			<p class="page">83</p>
+		</li>
+
+		<li style="background-color: #FFCC99">
+			<p class="abb">ICH</p>
+			<p class="full-name">International Conference on Harmonization</p>
+			<p class="definition">人用药品注册技术要求国际协调会议</p>
+			<p class="page">84</p>
+		</li>
+
+		<li style="background-color: #FF6666">
+			<p class="abb">IEC</p>
+			<p class="full-name">International Electrotechnical Commission</p>
+			<p class="definition">国际电工委员会</p>
+			<p class="page">85</p>
+		</li>
+
+		<li style="background-color: #FF9966">
+			<p class="abb">IND</p>
+			<p class="full-name">Investigational New Drug</p>
+			<p class="definition">新药研究申请</p>
+			<p class="page">86</p>
+		</li>
+
+		<li style="background-color: #CCCCFF">
+			<p class="abb">IPC</p>
+			<p class="full-name">In-Process Control</p>
+			<p class="definition">过程控制</p>
+			<p class="page">87</p>
+		</li>
+
+		<li style="background-color: #FFFF00">
+			<p class="abb">IPM</p>
+			<p class="full-name">In-Process Monitoring</p>
+			<p class="definition">工艺监控</p>
+			<p class="page">88</p>
+		</li>
+
+		<li style="background-color: #99CC99">
+			<p class="abb">IPT</p>
+			<p class="full-name">In-Process Testing</p>
+			<p class="definition">中间测试</p>
+			<p class="page">89</p>
+		</li>
+
+		<li style="background-color: #FF9933">
+			<p class="abb">IQ</p>
+			<p class="full-name">Installation Qualification</p>
+			<p class="definition">安装确认</p>
+			<p class="page">90</p>
+		</li>
+
+		<li style="background-color: #009966">
+			<p class="abb">ISPE</p>
+			<p class="full-name">International Society For Pharmaceutical Engineering</p>
+			<p class="definition">
+				国际制药工程协会
+			</p>
+			<p class="page">91</p>
+		</li>
+
+		<li style="background-color: #999999">
+			<p class="abb">KPP</p>
+			<p class="full-name">Key process parameter</p>
+			<p class="definition">主要工艺参数</p>
+			<p class="page">92</p>
+		</li>
+
+		<li style="background-color: #CCCC33">
+			<p class="abb">LMH</p>
+			<p class="full-name">Liter/(Meter)2/Hour</p>
+			<p class="definition">通量单位：升每平方米每小时</p>
+			<p class="page">93</p>
+		</li>
+
+		<li style="background-color: #6699CC">
+			<p class="abb">MCB</p>
+			<p class="full-name">Master Cell Bank</p>
+			<p class="definition">主细胞库</p>
+			<p class="page">94</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">MCC</p>
+			<p class="full-name">Motor Control Center</p>
+			<p class="definition">马达控制中心</p>
+			<p class="page">95</p>
+		</li>
+
+		<li style="background-color: #99CCFF">
+			<p class="abb">MFG</p>
+			<p class="full-name">Manufacturing</p>
+			<p class="definition">生产（部）</p>
+			<p class="page">96</p>
+		</li>
+
+		<li style="background-color: #FF9999">
+			<p class="abb">MHV</p>
+			<p class="full-name">Membrane Hold Volume</p>
+			<p class="definition">膜包死体积</p>
+			<p class="page">97</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">MP</p>
+			<p class="full-name">Mechanival Polishing</p>
+			<p class="definition">机械抛光</p>
+			<p class="page">98</p>
+		</li>
+
+		<li style="background-color: #FFCCCC">
+			<p class="abb">MPTR</p>
+			<p class="full-name">Manufacturing Process Transfer Report</p>
+			<p class="definition">生产过程转移报告</p>
+			<p class="page">99</p>
+		</li>
+
+		<li style="background-color: #99CCCC">
+			<p class="abb">MST</p>
+			<p class="full-name">Manufacturing Science and Technology</p>
+			<p class="definition">生产科学技术（组）</p>
+			<p class="page">100</p>
+		</li>
+
+		<li style="background-color: #FFCC99">
+			<p class="abb">N/A</p>
+			<p class="full-name">Not Applicable</p>
+			<p class="definition">不适用</p>
+			<p class="page">101</p>
+		</li>
+
+		<li style="background-color: #FF6666">
+			<p class="abb">NAI</p>
+			<p class="full-name">No Action Indicated</p>
+			<p class="definition">无需采取整改</p>
+			<p class="page">102</p>
+		</li>
+
+		<li style="background-color: #FF9966">
+			<p class="abb">NDA</p>
+			<p class="full-name">New Drug Application</p>
+			<p class="definition">新药上市申请</p>
+			<p class="page">103</p>
+		</li>
+
+		<li style="background-color: #CCCCFF">
+			<p class="abb">NMPA</p>
+			<p class="full-name">National Medical Products Administration</p>
+			<p class="definition">国家药品监督管理局</p>
+			<p class="page">104</p>
+		</li>
+
+		<li style="background-color: #FFFF00">
+			<p class="abb">NOR</p>
+			<p class="full-name">Normal Operation Range</p>
+			<p class="definition">操作范围</p>
+			<p class="page">105</p>
+		</li>
+
+		<li style="background-color: #99CC99">
+			<p class="abb">NPI</p>
+			<p class="full-name">New Product Introduction</p>
+			<p class="definition">新产品引入（需要做风险评估）</p>
+			<p class="page">106</p>
+		</li>
+
+		<li style="background-color: #FF9933">
+			<p class="abb">NWP</p>
+			<p class="full-name">Normal Water Permeability</p>
+			<p class="definition">标准水通量</p>
+			<p class="page">107</p>
+		</li>
+
+		<li style="background-color: #009966">
+			<p class="abb">OAI</p>
+			<p class="full-name">Official Action Indicated</p>
+			<p class="definition">强制采取整改</p>
+			<p class="page">108</p>
+		</li>
+
+		<li style="background-color: #999999">
+			<p class="abb">OL</p>
+			<p class="full-name">Optical Length</p>
+			<p class="definition">光程</p>
+			<p class="page">109</p>
+		</li>
+
+		<li style="background-color: #CCCC33">
+			<p class="abb">OOS</p>
+			<p class="full-name">Out Of Specification</p>
+			<p class="definition">检验结果偏差</p>
+			<p class="page">110</p>
+		</li>
+
+		<li style="background-color: #009966">
+			<p class="abb">OP</p>
+			<p class="full-name">Operations</p>
+			<p class="definition">操作程序</p>
+			<p class="page">111</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">OQ</p>
+			<p class="full-name">Operation Qualification</p>
+			<p class="definition">运行确认</p>
+			<p class="page">112</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">P&ID</p>
+			<p class="full-name">Process & Instrument Diagram</p>
+			<p class="definition">工艺和仪表流程图</p>
+			<p class="page">113</p>
+		</li>
+
+		<li style="background-color: #CCCCFF">
+			<p class="abb">PA</p>
+			<p class="full-name">Process Air</p>
+			<p class="definition">工艺压缩空气</p>
+			<p class="page">114</p>
+		</li>
+
+		<li style="background-color: #6699CC">
+			<p class="abb">PAI</p>
+			<p class="full-name">Pre Approval Inspection</p>
+			<p class="definition">批准前检查</p>
+			<p class="page">115</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">PAR</p>
+			<p class="full-name">Proven Acceptance Range</p>
+			<p class="definition">可接受范围</p>
+			<p class="page">116</p>
+		</li>
+
+		<li style="background-color: #99CCFF">
+			<p class="abb">PAS</p>
+			<p class="full-name">Process Automation System</p>
+			<p class="definition">过程自动化系统</p>
+			<p class="page">117</p>
+		</li>
+
+		<li style="background-color: #FF9999">
+			<p class="abb">PAT</p>
+			<p class="full-name">Process Analytical Technology</p>
+			<p class="definition">过程分析技术</p>
+			<p class="page">118</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">PC</p>
+			<p class="full-name">Process Characteristics</p>
+			<p class="definition">工艺特性研究</p>
+			<p class="page">119</p>
+		</li>
+
+		<li style="background-color: #FFCCCC">
+			<p class="abb">PCS</p>
+			<p class="full-name">Process Control System</p>
+			<p class="definition">过程控制系统</p>
+			<p class="page">120</p>
+		</li>
+
+		<li style="background-color: #99CCCC">
+			<p class="abb">PDA</p>
+			<p class="full-name">Parenteral Drug Association</p>
+			<p class="definition">美国注射剂协会</p>
+			<p class="page">121</p>
+		</li>
+
+		<li style="background-color: #FFCC99">
+			<p class="abb">PFD</p>
+			<p class="full-name">Process Flow Diagram</p>
+			<p class="definition">工艺流程图</p>
+			<p class="page">122</p>
+		</li>
+
+		<li style="background-color: #FF6666">
+			<p class="abb">PHS</p>
+			<p class="full-name">Public Health Service</p>
+			<p class="definition">公共健康服务</p>
+			<p class="page">123</p>
+		</li>
+
+		<li style="background-color: #FF9966">
+			<p class="abb">PLC</p>
+			<p class="full-name">Programmable Logic Controller</p>
+			<p class="definition">可编程逻辑控制器</p>
+			<p class="page">124</p>
+		</li>
+
+		<li style="background-color: #CCCCFF">
+			<p class="abb">PPCS</p>
+			<p class="full-name">Production Protection Control System</p>
+			<p class="definition">生产保护控制系统</p>
+			<p class="page">125</p>
+		</li>
+
+		<li style="background-color: #CCCCCC">
+			<p class="abb">PPQ</p>
+			<p class="full-name">Process Performance Qualification</p>
+			<p class="definition">工艺表现确认</p>
+			<p class="page">126</p>
+		</li>
+
+		<li style="background-color: #CC9933">
+			<p class="abb">PQ</p>
+			<p class="full-name">Performance Qualification</p>
+			<p class="definition">性能确认
+			</p>
+			<p class="page">127</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">PQA</p>
+			<p class="full-name">Product Quality Attributes</p>
+			<p class="definition">产品质量属性</p>
+			<p class="page">128</p>
+		</li>
+
+		<li style="background-color: #FFCCCC">
+			<p class="abb">PQP</p>
+			<p class="full-name">Project Quality Plan</p>
+			<p class="definition">项目质量计划</p>
+			<p class="page">129</p>
+		</li>
+
+		<li style="background-color: #99CCCC">
+			<p class="abb">PQS</p>
+			<p class="full-name">Pharmaceutical Quality System</p>
+			<p class="definition">药品质量体系</p>
+			<p class="page">130</p>
+		</li>
+
+		<li style="background-color: #FFCC99">
+			<p class="abb">PR</p>
+			<p class="full-name">Procedures</p>
+			<p class="definition">程序</p>
+			<p class="page">131</p>
+		</li>
+
+		<li style="background-color: #FF6666">
+			<p class="abb">PS</p>
+			<p class="full-name">Pure Steam/Plant Steam</p>
+			<p class="definition">纯蒸汽/工业蒸汽</p>
+			<p class="page">132</p>
+		</li>
+
+		<li style="background-color: #FFFF99">
+			<p class="abb">PV</p>
+			<p class="full-name">Process Validation</p>
+			<p class="definition">工艺验证</p>
+			<p class="page">133</p>
+		</li>
+
+		<li style="background-color: #009966">
+			<p class="abb">PW</p>
+			<p class="full-name">Purified Water</p>
+			<p class="definition">纯水</p>
+			<p class="page">134</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">Q&A</p>
+			<p class="full-name">Question and Answer</p>
+			<p class="definition">问题和解答</p>
+			<p class="page">135</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">QA</p>
+			<p class="full-name">Quality Assurance</p>
+			<p class="definition">质量保证</p>
+			<p class="page">136</p>
+		</li>
+
+		<li style="background-color: #CCCCFF">
+			<p class="abb">QbD</p>
+			<p class="full-name">Quality by Design</p>
+			<p class="definition">质量源于设计</p>
+			<p class="page">137</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">QC</p>
+			<p class="full-name">Quality Control</p>
+			<p class="definition">质量控制</p>
+			<p class="page">138</p>
+		</li>
+
+		<li style="background-color: #FFCC99">
+			<p class="abb">QP</p>
+			<p class="full-name">Quality Policy</p>
+			<p class="definition">质量政策</p>
+			<p class="page">139</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">RA</p>
+			<p class="full-name">Risk Assessment</p>
+			<p class="definition">风险评估</p>
+			<p class="page">140</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">RCB</p>
+			<p class="full-name">Research Cell Bank</p>
+			<p class="definition">研发细胞库</p>
+			<p class="page">141</p>
+		</li>
+
+		<li style="background-color: #99CCFF">
+			<p class="abb">RT</p>
+			<p class="full-name">Resident Time</p>
+			<p class="definition">停留时间</p>
+			<p class="page">142</p>
+		</li>
+
+		<li style="background-color: #FF9999">
+			<p class="abb">RTM</p>
+			<p class="full-name">Requirement Traceability Matrix</p>
+			<p class="definition">需求追溯矩阵</p>
+			<p class="page">143</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">RW</p>
+			<p class="full-name">Raw Water（Tap Water）</p>
+			<p class="definition">原水（自来水）</p>
+			<p class="page">144</p>
+		</li>
+
+		<li style="background-color: #FFCCCC">
+			<p class="abb">SAT</p>
+			<p class="full-name">Site Acceptance Test</p>
+			<p class="definition">现场验收测试</p>
+			<p class="page">145</p>
+		</li>
+
+		<li style="background-color: #99CCCC">
+			<p class="abb">SD</p>
+			<p class="full-name">System Description</p>
+			<p class="definition">系统描述</p>
+			<p class="page">146</p>
+		</li>
+
+		<li style="background-color: #FFCC99">
+			<p class="abb">SDS</p>
+			<p class="full-name">Software Design Specification</p>
+			<p class="definition">软件设计说明</p>
+			<p class="page">147</p>
+		</li>
+
+		<li style="background-color: #FF6666">
+			<p class="abb">SEC-HPLC</p>
+			<p class="full-name">Size Exclusion Chromatography-High-Performance Liquid Chromatography</p>
+			<p class="definition">凝胶过滤高效液相色谱</p>
+			<p class="page">148</p>
+		</li>
+
+		<li style="background-color: #FF9966">
+			<p class="abb">SFC</p>
+			<p class="full-name">Sequential Function Chart</p>
+			<p class="definition">顺序功能图</p>
+			<p class="page">149</p>
+		</li>
+
+		<li style="background-color: #CCCCFF">
+			<p class="abb">SIA</p>
+			<p class="full-name">System Impact Assessment</p>
+			<p class="definition">系统影响性评估</p>
+			<p class="page">150</p>
+		</li>
+
+		<li style="background-color: #FFFF00">
+			<p class="abb">SIP</p>
+			<p class="full-name">Steam In Place</p>
+			<p class="definition">在位蒸汽处理</p>
+			<p class="page">151</p>
+		</li>
+
+		<li style="background-color: #99CC99">
+			<p class="abb">SISPQ</p>
+			<p class="full-name">Safety, Identity, Strength, Purity, and Quality</p>
+			<p class="definition">产品质量的安全性、一致性、有效性、纯度和质量</p>
+			<p class="page">152</p>
+		</li>
+
+		<li style="background-color: #CC9933">
+			<p class="abb">SME</p>
+			<p class="full-name">Subject Matter Expert</p>
+			<p class="definition">各个区域的技术专家</p>
+			<p class="page">153</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">SMP</p>
+			<p class="full-name">Standard Management Procedure</p>
+			<p class="definition">标准管理规程</p>
+			<p class="page">154</p>
+		</li>
+
+		<li style="background-color: #FFCCCC">
+			<p class="abb">SOP</p>
+			<p class="full-name">Standard Operating Procedure</p>
+			<p class="definition">标准操作规程</p>
+			<p class="page">155</p>
+		</li>
+
+		<li style="background-color: #99CCCC">
+			<p class="abb">SS</p>
+			<p class="full-name">Stainless Steel</p>
+			<p class="definition">不锈钢</p>
+			<p class="page">156</p>
+		</li>
+
+		<li style="background-color: #FFCC99">
+			<p class="abb">SU</p>
+			<p class="full-name">Single Use</p>
+			<p class="definition">一次性</p>
+			<p class="page">157</p>
+		</li>
+
+		<li style="background-color: #FF6666">
+			<p class="abb">SW</p>
+			<p class="full-name">Softened Water</p>
+			<p class="definition">软化水</p>
+			<p class="page">158</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">TC</p>
+			<p class="full-name">Thin Client</p>
+			<p class="definition">瘦客户机</p>
+			<p class="page">159</p>
+		</li>
+
+		<li style="background-color: #99CCFF">
+			<p class="abb">TCU</p>
+			<p class="full-name">Temperature Control Unit</p>
+			<p class="definition">温控单元</p>
+			<p class="page">160</p>
+		</li>
+
+		<li style="background-color: #FF9999">
+			<p class="abb">TDM</p>
+			<p class="full-name">Test and Documentation Matrix</p>
+			<p class="definition">测试文件矩阵</p>
+			<p class="page">161</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">TM</p>
+			<p class="full-name">Traceability Matrix</p>
+			<p class="definition">（用户需求）追溯矩阵</p>
+			<p class="page">162</p>
+		</li>
+
+		<li style="background-color: #FFCCCC">
+			<p class="abb">TMP</p>
+			<p class="full-name">Transfer Membrane Pressure</p>
+			<p class="definition">跨膜压力</p>
+			<p class="page">163</p>
+		</li>
+
+		<li style="background-color: #99CCCC">
+			<p class="abb">TOC</p>
+			<p class="full-name">Total Organic Carbon</p>
+			<p class="definition">总有机碳</p>
+			<p class="page">164</p>
+		</li>
+
+		<li style="background-color: #FFCC99">
+			<p class="abb">TPP</p>
+			<p class="full-name">Target Product Profiles</p>
+			<p class="definition">产品目标属性</p>
+			<p class="page">165</p>
+		</li>
+
+		<li style="background-color: #FF6666">
+			<p class="abb">TS</p>
+			<p class="full-name">Technical Specification</p>
+			<p class="definition">技术规范</p>
+			<p class="page">166</p>
+		</li>
+
+		<li style="background-color: #FF9966">
+			<p class="abb">UDS</p>
+			<p class="full-name">Unit Design Specification</p>
+			<p class="definition">系统设计规格书</p>
+			<p class="page">167</p>
+		</li>
+
+		<li style="background-color: #CCCCFF">
+			<p class="abb">UF</p>
+			<p class="full-name">Ultrafiltration</p>
+			<p class="definition">超滤浓缩</p>
+			<p class="page">168</p>
+		</li>
+
+		<li style="background-color: #CCCCCC">
+			<p class="abb">UF/DF</p>
+			<p class="full-name">Ultrafiltration/Diafiltration</p>
+			<p class="definition">超滤/洗滤</p>
+			<p class="page">169</p>
+		</li>
+
+		<li style="background-color: #CC9933">
+			<p class="abb">UP</p>
+			<p class="full-name">Unit Procedures</p>
+			<p class="definition">单位程序</p>
+			<p class="page">170</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">UPB</p>
+			<p class="full-name">Un-processed Bulk</p>
+			<p class="definition">细胞收获液</p>
+			<p class="page">171</p>
+		</li>
+
+		<li style="background-color: #33CC99">
+			<p class="abb">UPS</p>
+			<p class="full-name">Uninterrupted Power Supply</p>
+			<p class="definition">不间断电源</p>
+			<p class="page">172</p>
+		</li>
+
+		<li style="background-color: #FF9933">
+			<p class="abb">URS</p>
+			<p class="full-name">User Requirement Specification</p>
+			<p class="definition">用户需求说明书</p>
+			<p class="page">173</p>
+		</li>
+
+		<li style="background-color: #CC99CC">
+			<p class="abb">USP</p>
+			<p class="full-name">United States Pharmacopoeia</p>
+			<p class="definition">美国药典</p>
+			<p class="page">174</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">UV</p>
+			<p class="full-name">Ultraviolet</p>
+			<p class="definition">紫外吸收值</p>
+			<p class="page">175</p>
+		</li>
+
+		<li style="background-color: #FFFF99">
+			<p class="abb">VAI</p>
+			<p class="full-name">Voluntary Action Indicated</p>
+			<p class="definition">自愿采取整改</p>
+			<p class="page">176</p>
+		</li>
+
+		<li style="background-color: #009966">
+			<p class="abb">VF</p>
+			<p class="full-name">Viral Filtration</p>
+			<p class="definition">除病毒过滤</p>
+			<p class="page">177</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">VI</p>
+			<p class="full-name">Low pH Viral Inactivation</p>
+			<p class="definition">低pH病毒灭活</p>
+			<p class="page">178</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">VIN</p>
+			<p class="full-name">Viral Inactivation and Neutralization</p>
+			<p class="definition">病毒灭活</p>
+			<p class="page">179</p>
+		</li>
+
+		<li style="background-color: #FF6666">
+			<p class="abb">VM</p>
+			<p class="full-name">Virtual Machine</p>
+			<p class="definition">虚拟机</p>
+			<p class="page">180</p>
+		</li>
+
+		<li style="background-color: #FFFF99">
+			<p class="abb">VMP</p>
+			<p class="full-name">Validation Master Plan</p>
+			<p class="definition">验证主计划</p>
+			<p class="page">181</p>
+		</li>
+
+		<li style="background-color: #009966">
+			<p class="abb">VP</p>
+			<p class="full-name">Validation Plan</p>
+			<p class="definition">验证计划</p>
+			<p class="page">182</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">VSR</p>
+			<p class="full-name">Validation Summary Report</p>
+			<p class="definition">验证总结报告</p>
+			<p class="page">183</p>
+		</li>
+
+		<li style="background-color: #CCFFCC">
+			<p class="abb">WCB</p>
+			<p class="full-name">Working Cell Bank</p>
+			<p class="definition">工作细胞库</p>
+			<p class="page">184</p>
+		</li>
+
+		<li style="background-color: #CCCCFF">
+			<p class="abb">WC-CPP</p>
+			<p class="full-name">Well controlled-Critical process parameter</p>
+			<p class="definition">可控关键工艺参数</p>
+			<p class="page">185</p>
+		</li>
+
+		<li style="background-color: #CCFFFF">
+			<p class="abb">WFI</p>
+			<p class="full-name">Water For Injection</p>
+			<p class="definition">注射用水</p>
+			<p class="page">186</p>
+		</li>
+
+		<li style="background-color: #FFCC99">
+			<p class="abb">WHO</p>
+			<p class="full-name">World Health Organization</p>
+			<p class="definition">世界卫生组织</p>
+			<p class="page">187</p>
+		</li>
+
+		<!--修改2-->
+
+	</ul>
+	<div class="actions">
+		<button class="prev">Prev</button>
+		<button class="next">Next</button>
+	</div>
+</div>
+<!-- partial -->
+<!--https://unpkg.co/gsap@3/dist/-->
+<script src='gsap.min.js'></script>
+<script src='ScrollTrigger.min.js'></script><script  src="script.js"></script>
+
+</body>
+</html>
