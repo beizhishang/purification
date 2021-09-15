@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="en"><head>
+
+    <meta charset="UTF-8">
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+
+
+    <title>CodePen - Light to Dark #CodePenChallenge</title>
+
+
+
+
+    <style>
+        *, *::after, *::before {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #001933;
+        }
+
+        .container {
+            width: 75px;
+            height: 275px;
+            animation: bulb-swing 3s infinite ease-in-out;
+            transform-origin: top center;
+            position: absolute;
+            top: 0;
+            left: calc(50% - (75px/2));
+        }
+
+        .container.paused {
+            animation-play-state: paused;
+        }
+
+        .bulb {
+            z-index: 10;
+            display: block;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            position: absolute;
+            top: 200px;
+            left: calc(50% - (75px/2));
+            background: #FFD700;
+            box-shadow: 5px 5px 80px gold, 5px -5px 80px gold, -5px 5px 80px gold, -5px -5px 80px gold;
+            cursor: pointer;
+        }
+        .bulb::before {
+            content: "";
+            position: absolute;
+            width: 35px;
+            height: 50px;
+            background: black;
+            bottom: 100%;
+            left: calc(50% - (35px/2));
+            z-index: -1;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .bulb::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 250px;
+            background: black;
+            bottom: 100%;
+            left: calc(50% - 5px);
+            z-index: -1;
+        }
+        .bulb .filaments {
+            display: block;
+            position: absolute;
+            width: 2px;
+            height: 30px;
+            background: black;
+            top: 2px;
+            left: 28px;
+            box-shadow: 17px 0 black;
+            opacity: 0;
+        }
+        .bulb .filaments::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 4px;
+            background: black;
+            width: 2px;
+            height: 12px;
+            display: block;
+            box-shadow: 4.5px 0 black, 9px 0 black;
+        }
+
+        .bulb.off {
+            background: transparent;
+            box-shadow: none;
+            border: 1px solid black;
+        }
+
+        .filaments.off {
+            opacity: 1;
+        }
+
+        @keyframes bulb-swing {
+            0% {
+                transform: rotate(-10deg);
+            }
+            50% {
+                transform: rotate(10deg);
+            }
+            100% {
+                transform: rotate(-10deg);
+            }
+        }
+        .floor {
+            position: absolute;
+            background: #000c19;
+            height: 200px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+        .floor .shadow {
+            position: absolute;
+            background: #524c11;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            top: calc(50% - 25px);
+            left: calc(50% - 25px);
+            box-shadow: 20px 20px 100px gold, -20px 20px 100px gold, 20px -20px 100px gold, -20px -20px 100px gold;
+            animation: shadow-swing 3s infinite ease-in-out;
+        }
+
+        .shadow.off {
+            background: #000c19;
+            box-shadow: none;
+        }
+
+        @keyframes shadow-swing {
+            0% {
+                transform: translateX(100px);
+            }
+            50% {
+                transform: translateX(-100px);
+            }
+            100% {
+                transform: translateX(100px);
+            }
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function(t) {};
+    </script>
+
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+</head>
+
+<body translate="no">
+<div class="container">
+    <div class="bulb">
+        <div class="filaments"></div>
+    </div>
+</div>
+<div class="floor">
+    <div class="shadow"></div>
+</div>
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+
+<script id="rendered-js">
+    const shadow = document.querySelector('.shadow');
+    const light = document.querySelector('.bulb');
+    const filaments = document.querySelector('.filaments');
+
+    light.addEventListener('click', function () {
+        light.classList.toggle('off');
+        shadow.classList.toggle('off');
+        filaments.classList.toggle('off');
+    });
+    //# sourceURL=pen.js
+</script>
+
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html><html lang="en"><head>
+
+    <meta charset="UTF-8">
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+
+
+    <title>CodePen - React Color Gradients</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&amp;display=swap" rel="stylesheet">
+
+
+
+    <style>
+        :root {
+            --color-background: #e8e0fd;
+            --color-text: #111;
+            --font-family: Roboto, sans-serif;
+        }
+
+
+        body {
+            background-color: #e8e0fd;
+            background-color: var(--color-background);
+            color: #111;
+            color: var(--color-text);
+            display: grid;
+            font-family: Roboto, sans-serif;
+            font-family: var(--font-family);
+            line-height: 1.5;
+            margin: 0;
+            min-height: 100vh;
+            -ms-flex-line-pack: center;
+            align-content: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            place-content: center;
+        }
+
+        .app {
+            padding: 5vmin;
+        }
+
+        .grid {
+            width: 90vw;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1440px;
+        }
+
+        .aspect-ratio {
+            overflow: hidden;
+            padding-top: 100%;
+            position: relative;
+        }
+
+        .aspect-ratio > * {
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .palettes {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            grid-gap: 3em;
+            gap: 3em;
+        }
+
+        .palette {
+            -webkit-box-shadow: 0.25em 0.25em 2em rgba(0, 0, 0, 0.25);
+            box-shadow: 0.25em 0.25em 2em rgba(0, 0, 0, 0.25);
+            border-radius: 0.5em;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .palette__caption {
+            background-color: #fff;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 1.5em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function(t) {};
+    </script>
+
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+</head>
+
+<body translate="no">
+<div id="root"><div class="app"><div class="grid"><div class="palettes"><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(244, 0, 118), rgb(223, 152, 250));"></div></div><figcaption class="palette__caption">#f40076 – #df98fa</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(240, 105, 102), rgb(250, 214, 166));"></div></div><figcaption class="palette__caption">#f06966 – #fad6a6</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(255, 0, 118), rgb(89, 15, 183));"></div></div><figcaption class="palette__caption">#ff0076 – #590fb7</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(144, 85, 255), rgb(19, 226, 218));"></div></div><figcaption class="palette__caption">#9055ff – #13e2da</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(11, 99, 246), rgb(0, 60, 197));"></div></div><figcaption class="palette__caption">#0b63f6 – #003cc5</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(214, 255, 127), rgb(0, 179, 204));"></div></div><figcaption class="palette__caption">#d6ff7f – #00b3cc</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(226, 51, 255), rgb(255, 107, 0));"></div></div><figcaption class="palette__caption">#e233ff – #ff6b00</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(223, 152, 250), rgb(144, 85, 255));"></div></div><figcaption class="palette__caption">#df98fa – #9055ff</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(237, 123, 132), rgb(144, 85, 255));"></div></div><figcaption class="palette__caption">#ed7b84 – #9055ff</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(64, 37, 101), rgb(48, 190, 150));"></div></div><figcaption class="palette__caption">#402565 – #30be96</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(64, 38, 98), rgb(57, 0, 166));"></div></div><figcaption class="palette__caption">#402662 – #3900a6</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(241, 70, 88), rgb(220, 37, 55));"></div></div><figcaption class="palette__caption">#f14658 – #dc2537</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(244, 0, 118), rgb(52, 39, 17));"></div></div><figcaption class="palette__caption">#f40076 – #342711</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(0, 0, 102), rgb(102, 153, 255));"></div></div><figcaption class="palette__caption">#000066 – #6699ff</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(203, 94, 238), rgb(75, 225, 236));"></div></div><figcaption class="palette__caption">#cb5eee – #4be1ec</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(250, 124, 187), rgb(241, 70, 88));"></div></div><figcaption class="palette__caption">#fa7cbb – #f14658</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(115, 125, 254), rgb(255, 202, 201));"></div></div><figcaption class="palette__caption">#737dfe – #ffcac9</figcaption></figure><figure class="palette"><div class="aspect-ratio" style="padding-top: 100%;"><div style="background-image: linear-gradient(135deg, rgb(47, 128, 237), rgb(178, 255, 218));"></div></div><figcaption class="palette__caption">#2f80ed – #b2ffda</figcaption></figure></div></div></div></div>
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.production.min.js"></script>
+<script id="rendered-js">
+    function _extends() {_extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {if (window.CP.shouldStopExecution(0)) break;var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}window.CP.exitedLoop(0);return target;};return _extends.apply(this, arguments);}const AspectRatio = props => {
+        const { ratio = 1 / 1, ...otherProps } = props;
+
+        return /*#__PURE__*/(
+            React.createElement("div", _extends({
+                    className: "aspect-ratio",
+                    style: { paddingTop: `${100 / ratio}%` } },
+                otherProps)));
+
+
+    };
+
+    const Gradient = props => {
+        const { angle = 0, from, to } = props;
+
+        return /*#__PURE__*/(
+            React.createElement("div", {
+                style: {
+                    backgroundImage: `linear-gradient(${angle}deg, ${from}, ${to})` } }));
+
+
+
+    };
+
+    const Palette = props => {
+        const { from, to } = props;
+
+        return /*#__PURE__*/(
+            React.createElement("figure", { className: "palette" }, /*#__PURE__*/
+                React.createElement(AspectRatio, null, /*#__PURE__*/
+                    React.createElement(Gradient, _extends({ angle: 135 }, props))), /*#__PURE__*/
+
+                React.createElement("figcaption", { className: "palette__caption" },
+                    from, " \u2013 ", to)));
+
+
+
+    };
+
+    const Palettes = props => {
+        const { palettes } = props;
+
+        return /*#__PURE__*/(
+            React.createElement("div", { className: "palettes" },
+                palettes.map((palette) => /*#__PURE__*/
+                    React.createElement(Palette, _extends({ key: palette.toString() }, palette)))));
+
+
+
+    };
+
+    const Grid = props => {
+        return /*#__PURE__*/React.createElement("div", _extends({ className: "grid" }, props));
+    };
+
+    const App = () => {
+        const palettes = [
+            {
+                from: "#f40076",
+                to: "#df98fa" },
+
+            {
+                from: "#f06966",
+                to: "#fad6a6" },
+
+            {
+                from: "#ff0076",
+                to: "#590fb7" },
+
+            {
+                from: "#9055ff",
+                to: "#13e2da" },
+
+            {
+                from: "#0b63f6",
+                to: "#003cc5" },
+
+            {
+                from: "#d6ff7f",
+                to: "#00b3cc" },
+
+            {
+                from: "#e233ff",
+                to: "#ff6b00" },
+
+            {
+                from: "#df98fa",
+                to: "#9055ff" },
+
+            {
+                from: "#ed7b84",
+                to: "#9055ff" },
+
+            {
+                from: "#402565",
+                to: "#30be96" },
+
+            {
+                from: "#402662",
+                to: "#3900a6" },
+
+            {
+                from: "#f14658",
+                to: "#dc2537" },
+
+            {
+                from: "#f40076",
+                to: "#342711" },
+
+            {
+                from: "#000066",
+                to: "#6699ff" },
+
+            {
+                from: "#cb5eee",
+                to: "#4be1ec" },
+
+            {
+                from: "#fa7cbb",
+                to: "#f14658" },
+
+            {
+                from: "#737dfe",
+                to: "#ffcac9" },
+
+            {
+                from: "#2f80ed",
+                to: "#b2ffda" }];
+
+
+
+        return /*#__PURE__*/(
+            React.createElement("div", { className: "app" }, /*#__PURE__*/
+                React.createElement(Grid, null, /*#__PURE__*/
+                    React.createElement(Palettes, { palettes: palettes }))));
+
+
+
+    };
+
+    ReactDOM.render( /*#__PURE__*/React.createElement(App, null), document.getElementById("root"));
+    //# sourceURL=pen.js
+</script>
+
+
+
+
+
+
+
+</body></html>
