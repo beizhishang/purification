@@ -2,46 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a87bce54-4437-4f2e-b5ec-73adbac2ac80" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/doing/photobox/README.markdown" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doing/photobox/dist/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doing/photobox/dist/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doing/photobox/dist/jquery.photobox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doing/photobox/dist/normalize.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doing/photobox/dist/photobox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doing/photobox/dist/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doing/photobox/dist/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doing/photobox/license.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doing/photobox/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doing/photobox/src/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doing/photobox/src/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/muurigrid-demo-0-4-0/README.markdown" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/muurigrid-demo-0-4-0/dist/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/muurigrid-demo-0-4-0/dist/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/muurigrid-demo-0-4-0/dist/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/muurigrid-demo-0-4-0/license.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/muurigrid-demo-0-4-0/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/muurigrid-demo-0-4-0/src/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/muurigrid-demo-0-4-0/src/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/photobox/README.markdown" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/photobox/dist/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/photobox/dist/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/photobox/dist/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/photobox/license.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/photobox/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/photobox/src/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/photobox/src/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/shape-shifter/README.markdown" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/shape-shifter/dist/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/shape-shifter/dist/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/shape-shifter/dist/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/shape-shifter/license.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/shape-shifter/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/shape-shifter/src/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/shape-shifter/src/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Carousel Figure/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/dist/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Carousel Figure/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/dist/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Carousel Figure/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doing/M2/images/clip-147.png" beforeDir="false" afterPath="$PROJECT_DIR$/innovent/images/clip-147.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doing/M2/images/flame-remote-working.png" beforeDir="false" afterPath="$PROJECT_DIR$/innovent/images/flame-remote-working.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doing/M2/images/fogg-903.png" beforeDir="false" afterPath="$PROJECT_DIR$/innovent/images/fogg-903.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doing/M2/images/footer-logo-innovent.png" beforeDir="false" afterPath="$PROJECT_DIR$/innovent/images/footer-logo-innovent.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doing/M2/images/innovent-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/innovent/images/innovent-logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doing/M2/images/karlsson-business-thinking.png" beforeDir="false" afterPath="$PROJECT_DIR$/innovent/images/karlsson-business-thinking.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doing/M2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/innovent/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doing/M2/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/innovent/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doing/M2/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/innovent/style.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -59,11 +29,20 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/photobox/dist/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="414">
               <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/doing/photobox/dist/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -202,14 +181,19 @@
               <item name="purification" type="b2602c69:ProjectViewProjectNode" />
               <item name="purification" type="462c0819:PsiDirectoryNode" />
               <item name="doing" type="462c0819:PsiDirectoryNode" />
-              <item name="M2" type="462c0819:PsiDirectoryNode" />
+              <item name="photobox" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="purification" type="b2602c69:ProjectViewProjectNode" />
               <item name="purification" type="462c0819:PsiDirectoryNode" />
               <item name="doing" type="462c0819:PsiDirectoryNode" />
-              <item name="M2" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="photobox" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="purification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="purification" type="462c0819:PsiDirectoryNode" />
+              <item name="innovent" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="purification" type="b2602c69:ProjectViewProjectNode" />
@@ -239,11 +223,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/doing" />
       <recent name="$PROJECT_DIR$/doing/dist/images" />
       <recent name="$PROJECT_DIR$/doing/dist" />
       <recent name="$PROJECT_DIR$/DCS system" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources" />
@@ -290,7 +274,7 @@
       <workItem from="1628263181213" duration="429000" />
       <workItem from="1630137741413" duration="9000" />
       <workItem from="1630217450067" duration="4947000" />
-      <workItem from="1632850964483" duration="35419000" />
+      <workItem from="1632850964483" duration="36701000" />
     </task>
     <task id="LOCAL-00001" summary="new resources">
       <created>1598158012356</created>
@@ -397,11 +381,18 @@
       <option name="project" value="LOCAL" />
       <updated>1633400553077</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="update">
+      <created>1633415779710</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1633415779710</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72264000" />
+    <option name="totallyTimeSpent" value="73546000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -419,7 +410,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32857144" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -689,7 +680,7 @@
     <entry file="file://$PROJECT_DIR$/resources/dist/1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/doing/M2/images/clip-147.png">
+    <entry file="file://$PROJECT_DIR$/innovent/images/clip-147.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/Carousel Figure/script.js">
@@ -706,14 +697,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doing/M2/style.css">
+    <entry file="file://$PROJECT_DIR$/innovent/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="206" column="1" selection-start-line="206" selection-start-column="1" selection-end-line="206" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doing/M2/script.js">
+    <entry file="file://$PROJECT_DIR$/innovent/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
           <caret line="140" column="35" selection-start-line="140" selection-start-column="35" selection-end-line="140" selection-end-column="35" />
@@ -737,7 +728,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doing/M2/index.html">
+    <entry file="file://$PROJECT_DIR$/innovent/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
@@ -831,13 +822,6 @@
     <entry file="file://$PROJECT_DIR$/doing/photobox/license.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/doing/photobox/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/photobox/src/script.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -855,6 +839,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doing/photobox/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
         </state>
       </provider>
     </entry>
