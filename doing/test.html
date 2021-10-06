@@ -4,18 +4,83 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script language="Javascript">
-        function doword() {
-            var WordApp = new ActiveXObject("Word.Application");
-            WordApp.Application.Visible = true;
-            var Doc = WordApp.Documents.Add("/Users/a/Desktop/主持稿.docx",true);
-            //下面是以只读方式打开
-            var openDocObj = new ActiveXObject("SharePoint.OpenDocuments.1");
-            openDocObj.EditDocument("/Users/a/Desktop/主持稿.docx");
+        function dispFile(contents) {
+
+            document.getElementById('contents').innerHTML=contents
+
         }
+
+        function clickElem(elem) {
+
+            // Thx user1601638 on Stack Overflow (6/6/2018 - https://stackoverflow.com/questions/13405129/javascript-create-and-save-file )
+
+            var eventMouse = document.createEvent("MouseEvents")
+
+            eventMouse.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+
+            elem.dispatchEvent(eventMouse)
+
+        }
+
+        function openFile(func) {
+
+            readFile = function(e) {
+
+                var file = e.target.files[0];
+
+                if (!file) {
+
+                    return;
+
+                }
+
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+
+                    var contents = e.target.result;
+
+                    fileInput.func(contents)
+
+                    document.body.removeChild(fileInput)
+
+                }
+
+                reader.readAsText(file)
+
+            }
+
+            fileInput = document.createElement("input")
+
+            fileInput.type='file'
+
+            fileInput.style.display='none'
+
+            fileInput.onchange=readFile
+
+            fileInput.func=func
+
+            document.body.appendChild(fileInput)
+
+            clickElem(fileInput)
+
+        }
+
+
+
     </script>
 </head>
 <body>
-<button onclick="doword()">打开Word模板</button>
-</body>
+<div id="profile-pic-wrap">
+    <div id="profile-pic" style="background:url({{info.avatar}}) no-repeat center;background-position: cover;background-size:128px 128px;">
+        <div class="profile-btn-bg">
+            <a ng-click="uploadAvatar()" class="profile-pic-btn" style="cursor:pointer">修改头像</a>
+        </div>
+    </div>
+    <form id="myfrom" style="display: none; ">
+        <input type="text" name="UserId" placeholder="UserId" value="{{id}}">
+        <input type="file" accept="image/png,image/jpg,image/jpeg" name="Img" id="Img" onchange="angular.element(this).scope().doUpload()"/>
+    </form>
+</div></body>
 </html>
 

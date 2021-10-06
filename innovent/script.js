@@ -154,3 +154,16 @@ const touchSlide = (() => {
     // call mobile on touch end
     slider.addEventListener("touchend", mobile)
 })();
+
+// auto refresh
+function refresh() {
+    const date = new Date();
+    const h = date.getHours();
+    const m = date.getMinutes();
+    const s = date.getSeconds();
+    if (h === 0 && m === 0 && s === 0) {
+        location.reload();
+    }
+}
+
+setInterval(refresh,1000);
