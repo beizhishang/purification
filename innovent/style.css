@@ -160,8 +160,8 @@ h1 span{
 }
 
 .slider .box .illustration img{
-
-  width: 80%;
+  margin-left: 10%;
+  width: 75%;
   z-index: 1000;
 }
 
