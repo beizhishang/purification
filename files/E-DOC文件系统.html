@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enterprise</title>
+    <meta charset="UTF-8">
+	<link rel="shortcut icon" href="http://edocapp/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+    }
+
+     #home{
+        cursor: pointer;
+    }
+
+    .sidebar{
+        position: fixed;
+        left: -550px;
+        width: 550px;
+        height: 100%;
+        background: #042331;
+        transition: all .5s ease;
+    }
+
+
+
+    #check{
+        display: none;
+    }
+
+    label #btn, label #cancel{
+        position: absolute;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+
+    label #btn{
+        padding-left: 3px;
+		padding-right: 5px;
+		display: flex;
+		align-items: center;
+        font-size: 30px;
+        color: white;
+        transition: all .5s;
+        position: fixed;
+		height: 100vh;
+		width: 22px;
+		background-image: linear-gradient(to right, rgba(8,76,152,.5) 3.6%, rgba(119,127,148,0) 105.8% );
+		animation: mymove 1.8s infinite ease-in-out;
+    }
+	
+	@keyframes mymove{
+	0%{padding-left: 3px;}
+	50%{padding-left: 8px;color:rgba(8,76,152,.5);padding-right: 0;}
+	100%{padding-left: 3px;}
+	}
+
+    label #cancel{
+        z-index: 1111;
+        left: -495px;
+        top: 10px;
+		right: 10px;
+        font-size: 25px;
+        color: gray;
+        padding: 4px;
+        transition: all .5s ease;
+        position: fixed;
+    }
+
+    #check:checked ~ .sidebar{
+        left: 0;   
+    }
+
+    #check:checked ~ label #btn{
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    #check:checked ~ label #cancel{
+        left: 495px;
+    }
+
+    section{
+        height: 100vh;
+        transition: all .5s ease;
+    }
+
+    #check:checked ~ section{
+        margin-left: 550px;
+    }
+	
+	.container{
+	color: white;
+	width: 490px;
+	height: calc(100vh - 130px);
+	margin: 50px 10px 50px 30px;
+	}
+
+#datarea{
+	margin-top: 10px;
+	padding-right: 10px;
+	width: 100%;
+	height: 100%;
+	overflow-Y: scroll;
+	overflow-X: hidden;
+	visibility: hidden;
+}
+
+input{
+width:400px;
+height: 30px;
+margin-right: 20px;
+border-radius: 5px;
+border: none;
+text-indent: 8px;
+}
+
+button{
+height: 30px;
+padding: 3px 8px;
+border-radius: 5px;
+background-color: #539e9e;
+user-select: none;
+cursor: pointer;
+color: #ffffffe0;
+font-weight: 700;
+letter-spacing: 2px;
+}
+
+li{
+	height: 25px;
+	margin: 2px 0;
+	width: 75%;
+	cursor: pointer;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	line-height: 25px;
+	float: left;
+	border-radius: 5px;
+	user-select: none;
+}
+
+li:hover{
+background-color: #539e9e;
+padding: 0 5px;
+color: #ffffffe0;
+font-weight: 700;
+}
+
+
+body::-webkit-scrollbar
+{
+	width: 0;
+}
+
+#datarea::-webkit-scrollbar-track
+{
+	background-image: linear-gradient( 96.5deg,  rgba(39,103,187,1) 10.4%, rgba(16,72,144,1) 87.7% );
+}
+
+#datarea::-webkit-scrollbar
+{
+	width: 3px;
+	background-color: rgb(255, 255, 255);
+}
+
+#datarea::-webkit-scrollbar-thumb
+{
+	background-color: rgb(158, 165, 171) !important;	
+	opacity: 0.4;
+	border-radius: 3px;
+}
+
+#data span{
+	height: 25px;
+	line-height: 25px;
+	float: right;
+	cursor: pointer;
+	border-radius: 5px;
+	padding: 0 8px;
+	user-select: none;
+}
+
+#data span:hover{
+background-color: #539e9e;
+color: #ffffffe0;
+font-weight: 700;
+}
+
+.SOP2, .SOP1, .SOP3, .SOP4, .SOP5{
+background:#8c696f;
+}
+
+.SMP{
+background: #5d5f48;
+}
+
+.PFD{
+background: #4b89a5;
+}
+
+.BPR1{
+background: #673ab7;
+}
+
+.LB{
+background-color: #6cafb7;
+}
+
+</style>
+
+<body>
+
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fa fa-chevron-right" id="btn"></i>
+        <i class="fa fa-times-circle" id="cancel"></i>
+    </label>
+
+    <div class="sidebar">
+		<div class="container">
+			<input  id="search-input" type="search" /><button onclick="search()">搜索</button>
+			<div id="datarea" style="visibility: visible;">
+				<ol id="data">
+
+				</ol>
+			</div>
+		</div>
+    </div>
+    <section>
+        <iframe name="show" height="100%" width="100%" frameborder="0" src="http://edocapp/otcs/llisapi.dll?func=llworkspace"></iframe>
+    </section>
+
+</body>
+<script src="document-data.js"></script>
+<script>
+
+initialization();
+
+	  
+var searchInput = document.getElementById("search-input");
+
+document.onkeyup = function(e){
+   if(
+		searchInput.value == ""
+   ){
+	   	initialization();
+   }else if(
+        e.keyCode == 13 && searchInput.value !== ""
+   ){
+		search();
+	}else{
+		fuzzyQuery();
+		document.getElementById("datarea").style.visibility = "visible";
+	}		
+}
+	
+
+function fuzzyQuery() {
+    document.getElementById("data").innerHTML = "";
+    for (i = 0; i < obj.length; i++) {
+      if (obj[i].number.indexOf(searchInput.value) >= 0 ||  obj[i].name.indexOf(searchInput.value) >= 0) {
+		var node = document.createElement("li");
+		node.setAttribute("title",obj[i].name);
+		var textnode = document.createTextNode(obj[i].name);
+		node.appendChild(textnode);
+		document.getElementById("data").appendChild(node);
+		var node1 = document.createElement("span");
+		node1.setAttribute("class",obj[i].type);
+		var textnode1 = document.createTextNode(obj[i].number);
+		node1.appendChild(textnode1);
+		document.getElementById("data").appendChild(node1);
+      } 
+    }
+		var list = document.getElementById("data").getElementsByTagName("li");
+		var number = document.getElementById("data").getElementsByTagName("span");
+		
+		for(i = 0; i < list.length; i ++){
+				list[i].addEventListener("click",function(){
+				parent.show.location.href="http://edocapp/otcs/llisapi.dll?slice=3142&searchbarwidgetmode=fulltext&where1="+this.innerText+"&ScopeSelection=3142%7C2000%7C%E5%9C%A8+Enterprise+%E5%86%85&lookfor1=allwords&modifier1=relatedto&boolean2=And&lookfor2=complexquery&typeDropDownId=1&boolean3=And&lookfor3=complexquery&dateDropDownId=1&func=search&objType=258&SearchBarSearch=TRUE&location_id1=2000&facets=user&fulltextMode=allwords";
+				this.style.backgroundColor="gray";
+				this.style.paddingLeft = "5px";
+			});
+				number[i].addEventListener("click",function(){
+				parent.show.location.href="http://edocapp/otcs/llisapi.dll?slice=3142&searchbarwidgetmode=fulltext&where1="+this.innerText+"&ScopeSelection=3142%7C2000%7C%E5%9C%A8+Enterprise+%E5%86%85&lookfor1=allwords&modifier1=relatedto&boolean2=And&lookfor2=complexquery&typeDropDownId=1&boolean3=And&lookfor3=complexquery&dateDropDownId=1&func=search&objType=258&SearchBarSearch=TRUE&location_id1=2000&facets=user&fulltextMode=allwords";
+				this.style.backgroundColor="gray";
+				this.style.paddingLeft = "5px";
+			});
+		}	
+}
+
+function search(){ 
+        parent.show.location.href="http://edocapp/otcs/llisapi.dll?slice=3142&searchbarwidgetmode=fulltext&where1="+searchInput.value+"&ScopeSelection=3142%7C2000%7C%E5%9C%A8+Enterprise+%E5%86%85&lookfor1=allwords&modifier1=relatedto&boolean2=And&lookfor2=complexquery&typeDropDownId=1&boolean3=And&lookfor3=complexquery&dateDropDownId=1&func=search&objType=258&SearchBarSearch=TRUE&location_id1=2000&facets=user&fulltextMode=allwords";
+}
+
+function initialization(){
+for (i = 0; i < pur.length; i++) {
+		var node = document.createElement("li");
+		node.setAttribute("title",pur[i].name);
+		var textnode = document.createTextNode(pur[i].name);
+		node.appendChild(textnode);
+		document.getElementById("data").appendChild(node);
+		var node1 = document.createElement("span");
+		node1.setAttribute("class",pur[i].type);
+		var textnode1 = document.createTextNode(pur[i].number);
+		node1.appendChild(textnode1);
+		document.getElementById("data").appendChild(node1);
+      } ;
+
+var list = document.getElementById("data").getElementsByTagName("li");
+var number = document.getElementById("data").getElementsByTagName("span");
+		
+		for(i = 0; i < list.length; i ++){
+				list[i].addEventListener("click",function(){
+				parent.show.location.href="http://edocapp/otcs/llisapi.dll?slice=3142&searchbarwidgetmode=fulltext&where1="+this.innerText+"&ScopeSelection=3142%7C2000%7C%E5%9C%A8+Enterprise+%E5%86%85&lookfor1=allwords&modifier1=relatedto&boolean2=And&lookfor2=complexquery&typeDropDownId=1&boolean3=And&lookfor3=complexquery&dateDropDownId=1&func=search&objType=258&SearchBarSearch=TRUE&location_id1=2000&facets=user&fulltextMode=allwords";
+				this.style.backgroundColor="gray";
+				this.style.paddingLeft = "5px";
+				});
+				number[i].addEventListener("click",function(){
+				parent.show.location.href="http://edocapp/otcs/llisapi.dll?slice=3142&searchbarwidgetmode=fulltext&where1="+this.innerText+"&ScopeSelection=3142%7C2000%7C%E5%9C%A8+Enterprise+%E5%86%85&lookfor1=allwords&modifier1=relatedto&boolean2=And&lookfor2=complexquery&typeDropDownId=1&boolean3=And&lookfor3=complexquery&dateDropDownId=1&func=search&objType=258&SearchBarSearch=TRUE&location_id1=2000&facets=user&fulltextMode=allwords";
+				this.style.backgroundColor="gray";
+				this.style.paddingLeft = "5px";
+				});
+			}
+}
+
+
+</script>
+</html>
