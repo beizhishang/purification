@@ -1,98 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.1/gsap.min.js" type="text/javascript"></script>
     <style type="text/css">
-        body, html, #container {
+        body,
+        html,
+        #container {
             width: 100%;
             height: 100%;
-            overflow:hidden;
-            background:#000;
+            overflow: hidden;
+            background: #000;
         }
 
-        div, img {
-            position:absolute;
+        div,
+        img {
+            position: absolute;
             user-select: none;
-            overflow:hidden;
+            overflow: hidden;
         }
     </style>
 </head>
+
 <body>
-<div id="container"></div>
-<div id="soundBtn">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAxBAMAAACIWfxVAAAAJFBMVEVHcEz///////////////////////////////////////////8Uel1nAAAAC3RSTlMA6g6/2IYjN1FroPA1XvYAAAFqSURBVHgBnZQ1WwNBEIYnnlwFLe5SoRVuFd7h3uE1XuMV7pRp4jZ/jtmTJbvP7SHx3HvzzewY2D1qr0H56IyrGeKbks1hUr5UZ/3QEE9EFCys4A4xJivprJFMXChGs4ZRxtzFWYCAKBosZsy6PIcFgqJpN4IpJprNVzQZVGKUVOiDKyJnfsRJgBG85oomC0wDPDLRM2zmiibboNs9GGcOU5aixc4wzUSXwWelLcxZDYshTA4DzPizra0dOdMD2WCHK8YKevMHMRKNkcM0M96FEZF5yE+I3hTttcz8GDV87eObzKCTtIopoA06oMzm8Jr4Mrhs2BlO6nF4sU9mzI/OPDZsg9icgjnZqf05xzmCy6rzBTAh5EWVT7s6eK06iPULCPUT674i1F3ul5TUL7D2bXfC+0zuT/8t78++vEmR+/rEdh4S4jwIc5QW58h5/qBaPbeO8w6BIVDuCXCr94u4l/6zz5z2oM/YA18bg3c4+hgWFQAAAABJRU5ErkJggg==" width="32px">
-</div>
+    <div id="container"></div>
+    <div id="soundBtn">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAxBAMAAACIWfxVAAAAJFBMVEVHcEz///////////////////////////////////////////8Uel1nAAAAC3RSTlMA6g6/2IYjN1FroPA1XvYAAAFqSURBVHgBnZQ1WwNBEIYnnlwFLe5SoRVuFd7h3uE1XuMV7pRp4jZ/jtmTJbvP7SHx3HvzzewY2D1qr0H56IyrGeKbks1hUr5UZ/3QEE9EFCys4A4xJivprJFMXChGs4ZRxtzFWYCAKBosZsy6PIcFgqJpN4IpJprNVzQZVGKUVOiDKyJnfsRJgBG85oomC0wDPDLRM2zmiibboNs9GGcOU5aixc4wzUSXwWelLcxZDYshTA4DzPizra0dOdMD2WCHK8YKevMHMRKNkcM0M96FEZF5yE+I3hTttcz8GDV87eObzKCTtIopoA06oMzm8Jr4Mrhs2BlO6nF4sU9mzI/OPDZsg9icgjnZqf05xzmCy6rzBTAh5EWVT7s6eK06iPULCPUT674i1F3ul5TUL7D2bXfC+0zuT/8t78++vEmR+/rEdh4S4jwIc5QW58h5/qBaPbeO8w6BIVDuCXCr94u4l/6zz5z2oM/YA18bg3c4+hgWFQAAAABJRU5ErkJggg=="
+            width="32px">
+    </div>
 </body>
 <script type="text/javascript">
     let muted = true,
         n = 8;
 
     gsap.timeline()
-        .set('#container', {perspective:800})
-        .set('#soundBtn', {width:16, height:32, left:'50%', top:'100%', x:-8, y:-40, cursor:'pointer', opacity:0.5});
+        .set('#container', { perspective: 800 })
+        .set('#soundBtn', { width: 16, height: 32, left: '50%', top: '100%', x: -8, y: -40, cursor: 'pointer', opacity: 0.5 });
 
 
-    for (let i=0; i<n; i++){
+    for (let i = 0; i < n; i++) {
 
         let b = document.createElement('div'),
-            a = new Audio('https://assets.codepen.io/721952/chime'+(n-i)+'.mp3');
+            a = new Audio('https://assets.codepen.io/721952/chime' + (n - i) + '.mp3');
 
         b.classList.add('box');
         document.getElementById('container').appendChild(b);
         b.appendChild(a);
 
         gsap.set(b, {
-            left:'50%',
-            top:'50%',
-            x:-100,
-            y:-300,
-            z:600,
-            width:200,
-            height:600,
-            borderRadius:20,
-            background:()=>'hsl('+(i/n*200)+',100%,50%)'
+            left: '50%',
+            top: '50%',
+            x: -100,
+            y: -300,
+            z: 600,
+            width: 200,
+            height: 600,
+            borderRadius: 20,
+            background: () => 'hsl(' + (i / n * 200) + ',100%,50%)'
         });
 
         gsap.fromTo(b, {
-            scaleY:0,
-            opacity:0,
-            zIndex:-i,
-            rotationY:90+i/n*205,
-            transformOrigin:String("50% 50% -900%")
-        },{
-            scaleY:1,
-            opacity:0.7,
-            duration:1,
-            delay:1-0.5*(i/n),
-            ease:'elastic'
+            scaleY: 0,
+            opacity: 0,
+            zIndex: -i,
+            rotationY: 90 + i / n * 205,
+            transformOrigin: String("50% 50% -900%")
+        }, {
+            scaleY: 1,
+            opacity: 0.7,
+            duration: 1,
+            delay: 1 - 0.5 * (i / n),
+            ease: 'elastic'
         })
 
-        b.onmouseenter = (e)=>{
-            if (!muted){
-                a.currentTime=0;
-                a.volume=0.15;
+        b.onmouseenter = (e) => {
+            if (!muted) {
+                a.currentTime = 0;
+                a.volume = 0.15;
                 a.play();
             }
-            gsap.to(b, {duration:0.3, opacity:1, scaleY:1.2, ease:'back.out(5)'});
+            gsap.to(b, { duration: 0.3, opacity: 1, scaleY: 1.2, ease: 'back.out(5)' });
         }
 
-        b.onmouseleave = (e)=>{
-            gsap.to(b, {duration:0.4, opacity:0.7, scaleY:1});
+        b.onmouseleave = (e) => {
+            gsap.to(b, { duration: 0.4, opacity: 0.7, scaleY: 1 });
         }
     }
 
-    window.onmousemove = (e)=>{
-        gsap.to('.box', {duration:0.6, rotationY:(i)=>45+i/n*205+90*(e.clientX/window.innerWidth) });
+    window.onmousemove = (e) => {
+        gsap.to('.box', { duration: 0.6, rotationY: (i) => 45 + i / n * 205 + 90 * (e.clientX / window.innerWidth) });
     }
 
 
-    document.getElementById('soundBtn').onclick = (e)=>{
+    document.getElementById('soundBtn').onclick = (e) => {
         gsap.timeline()
-            .to('#soundBtn', {width:()=>(muted)?16:32, duration:0.15, ease:'power3.in'}, 0)
-            .to('#soundBtn', {x:()=>(muted)?-8:-16, duration:0.3, ease:'back.out(2)'}, 0)
-        muted=!muted;
+            .to('#soundBtn', { width: () => (muted) ? 16 : 32, duration: 0.15, ease: 'power3.in' }, 0)
+            .to('#soundBtn', { x: () => (muted) ? -8 : -16, duration: 0.3, ease: 'back.out(2)' }, 0)
+        muted = !muted;
     }
 </script>
+
 </html>
