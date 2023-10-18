@@ -1,0 +1,142 @@
+:root {
+    --designcolor: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    user-select: none;
+}
+
+body {
+	background: lightblue;
+	}
+	
+body::-webkit-Scrollbar{
+	width: 0;
+}
+
+#logo {
+    position: fixed;
+    width: 140px;
+    height: 40px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: 30px;
+    cursor: pointer;
+    transition: all .5s ease;
+    border-radius: 5px;
+}
+
+#logo:hover{
+     box-shadow: 0 0 20px white;
+        }
+
+#logo:active{
+     transform: translateY(8px);
+        }
+		
+.text {
+    font-size: 12px;
+    line-height: 100%;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    color: var(--designcolor);
+}
+
+.trap {
+    width: 25px;
+    height: 15px;
+    background: lightgray;
+    border: solid 1px;
+    line-height: 15px;
+    text-align: center;
+    font-weight: 700;
+    cursor: none;
+}
+
+.coldhot {
+    width: 22px;
+    height: 22px;
+    border: solid 1px;
+    display: block;
+    background-color: lightgray;
+    text-align: center;
+    line-height: 22px;
+    cursor: none;
+}
+
+.line-h {
+    background-color: var(--designcolor);
+    height: 2px;
+}
+
+.line-v {
+    background-color: var(--designcolor);
+    width: 2px;
+}
+
+.textarea {
+    width: 80px;
+    height: 25px;
+    background-color: lightgray;
+    border: solid 1px;
+    text-align: center;
+    line-height: 25px;
+}
+
+span img:hover {
+    cursor: pointer;
+}
+
+.valve:hover {
+    cursor: pointer;
+}
+
+.unit-button{
+	width: 185px;
+    height: 30px;
+    background-color: #f0f0f0;
+	text-align: center;
+	line-height: 30px;
+	font-size: 16px;
+	font-weight: 700;
+	box-shadow: 1px 1px 5px black;
+	border: white 2px;
+	color: var(--designcolor);
+	border-radius: 5px;
+	user-select: none;
+	animation: 0.3s;
+	}
+	
+ .unit-button-mouseover{
+	 background-color:  lightgreen;
+ }
+ 
+	.unit-button:hover{
+		background-color: black;
+		color: white;
+		box-shadow: 0 0 30px white;
+		cursor: pointer;
+	}
+	
+	.unit-button:active{
+		transform: scale(0.9);
+	}
+	
+	#home{
+		top: 42px;
+		left: 87px;
+		width: 30px;
+		height: 30px;
+		background-image: url("../image-unit/home.png");
+		background-size: cover;
+		animation: 0.5s ease-in;
+	}
+	
+	#home:hover{
+		transform: scale(1.2);
+        cursor: pointer;
+	}
+	

@@ -1,0 +1,733 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>学习资料</title>
+    <link rel="shortcut icon" href="https://trello-attachments.s3.amazonaws.com/5d870c0418f7104546584cfb/5dcbcaedb6ca803685cc6fa0/a83d2af9b74ca6ddceec6ed84190fa15/Purification_(2).ico">
+    <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+    <script type=text/javascript>
+        $(function(){
+	$('#purification li').hover(function(){
+		$(this).children('ul').stop(true,true).show('slow');
+	},function(){
+		$(this).children('ul').stop(true,true).hide('slow');
+	});
+	
+	$('#purification li').hover(function(){
+		$(this).children('div').stop(true,true).show('slow');
+	},function(){
+		$(this).children('div').stop(true,true).hide('slow');
+	});
+    });
+    </script>
+    <style type="text/css">
+         * {
+	margin:0;
+	padding:0;
+         }
+
+         body {
+	font-family:Arial, Verdana, Helvetica, sans-serif;
+	font-family:"雅黑宋体", "微软雅黑", "新宋体", "宋体";
+	font-size:1.2em;
+	font-size:18px;
+	color:#FFF;
+	text-align:left;
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
+         }
+
+         a {
+	color:#FFF;
+	text-decoration:none;
+         }
+
+         ul {
+	list-style:none;
+         }
+
+        .sign{
+               position: fixed;
+               right: 50px;
+               top: 25px;
+               z-index: 100;
+               font-size: 16px;
+               cursor: pointer;
+               opacity: 0.4;
+        }
+
+       .nav{
+               position: fixed;
+               width: 100vw;
+               height: 70px;
+               background:#333;
+        }
+
+        #logo{
+             position: fixed;
+             width: 140px;
+             height: 40px;
+             padding: 10px;
+             margin-top: 5px;
+             margin-left:  30px;
+             cursor: pointer;
+             transition: all .5s ease;
+             border-radius: 5px;
+        }
+        
+       #logo:hover{
+             box-shadow: 0 0 20px;
+        }
+
+       #logo:active{
+             transform: translateY(8px);
+        }
+
+         #purification {
+                position: absolute;
+	background:#333;
+	left: 50%;
+                top: 15px;
+                transform: translateX(-50%);
+	text-align:center;
+         }
+
+         #purification a {
+	font-size:.8em;
+         }
+
+         #purification li ul {
+	display:none;
+         }
+
+         #purification li ul li {
+	float:none;
+         }
+
+         *html #purification li ul li {
+	display:inline;
+         }
+
+         #purification li ul a {
+	float:none;
+	height:32px;
+	line-height:32px;
+	padding:0 10px;
+	text-transform:capitalize;
+	font-size:.6em;
+         }
+
+         #purification .height-auto {
+	line-height:15px;
+	padding:5px 10px;
+         }
+         .second-menu, .third-menu, .fourth-menu {
+	position:absolute;
+         }
+
+         .first-menu li {
+	float:left;
+	position:relative;
+         }
+
+         .first-menu a {
+	float:left;
+	display:block;
+	padding:0 20px;
+	height:35px;
+	line-height:35px;
+	background:#333;
+	border-top:1px solid #4a4a4a;
+	border-left:1px solid #4a4a4a;
+	border-bottom:1px solid #242424;
+	border-right:1px solid #242424;
+	font-size:.7em;
+         }
+
+         .first-menu a:hover {
+	background:#4698ca;
+	border-top:1px solid #5db1e0;
+	border-left:1px solid #5db1e0;
+         }
+
+         .second-menu {
+	top:37px;
+	right:0;
+         }
+
+         *html .second-menu {
+	right:-1px;
+         }
+
+         .second-menu li a {
+	font-size:16px;
+         }
+
+         .second-menu a.resources {
+	background:#3a3a3a;
+         }
+
+         .second-menu a.resources:hover {
+	background:#4698ca;
+         }
+         .second-menu a.resources-02 {
+	background:#3a3a3a;
+         }
+
+         .second-menu a.resources-02:hover {
+	background:#4698ca;
+         }
+
+         .third-menu, .fourth-menu {
+	width:300px;
+	top:0;
+	left:177px;
+         }
+
+         .third-menu a {
+	background:#4c4c4c;
+	font-weight:normal;
+	border-top:1px solid #595959;
+	border-left:1px solid #595959;
+	border-bottom:1px solid #333;
+	border-right:1px solid #333;
+                text-align: left;
+                overflow: hidden;
+                cursor: pointer;
+         }
+
+         #subMgm {
+	width:150px;
+         }
+
+         #subMgm .third-menu {
+	left:177px;
+	
+         }
+
+         #subMgm .fourth-menu {
+	left:177px;
+         }
+
+         #subMusic, #subNews {
+	width:177px;
+         }
+
+
+         iframe{
+               width: 100vw;
+               height: 95vh;
+               margin-top: 70px;
+}
+</style>
+</head>
+<body>
+
+<a class="sign" onClick="parent.show.location.href='签到.html'">签到</a>
+
+<div class="nav">
+<div id="logo" onclick="javascript:window.location.href='../M2共享平台.html'"><img width="140px" src="http://innoventbio.com/static/img/footer-logo-zh-new.284f4f5.png" /></div>
+<ul id="purification" class="first-menu">
+  
+
+  <li><a href="#" target="_self">基础理论</a>
+
+    <ul style="display: none;" id="subMusic" class="second-menu">
+      <li><a href="#" class="resources" target="_self">单克隆抗体</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/基础理论/单克隆抗体/A-Mab_Case_Study_Version2.1.pdf'"><a>A-Mab_Case_Study_Version2.1</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/单克隆抗体/A-Mab中文版.pdf'"><a>A-Mab中文版</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/单克隆抗体/产品知识介绍.pdf'"><a>产品知识介绍</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/单克隆抗体/单核细胞的分离.pdf'"><a>单核细胞的分离</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/单克隆抗体/病毒去除灭活的方法及工艺的选择.pdf'"><a>病毒去除灭活的方法及工艺的选择</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/单克隆抗体/细胞分离介质.pdf'"><a>细胞分离介质</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/单克隆抗体/制药用水系统（第二版）—张功臣主编2016.10出版.pdf'"><a>制药用水系统</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/单克隆抗体/免疫学概览中文第四版.pdf'"><a>免疫学概览中文第四版</a></li>
+<li onClick="parent.show.location.href='R:\01跨部门协作\06 工程部_CSO_COO工程情况分享 曹雪良\00 工程分享\03 仪表校准管理\05 2021年校准证书扫描件\MFG-M2\MFG-混合器-MFG-M2-OT-057-20210712.pdf'"><a>test</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">填料相关</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/基础理论/填料相关/GE公司凝胶选择指南2011.pdf'"><a>GE公司凝胶选择指南2011</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/填料相关/Multimodals Media_CN.pdf'"><a>Multimodals Media_CN</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/填料相关/层析填料介绍与选择.pdf'"><a>层析填料介绍与选择</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/填料相关/层析填料选择media.pdf'"><a>层析填料选择media</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">层析相关 </a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/GE-抗体生产纯化.pdf'"><a>GE-抗体生产纯化</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/Purification of Antibody Fragments CN.pdf'"><a>Purification of Antibody Fragments CN</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/Simplified purification of secreted histidine-tagged proteins_CN.pdf'"><a>Simplified purification of secreted histidine-tagged proteins_CN</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/亲和层析 AF.pdf'"><a>亲和层析 AF</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/亲和层析的基本操作.pdf'"><a>亲和层析的基本操作</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/免疫亲和色谱.pdf'"><a>免疫亲和色谱</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/凝胶过滤GF.pdf'"><a>凝胶过滤GF</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/凝胶过滤手册.pdf'"><a>凝胶过滤手册</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/富有挑战性的蛋白质纯化.pdf'"><a>富有挑战性的蛋白质纯化</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/层析术语.pdf'"><a>层析术语</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/抗体-维基百科.pdf'"><a>抗体-维基百科</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/抗体纯化手册.pdf'"><a>抗体纯化手册</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/疏水层析HIC.pdf'"><a>疏水层析HIC</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/疏水相互作用层析和反相层析.pdf'"><a>疏水相互作用层析和反相层析</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/离子交换IEX.pdf'"><a>离子交换IEX</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/离子交换手册.pdf'"><a>离子交换手册</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/纯化策略.pdf'"><a>纯化策略</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/蛋白质纯化.pdf'"><a>蛋白质纯化</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/层析相关/重组蛋白质纯化手册.pdf'"><a>重组蛋白质纯化手册</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">病毒灭活</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/基础理论/病毒灭活/WHO病毒灭活.pdf'"><a>WHO病毒灭活</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/病毒灭活/应用组合的技术提高工艺安全性.pdf'"><a>应用组合的技术提高工艺安全性</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/病毒灭活/病毒去除灭活的方法及工艺的选择.pdf'"><a>病毒去除灭活的方法及工艺的选择</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">装柱相关</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/基础理论/装柱相关/Frontal analysis 28937207AA1.pdf'"><a>Frontal analysis 28937207AA1</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/装柱相关/Frontal analysis article-80028.pdf'"><a>Frontal analysis article-80028</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/装柱相关/Frontal analysis Transition Analysis.pdf'"><a>Frontal analysis Transition Analysis</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">超滤膜包</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/基础理论/超滤膜包/Pellicon 2 Installation, User, and Maintenance Guide.pdf'"><a>Pellicon 2 Installation, User, and Maintenance Guide</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/超滤膜包/Pellicon 2 User Guide-P35430 Rev D .pdf'"><a>Pellicon 2 User Guide-P35430 Rev D </a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/超滤膜包/Pellicon®2盒式膜包使用指南.pdf'"><a>Pellicon®2盒式膜包使用指南</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">过滤相关</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/基础理论/过滤相关/切向流过滤装置及系统产品手册 V3.pdf'"><a>切向流过滤装置及系统产品手册 V3</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/过滤相关/深层过滤.pdf'"><a>深层过滤</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/过滤相关/过滤原理.pdf'"><a>过滤原理</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/过滤相关/过滤器的使用.pdf'"><a>过滤器的使用</a></li>
+          <li onClick="parent.show.location.href='Resources/基础理论/过滤相关/杭州科百特—生命科学制药公司及产品介绍.pdf'"><a>膜包-科百特</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">常用物料</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/基础理论/常用物料/Hose 选型手册.pdf'"><a>耐压管</a></li>
+        </ul>
+      </li>
+
+    </ul>
+  </li>
+
+
+
+
+
+  <li><a href="#" target="_self">设备学习</a>
+    <ul id="subNews" class="second-menu">
+      <li><a href="#" class="resources" target="_self">完整性检测</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/Integritest_4 全自动滤器完整性测试仪操作手册.pdf'"><a>Integritest_4 全自动滤器完整性测试仪操作手册</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/【密里博】完整性测试.pdf'"><a>【密里博】完整性测试</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/除菌过滤器完整性测试.pdf'"><a>除菌过滤器完整性测试</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/除菌过滤器完整性测试润湿指南.pdf'"><a>除菌过滤器完整性测试润湿指南</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/中文-PDA TR26 液体的除菌过滤2007.pdf'"><a>中文-PDA TR26 液体的除菌过滤2007</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/Broch_Sartocheck4+ Guide完整性测试仪技术应用手册_cn201408.pdf'"><a>Broch_Sartocheck4+ Guide完整性测试仪技术应用手册_cn201408</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/Publ_Integrity_Testing_of_Membrane_Filters_SPI8000-e.pdf'"><a>Publ_Integrity_Testing_of_Membrane_Filters_SPI8000-e</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/Appl_Filter_Integrity_Testing_Test_Setup_SPI4006-e.pdf'"><a>Appl_Filter_Integrity_Testing_Test_Setup_SPI4006-e</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/Appl_Filter_Integrity_Testing_Test_Time_SPI4007-e.pdf'"><a>Appl_Filter_Integrity_Testing_Test_Time_SPI4007-e</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/【PALL】过滤器的使用.pdf'"><a>【PALL】过滤器的使用</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/【PALL】过滤原理.pdf'"><a>【PALL】过滤原理</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/【PALL】Integrity Test.pdf'"><a>【PALL】Integrity Test</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/【密里博】Integrity Test Troubleshooting –Beyond Rewet and Retest.pdf'"><a>【密里博】Integrity Test Troubleshooting –Beyond Rewet and Retest</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/缩短完整性测试测试时间而不失准确性和可靠性.pdf'"><a>缩短完整性测试测试时间而不失准确性和可靠性</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/无菌制药工艺中先进的完整性检测技术-Pall.pdf'"><a>无菌制药工艺中先进的完整性检测技术-Pall</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/除菌级过滤器完整性测试方法及原理.pdf'"><a>除菌级过滤器完整性测试方法及原理</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/Sartocheck® 4 plus Filter tester  Filter tester MultiUnit.pdf'"><a>Sartocheck® 4 plus Filter tester  Filter tester MultiUnit</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/Integrity test principle and regulatory introduction.pdf'"><a>Integrity test principle and regulatory introduction</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/Valid_Sartopore_2_Sterilizing_Grade_Filter_Elements_SPK5802-e.pdf'"><a>Valid_Sartopore_2_Sterilizing_Grade_Filter_Elements_SPK5802-e</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/Manual_Sartocheck_5_SPI6053av191203 (1).pdf'"><a>Manual_Sartocheck_5_SPI6053av191203 (1)</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/完整性检测/Manual_Sartocheck_5_SPI6053-e190504 (2).pdf'"><a>Manual_Sartocheck_5_SPI6053-e190504 (2)</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">层析柱</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/层析柱/AxiChrom™ 300-1600 columns操作手册.pdf'"><a>AxiChrom™ 300-1600 columns操作手册</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">层析系统</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/层析系统/AKTAavant简介.pdf'"><a>AKTAavant简介</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/层析系统/AKTA系统手动命令指南.pdf'"><a>AKTA系统手动命令指南</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/层析系统/Unicorn  7.3 methord edit.pdf'"><a>Unicorn  7.3 methord edit</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/层析系统/UNICORN 5.1参考手册.pdf'"><a>UNICORN 5.1参考手册</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/层析系统/Unicorn7方法编辑使用手册.pdf'"><a>Unicorn7方法编辑使用手册</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/层析系统/Unicorn7系统控制使用手册.pdf'"><a>Unicorn7系统控制使用手册</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/层析系统/Unicorn7系统管理使用手册.pdf'"><a>Unicorn7系统管理使用手册</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/层析系统/Unicorn7结果分析使用手册.pdf'"><a>Unicorn7结果分析使用手册</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/层析系统/系统维护maintenance.pdf'"><a>系统维护maintenance</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/层析系统/层析PID.pdf'"><a>层析PID</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/层析系统/M2项目下游工艺管罐系统主要部件品牌推荐表.pdf'"><a>M2项目下游工艺管罐系统主要部件品牌推荐表</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/层析系统/层析系统外观图.pdf'"><a>层析系统外观图</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/层析系统/层析系统FS.pdf'"><a>层析系统FS</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/层析系统/层析系统UDS.pdf'"><a>层析系统UDS</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/层析系统/层析系统SD.pdf'"><a>层析系统SD</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">超滤系统</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/超滤系统/超滤系统及膜包产品手册.pdf'"><a>超滤系统及膜包产品手册</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/超滤系统/超滤系统说明书.pdf'"><a>超滤系统说明书</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">除病毒过滤</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/除病毒过滤/millipore 除病毒设备.pdf'"><a>millipore 除病毒设备</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">多参数仪</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/多参数仪/梅特勒-托利多 LabX软件的法规支持白皮书.pdf'"><a>梅特勒-托利多 LabX软件的法规支持白皮书</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/多参数仪/梅特勒-托利多 LabX实验室软件 样本.pdf'"><a>梅特勒-托利多 LabX实验室软件 样本</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/多参数仪/梅特勒-托利多 SevenExcellence_ pH_mV_ISFET测量仪 样本.pdf'"><a>梅特勒-托利多 SevenExcellence_ pH_mV_ISFET测量仪 样本</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/多参数仪/SevenExcellence操作说明书.pdf'"><a>SevenExcellence操作说明书</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/多参数仪/主流药典对电导率测量的规定.pdf'"><a>主流药典对电导率测量的规定</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">混合器</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/混合器/29251615AE_XDUO OI.pdf'"><a>29251615AE_XDUO OI</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/混合器/XDM混合器数据工作站方案含报价M2_37 .pdf'"><a>XDM混合器数据工作站方案含报价M2_37 </a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">冰箱</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/冰箱/YCD系列冷藏冷冻保存箱-说明书.pdf'"><a>YCD系列冷藏冷冻保存箱-说明书</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/冰箱/YC-200、280、330、370说明书.pdf'"><a>YC-200、280、330、370说明书</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/冰箱/YC-626冰箱说明书.pdf'"><a>YC-626冰箱说明书</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/冰箱/86度冰箱使用说明书V3.pdf'"><a>86度冰箱使用说明书V3</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">紫外分光光度计</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/紫外分光光度计/M2紫外分光光度计白皮书.pdf'"><a>M2紫外分光光度计白皮书</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/紫外分光光度计/DOC0083 21 CFR Part 11 Position Paper-译文.pdf'"><a>DOC0083 21 CFR Part 11 Position Paper-译文</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/紫外分光光度计/SoloVPE可变光程紫外可见分光光度计标准操作规程.pdf'"><a>SoloVPE可变光程紫外可见分光光度计标准操作规程</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/紫外分光光度计/SoloVPE User Manual - Software Version 3x - DOC0126.pdf'"><a>SoloVPE User Manual - Software Version 3x - DOC0126</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">磁力搅拌器</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/磁力搅拌器/磁力搅拌器.pdf'"><a>磁力搅拌器</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">地秤 天平 台秤</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/地秤 天平 台秤/MAN_5900_Oper_en_949905059900.pdf'"><a>MAN_5900_Oper_en_949905059900</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/地秤 天平 台秤/MAN_ISBB.-ISDC._Oper_zh_9864801905.pdf'"><a>MAN_ISBB.-ISDC._Oper_zh_9864801905</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/地秤 天平 台秤/Man_Midrics3_V2_200801_cn.pdf'"><a>Man_Midrics3_V2_200801_cn</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/地秤 天平 台秤/MAN-IF-, IF-0CE_with Option T7, T10, T16, T17_WIF8001_4-en.pdf'"><a>MAN-IF-, IF-0CE_with Option T7, T10, T16, T17_WIF8001_4-en</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/地秤 天平 台秤/Manual_Entris BCE_Precision-and-Analytical-Balances_WBC6002av190602.pdf'"><a>Manual_Entris BCE_Precision-and-Analytical-Balances_WBC6002av190602</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/地秤 天平 台秤/地秤.pdf'"><a>地秤</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/地秤 天平 台秤/地秤相关.pdf'"><a>地秤相关</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">二氧化碳摇床</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/二氧化碳摇床/Multitron说明书77408_BA_Multitron_4.0_EN_V.01.00_25Feb2019_Web.pdf'"><a>Multitron说明书77408_BA_Multitron_4.0_EN_V.01.00_25Feb2019_Web</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">接管机</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/接管机/BWTC中文说明书.pdf'"><a>BWTC中文说明书</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/接管机/接管机日常使用操作指南.pdf'"><a>接管机日常使用操作指南</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/接管机/Manual_BioWelder_TC_SGI6106-p.pdf'"><a>Manual_BioWelder_TC_SGI6106-p</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">封管机</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/封管机/BioSealer使用注意事项说明.pdf'"><a>BioSealer使用注意事项说明</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/封管机/Manual_Biosealer_SGI6101-e.pdf'"><a>Manual_Biosealer_SGI6101-e</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/封管机/封管机日常使用操作指南.pdf'"><a>封管机日常使用操作指南</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/封管机/Manual_BioSealer-TC_2486866-000-e (4).pdf'"><a>Manual_BioSealer-TC_2486866-000-e (4)</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">封口机</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/封口机/封口机.pdf'"><a>封口机</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">浮游菌采样仪</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/浮游菌采样仪/MiniCapt Mobile Microbial Air Sampler Operations Manual Rev J.pdf'"><a>MiniCapt Mobile Microbial Air Sampler Operations Manual Rev J</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">离心机</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/离心机/MICRO CL 17&21 微型离心机.pdf'"><a>MICRO CL 17&21 微型离心机</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/离心机/Sorvall X Pro-ST Plus-zh离心机.pdf'"><a>Sorvall X Pro-ST Plus-zh离心机</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">粒子计数器</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/粒子计数器/Lasair III Operations Manual Rev Q.pdf'"><a>Lasair III Operations Manual Rev Q</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">蠕动泵</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/蠕动泵/530U资料 (1).pdf'"><a>530U资料 (1)</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/蠕动泵/530S资料 (2).pdf'"><a>530S资料 (2)</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/蠕动泵/wd-530-r2-zh-02.pdf'"><a>wd-530-r2-zh-02</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/蠕动泵/wd-630-r-zhs-02.pdf'"><a>wd-630-r-zhs-02</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">储液车</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/储液车/TechBooklet_PLT_Plastic_revision_dec_2011.pdf'"><a>TechBooklet_PLT_Plastic_revision_dec_2011</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">渗透压仪器</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/渗透压仪器/3250使用说明.pdf'"><a>3250使用说明</a></li>
+          <li onClick="parent.show.location.href='Resources/设备学习/渗透压仪器/3250英文版使用说明.pdf'"><a>3250英文版使用说明</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">生物安全柜</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/生物安全柜/3250使用说明1379 生物安全柜 产品说明书.pdf'"><a>1379 生物安全柜 产品说明书</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">水浴锅</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/水浴锅/TSPG10 水浴.pdf'"><a>TSPG10 水浴</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">细胞计数仪</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/细胞计数仪/Vi-CELL Manual 细胞计数仪.pdf'"><a>3250使用说明Vi-CELL Manual 细胞计数仪</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">血气分析仪</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/血气分析仪/EasyStat操作手册.pdf'"><a>EasyStat操作手册</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="resources" target="_self">生化分析仪</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/设备学习/生化分析仪/Cedex Bio Operators Manual V3.4_SW2.3_201807(1).pdf'"><a>Cedex Bio Operators Manual V3.4_SW2.3_201807(1)</a></li>
+        </ul>
+      </li>
+
+
+
+
+    </ul>
+  </li>
+
+
+
+
+  <li><a href="#" target="_self">工艺相关</a>
+
+    <ul style="display: none;" id="subMusic" class="second-menu">
+
+      <li><a href="#" class="resources" target="_self">DoE</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/工艺相关/DoE/DoE Presentation_CN.pdf'"><a>DoE Presentation_CN</a></li>
+          <li onClick="parent.show.location.href='Resources/工艺相关/DoE/DOE培训.pdf'"><a>DOE培训</a></li>
+          <li onClick="parent.show.location.href='Resources/工艺相关/DoE/闵亚能-实验设计（DOE）应用指南 (2011).pdf'"><a>闵亚能-实验设计（DOE）应用指南 (2011)</a></li>
+        </ul>
+      </li>
+
+     <li><a href="#" class="resources" target="_self">验证</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/工艺相关/验证/Process Validation General Principle and Practices.pdf'"><a>Process Validation General Principle and Practices</a></li>
+          <li onClick="parent.show.location.href='Resources/工艺相关/验证/PDATR60-3- 2021.pdf'"><a>PDATR60-3- 2021</a></li>
+        </ul>
+      </li>
+
+    </ul>
+  </li>
+
+
+
+
+
+  <li><a href="#" target="_self">质量文件</a>
+
+    <ul style="display: none;" id="subMusic" class="second-menu">
+
+      <li><a href="#" class="resources" target="_self">手册</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/质量文件/手册/信达E-DOC_User Manual.pdf'"><a>信达E-DOC_User Manual</a></li>
+        </ul>
+      </li>
+
+     <li><a href="#" class="resources" target="_self">管理规范</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/质量文件/管理规范/药品风险管理、偏差变更、CAPA和实验室管理.pdf'"><a>药品风险管理、偏差变更、CAPA和实验室管理</a></li>
+          <li onClick="parent.show.location.href='http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80332/80343/80344/80345/80821/%E8%89%AF%E5%A5%BD%E8%AE%B0%E5%BD%95%E8%A7%84%E8%8C%83%E8%A7%84%E7%A8%8B.PDF?nodeid=7597335&vernum=8'"><a>良好记录规范规程</a></li>
+          <li onClick="parent.show.location.href='http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80336/80349/80350/80721/80780/2020_%E6%95%B0%E6%8D%AE%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B9%B4%E5%BA%A6%E5%9F%B9%E8%AE%AD.PDF?nodeid=11876775&vernum=3'"><a>2020_数据可靠性年度培训</a></li>
+          <li onClick="parent.show.location.href='http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80336/80349/80350/80721/80780/GMP%E5%9F%BA%E7%A1%80%E5%9F%B9%E8%AE%AD%EF%BC%88%E5%81%8F%E5%B7%AE%EF%BC%8C%E5%8F%98%E6%9B%B4%E6%8E%A7%E5%88%B6%EF%BC%89.PDF?nodeid=7326040&vernum=6'"><a>GMP基础培训（偏差，变更控制）</a></li>
+          <li onClick="parent.show.location.href='http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80332/80343/80344/80345/80821/GMP%E6%95%B0%E6%8D%AE%E5%92%8C%E8%AE%B0%E5%BD%95%E5%AE%A1%E6%A0%B8%E7%AE%A1%E7%90%86%E8%A7%84%E7%A8%8B.PDF?nodeid=3544527&vernum=7'"><a>GMP数据和记录审核管理规程</a></li>
+          <li onClick="parent.show.location.href='http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80332/80343/80344/80759/80760/%E8%B4%A8%E9%87%8F%E6%89%8B%E5%86%8C.PDF?nodeid=1044978&vernum=8'"><a>质量手册</a></li>
+          <li onClick="parent.show.location.href='http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80332/80343/80344/80345/80821/%E5%81%8F%E5%B7%AE%E7%AE%A1%E7%90%86%E8%A7%84%E7%A8%8B.PDF?nodeid=8348699&vernum=12'"><a>偏差管理规程</a></li>
+          <li onClick="parent.show.location.href='http://edocapp/otcs/llisapi.dll/fetch/2000/74269/80332/80343/80344/80345/80821/%E5%8F%98%E6%9B%B4%E6%8E%A7%E5%88%B6%E7%AE%A1%E7%90%86%E8%A7%84%E7%A8%8B.PDF?nodeid=4808302&vernum=15'"><a>变更控制管理规程</a></li>
+        </ul>
+      </li>
+
+    </ul>
+  </li>
+
+
+
+
+ <li><a href="#" target="_self">法规学习</a>
+
+    <ul style="display: none;" id="subMusic" class="second-menu">
+
+      <li><a href="#" class="resources" target="_self">CFR</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/法规学习/CFR/21 CFR 210.pdf'"><a>21 CFR 210</a></li>
+          <li onClick="parent.show.location.href='Resources/法规学习/CFR/21 CFR 211.pdf'"><a>21 CFR 211</a></li>
+        </ul>
+      </li>
+
+     <li><a href="#" class="resources" target="_self">CMC</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/法规学习/CMC/CMC评审要点.pdf'"><a>CMC评审要点</a></li>
+          <li onClick="parent.show.location.href='Resources/法规学习/CMC/药品注册现场核查管理规定.pdf'"><a>药品注册现场核查管理规定</a></li>
+        </ul>
+      </li>
+
+     <li><a href="#" class="resources" target="_self">FDA</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/法规学习/FDA/2011-FDA行业指南.pdf'"><a>2011-FDA行业指南</a></li>
+          <li onClick="parent.show.location.href='Resources/法规学习/FDA/FDA数据完整性问答.pdf'"><a>FDA数据完整性问答</a></li>
+          <li onClick="parent.show.location.href='Resources/法规学习/FDA/FDA检查员指导手册.pdf'"><a>FDA检查员指导手册</a></li>
+          <li onClick="parent.show.location.href='Resources/法规学习/FDA/FDA无菌生产指南-中英文对照版2019.pdf'"><a>FDA无菌生产指南</a></li>
+        </ul>
+      </li>
+
+     <li><a href="#" class="resources" target="_self">GMP</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/法规学习/GMP/欧盟GMP(中英文对照).pdf'"><a>欧盟GMP(中英文对照)</a></li>
+        </ul>
+      </li>
+
+     <li><a href="#" class="resources" target="_self">ICH</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/法规学习/ICH/原料药生产的GMP指南的问与答.pdf'"><a>原料药生产的GMP指南的问与答</a></li>
+          <li onClick="parent.show.location.href='Resources/法规学习/ICH/Q7 Questions and Answers.pdf'"><a>Q7 Questions and Answers</a></li>
+          <li onClick="parent.show.location.href='Resources/法规学习/ICH/Q7 Good Manufacturing Practice Guide for Active Pharmaceutical Ingredients.pdf'" title="Q7 Good Manufacturing Practice Guide for Active Pharmaceutical Ingredients"><a>Q7 Good Manufacturing Practice Guide for Active Pharmaceutical Ingredients</a></li>
+          <li onClick="parent.show.location.href='Resources/法规学习/ICH/M4Q（R1）：人用药物注册通用技术文档-药学部分.pdf'"><a>M4Q（R1）：人用药物注册通用技术文档-药学部分</a></li>
+          <li onClick="parent.show.location.href='Resources/法规学习/ICH/M4（R4）：人用药物注册申请通用技术文档的组织.pdf'"><a>M4（R4）：人用药物注册申请通用技术文档的组织</a></li>
+        </ul>
+      </li>
+
+     <li><a href="#" class="resources" target="_self">PDA</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/法规学习/PDA/PDA TR61 Steam in place.pdf'"><a>PDA TR61 Steam in place</a></li>
+        </ul>
+      </li>
+
+    </ul>
+  </li>
+  
+
+
+
+
+
+<li><a href="#" class="resources" target="_self">管罐系统</a>
+<ul style="display: none;" id="subMusic" class="second-menu">
+
+      <li><a href="#" class="resources" target="_self">管罐基础</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐基础/PID图例.pdf'"><a>PID图例</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐基础/制药行业红锈如何预防.pdf'"><a>制药行业红锈如何预防</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐基础/管道设计说明.pdf'"><a>管道设计说明</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐基础/DQ缓冲液-DS1.pdf'"><a>DQ缓冲液-DS1</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐基础/DQ-CIP-DS1.pdf'"><a>DQ-CIP-DS1</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐基础/DQ纯化匀浆原液-DS1.pdf'"><a>DQ纯化匀浆原液-DS1</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐基础/自动化基础知识精品PPT课件.pdf'"><a>自动化基础知识精品PPT课件</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐基础/1 手动泵使用手册.pdf'"><a>1 手动泵使用手册</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐基础/2 油缸使用手册.pdf'"><a>2 油缸使用手册</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐基础/3 单向阀 使用手册.pdf'"><a>3 单向阀 使用手册</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐基础/4. 1拖5超滤夹具动力系统装配图.pdf'"><a>4. 1拖5超滤夹具动力系统装配图</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐基础/5. 滤板压装工具使用说明书.pdf'"><a>5. 滤板压装工具使用说明书</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐基础/6. MSDS-安全数据表.pdf'"><a>6. MSDS-安全数据表</a></li>
+        </ul>
+      </li>
+
+     <li><a href="#" class="resources" target="_self">GMP图纸</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/管罐系统/GMP图纸/信达M2项目-方案设计说明.pdf'"><a>信达M2项目-方案设计说明</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/GMP图纸/M2工艺设备布置平面图.pdf'"><a>M2工艺设备布置平面图</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/GMP图纸/M2洁净分区示意图.pdf'"><a>M2洁净分区示意图</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/GMP图纸/M2人物流流向示意图.pdf'"><a>M2人物流流向示意图</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/GMP图纸/M2空调系统划分平面图.pdf'"><a>M2空调系统划分平面图</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/GMP图纸/M2压差示意图.pdf'"><a>M2压差示意图</a></li>
+        </ul>
+      </li>
+
+     <li><a href="#" class="resources" target="_self">管罐PID图</a>
+        <ul class="third-menu">
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐PID图/信达M2-Buffer_rev 2.0.pdf'"><a>信达M2-Buffer_rev 2.0</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐PID图/信达M2-CIP_rev 2.0.pdf'"><a>信达M2-CIP_rev 2.0</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐PID图/信达M2-Purification_rev 2.0.pdf'"><a>信达M2-Purification_rev 2.0</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐PID图/超滤系统PID图.pdf'"><a>超滤系统PID图</a></li>
+          <li onClick="parent.show.location.href='Resources/管罐系统/管罐PID图/部件仪表介绍.html'"><a>部件仪表介绍</a></li>
+        </ul>
+      </li>
+
+     <li><a href="#" class="resources" target="_self">EM&Phase</a>
+        <ul class="third-menu">
+
+        </ul>
+      </li>
+
+    </ul>
+</li>
+
+<li><a href="../files/培训演示.html" class="resources" target="_blank">培训演示</a>
+
+</li>
+
+</ul>
+</div>
+
+<iframe name="show" frameborder="0" src="show.html"></iframe>
+
+</body>
+</html>
